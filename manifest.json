@@ -1,0 +1,17 @@
+{
+  "name": "Spirit Core · Whisky Guide",
+  "short_name": "SPIRIT CORE",
+  "description": "위스키 테이스팅 가이드 — 원료·캐스크·향미·원산지 분류",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#060606",
+  "theme_color": "#060606",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
