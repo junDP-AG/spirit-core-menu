@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Spirit Core · Core 100 Whisky Guide</title>
+<title>Spirit Core · Whisky Guide</title>
 <meta name="theme-color" content="#060606">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -487,109 +487,140 @@ select,
 /* current: all images visible via web candidates, localizable later */
 /* logo replaced with transparent burgundy SPIRIT CORE LABORATORY cutout as embedded data URI. */
 /* current: all images visible via web candidates, localizable later */
-/* ═══════════════ CORE 100 WHISKY DATA · 2026-06 ═══════════════ */
+/* ═══════════════ WHISKEY DATA · ACTUAL STOCK ONLY (130) ═══════════════ */
 const RAW=[
-[3001, "The Macallan Sherry Oak 25 Years Old", "Single Malt", "Sherry / Wine / Port", "Scotland / Speyside", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "None"],
-[3002, "The Macallan Sherry Oak 18 2025", "Single Malt", "Sherry / Wine / Port", "Scotland / Speyside", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "None"],
-[3003, "The Macallan Sherry Oak 12", "Single Malt", "Sherry / Wine / Port", "Scotland / Speyside", "Dried Fruit & Sherry", "Standard", "Medium & Smooth", "None"],
-[3004, "The Macallan Classic Cut", "Single Malt", "Sherry / Wine / Port", "Scotland / Speyside", "Dried Fruit & Sherry", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3005, "The Balvenie 14 Caribbean Cask", "Single Malt", "Rum / Brandy / Tequila", "Scotland / Speyside", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
-[3006, "The Balvenie 16 French Oak", "Single Malt", "Special / Experimental Cask", "Scotland / Speyside", "Floral & Herbal", "Full Strength", "Medium & Smooth", "None"],
-[3007, "Glenfiddich 15 Solera", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
-[3008, "The Glenlivet 18", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "None"],
-[3009, "GlenAllachie 8", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Dried Fruit & Sherry", "Full Strength", "Rich & Oily", "None"],
-[3010, "Benromach 10", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Malty & Cereal", "Standard", "Medium & Smooth", "Light Smoke"],
-[3011, "Mortlach 16", "Single Malt", "Sherry / Wine / Port", "Scotland / Speyside", "Earthy & Leather", "Standard", "Rich & Oily", "None"],
-[3012, "Aultmore 12", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Speyside", "Floral & Herbal", "Full Strength", "Light & Crisp", "None"],
-[3013, "Glenmorangie The Original 12", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Highland", "Citrus & Zesty", "Standard", "Light & Crisp", "None"],
-[3014, "Glenmorangie The Nectar 16", "Single Malt", "Sherry / Wine / Port", "Scotland / Highland", "Sweet Pastry & Honey", "Full Strength", "Medium & Smooth", "None"],
-[3015, "Glenmorangie Signet Reserve", "Single Malt", "Multiple / Complex Cask", "Scotland / Highland", "Chocolate & Coffee", "Full Strength", "Rich & Oily", "None"],
-[3016, "The GlenDronach 12", "Single Malt", "Sherry / Wine / Port", "Scotland / Highland", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "None"],
-[3017, "The GlenDronach 18 Allardice", "Single Malt", "Sherry / Wine / Port", "Scotland / Highland", "Chocolate & Coffee", "Full Strength", "Rich & Oily", "None"],
-[3018, "The GlenDronach Cask Bottling 1993 29 Year Old", "Single Malt", "Sherry / Wine / Port", "Scotland / Highland", "Earthy & Leather", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3019, "The Dalmore 2002 Vintage 18 Year Old", "Single Malt", "Multiple / Complex Cask", "Scotland / Highland", "Dried Fruit & Sherry", "Full Strength", "Rich & Oily", "None"],
-[3020, "The Dalmore King Alexander III", "Single Malt", "Multiple / Complex Cask", "Scotland / Highland", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "None"],
-[3021, "Glenglassaugh Sandend", "Single Malt", "Multiple / Complex Cask", "Scotland / Highland", "Fruity & Tropical", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3022, "Tomatin Cask Strength", "Single Malt", "Multiple / Complex Cask", "Scotland / Highland", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3023, "The Glenturret 10 Peat Smoked", "Single Malt", "Multiple / Complex Cask", "Scotland / Highland", "Dried Fruit & Sherry", "High Proof / Cask Strength", "Rich & Oily", "Medium Peat"],
-[3024, "Old Pulteney Huddart", "Single Malt", "Special / Experimental Cask", "Scotland / Highland", "Savory & Umami", "Full Strength", "Medium & Smooth", "Light Smoke"],
-[3025, "Bruichladdich The Classic Laddie", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Islay", "Malty & Cereal", "High Proof / Cask Strength", "Medium & Smooth", "None"],
-[3026, "Port Charlotte 10", "Single Malt", "Multiple / Complex Cask", "Scotland / Islay", "Malty & Cereal", "High Proof / Cask Strength", "Rich & Oily", "Heavy Peat"],
-[3027, "Octomore 16.1", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Islay", "Malty & Cereal", "High Proof / Cask Strength", "Rich & Oily", "Heavy Peat"],
-[3028, "Octomore 16.2", "Single Malt", "Multiple / Complex Cask", "Scotland / Islay", "Dried Fruit & Sherry", "High Proof / Cask Strength", "Rich & Oily", "Heavy Peat"],
-[3029, "Octomore 16.3", "Single Malt", "Multiple / Complex Cask", "Scotland / Islay", "Earthy & Leather", "High Proof / Cask Strength", "Rich & Oily", "Heavy Peat"],
-[3030, "Ardbeg Uigeadail", "Single Malt", "Sherry / Wine / Port", "Scotland / Islay", "Dried Fruit & Sherry", "High Proof / Cask Strength", "Rich & Oily", "Heavy Peat"],
-[3031, "Laphroaig 10 Sherry Oak Finish", "Single Malt", "Sherry / Wine / Port", "Scotland / Islay", "Savory & Umami", "Full Strength", "Rich & Oily", "Medicinal / Maritime"],
-[3032, "Caol Ila 12", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Islay", "Citrus & Zesty", "Standard", "Medium & Smooth", "Medicinal / Maritime"],
-[3033, "Kilchoman Machir Bay Cask Strength", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Islay", "Citrus & Zesty", "High Proof / Cask Strength", "Rich & Oily", "Heavy Peat"],
-[3034, "Lagavulin 16", "Single Malt", "Multiple / Complex Cask", "Scotland / Islay", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "Heavy Peat"],
-[3035, "Bowmore 18", "Single Malt", "Sherry / Wine / Port", "Scotland / Islay", "Chocolate & Coffee", "Standard", "Rich & Oily", "Medium Peat"],
-[3036, "Arran 10", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Islands", "Citrus & Zesty", "Full Strength", "Medium & Smooth", "None"],
-[3037, "Arran Sherry Cask", "Single Malt", "Sherry / Wine / Port", "Scotland / Islands", "Dried Fruit & Sherry", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3038, "Arran Amarone Cask Finish", "Single Malt", "Sherry / Wine / Port", "Scotland / Islands", "Winey & Tannic", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3039, "Highland Park 15 Viking Heart", "Single Malt", "Sherry / Wine / Port", "Scotland / Islands", "Sweet Pastry & Honey", "Full Strength", "Rich & Oily", "Light Smoke"],
-[3040, "Isle of Raasay Peated Na Sia Single Cask Series 1", "Single Malt", "Special / Experimental Cask", "Scotland / Islands", "Earthy & Leather", "High Proof / Cask Strength", "Rich & Oily", "Medium Peat"],
-[3041, "Tobermory 12", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Islands", "Fruity & Tropical", "Full Strength", "Medium & Smooth", "None"],
-[3042, "Auchentoshan Three Wood", "Single Malt", "Multiple / Complex Cask", "Scotland / Lowland", "Dried Fruit & Sherry", "Standard", "Medium & Smooth", "None"],
-[3043, "The Epicurean Glasgow Edition", "Blended Malt", "Multiple / Complex Cask", "Scotland / Lowland", "Floral & Herbal", "High Proof / Cask Strength", "Medium & Smooth", "None"],
-[3044, "Johnnie Walker Black Label 12", "Blended", "Multiple / Complex Cask", "Scotland / All Regions", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "Light Smoke"],
-[3045, "Johnnie Walker Green Label 15", "Blended Malt", "Multiple / Complex Cask", "Scotland / All Regions", "Malty & Cereal", "Standard", "Medium & Smooth", "Light Smoke"],
-[3046, "Johnnie Walker Blue Label", "Blended", "Multiple / Complex Cask", "Scotland / All Regions", "Sweet Pastry & Honey", "Standard", "Rich & Oily", "Light Smoke"],
-[3047, "Dewar's 18 Mizunara Cask Finish", "Blended", "Special / Experimental Cask", "Scotland / All Regions", "Woody & Oaky", "Standard", "Medium & Smooth", "None"],
-[3048, "Naked Malt", "Blended Malt", "Sherry / Wine / Port", "Scotland / All Regions", "Dried Fruit & Sherry", "Standard", "Medium & Smooth", "None"],
-[3049, "Scallywag", "Blended Malt", "Sherry / Wine / Port", "Scotland / All Regions", "Chocolate & Coffee", "Full Strength", "Rich & Oily", "None"],
-[3050, "Cutty Sark Prohibition Edition", "Blended", "Ex-Bourbon / Virgin Oak", "Scotland / All Regions", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "Light Smoke"],
-[3051, "Mellow Corn", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Malty & Cereal", "High Proof / Cask Strength", "Medium & Smooth", "None"],
-[3052, "Wild Turkey 101 8 Year", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3053, "Wild Turkey Rare Breed Bourbon", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3054, "Eagle Rare 10", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Woody & Oaky", "Full Strength", "Medium & Smooth", "None"],
-[3055, "Four Roses Single Barrel", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Fruity & Tropical", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3056, "Maker's Mark Cask Strength", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Sweet Pastry & Honey", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3057, "Woodford Reserve Double Oaked", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Chocolate & Coffee", "Full Strength", "Rich & Oily", "None"],
-[3058, "E.H. Taylor Single Barrel", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Woody & Oaky", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3059, "Angel's Envy Bourbon", "Bourbon / Corn-Based", "Sherry / Wine / Port", "USA / Kentucky", "Winey & Tannic", "Standard", "Medium & Smooth", "None"],
-[3060, "Sagamore Spirit Double Oak Rye", "Rye", "Ex-Bourbon / Virgin Oak", "USA / Other", "Woody & Oaky", "Full Strength", "Rich & Oily", "None"],
-[3061, "Sagamore Spirit Cask Strength Rye", "Rye", "Ex-Bourbon / Virgin Oak", "USA / Other", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3062, "WhistlePig 12 Old World Rye", "Rye", "Sherry / Wine / Port", "USA / Other", "Winey & Tannic", "Standard", "Rich & Oily", "None"],
-[3063, "Michter's US*1 Single Barrel Rye", "Rye", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Spicy & Aromatic", "Standard", "Medium & Smooth", "None"],
-[3064, "Russell's Reserve Single Barrel Rye", "Rye", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3065, "E.H. Taylor Straight Rye", "Rye", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3066, "High West A Midwinter Night's Dram", "Rye", "Sherry / Wine / Port", "USA / Other", "Dried Fruit & Sherry", "Full Strength", "Rich & Oily", "None"],
-[3067, "Bernheim Wheat Whiskey", "Wheat", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Sweet Pastry & Honey", "Full Strength", "Medium & Smooth", "None"],
-[3068, "Jack Daniel's Old No.7", "Tennessee Whiskey", "Ex-Bourbon / Virgin Oak", "USA / Tennessee", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
-[3069, "Charbay R5 Final Lot", "Grain / Other", "Special / Experimental Cask", "USA / Other", "Floral & Herbal", "Full Strength", "Medium & Smooth", "None"],
-[3070, "Barrell Seagrass", "Rye", "Rum / Brandy / Tequila", "USA / Other", "Fruity & Tropical", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3071, "Redbreast 12", "Single Pot Still Irish", "Sherry / Wine / Port", "Ireland", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "None"],
-[3072, "Bushmills 10", "Single Malt", "Multiple / Complex Cask", "Ireland", "Fruity & Tropical", "Standard", "Light & Crisp", "None"],
-[3073, "Limavady Single Malt", "Single Malt", "Double Cask", "Ireland", "Fruity & Tropical", "Full Strength", "Medium & Smooth", "None"],
-[3074, "Jameson Black Barrel", "Blended", "Ex-Bourbon / Virgin Oak", "Ireland", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
-[3075, "The Busker Triple Cask", "Blended", "Multiple / Complex Cask", "Ireland", "Fruity & Tropical", "Standard", "Medium & Smooth", "None"],
-[3076, "West Cork Calvados Cask Finish", "Single Malt", "Rum / Brandy / Tequila", "Ireland", "Fruity & Tropical", "Standard", "Medium & Smooth", "None"],
-[3077, "Natterjack Cask Strength", "Blended", "Double Cask", "Ireland", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3078, "Yamazaki Distiller's Reserve", "Single Malt", "Special / Experimental Cask", "Japan", "Floral & Herbal", "Standard", "Medium & Smooth", "None"],
-[3079, "Yamazaki 12", "Single Malt", "Multiple / Complex Cask", "Japan", "Fruity & Tropical", "Standard", "Medium & Smooth", "None"],
-[3080, "Yoichi Single Malt", "Single Malt", "Multiple / Complex Cask", "Japan", "Spicy & Aromatic", "Full Strength", "Rich & Oily", "Light Smoke"],
-[3081, "Miyagikyo Single Malt", "Single Malt", "Multiple / Complex Cask", "Japan", "Floral & Herbal", "Full Strength", "Medium & Smooth", "None"],
-[3082, "Taketsuru Pure Malt", "Blended Malt", "Multiple / Complex Cask", "Japan", "Fruity & Tropical", "Standard", "Medium & Smooth", "Light Smoke"],
-[3083, "Hibiki Japanese Harmony", "Blended", "Multiple / Complex Cask", "Japan", "Floral & Herbal", "Standard", "Medium & Smooth", "None"],
-[3084, "Kirin Fuji Single Grain", "Grain / Other", "Ex-Bourbon / Virgin Oak", "Japan", "Sweet Pastry & Honey", "Full Strength", "Medium & Smooth", "None"],
-[3085, "SHINDO Experimental 02", "Single Malt", "Multiple / Complex Cask", "Japan", "Sweet Pastry & Honey", "Full Strength", "Rich & Oily", "None"],
-[3086, "Canadian 12 Year Blended Whisky", "Blended", "Multiple / Complex Cask", "Canada", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
-[3087, "Kavalan Distillery Select", "Single Malt", "Multiple / Complex Cask", "New World / Taiwan", "Fruity & Tropical", "Standard", "Medium & Smooth", "None"],
-[3088, "Kavalan Solist Vinho Barrique", "Single Malt", "Sherry / Wine / Port", "New World / Taiwan", "Winey & Tannic", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3089, "Kavalan Solist Oloroso Sherry", "Single Malt", "Sherry / Wine / Port", "New World / Taiwan", "Dried Fruit & Sherry", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3090, "Amrut Indian Single Malt", "Single Malt", "Ex-Bourbon / Virgin Oak", "New World / India", "Malty & Cereal", "Full Strength", "Medium & Smooth", "None"],
-[3091, "Paul John Peated Select Cask", "Single Malt", "Ex-Bourbon / Virgin Oak", "New World / India", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "Medium Peat"],
-[3092, "Starward Nova", "Single Malt", "Sherry / Wine / Port", "New World / Australia", "Winey & Tannic", "Standard", "Medium & Smooth", "None"],
-[3093, "Alfred Giraud Horizon", "Single Malt", "Multiple / Complex Cask", "New World / Other", "Fruity & Tropical", "Full Strength", "Medium & Smooth", "None"],
-[3094, "Alfred Giraud Harmonie", "Blended Malt", "Rum / Brandy / Tequila", "New World / Other", "Spicy & Aromatic", "Full Strength", "Rich & Oily", "Light Smoke"],
-[3095, "Ki One Tiger", "Single Malt", "Sherry / Wine / Port", "New World / South Korea", "Fruity & Tropical", "Full Strength", "Medium & Smooth", "None"],
-[3096, "Ki One Unicorn", "Single Malt", "Ex-Bourbon / Virgin Oak", "New World / South Korea", "Earthy & Leather", "Full Strength", "Rich & Oily", "Medium Peat"],
-[3097, "Ki One Eagle Cask Strength", "Single Malt", "Ex-Bourbon / Virgin Oak", "New World / South Korea", "Woody & Oaky", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3098, "Ki One x Chef Edward Lee Edition", "Single Malt", "Special / Experimental Cask", "New World / South Korea", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "None"],
-[3099, "Kim Chang-soo Whisky Gimpo 2024", "Single Malt", "Multiple / Complex Cask", "New World / South Korea", "Savory & Umami", "High Proof / Cask Strength", "Rich & Oily", "Medium Peat"],
-[3100, "Kim Chang-soo Whisky Year of the Horse 2026", "Single Malt", "Multiple / Complex Cask", "New World / South Korea", "Fruity & Tropical", "High Proof / Cask Strength", "Rich & Oily", "Light Smoke"]
-];
+// ─── 실제 입고 확정 130종 · 2026-06-15 ───
+[1, "1792 Small Batch", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Sweet Pastry & Honey", "Full Strength", "Rich & Oily", "None"],
+[2, "The Glenlivet 18", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "None"],
+[3, "The Glenturret 12", "Single Malt", "Sherry / Wine / Port", "Scotland / Highland", "Dried Fruit & Sherry", "Full Strength", "Rich & Oily", "None"],
+[4, "Glenfarclas 15", "Single Malt", "Sherry / Wine / Port", "Scotland / Speyside", "Chocolate & Coffee", "Full Strength", "Rich & Oily", "None"],
+[5, "Glengoyne 12", "Single Malt", "Sherry / Wine / Port", "Scotland / Highland", "Fruity & Tropical", "Standard", "Medium & Smooth", "None"],
+[6, "The Glen Grant 12", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Fruity & Tropical", "Standard", "Light & Crisp", "None"],
+[7, "The Glen Grant 18", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Fruity & Tropical", "Standard", "Medium & Smooth", "None"],
+[8, "Glenglassaugh 12", "Single Malt", "Multiple / Complex Cask", "Scotland / Highland", "Fruity & Tropical", "Full Strength", "Medium & Smooth", "None"],
+[9, "The GlenDronach 12", "Single Malt", "Sherry / Wine / Port", "Scotland / Highland", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "None"],
+[10, "The GlenDronach 18 Allardice", "Single Malt", "Sherry / Wine / Port", "Scotland / Highland", "Chocolate & Coffee", "Full Strength", "Rich & Oily", "None"],
+[11, "The Glenrothes 12", "Single Malt", "Sherry / Wine / Port", "Scotland / Speyside", "Fruity & Tropical", "Standard", "Medium & Smooth", "None"],
+[12, "The Glenlivet 12", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Speyside", "Fruity & Tropical", "Standard", "Light & Crisp", "None"],
+[13, "Glenmorangie The Original 12", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Highland", "Citrus & Zesty", "Standard", "Light & Crisp", "None"],
+[14, "Glenmorangie The Nectar 16", "Single Malt", "Sherry / Wine / Port", "Scotland / Highland", "Sweet Pastry & Honey", "Full Strength", "Medium & Smooth", "None"],
+[15, "Glenmorangie Signet", "Single Malt", "Multiple / Complex Cask", "Scotland / Highland", "Chocolate & Coffee", "Full Strength", "Rich & Oily", "None"],
+[16, "The GlenAllachie 12", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Dried Fruit & Sherry", "Full Strength", "Rich & Oily", "None"],
+[17, "The GlenAllachie 8", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Dried Fruit & Sherry", "Full Strength", "Rich & Oily", "None"],
+[18, "The Glenturret 10 Peat Smoked", "Single Malt", "Multiple / Complex Cask", "Scotland / Highland", "Malty & Cereal", "High Proof / Cask Strength", "Rich & Oily", "Medium Peat"],
+[19, "The Glenturret Triple Wood", "Single Malt", "Multiple / Complex Cask", "Scotland / Highland", "Dried Fruit & Sherry", "Standard", "Medium & Smooth", "None"],
+[20, "Glenfiddich 12", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Speyside", "Fruity & Tropical", "Standard", "Medium & Smooth", "None"],
+[21, "Glenfiddich 18", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Dried Fruit & Sherry", "Standard", "Medium & Smooth", "None"],
+[22, "Ki One Unicorn", "Single Malt", "Ex-Bourbon / Virgin Oak", "New World / South Korea", "Earthy & Leather", "Full Strength", "Rich & Oily", "Medium Peat"],
+[23, "Ki One Tiger", "Single Malt", "Sherry / Wine / Port", "New World / South Korea", "Fruity & Tropical", "Full Strength", "Medium & Smooth", "None"],
+[24, "Ki One Eagle", "Single Malt", "Ex-Bourbon / Virgin Oak", "New World / South Korea", "Woody & Oaky", "Standard", "Medium & Smooth", "None"],
+[25, "Kim Chang-soo Whisky 51.7", "Single Malt", "Special / Experimental Cask", "New World / South Korea", "Malty & Cereal", "High Proof / Cask Strength", "Rich & Oily", "None"],
+[26, "Knob Creek Rye", "Rye", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Spicy & Aromatic", "High Proof / Cask Strength", "Medium & Smooth", "None"],
+[27, "Knob Creek Kentucky Straight Bourbon", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Woody & Oaky", "High Proof / Cask Strength", "Rich & Oily", "None"],
+[28, "Naked Malt", "Blended Malt", "Sherry / Wine / Port", "Scotland / All Regions", "Dried Fruit & Sherry", "Standard", "Medium & Smooth", "None"],
+[29, "The Dalmore 12", "Single Malt", "Sherry / Wine / Port", "Scotland / Highland", "Chocolate & Coffee", "Standard", "Medium & Smooth", "None"],
+[30, "The Dalmore Cigar Malt Reserve", "Single Malt", "Sherry / Wine / Port", "Scotland / Highland", "Chocolate & Coffee", "Full Strength", "Rich & Oily", "None"],
+[31, "The Dalmore King Alexander III", "Single Malt", "Multiple / Complex Cask", "Scotland / Highland", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "None"],
+[32, "Dewar's 12", "Blended", "Multiple / Complex Cask", "Scotland / All Regions", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[33, "Dewar's 18 Mizunara Cask Finish", "Blended", "Special / Experimental Cask", "Scotland / All Regions", "Woody & Oaky", "Standard", "Rich & Oily", "None"],
+[34, "Deanston Virgin Oak", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Highland", "Sweet Pastry & Honey", "Full Strength", "Medium & Smooth", "None"],
+[35, "Lagavulin 16", "Single Malt", "Multiple / Complex Cask", "Scotland / Islay", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "Heavy Peat"],
+[36, "Lagavulin 8", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Islay", "Citrus & Zesty", "Full Strength", "Medium & Smooth", "Heavy Peat"],
+[37, "Laphroaig 10", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Islay", "Savory & Umami", "Standard", "Rich & Oily", "Medicinal / Maritime"],
+[38, "Laphroaig Quarter Cask", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Islay", "Woody & Oaky", "Full Strength", "Rich & Oily", "Medicinal / Maritime"],
+[39, "Russell's Reserve Single Barrel", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "None"],
+[40, "Russell's Reserve 10", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Woody & Oaky", "Full Strength", "Medium & Smooth", "None"],
+[41, "Redbreast 12", "Single Pot Still Irish", "Sherry / Wine / Port", "Ireland", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "None"],
+[42, "Rebel 100 Kentucky Straight Bourbon", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Sweet Pastry & Honey", "High Proof / Cask Strength", "Rich & Oily", "None"],
+[43, "Royal Brackla 12", "Single Malt", "Sherry / Wine / Port", "Scotland / Highland", "Fruity & Tropical", "Full Strength", "Medium & Smooth", "None"],
+[44, "Royal Brackla 18", "Single Malt", "Sherry / Wine / Port", "Scotland / Highland", "Dried Fruit & Sherry", "Full Strength", "Rich & Oily", "None"],
+[45, "Royal Salute 21", "Blended", "Multiple / Complex Cask", "Scotland / All Regions", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "None"],
+[46, "Loch Lomond 12", "Single Malt", "Multiple / Complex Cask", "Scotland / Highland", "Fruity & Tropical", "Full Strength", "Medium & Smooth", "Light Smoke"],
+[47, "The Macallan 12 Double Cask", "Single Malt", "Double Cask", "Scotland / Speyside", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[48, "Maker's Mark", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Sweet Pastry & Honey", "Full Strength", "Medium & Smooth", "None"],
+[49, "Mellow Corn", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Malty & Cereal", "High Proof / Cask Strength", "Medium & Smooth", "None"],
+[50, "Monkey Shoulder", "Blended Malt", "Ex-Bourbon / Virgin Oak", "Scotland / All Regions", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[51, "Michter's US*1 Small Batch Bourbon", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Sweet Pastry & Honey", "Full Strength", "Rich & Oily", "None"],
+[52, "Michter's US*1 Unblended American Whiskey", "Grain / Other", "Special / Experimental Cask", "USA / Other", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[53, "Ballantine's Glenburgie 12", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Fruity & Tropical", "Standard", "Medium & Smooth", "None"],
+[54, "Ballantine's 21", "Blended", "Multiple / Complex Cask", "Scotland / All Regions", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "None"],
+[55, "Ballantine's Masters", "Blended", "Multiple / Complex Cask", "Scotland / All Regions", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[56, "The Balvenie 12 DoubleWood", "Single Malt", "Double Cask", "Scotland / Speyside", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[57, "The Balvenie 14 Caribbean Cask", "Single Malt", "Rum / Brandy / Tequila", "Scotland / Speyside", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[58, "The Balvenie 16 French Oak", "Single Malt", "Special / Experimental Cask", "Scotland / Speyside", "Floral & Herbal", "Full Strength", "Medium & Smooth", "None"],
+[59, "The Busker Triple Cask", "Blended", "Multiple / Complex Cask", "Ireland", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[60, "Benromach 10", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Malty & Cereal", "Standard", "Medium & Smooth", "Light Smoke"],
+[61, "Benriach The Smoky Ten", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Sweet Pastry & Honey", "Full Strength", "Medium & Smooth", "Medium Peat"],
+[62, "Benriach 16", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Fruity & Tropical", "Standard", "Rich & Oily", "None"],
+[63, "Benchmark Old No. 8", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[64, "Bowmore 12", "Single Malt", "Sherry / Wine / Port", "Scotland / Islay", "Chocolate & Coffee", "Standard", "Medium & Smooth", "Medium Peat"],
+[65, "Bowmore 18", "Single Malt", "Sherry / Wine / Port", "Scotland / Islay", "Chocolate & Coffee", "Standard", "Rich & Oily", "Medium Peat"],
+[66, "Bushmills 10", "Single Malt", "Ex-Bourbon / Virgin Oak", "Ireland", "Fruity & Tropical", "Standard", "Light & Crisp", "None"],
+[67, "Bushmills 12", "Single Malt", "Sherry / Wine / Port", "Ireland", "Dried Fruit & Sherry", "Standard", "Medium & Smooth", "None"],
+[68, "Bulleit Rye", "Rye", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Spicy & Aromatic", "Full Strength", "Medium & Smooth", "None"],
+[69, "Bulleit Bourbon", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Spicy & Aromatic", "Full Strength", "Medium & Smooth", "None"],
+[70, "Brenne French Single Malt", "Single Malt", "Special / Experimental Cask", "New World / Other", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[71, "Hibiki Japanese Harmony", "Blended", "Multiple / Complex Cask", "Japan", "Floral & Herbal", "Standard", "Medium & Smooth", "None"],
+[72, "Smokehead Original", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Islay", "Malty & Cereal", "Standard", "Rich & Oily", "Heavy Peat"],
+[73, "Starward Nova", "Single Malt", "Sherry / Wine / Port", "New World / Australia", "Winey & Tannic", "Standard", "Medium & Smooth", "None"],
+[74, "Chivas Regal 12", "Blended", "Multiple / Complex Cask", "Scotland / All Regions", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[75, "The Singleton of Dufftown 12", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Speyside", "Fruity & Tropical", "Standard", "Medium & Smooth", "None"],
+[76, "Ardbeg 10", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Islay", "Citrus & Zesty", "Full Strength", "Medium & Smooth", "Heavy Peat"],
+[77, "Ardbeg Uigeadail", "Single Malt", "Sherry / Wine / Port", "Scotland / Islay", "Dried Fruit & Sherry", "High Proof / Cask Strength", "Rich & Oily", "Heavy Peat"],
+[78, "Arran 10", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Islands", "Citrus & Zesty", "Full Strength", "Medium & Smooth", "None"],
+[79, "Arran Sherry Cask", "Single Malt", "Sherry / Wine / Port", "Scotland / Islands", "Dried Fruit & Sherry", "High Proof / Cask Strength", "Rich & Oily", "None"],
+[80, "Aberlour 12 Double Cask", "Single Malt", "Double Cask", "Scotland / Speyside", "Dried Fruit & Sherry", "Standard", "Medium & Smooth", "None"],
+[81, "Aberlour 16", "Single Malt", "Double Cask", "Scotland / Speyside", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "None"],
+[82, "The Islay Boys Battle Axe", "Blended Malt", "Multiple / Complex Cask", "Scotland / All Regions", "Savory & Umami", "Standard", "Medium & Smooth", "Medium Peat"],
+[83, "Alfred Giraud Horizon", "Blended Malt", "Multiple / Complex Cask", "New World / Other", "Woody & Oaky", "Full Strength", "Rich & Oily", "None"],
+[84, "Amrut Indian Single Malt", "Single Malt", "Ex-Bourbon / Virgin Oak", "New World / India", "Malty & Cereal", "Full Strength", "Medium & Smooth", "None"],
+[85, "Yamazaki 12", "Single Malt", "Multiple / Complex Cask", "Japan", "Fruity & Tropical", "Standard", "Medium & Smooth", "None"],
+[86, "Yamazaki Distiller's Reserve", "Single Malt", "Special / Experimental Cask", "Japan", "Floral & Herbal", "Standard", "Medium & Smooth", "None"],
+[87, "Evan Williams Bottled-in-Bond", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Nutty & Toasty", "High Proof / Cask Strength", "Rich & Oily", "None"],
+[88, "Evan Williams Black Label", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[89, "Aberfeldy 16", "Single Malt", "Double Cask", "Scotland / Highland", "Sweet Pastry & Honey", "Standard", "Rich & Oily", "None"],
+[90, "The Epicurean", "Blended Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Lowland", "Citrus & Zesty", "Full Strength", "Light & Crisp", "None"],
+[91, "Angel's Envy Kentucky Straight Bourbon", "Bourbon / Corn-Based", "Sherry / Wine / Port", "USA / Kentucky", "Winey & Tannic", "Standard", "Rich & Oily", "None"],
+[92, "Oban 14", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Highland", "Fruity & Tropical", "Standard", "Medium & Smooth", "Light Smoke"],
+[93, "Old Parr 12", "Blended", "Multiple / Complex Cask", "Scotland / All Regions", "Malty & Cereal", "Standard", "Medium & Smooth", "Light Smoke"],
+[94, "Wild Turkey 101 8 Year", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "None"],
+[95, "Wild Turkey 101 Rye", "Rye", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "None"],
+[96, "Wild Turkey Rare Breed", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "None"],
+[97, "Wild Turkey Master's Keep Triumph", "Rye", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Spicy & Aromatic", "High Proof / Cask Strength", "Rich & Oily", "None"],
+[98, "Nikka Yoichi Single Malt", "Single Malt", "Ex-Bourbon / Virgin Oak", "Japan", "Spicy & Aromatic", "Full Strength", "Rich & Oily", "Light Smoke"],
+[99, "Woodford Reserve", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Nutty & Toasty", "Full Strength", "Medium & Smooth", "None"],
+[100, "West Cork Calvados Cask Finish", "Blended", "Rum / Brandy / Tequila", "Ireland", "Fruity & Tropical", "Standard", "Medium & Smooth", "None"],
+[101, "Eagle Rare 10", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Woody & Oaky", "Full Strength", "Medium & Smooth", "None"],
+[102, "Jack Daniel's Old No. 7", "Tennessee Whiskey", "Ex-Bourbon / Virgin Oak", "USA / Tennessee", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[103, "Jameson Black Barrel", "Blended", "Ex-Bourbon / Virgin Oak", "Ireland", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[104, "Jameson 6 Year", "Blended", "Multiple / Complex Cask", "Ireland", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[105, "Johnnie Walker Red Label", "Blended", "Multiple / Complex Cask", "Scotland / All Regions", "Spicy & Aromatic", "Standard", "Light & Crisp", "Light Smoke"],
+[106, "Johnnie Walker Black Label", "Blended", "Multiple / Complex Cask", "Scotland / All Regions", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "Medium Peat"],
+[107, "Johnnie Walker Black Ruby", "Blended", "Multiple / Complex Cask", "Scotland / All Regions", "Fruity & Tropical", "Standard", "Medium & Smooth", "Light Smoke"],
+[108, "Johnnie Walker Blue Label", "Blended", "Multiple / Complex Cask", "Scotland / All Regions", "Sweet Pastry & Honey", "Standard", "Rich & Oily", "Light Smoke"],
+[109, "Johnnie Walker Red Icon Edition", "Blended", "Multiple / Complex Cask", "Scotland / All Regions", "Spicy & Aromatic", "Standard", "Light & Crisp", "Light Smoke"],
+[110, "Johnnie Walker Platinum Label 18", "Blended", "Multiple / Complex Cask", "Scotland / All Regions", "Dried Fruit & Sherry", "Standard", "Rich & Oily", "Light Smoke"],
+[111, "Jura Origin 10", "Single Malt", "Multiple / Complex Cask", "Scotland / Islands", "Malty & Cereal", "Standard", "Medium & Smooth", "Light Smoke"],
+[112, "Jim Beam White Label", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Sweet Pastry & Honey", "Standard", "Light & Crisp", "None"],
+[113, "Jim Beam Rye", "Rye", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Spicy & Aromatic", "Standard", "Medium & Smooth", "None"],
+[114, "Kavalan Solist Vinho Barrique", "Single Malt", "Sherry / Wine / Port", "New World / Taiwan", "Winey & Tannic", "High Proof / Cask Strength", "Rich & Oily", "None"],
+[115, "Canadian Club Classic 12", "Blended", "Multiple / Complex Cask", "Canada", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
+[116, "Caol Ila 12", "Single Malt", "Ex-Bourbon / Virgin Oak", "Scotland / Islay", "Citrus & Zesty", "Standard", "Medium & Smooth", "Medicinal / Maritime"],
+[117, "Cragganmore 12", "Single Malt", "Multiple / Complex Cask", "Scotland / Speyside", "Malty & Cereal", "Standard", "Medium & Smooth", "Light Smoke"],
+[118, "Nikka Taketsuru Pure Malt", "Blended Malt", "Multiple / Complex Cask", "Japan", "Fruity & Tropical", "Standard", "Medium & Smooth", "Light Smoke"],
+[119, "Talisker Special Release 2023", "Single Malt", "Sherry / Wine / Port", "Scotland / Islands", "Savory & Umami", "High Proof / Cask Strength", "Rich & Oily", "Medicinal / Maritime"],
+[120, "Tamnavulin Sauvignon Blanc Cask", "Single Malt", "Sherry / Wine / Port", "Scotland / Speyside", "Citrus & Zesty", "Standard", "Light & Crisp", "None"],
+[121, "Tamnavulin Sherry Cask", "Single Malt", "Sherry / Wine / Port", "Scotland / Speyside", "Dried Fruit & Sherry", "Standard", "Medium & Smooth", "None"],
+[122, "Tamnavulin Pinot Noir Cask", "Single Malt", "Sherry / Wine / Port", "Scotland / Speyside", "Winey & Tannic", "Standard", "Medium & Smooth", "None"],
+[123, "Four Roses Single Barrel", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Kentucky", "Fruity & Tropical", "High Proof / Cask Strength", "Rich & Oily", "None"],
+[124, "Paul John Brilliance", "Single Malt", "Ex-Bourbon / Virgin Oak", "New World / India", "Sweet Pastry & Honey", "Full Strength", "Medium & Smooth", "None"],
+[125, "Highland Park 12", "Single Malt", "Sherry / Wine / Port", "Scotland / Islands", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "Light Smoke"],
+[126, "Highland Park 15", "Single Malt", "Sherry / Wine / Port", "Scotland / Islands", "Sweet Pastry & Honey", "Full Strength", "Rich & Oily", "Light Smoke"],
+[127, "High West Rendezvous Rye", "Rye", "Ex-Bourbon / Virgin Oak", "USA / Other", "Spicy & Aromatic", "Full Strength", "Rich & Oily", "None"],
+[128, "High West Bourbon", "Bourbon / Corn-Based", "Ex-Bourbon / Virgin Oak", "USA / Other", "Sweet Pastry & Honey", "Full Strength", "Medium & Smooth", "None"],
+[129, "Heaven's Door Double Barrel", "Grain / Other", "Ex-Bourbon / Virgin Oak", "USA / Tennessee", "Woody & Oaky", "High Proof / Cask Strength", "Rich & Oily", "None"],
+[130, "Fuji Sanroku Signature Blend", "Blended", "Multiple / Complex Cask", "Japan", "Fruity & Tropical", "High Proof / Cask Strength", "Rich & Oily", "None"]
+];;
 
 /* ═══════════════ AXIS DATA ═══════════════ */
 const AXES=[
@@ -655,8 +686,8 @@ subs:[
 ]},
 {num:"⑤",id:"str",label:"Strength",ko:"알코올 도수",short:"ABV 볼륨과 타격감의 강도",desc:"위스키의 물리적인 강도와 알코올 볼륨(ABV)입니다. 도수가 높을수록 향의 밀도가 빽빽하고 타격감이 강해집니다.",
 subs:[
-{id:"Standard",ko:"기본 도수 · 40~43.9%",desc:"가장 부드럽고 편안하게 마실 수 있도록 물을 타서 도수를 낮춘 입문용/데일리 체급입니다. 알코올 자극이 적어 위스키 본연의 향을 쉽게 탐색할 수 있으며 하이볼로도 부담이 없습니다."},
-{id:"Full Strength",ko:"강화 도수 · 44~49.9%",desc:"위스키 매니아들이 가장 선호하는 44~49.9% 대역입니다. 논 칠 필터(Non-Chill Filtered) 공정을 적용할 수 있는 마지노선 도수(주로 46%)가 이 체급에 속합니다."},
+{id:"Standard",ko:"기본 도수 · 40~43%",desc:"가장 부드럽고 편안하게 마실 수 있도록 물을 타서 도수를 낮춘 입문용/데일리 체급입니다. 알코올 자극이 적어 위스키 본연의 향을 쉽게 탐색할 수 있으며 하이볼로도 부담이 없습니다."},
+{id:"Full Strength",ko:"강화 도수 · 44~49%",desc:"위스키 매니아들이 가장 선호하는 44~49.9% 대역입니다. 논 칠 필터(Non-Chill Filtered) 공정을 적용할 수 있는 마지노선 도수(주로 46%)가 이 체급에 속합니다."},
 {id:"High Proof / Cask Strength",ko:"고도수 원액 · 50%+",desc:"50% 이상의 고도수 제품군입니다. 일부는 캐스크 스트렝스이고, 일부는 병입 전 도수 조정을 거친 하이 프루프 제품입니다. 향의 밀도와 타격감이 강해 물을 조금씩 더하며 변화를 보기 좋습니다."}
 ]},
 {num:"⑥",id:"bod",label:"Body & Texture",ko:"바디 & 텍스처",short:"입안의 무게감과 점성 — 순수한 촉각",desc:"입안에 위스키를 머금었을 때 느껴지는 물리적인 무게감과 점성입니다. 향이 아닌 오직 '촉각'에 집중한 분류입니다.",
@@ -687,7 +718,7 @@ const OPTS={
 };
 const FLABELS={mat:"원료 (Material)",cask:"캐스크 (Cask)",ori:"원산지 (Origin)",flv:"향미 (Flavor)",str:"도수 (Strength)",bod:"바디 (Body)",peat:"피트 (Peat)"};
 
-const STORAGE_KEY='sc_ws_v11_core_100'; // (레거시 키, 더 이상 사용 안 함)
+const STORAGE_KEY='sc_ws_v11_actual_stock_130'; // (레거시 키, 더 이상 사용 안 함)
 
 /* ═══════════════ SUPABASE CONFIG ═══════════════
    1. https://app.supabase.com 에서 프로젝트 생성
@@ -710,11 +741,6 @@ const STORAGE_KEY='sc_ws_v11_core_100'; // (레거시 키, 더 이상 사용 안
 const SUPABASE_URL  = 'https://qmyhhergbtoojhihbour.supabase.co'; 
 const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFteWhoZXJnYnRvb2poaWhib3VyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk3MDA3NjAsImV4cCI6MjA5NTI3Njc2MH0.JCV48pzWoa_BLHmj1EtmDLuAIaqrag7O06qq6peNn60'
 const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
-const DATASET_MIN_ID=3001; // 실제 입고 가능 목록 기반 CORE 100 v3 전용 Supabase ID 영역
-const DATASET_MAX_ID=3100;
-const DATASET_VERSION='core-100-available-stock-v3';
-const CORE_ID_SET=new Set(RAW.map(r=>Number(r[0])));
-const CORE_LOCKED=true;
 const FIELD_ORDER=['mat','cask','ori','flv','str','bod','peat'];
 const VALUE_ALIASES={
   "Bourbon / Corn":"Bourbon / Corn-Based",
@@ -725,48 +751,165 @@ const VALUE_ALIASES={
   "Dark Chocolate & Coffee":"Chocolate & Coffee"
 };
 const PRODUCT_OVERRIDES={
-  "Redbreast 12": {
-    "mat": "Single Pot Still Irish"
-  },
-  "Jack Daniel's Old No.7": {
-    "mat": "Tennessee Whiskey"
-  },
-  "Natterjack Cask Strength": {
-    "mat": "Blended",
-    "cask": "Double Cask"
-  },
-  "Charbay R5 Final Lot": {
-    "mat": "Grain / Other",
-    "cask": "Special / Experimental Cask"
-  },
-  "Alfred Giraud Harmonie": {
-    "mat": "Blended Malt",
-    "cask": "Rum / Brandy / Tequila"
-  },
-  "The Epicurean Glasgow Edition": {
-    "mat": "Blended Malt"
-  }
+  "Redbreast 12":{mat:"Single Pot Still Irish"},
+  "Redbreast 12 Cask Strength":{mat:"Single Pot Still Irish"},
+  "Redbreast 15":{mat:"Single Pot Still Irish"},
+  "Green Spot":{mat:"Single Pot Still Irish"},
+  "Yellow Spot 12":{mat:"Single Pot Still Irish"},
+  "Red Spot 15":{mat:"Single Pot Still Irish"},
+  "Method and Madness Japanese Cedarwood Cask Finish":{mat:"Single Pot Still Irish",cask:"Special / Experimental Cask"},
+  "Weller Special Reserve":{mat:"Bourbon / Corn-Based"},
+  "Larceny Small Batch":{mat:"Bourbon / Corn-Based"},
+  "Jameson Caskmates Stout Edition":{cask:"Special / Experimental Cask"},
+  "Aberlour 16 Double Cask":{str:"Standard"},
+  "Glengoyne 15":{str:"Standard"},
+  "Mortlach 14 Alexander’s Way":{str:"Standard"},
+  "Highland Park 18 Viking Pride":{str:"Standard"},
+  "Tullamore D.E.W. 14 Single Malt":{str:"Standard"},
+  "Mackmyra Brukswhisky":{str:"Standard"},
+  "Stauning KAOS":{mat:"Grain / Other"},
+  "Jack Daniel’s Old No.7":{mat:"Tennessee Whiskey"},
+  "George Dickel No.12":{mat:"Tennessee Whiskey"},
+  "Jack Daniel’s Single Barrel Select":{mat:"Tennessee Whiskey"},
+  "Jack Daniel’s Bonded":{mat:"Tennessee Whiskey"},
+  "George Dickel Bottled in Bond":{mat:"Tennessee Whiskey"},
+  "George Dickel Barrel Select":{mat:"Tennessee Whiskey"}
 };
 
+const PRODUCT_KO_NAMES={
+  "1792 Small Batch": "1792 스몰 배치",
+  "The Glenlivet 18": "글렌리벳 18년",
+  "The Glenturret 12": "글렌터렛 12년",
+  "Glenfarclas 15": "글렌파클라스 15년",
+  "Glengoyne 12": "글렌고인 12년",
+  "The Glen Grant 12": "글렌그란트 12년",
+  "The Glen Grant 18": "글렌그란트 18년",
+  "Glenglassaugh 12": "글렌글라사 12년",
+  "The GlenDronach 12": "글렌드로낙 12년",
+  "The GlenDronach 18 Allardice": "글렌드로낙 18년",
+  "The Glenrothes 12": "글렌로티스 12년",
+  "The Glenlivet 12": "글렌리벳 12년",
+  "Glenmorangie The Original 12": "글렌모렌지 12년 디 오리지널",
+  "Glenmorangie The Nectar 16": "글렌모렌지 16년 더 넥타",
+  "Glenmorangie Signet": "글렌모렌지 시그넷",
+  "The GlenAllachie 12": "글렌알라키 12년",
+  "The GlenAllachie 8": "글렌알라키 8년",
+  "The Glenturret 10 Peat Smoked": "글렌터렛 10년 피트 스모크",
+  "The Glenturret Triple Wood": "글렌터렛 트리플 우드",
+  "Glenfiddich 12": "글렌피딕 12년",
+  "Glenfiddich 18": "글렌피딕 18년",
+  "Ki One Unicorn": "기원 유니콘",
+  "Ki One Tiger": "기원 호랑이",
+  "Ki One Eagle": "기원 독수리",
+  "Kim Chang-soo Whisky 51.7": "김창수 위스키 51.7",
+  "Knob Creek Rye": "납 크릭 라이",
+  "Knob Creek Kentucky Straight Bourbon": "납 크릭 버번",
+  "Naked Malt": "네이키드 몰트",
+  "The Dalmore 12": "달모어 12년",
+  "The Dalmore Cigar Malt Reserve": "달모어 시가 몰트 리저브",
+  "The Dalmore King Alexander III": "달모어 킹 알렉산더 3세",
+  "Dewar's 12": "듀어스 12년",
+  "Dewar's 18 Mizunara Cask Finish": "듀어스 18년 미즈나라 캐스크",
+  "Deanston Virgin Oak": "딘스톤 버진 오크",
+  "Lagavulin 16": "라가불린 16년",
+  "Lagavulin 8": "라가불린 8년",
+  "Laphroaig 10": "라프로익 10년",
+  "Laphroaig Quarter Cask": "라프로익 쿼터 캐스크",
+  "Russell's Reserve Single Barrel": "러셀 리저브 싱글 배럴",
+  "Russell's Reserve 10": "러셀 리저브 10년",
+  "Redbreast 12": "레드브레스트 12년",
+  "Rebel 100 Kentucky Straight Bourbon": "레벨 100 스트레이트 버번",
+  "Royal Brackla 12": "로얄 브라클라 12년",
+  "Royal Brackla 18": "로얄 브라클라 18년",
+  "Royal Salute 21": "로얄 살루트 21년",
+  "Loch Lomond 12": "로크 로몬드 12년",
+  "The Macallan 12 Double Cask": "맥캘란 12년 더블 캐스크",
+  "Maker's Mark": "메이커스 마크",
+  "Mellow Corn": "멜로우 콘",
+  "Monkey Shoulder": "몽키 숄더",
+  "Michter's US*1 Small Batch Bourbon": "믹터스 스몰 배치 버번",
+  "Michter's US*1 Unblended American Whiskey": "믹터스 언블렌디드 아메리칸",
+  "Ballantine's Glenburgie 12": "발렌타인 글렌버기 12년",
+  "Ballantine's 21": "발렌타인 21년",
+  "Ballantine's Masters": "발렌타인 마스터스",
+  "The Balvenie 12 DoubleWood": "발베니 12년 더블우드",
+  "The Balvenie 14 Caribbean Cask": "발베니 14년 캐리비안 캐스크",
+  "The Balvenie 16 French Oak": "발베니 16년 프렌치 오크",
+  "The Busker Triple Cask": "버스커 트리플 캐스크",
+  "Benromach 10": "벤로막 10년",
+  "Benriach The Smoky Ten": "벤리악 스모키 10년",
+  "Benriach 16": "벤리악 16년",
+  "Benchmark Old No. 8": "벤치마크 올드 No. 8",
+  "Bowmore 12": "보모어 12년",
+  "Bowmore 18": "보모어 18년",
+  "Bushmills 10": "부쉬밀 10년",
+  "Bushmills 12": "부쉬밀 12년",
+  "Bulleit Rye": "불렛 라이",
+  "Bulleit Bourbon": "불렛 버번",
+  "Brenne French Single Malt": "브렌 프렌치 싱글 몰트",
+  "Hibiki Japanese Harmony": "산토리 히비키 하모니",
+  "Smokehead Original": "스모크헤드 오리지널",
+  "Starward Nova": "스타워드 노바",
+  "Chivas Regal 12": "시바스 리갈 12년",
+  "The Singleton of Dufftown 12": "싱글톤 더프타운 12년",
+  "Ardbeg 10": "아드벡 10년",
+  "Ardbeg Uigeadail": "아드벡 우거다일",
+  "Arran 10": "아란 10년",
+  "Arran Sherry Cask": "아란 셰리 캐스크",
+  "Aberlour 12 Double Cask": "아벨라워 12년 더블 캐스크",
+  "Aberlour 16": "아벨라워 16년",
+  "The Islay Boys Battle Axe": "아일라 보이즈 배틀 액스",
+  "Alfred Giraud Horizon": "알프레드 지로 호라이즌",
+  "Amrut Indian Single Malt": "암룻 인디언 싱글 몰트",
+  "Yamazaki 12": "야마자키 12년",
+  "Yamazaki Distiller's Reserve": "야마자키 디스틸러스 리저브",
+  "Evan Williams Bottled-in-Bond": "에반 윌리엄스 바틀드 인 본드",
+  "Evan Williams Black Label": "에반 윌리엄스 블랙",
+  "Aberfeldy 16": "애버펠디 16년",
+  "The Epicurean": "에피큐리안",
+  "Angel's Envy Kentucky Straight Bourbon": "엔젤스 엔비",
+  "Oban 14": "오반 14년",
+  "Old Parr 12": "올드 파 12년",
+  "Wild Turkey 101 8 Year": "와일드 터키 101 8년",
+  "Wild Turkey 101 Rye": "와일드 터키 101 라이",
+  "Wild Turkey Rare Breed": "와일드 터키 레어 브리드",
+  "Wild Turkey Master's Keep Triumph": "와일드 터키 마스터스 킵 트라이엄프",
+  "Nikka Yoichi Single Malt": "요이치 싱글 몰트",
+  "Woodford Reserve": "우드포드 리저브",
+  "West Cork Calvados Cask Finish": "웨스트 콕 아이리시 칼바도스 캐스크",
+  "Eagle Rare 10": "이글 레어 10년",
+  "Jack Daniel's Old No. 7": "잭 다니엘스",
+  "Jameson Black Barrel": "제임슨 블랙 배럴",
+  "Jameson 6 Year": "제임슨 6년",
+  "Johnnie Walker Red Label": "조니워커 레드",
+  "Johnnie Walker Black Label": "조니워커 블랙",
+  "Johnnie Walker Black Ruby": "조니워커 블랙 루비",
+  "Johnnie Walker Blue Label": "조니워커 블루",
+  "Johnnie Walker Red Icon Edition": "조니워커 레드 아이콘 에디션",
+  "Johnnie Walker Platinum Label 18": "조니워커 플래티넘 18년",
+  "Jura Origin 10": "주라 오리진 10년",
+  "Jim Beam White Label": "짐빔 화이트",
+  "Jim Beam Rye": "짐빔 라이",
+  "Kavalan Solist Vinho Barrique": "카발란 솔리스트 비노 바리크 T",
+  "Canadian Club Classic 12": "캐나디언 클럽 12년",
+  "Caol Ila 12": "쿨일라 12년",
+  "Cragganmore 12": "크래건모어 12년",
+  "Nikka Taketsuru Pure Malt": "타케츠루 퓨어 몰트",
+  "Talisker Special Release 2023": "탈리스커 SR 2023",
+  "Tamnavulin Sauvignon Blanc Cask": "탐나불린 소비뇽 블랑 캐스크",
+  "Tamnavulin Sherry Cask": "탐나불린 셰리 캐스크",
+  "Tamnavulin Pinot Noir Cask": "탐나불린 피노 누아 캐스크",
+  "Four Roses Single Barrel": "포 로지스 싱글 배럴",
+  "Paul John Brilliance": "폴 존 브릴리언스",
+  "Highland Park 12": "하이랜드 파크 12년",
+  "Highland Park 15": "하이랜드 파크 15년",
+  "High West Rendezvous Rye": "하이 웨스트 랑데뷰 라이",
+  "High West Bourbon": "하이 웨스트 버번",
+  "Heaven's Door Double Barrel": "헤븐스 도어 더블 배럴",
+  "Fuji Sanroku Signature Blend": "후지산로쿠 시그니처 블렌드"
+};
 const PRODUCT_NOTES={
-  "The Macallan Sherry Oak 25 Years Old": "OLD CORE · 25년 장기 숙성 스카치이자 셰리 오크 숙성의 최상단 기준점입니다.",
-  "The GlenDronach Cask Bottling 1993 29 Year Old": "싱글 캐스크 장기 숙성 제품 · 실제 입고 병의 캐스크 번호와 병입 도수는 라벨 기준으로 최종 확인해야 합니다.",
-  "Glenmorangie Signet Reserve": "Signet 계열의 상위 한정 표현 · 일반 Signet과 혼동되지 않도록 병 라벨의 정식 영문명을 확인하세요.",
-  "Bruichladdich The Classic Laddie": "논피트 아일라 · Islay 생산이지만 피트 훈연을 사용하지 않은 Bruichladdich의 기준 표현입니다.",
-  "Octomore 16.1": "Series 16 기준형 · 5년, 59.3%, 101.4 PPM, 퍼스트필 버번 배럴 숙성.",
-  "Octomore 16.2": "Series 16 캐스크 비교형 · 5년, 58.1%, 유럽 와인·코냑 계열 캐스크 중심 숙성.",
-  "Octomore 16.3": "Series 16 테루아형 · Octomore Farm 단일 필드 Islay 보리와 초고피트를 비교하는 표현입니다.",
-  "Isle of Raasay Peated Na Sia Single Cask Series 1": "싱글 캐스크 제품 · 정확한 캐스크 타입과 도수는 실제 입고 라벨 확인 후 관리자 화면에서 보정해야 합니다.",
-  "Charbay R5 Final Lot": "IPA 완성 맥주를 증류해 프렌치 오크에서 숙성한 실험적 미국 위스키입니다.",
-  "Barrell Seagrass": "라이 위스키를 마르티니크 럼·마데이라·애프리콧 브랜디 캐스크에 피니시한 복합 캐스크 표현입니다.",
-  "Natterjack Cask Strength": "옥수수 중심의 아이리시 블렌드 · 엑스버번 숙성 후 새 아메리칸 오크 피니시.",
-  "SHINDO Experimental 02": "2026년 출시 · 48% · 논피트 싱글몰트. 버번·올로로소 셰리·코냑 캐스크를 사용합니다.",
-  "Canadian 12 Year Blended Whisky": "공급처 표기만으로 브랜드가 확정되지 않았습니다. 실제 병 라벨 확인 전에는 임시 명칭으로 취급하세요.",
-  "Alfred Giraud Horizon": "프랑스 싱글몰트 · 코냑·프렌치 오크·아메리칸 오크를 포함한 14종 캐스크 조합.",
-  "Alfred Giraud Harmonie": "프랑스 트리플 몰트 · 오래된 코냑 캐스크 중심, 가벼운 피트가 포함된 표현입니다.",
-  "Ki One x Chef Edward Lee Edition": "국내산 홍고추를 활용한 실험적 캐스크 표현 · 57.5% 캐스크 스트렝스.",
-  "Kim Chang-soo Whisky Gimpo 2024": "김포 첫 정규 에디션 · 복수 셰리·와인·쿼터 캐스크를 결합한 피티드 한국 싱글몰트입니다.",
-  "Kim Chang-soo Whisky Year of the Horse 2026": "NEW CORE · 셰리·마데이라 와인·스패니시 버진 오크 원액을 결합한 51.8% 캐스크 스트렝스 한정판입니다."
+  "Bruichladdich The Classic Laddie":"논피트 아일라 · Islay 위스키지만 훈연하지 않은 Bruichladdich 기본 라인입니다."
 };
 function noteFor(w){return PRODUCT_NOTES[w.name]||w.note||'';}
 function noteHtml(w){const n=noteFor(w);return n?`<p style="font-size:13px;color:#d83a63;line-height:1.55;margin:6px 0 8px;letter-spacing:.04em;">${esc(n)}</p>`:'';}
@@ -780,209 +923,507 @@ const IMAGE_SOURCE_MODE='local-verified'; // verified local files only
 const IMAGE_BASE='./bottle-images/';
 const IMAGE_EXT='webp';
 const BOTTLE_IMAGE_URLS={
-  "The Macallan Sherry Oak 25 Years Old": "./bottle-images/the-macallan-sherry-oak-25-years-old.webp",
-  "The Macallan Sherry Oak 18 2025": "./bottle-images/the-macallan-sherry-oak-18-2025.webp",
-  "The Macallan Sherry Oak 12": "./bottle-images/the-macallan-sherry-oak-12.webp",
-  "The Macallan Classic Cut": "./bottle-images/the-macallan-classic-cut.webp",
-  "The Balvenie 14 Caribbean Cask": "./bottle-images/the-balvenie-14-caribbean-cask.webp",
-  "The Balvenie 16 French Oak": "./bottle-images/the-balvenie-16-french-oak.webp",
-  "Glenfiddich 15 Solera": "./bottle-images/glenfiddich-15-solera.webp",
-  "The Glenlivet 18": "./bottle-images/the-glenlivet-18.webp",
-  "GlenAllachie 8": "./bottle-images/glenallachie-8.webp",
-  "Benromach 10": "./bottle-images/benromach-10.webp",
-  "Mortlach 16": "./bottle-images/mortlach-16.webp",
-  "Aultmore 12": "./bottle-images/aultmore-12.webp",
-  "Glenmorangie The Original 12": "./bottle-images/glenmorangie-the-original-12.webp",
-  "Glenmorangie The Nectar 16": "./bottle-images/glenmorangie-the-nectar-16.webp",
-  "Glenmorangie Signet Reserve": "./bottle-images/glenmorangie-signet-reserve.webp",
-  "The GlenDronach 12": "./bottle-images/the-glendronach-12.webp",
-  "The GlenDronach 18 Allardice": "./bottle-images/the-glendronach-18-allardice.webp",
-  "The GlenDronach Cask Bottling 1993 29 Year Old": "./bottle-images/the-glendronach-cask-bottling-1993-29-year-old.webp",
-  "The Dalmore 2002 Vintage 18 Year Old": "./bottle-images/the-dalmore-2002-vintage-18-year-old.webp",
-  "The Dalmore King Alexander III": "./bottle-images/the-dalmore-king-alexander-iii.webp",
-  "Glenglassaugh Sandend": "./bottle-images/glenglassaugh-sandend.webp",
-  "Tomatin Cask Strength": "./bottle-images/tomatin-cask-strength.webp",
-  "The Glenturret 10 Peat Smoked": "./bottle-images/the-glenturret-10-peat-smoked.webp",
-  "Old Pulteney Huddart": "./bottle-images/old-pulteney-huddart.webp",
-  "Bruichladdich The Classic Laddie": "./bottle-images/bruichladdich-the-classic-laddie.webp",
-  "Port Charlotte 10": "./bottle-images/port-charlotte-10.webp",
-  "Octomore 16.1": "./bottle-images/octomore-16-1.webp",
-  "Octomore 16.2": "./bottle-images/octomore-16-2.webp",
-  "Octomore 16.3": "./bottle-images/octomore-16-3.webp",
-  "Ardbeg Uigeadail": "./bottle-images/ardbeg-uigeadail.webp",
-  "Laphroaig 10 Sherry Oak Finish": "./bottle-images/laphroaig-10-sherry-oak-finish.webp",
-  "Caol Ila 12": "./bottle-images/caol-ila-12.webp",
-  "Kilchoman Machir Bay Cask Strength": "./bottle-images/kilchoman-machir-bay-cask-strength.webp",
-  "Lagavulin 16": "./bottle-images/lagavulin-16.webp",
-  "Bowmore 18": "./bottle-images/bowmore-18.webp",
-  "Arran 10": "./bottle-images/arran-10.webp",
-  "Arran Sherry Cask": "./bottle-images/arran-sherry-cask.webp",
-  "Arran Amarone Cask Finish": "./bottle-images/arran-amarone-cask-finish.webp",
-  "Highland Park 15 Viking Heart": "./bottle-images/highland-park-15-viking-heart.webp",
-  "Isle of Raasay Peated Na Sia Single Cask Series 1": "./bottle-images/isle-of-raasay-peated-na-sia-single-cask-series-1.webp",
-  "Tobermory 12": "./bottle-images/tobermory-12.webp",
-  "Auchentoshan Three Wood": "./bottle-images/auchentoshan-three-wood.webp",
-  "The Epicurean Glasgow Edition": "./bottle-images/the-epicurean-glasgow-edition.webp",
-  "Johnnie Walker Black Label 12": "./bottle-images/johnnie-walker-black-label-12.webp",
-  "Johnnie Walker Green Label 15": "./bottle-images/johnnie-walker-green-label-15.webp",
-  "Johnnie Walker Blue Label": "./bottle-images/johnnie-walker-blue-label.webp",
-  "Dewar's 18 Mizunara Cask Finish": "./bottle-images/dewars-18-mizunara-cask-finish.webp",
-  "Naked Malt": "./bottle-images/naked-malt.webp",
-  "Scallywag": "./bottle-images/scallywag.webp",
-  "Cutty Sark Prohibition Edition": "./bottle-images/cutty-sark-prohibition-edition.webp",
-  "Mellow Corn": "./bottle-images/mellow-corn.webp",
-  "Wild Turkey 101 8 Year": "./bottle-images/wild-turkey-101-8-year.webp",
-  "Wild Turkey Rare Breed Bourbon": "./bottle-images/wild-turkey-rare-breed-bourbon.webp",
-  "Eagle Rare 10": "./bottle-images/eagle-rare-10.webp",
-  "Four Roses Single Barrel": "./bottle-images/four-roses-single-barrel.webp",
-  "Maker's Mark Cask Strength": "./bottle-images/makers-mark-cask-strength.webp",
-  "Woodford Reserve Double Oaked": "./bottle-images/woodford-reserve-double-oaked.webp",
-  "E.H. Taylor Single Barrel": "./bottle-images/e-h-taylor-single-barrel.webp",
-  "Angel's Envy Bourbon": "./bottle-images/angels-envy-bourbon.webp",
-  "Sagamore Spirit Double Oak Rye": "./bottle-images/sagamore-spirit-double-oak-rye.webp",
-  "Sagamore Spirit Cask Strength Rye": "./bottle-images/sagamore-spirit-cask-strength-rye.webp",
-  "WhistlePig 12 Old World Rye": "./bottle-images/whistlepig-12-old-world-rye.webp",
-  "Michter's US*1 Single Barrel Rye": "./bottle-images/michters-us1-single-barrel-rye.webp",
-  "Russell's Reserve Single Barrel Rye": "./bottle-images/russells-reserve-single-barrel-rye.webp",
-  "E.H. Taylor Straight Rye": "./bottle-images/e-h-taylor-straight-rye.webp",
-  "High West A Midwinter Night's Dram": "./bottle-images/high-west-a-midwinter-nights-dram.webp",
-  "Bernheim Wheat Whiskey": "./bottle-images/bernheim-wheat-whiskey.webp",
-  "Jack Daniel's Old No.7": "./bottle-images/jack-daniels-old-no-7.webp",
-  "Charbay R5 Final Lot": "./bottle-images/charbay-r5-final-lot.webp",
-  "Barrell Seagrass": "./bottle-images/barrell-seagrass.webp",
-  "Redbreast 12": "./bottle-images/redbreast-12.webp",
-  "Bushmills 10": "./bottle-images/bushmills-10.webp",
-  "Limavady Single Malt": "./bottle-images/limavady-single-malt.webp",
-  "Jameson Black Barrel": "./bottle-images/jameson-black-barrel.webp",
-  "The Busker Triple Cask": "./bottle-images/the-busker-triple-cask.webp",
-  "West Cork Calvados Cask Finish": "./bottle-images/west-cork-calvados-cask-finish.webp",
-  "Natterjack Cask Strength": "./bottle-images/natterjack-cask-strength.webp",
-  "Yamazaki Distiller's Reserve": "./bottle-images/yamazaki-distillers-reserve.webp",
-  "Yamazaki 12": "./bottle-images/yamazaki-12.webp",
-  "Yoichi Single Malt": "./bottle-images/yoichi-single-malt.webp",
-  "Miyagikyo Single Malt": "./bottle-images/miyagikyo-single-malt.webp",
-  "Taketsuru Pure Malt": "./bottle-images/taketsuru-pure-malt.webp",
-  "Hibiki Japanese Harmony": "./bottle-images/hibiki-japanese-harmony.webp",
-  "Kirin Fuji Single Grain": "./bottle-images/kirin-fuji-single-grain.webp",
-  "SHINDO Experimental 02": "./bottle-images/shindo-experimental-02.webp",
-  "Canadian 12 Year Blended Whisky": "./bottle-images/canadian-12-year-blended-whisky.webp",
-  "Kavalan Distillery Select": "./bottle-images/kavalan-distillery-select.webp",
-  "Kavalan Solist Vinho Barrique": "./bottle-images/kavalan-solist-vinho-barrique.webp",
-  "Kavalan Solist Oloroso Sherry": "./bottle-images/kavalan-solist-oloroso-sherry.webp",
-  "Amrut Indian Single Malt": "./bottle-images/amrut-indian-single-malt.webp",
-  "Paul John Peated Select Cask": "./bottle-images/paul-john-peated-select-cask.webp",
-  "Starward Nova": "./bottle-images/starward-nova.webp",
-  "Alfred Giraud Horizon": "./bottle-images/alfred-giraud-horizon.webp",
-  "Alfred Giraud Harmonie": "./bottle-images/alfred-giraud-harmonie.webp",
-  "Ki One Tiger": "./bottle-images/ki-one-tiger.webp",
-  "Ki One Unicorn": "./bottle-images/ki-one-unicorn.webp",
-  "Ki One Eagle Cask Strength": "./bottle-images/ki-one-eagle-cask-strength.webp",
-  "Ki One x Chef Edward Lee Edition": "./bottle-images/ki-one-x-chef-edward-lee-edition.webp",
-  "Kim Chang-soo Whisky Gimpo 2024": "./bottle-images/kim-chang-soo-whisky-gimpo-2024.webp",
-  "Kim Chang-soo Whisky Year of the Horse 2026": "./bottle-images/kim-chang-soo-whisky-year-of-the-horse-2026.webp"
+  "Glenfiddich 12":"./bottle-images/glenfiddich-12.webp",
+  "Glenfiddich 15 Solera":"./bottle-images/glenfiddich-15-solera.webp",
+  "Glenfiddich 18":"./bottle-images/glenfiddich-18.webp",
+  "The Glenlivet 12":"./bottle-images/the-glenlivet-12.webp",
+  "The Glenlivet 15 French Oak":"./bottle-images/the-glenlivet-15-french-oak.webp",
+  "The Macallan 12 Sherry Oak":"./bottle-images/the-macallan-12-sherry-oak.webp",
+  "The Macallan 12 Double Cask":"./bottle-images/the-macallan-12-double-cask.webp",
+  "The Balvenie 12 DoubleWood":"./bottle-images/the-balvenie-12-doublewood.webp",
+  "The Balvenie 14 Caribbean Cask":"./bottle-images/the-balvenie-14-caribbean-cask.webp",
+  "Aberlour 12 Double Cask":"./bottle-images/aberlour-12-double-cask.webp",
+  "Aberlour A’bunadh":"./bottle-images/aberlour-abunadh.webp",
+  "Glenfarclas 12":"./bottle-images/glenfarclas-12.webp",
+  "Glenfarclas 15":"./bottle-images/glenfarclas-15.webp",
+  "Tamdhu 12":"./bottle-images/tamdhu-12.webp",
+  "The Glenrothes 12":"./bottle-images/the-glenrothes-12.webp",
+  "BenRiach The Original Ten":"./bottle-images/benriach-the-original-ten.webp",
+  "Mortlach 12":"./bottle-images/mortlach-12.webp",
+  "Glenmorangie Original 10":"./bottle-images/glenmorangie-original-10.webp",
+  "Glenmorangie Lasanta":"./bottle-images/glenmorangie-lasanta.webp",
+  "Glenmorangie Quinta Ruban 14":"./bottle-images/glenmorangie-quinta-ruban-14.webp",
+  "The Dalmore 12":"./bottle-images/the-dalmore-12.webp",
+  "The Dalmore 15":"./bottle-images/the-dalmore-15.webp",
+  "Clynelish 14":"./bottle-images/clynelish-14.webp",
+  "Oban 14":"./bottle-images/oban-14.webp",
+  "Old Pulteney 12":"./bottle-images/old-pulteney-12.webp",
+  "Deanston 12":"./bottle-images/deanston-12.webp",
+  "Deanston Virgin Oak":"./bottle-images/deanston-virgin-oak.webp",
+  "Glengoyne 12":"./bottle-images/glengoyne-12.webp",
+  "The GlenDronach 12":"./bottle-images/the-glendronach-12.webp",
+  "The GlenDronach 15 Revival":"./bottle-images/the-glendronach-15-revival.webp",
+  "Edradour 10":"./bottle-images/edradour-10.webp",
+  "Balblair 12":"./bottle-images/balblair-12.webp",
+  "Tomatin 12":"./bottle-images/tomatin-12.webp",
+  "Auchentoshan 12":"./bottle-images/auchentoshan-12.webp",
+  "Auchentoshan Three Wood":"./bottle-images/auchentoshan-three-wood.webp",
+  "Glenkinchie 12":"./bottle-images/glenkinchie-12.webp",
+  "Bladnoch Vinaya":"./bottle-images/bladnoch-vinaya.webp",
+  "Lagavulin 16":"./bottle-images/lagavulin-16.webp",
+  "Laphroaig 10":"./bottle-images/laphroaig-10.webp",
+  "Laphroaig Quarter Cask":"./bottle-images/laphroaig-quarter-cask.webp",
+  "Ardbeg 10":"./bottle-images/ardbeg-10.webp",
+  "Ardbeg Uigeadail":"./bottle-images/ardbeg-uigeadail.webp",
+  "Ardbeg Corryvreckan":"./bottle-images/ardbeg-corryvreckan.webp",
+  "Bowmore 12":"./bottle-images/bowmore-12.webp",
+  "Bowmore 15":"./bottle-images/bowmore-15.webp",
+  "Caol Ila 12":"./bottle-images/caol-ila-12.webp",
+  "Bruichladdich The Classic Laddie":"./bottle-images/bruichladdich-the-classic-laddie.webp",
+  "Port Charlotte 10":"./bottle-images/port-charlotte-10.webp",
+  "Octomore 14.1":"./bottle-images/octomore-14-1.webp",
+  "Bunnahabhain 12":"./bottle-images/bunnahabhain-12.webp",
+  "Kilchoman Sanaig":"./bottle-images/kilchoman-sanaig.webp",
+  "Talisker 10":"./bottle-images/talisker-10.webp",
+  "Talisker Distillers Edition":"./bottle-images/talisker-distillers-edition.webp",
+  "Highland Park 12":"./bottle-images/highland-park-12.webp",
+  "Arran 10":"./bottle-images/arran-10.webp",
+  "Arran Sherry Cask":"./bottle-images/arran-sherry-cask.webp",
+  "Jura 10":"./bottle-images/jura-10.webp",
+  "Ledaig 10":"./bottle-images/ledaig-10.webp",
+  "Springbank 10":"./bottle-images/springbank-10.webp",
+  "Springbank 15":"./bottle-images/springbank-15.webp",
+  "Kilkerran 12":"./bottle-images/kilkerran-12.webp",
+  "Glen Scotia Double Cask":"./bottle-images/glen-scotia-double-cask.webp",
+  "Glen Scotia Victoriana":"./bottle-images/glen-scotia-victoriana.webp",
+  "Johnnie Walker Black Label 12":"./bottle-images/johnnie-walker-black-label-12.webp",
+  "Johnnie Walker Double Black":"./bottle-images/johnnie-walker-double-black.webp",
+  "Johnnie Walker Green Label 15":"./bottle-images/johnnie-walker-green-label-15.webp",
+  "Johnnie Walker Blue Label":"./bottle-images/johnnie-walker-blue-label.webp",
+  "Chivas Regal 12":"./bottle-images/chivas-regal-12.webp",
+  "Chivas Regal 18":"./bottle-images/chivas-regal-18.webp",
+  "Monkey Shoulder":"./bottle-images/monkey-shoulder.webp",
+  "Compass Box Peat Monster":"./bottle-images/compass-box-peat-monster.webp",
+  "Jameson Irish Whiskey":"./bottle-images/jameson-irish-whiskey.webp",
+  "Jameson Black Barrel":"./bottle-images/jameson-black-barrel.webp",
+  "Bushmills 10":"./bottle-images/bushmills-10.webp",
+  "Redbreast 12":"./bottle-images/redbreast-12.webp",
+  "Redbreast 12 Cask Strength":"./bottle-images/redbreast-12-cask-strength.webp",
+  "Green Spot":"./bottle-images/green-spot.webp",
+  "Teeling Small Batch":"./bottle-images/teeling-small-batch.webp",
+  "Buffalo Trace Bourbon":"./bottle-images/buffalo-trace-bourbon.webp",
+  "Eagle Rare 10":"./bottle-images/eagle-rare-10.webp",
+  "Woodford Reserve Distiller’s Select":"./bottle-images/woodford-reserve-distillers-select.webp",
+  "Woodford Reserve Double Oaked":"./bottle-images/woodford-reserve-double-oaked.webp",
+  "Maker’s Mark":"./bottle-images/makers-mark.webp",
+  "Maker’s Mark 46":"./bottle-images/makers-mark-46.webp",
+  "Maker’s Mark Cask Strength":"./bottle-images/makers-mark-cask-strength.webp",
+  "Wild Turkey 101 Bourbon":"./bottle-images/wild-turkey-101-bourbon.webp",
+  "Russell’s Reserve 10":"./bottle-images/russells-reserve-10.webp",
+  "Four Roses Single Barrel":"./bottle-images/four-roses-single-barrel.webp",
+  "Bulleit Bourbon":"./bottle-images/bulleit-bourbon.webp",
+  "Knob Creek 9":"./bottle-images/knob-creek-9.webp",
+  "Elijah Craig Small Batch":"./bottle-images/elijah-craig-small-batch.webp",
+  "Old Forester 1920 Prohibition Style":"./bottle-images/old-forester-1920-prohibition-style.webp",
+  "Rittenhouse Straight Rye":"./bottle-images/rittenhouse-straight-rye.webp",
+  "Jack Daniel’s Old No.7":"./bottle-images/jack-daniels-old-no-7.webp",
+  "George Dickel No.12":"./bottle-images/george-dickel-no-12.webp",
+  "Westward American Single Malt":"./bottle-images/westward-american-single-malt.webp",
+  "Crown Royal Northern Harvest Rye":"./bottle-images/crown-royal-northern-harvest-rye.webp",
+  "Lot No. 40 Rye":"./bottle-images/lot-no-40-rye.webp",
+  "Canadian Club 12":"./bottle-images/canadian-club-12.webp",
+  "Yamazaki 12":"./bottle-images/yamazaki-12.webp",
+  "Hakushu Distiller’s Reserve":"./bottle-images/hakushu-distillers-reserve.webp",
+  "Hibiki Japanese Harmony":"./bottle-images/hibiki-japanese-harmony.webp",
+  "Nikka From The Barrel":"./bottle-images/nikka-from-the-barrel.webp",
+  "Nikka Coffey Grain":"./bottle-images/nikka-coffey-grain.webp",
+  "Kavalan Classic":"./bottle-images/kavalan-classic.webp",
+  "Kavalan Solist Vinho Barrique":"./bottle-images/kavalan-solist-vinho-barrique.webp",
+  "Amrut Fusion":"./bottle-images/amrut-fusion.webp",
+  "Paul John Edited":"./bottle-images/paul-john-edited.webp",
+  "Starward Nova":"./bottle-images/starward-nova.webp",
+  "Starward Two-Fold":"./bottle-images/starward-two-fold.webp",
+  "M&H Classic":"./bottle-images/m-and-h-classic.webp",
+  "M&H Elements Sherry":"./bottle-images/m-and-h-elements-sherry.webp",
+  "Mackmyra Svensk Ek":"./bottle-images/mackmyra-svensk-ek.webp",
+  "Ki One Batch 1":"./bottle-images/ki-one-batch-1.webp",
+  "Stauning Rye":"./bottle-images/stauning-rye.webp",
+  "Woodford Reserve Wheat Whiskey":"./bottle-images/woodford-reserve-wheat-whiskey.webp",
+  "Dry Fly Straight Washington Wheat Whiskey":"./bottle-images/dry-fly-straight-washington-wheat-whiskey.webp",
+  "Bernheim Barrel Proof Wheat Whiskey":"./bottle-images/bernheim-barrel-proof-wheat-whiskey.webp",
+  "Mortlach 16":"./bottle-images/mortlach-16.webp",
+  "Laphroaig Lore":"./bottle-images/laphroaig-lore.webp",
+  "Arran Amarone Cask Finish":"./bottle-images/arran-amarone-cask-finish.webp",
+  "Kavalan Concertmaster Port Cask Finish":"./bottle-images/kavalan-concertmaster-port-cask-finish.webp",
+  "Glenfiddich 21 Gran Reserva":"./bottle-images/glenfiddich-21-gran-reserva.webp",
+  "Tullamore D.E.W. XO Caribbean Rum Cask Finish":"./bottle-images/tullamore-d-e-w-xo-caribbean-rum-cask-finish.webp",
+  "The Glenlivet 14 Cognac Cask Selection":"./bottle-images/the-glenlivet-14-cognac-cask-selection.webp",
+  "Yamazaki Distiller’s Reserve":"./bottle-images/yamazaki-distillers-reserve.webp",
+  "Ki One Tiger":"./bottle-images/ki-one-tiger.webp",
+  "Ki One Eagle":"./bottle-images/ki-one-eagle.webp",
+  "Ki One Unicorn":"./bottle-images/ki-one-unicorn.webp",
+  "The Macallan 15 Double Cask":"./bottle-images/the-macallan-15-double-cask.webp",
+  "The Macallan 18 Sherry Oak":"./bottle-images/the-macallan-18-sherry-oak.webp",
+  "The Balvenie 16 French Oak":"./bottle-images/the-balvenie-16-french-oak.webp",
+  "The Balvenie 21 PortWood":"./bottle-images/the-balvenie-21-portwood.webp",
+  "Aberlour 16 Double Cask":"./bottle-images/aberlour-16-double-cask.webp",
+  "Aberlour 18 Double Sherry Cask":"./bottle-images/aberlour-18-double-sherry-cask.webp",
+  "Glenfarclas 21":"./bottle-images/glenfarclas-21.webp",
+  "Glenfarclas 105 Cask Strength":"./bottle-images/glenfarclas-105-cask-strength.webp",
+  "Tamdhu 15":"./bottle-images/tamdhu-15.webp",
+  "Tamdhu Batch Strength":"./bottle-images/tamdhu-batch-strength.webp",
+  "The Glenrothes 18":"./bottle-images/the-glenrothes-18.webp",
+  "The Glenrothes Whisky Maker’s Cut":"./bottle-images/the-glenrothes-whisky-makers-cut.webp",
+  "BenRiach The Twelve":"./bottle-images/benriach-the-twelve.webp",
+  "BenRiach The Smoky Ten":"./bottle-images/benriach-the-smoky-ten.webp",
+  "Mortlach 20 Cowie’s Blue Seal":"./bottle-images/mortlach-20-cowies-blue-seal.webp",
+  "Mortlach 14 Alexander’s Way":"./bottle-images/mortlach-14-alexanders-way.webp",
+  "The Dalmore Cigar Malt Reserve":"./bottle-images/the-dalmore-cigar-malt-reserve.webp",
+  "The Dalmore King Alexander III":"./bottle-images/the-dalmore-king-alexander-iii.webp",
+  "Clynelish Distillers Edition":"./bottle-images/clynelish-distillers-edition.webp",
+  "Clynelish 12 Special Release":"./bottle-images/clynelish-12-special-release.webp",
+  "Oban Little Bay":"./bottle-images/oban-little-bay.webp",
+  "Oban Distillers Edition":"./bottle-images/oban-distillers-edition.webp",
+  "Old Pulteney 15":"./bottle-images/old-pulteney-15.webp",
+  "Old Pulteney 18":"./bottle-images/old-pulteney-18.webp",
+  "Deanston 18":"./bottle-images/deanston-18.webp",
+  "Glengoyne 15":"./bottle-images/glengoyne-15.webp",
+  "Glengoyne 21":"./bottle-images/glengoyne-21.webp",
+  "The GlenDronach 18 Allardice":"./bottle-images/the-glendronach-18-allardice.webp",
+  "Edradour 12 Caledonia":"./bottle-images/edradour-12-caledonia.webp",
+  "Ballechin 10":"./bottle-images/ballechin-10.webp",
+  "Balblair 15":"./bottle-images/balblair-15.webp",
+  "Balblair 18":"./bottle-images/balblair-18.webp",
+  "Tomatin 14 Port Casks":"./bottle-images/tomatin-14-port-casks.webp",
+  "Tomatin 18":"./bottle-images/tomatin-18.webp",
+  "Auchentoshan American Oak":"./bottle-images/auchentoshan-american-oak.webp",
+  "Bladnoch Samsara":"./bottle-images/bladnoch-samsara.webp",
+  "Bladnoch Alinta":"./bottle-images/bladnoch-alinta.webp",
+  "Lagavulin 8":"./bottle-images/lagavulin-8.webp",
+  "Lagavulin Distillers Edition":"./bottle-images/lagavulin-distillers-edition.webp",
+  "Bowmore 18":"./bottle-images/bowmore-18.webp",
+  "Caol Ila Distillers Edition":"./bottle-images/caol-ila-distillers-edition.webp",
+  "Caol Ila Moch":"./bottle-images/caol-ila-moch.webp",
+  "Bunnahabhain 18":"./bottle-images/bunnahabhain-18.webp",
+  "Bunnahabhain Stiùireadair":"./bottle-images/bunnahabhain-stiu-ireadair.webp",
+  "Kilchoman Machir Bay":"./bottle-images/kilchoman-machir-bay.webp",
+  "Kilchoman Loch Gorm":"./bottle-images/kilchoman-loch-gorm.webp",
+  "Talisker 18":"./bottle-images/talisker-18.webp",
+  "Highland Park 15 Viking Heart":"./bottle-images/highland-park-15-viking-heart.webp",
+  "Highland Park 18 Viking Pride":"./bottle-images/highland-park-18-viking-pride.webp",
+  "Jura 12":"./bottle-images/jura-12.webp",
+  "Jura Seven Wood":"./bottle-images/jura-seven-wood.webp",
+  "Ledaig Rioja Cask Finish":"./bottle-images/ledaig-rioja-cask-finish.webp",
+  "Ledaig 18":"./bottle-images/ledaig-18.webp",
+  "Springbank 12 Cask Strength":"./bottle-images/springbank-12-cask-strength.webp",
+  "Kilkerran Heavily Peated Batch":"./bottle-images/kilkerran-heavily-peated-batch.webp",
+  "Kilkerran 16":"./bottle-images/kilkerran-16.webp",
+  "Glen Scotia 15":"./bottle-images/glen-scotia-15.webp",
+  "Chivas Regal 25":"./bottle-images/chivas-regal-25.webp",
+  "Chivas Regal Mizunara":"./bottle-images/chivas-regal-mizunara.webp",
+  "Monkey Shoulder Smokey Monkey":"./bottle-images/monkey-shoulder-smokey-monkey.webp",
+  "Compass Box Orchard House":"./bottle-images/compass-box-orchard-house.webp",
+  "Compass Box The Spice Tree":"./bottle-images/compass-box-the-spice-tree.webp",
+  "Jameson Caskmates Stout Edition":"./bottle-images/jameson-caskmates-stout-edition.webp",
+  "Jameson 18":"./bottle-images/jameson-18.webp",
+  "Bushmills Black Bush":"./bottle-images/bushmills-black-bush.webp",
+  "Bushmills 16":"./bottle-images/bushmills-16.webp",
+  "Redbreast 15":"./bottle-images/redbreast-15.webp",
+  "Yellow Spot 12":"./bottle-images/yellow-spot-12.webp",
+  "Red Spot 15":"./bottle-images/red-spot-15.webp",
+  "Teeling Single Grain":"./bottle-images/teeling-single-grain.webp",
+  "Teeling Single Malt":"./bottle-images/teeling-single-malt.webp",
+  "Tullamore D.E.W. 12 Special Reserve":"./bottle-images/tullamore-d-e-w-12-special-reserve.webp",
+  "Tullamore D.E.W. 14 Single Malt":"./bottle-images/tullamore-d-e-w-14-single-malt.webp",
+  "Weller Special Reserve":"./bottle-images/weller-special-reserve.webp",
+  "E.H. Taylor Small Batch":"./bottle-images/e-h-taylor-small-batch.webp",
+  "Blanton’s Original Single Barrel":"./bottle-images/blantons-original-single-barrel.webp",
+  "Wild Turkey Rare Breed Bourbon":"./bottle-images/wild-turkey-rare-breed-bourbon.webp",
+  "Four Roses Small Batch":"./bottle-images/four-roses-small-batch.webp",
+  "Four Roses Small Batch Select":"./bottle-images/four-roses-small-batch-select.webp",
+  "Bulleit Rye":"./bottle-images/bulleit-rye.webp",
+  "Bulleit 10 Year Bourbon":"./bottle-images/bulleit-10-year-bourbon.webp",
+  "Knob Creek Single Barrel Reserve":"./bottle-images/knob-creek-single-barrel-reserve.webp",
+  "Knob Creek Rye":"./bottle-images/knob-creek-rye.webp",
+  "Elijah Craig Barrel Proof":"./bottle-images/elijah-craig-barrel-proof.webp",
+  "Elijah Craig Toasted Barrel":"./bottle-images/elijah-craig-toasted-barrel.webp",
+  "Larceny Small Batch":"./bottle-images/larceny-small-batch.webp",
+  "Bernheim 7 Year Wheat Whiskey":"./bottle-images/bernheim-7-year-wheat-whiskey.webp",
+  "Old Forester 100 Proof Bourbon":"./bottle-images/old-forester-100-proof-bourbon.webp",
+  "Old Forester Statesman":"./bottle-images/old-forester-statesman.webp",
+  "Jack Daniel’s Single Barrel Select":"./bottle-images/jack-daniels-single-barrel-select.webp",
+  "Jack Daniel’s Bonded":"./bottle-images/jack-daniels-bonded.webp",
+  "George Dickel Bottled in Bond":"./bottle-images/george-dickel-bottled-in-bond.webp",
+  "George Dickel Barrel Select":"./bottle-images/george-dickel-barrel-select.webp",
+  "Westward Stout Cask":"./bottle-images/westward-stout-cask.webp",
+  "Westward Pinot Noir Cask":"./bottle-images/westward-pinot-noir-cask.webp",
+  "Dry Fly Bourbon 101":"./bottle-images/dry-fly-bourbon-101.webp",
+  "Dry Fly Port Finish Wheat Whiskey":"./bottle-images/dry-fly-port-finish-wheat-whiskey.webp",
+  "Crown Royal Deluxe":"./bottle-images/crown-royal-deluxe.webp",
+  "Crown Royal Black":"./bottle-images/crown-royal-black.webp",
+  "Lot No. 40 Dark Oak Rye":"./bottle-images/lot-no-40-dark-oak-rye.webp",
+  "Lot No. 40 Cask Strength Rye":"./bottle-images/lot-no-40-cask-strength-rye.webp",
+  "Canadian Club 1858":"./bottle-images/canadian-club-1858.webp",
+  "Canadian Club 100% Rye":"./bottle-images/canadian-club-100-rye.webp",
+  "Yamazaki 18":"./bottle-images/yamazaki-18.webp",
+  "Hakushu 12":"./bottle-images/hakushu-12.webp",
+  "Hakushu 18":"./bottle-images/hakushu-18.webp",
+  "Hibiki Blender’s Choice":"./bottle-images/hibiki-blenders-choice.webp",
+  "Hibiki 21":"./bottle-images/hibiki-21.webp",
+  "Yoichi Single Malt":"./bottle-images/yoichi-single-malt.webp",
+  "Miyagikyo Single Malt":"./bottle-images/miyagikyo-single-malt.webp",
+  "Amrut Indian Single Malt":"./bottle-images/amrut-indian-single-malt.webp",
+  "Amrut Naarangi":"./bottle-images/amrut-naarangi.webp",
+  "Paul John Brilliance":"./bottle-images/paul-john-brilliance.webp",
+  "Paul John Bold":"./bottle-images/paul-john-bold.webp",
+  "Starward Solera":"./bottle-images/starward-solera.webp",
+  "M&H Apex Dead Sea":"./bottle-images/m-and-h-apex-dead-sea.webp",
+  "M&H Apex Pomegranate Wine Cask":"./bottle-images/m-and-h-apex-pomegranate-wine-cask.webp",
+  "Mackmyra Brukswhisky":"./bottle-images/mackmyra-brukswhisky.webp",
+  "Stauning KAOS":"./bottle-images/stauning-kaos.webp",
+  "Stauning Bastard":"./bottle-images/stauning-bastard.webp"
 };
 
 const BOTTLE_IMAGE_QUERY_OVERRIDES={
-  "The Macallan Sherry Oak 25 Years Old": "The Macallan Sherry Oak 25 Years Old whisky bottle product image full bottle transparent",
-  "The Macallan Sherry Oak 18 2025": "The Macallan Sherry Oak 18 2025 whisky bottle product image full bottle transparent",
-  "The Macallan Sherry Oak 12": "The Macallan Sherry Oak 12 whisky bottle product image full bottle transparent",
-  "The Macallan Classic Cut": "The Macallan Classic Cut whisky bottle product image full bottle transparent",
-  "The Balvenie 14 Caribbean Cask": "The Balvenie 14 Caribbean Cask whisky bottle product image full bottle transparent",
-  "The Balvenie 16 French Oak": "The Balvenie 16 French Oak whisky bottle product image full bottle transparent",
-  "Glenfiddich 15 Solera": "Glenfiddich 15 Solera whisky bottle product image full bottle transparent",
-  "The Glenlivet 18": "The Glenlivet 18 whisky bottle product image full bottle transparent",
-  "GlenAllachie 8": "GlenAllachie 8 whisky bottle product image full bottle transparent",
-  "Benromach 10": "Benromach 10 whisky bottle product image full bottle transparent",
-  "Mortlach 16": "Mortlach 16 whisky bottle product image full bottle transparent",
-  "Aultmore 12": "Aultmore 12 whisky bottle product image full bottle transparent",
-  "Glenmorangie The Original 12": "Glenmorangie The Original 12 whisky bottle product image full bottle transparent",
-  "Glenmorangie The Nectar 16": "Glenmorangie The Nectar 16 whisky bottle product image full bottle transparent",
-  "Glenmorangie Signet Reserve": "Glenmorangie Signet Reserve whisky bottle product image full bottle transparent",
-  "The GlenDronach 12": "The GlenDronach 12 whisky bottle product image full bottle transparent",
-  "The GlenDronach 18 Allardice": "The GlenDronach 18 Allardice whisky bottle product image full bottle transparent",
-  "The GlenDronach Cask Bottling 1993 29 Year Old": "The GlenDronach Cask Bottling 1993 29 Year Old whisky bottle product image full bottle transparent",
-  "The Dalmore 2002 Vintage 18 Year Old": "The Dalmore 2002 Vintage 18 Year Old whisky bottle product image full bottle transparent",
-  "The Dalmore King Alexander III": "The Dalmore King Alexander III whisky bottle product image full bottle transparent",
-  "Glenglassaugh Sandend": "Glenglassaugh Sandend whisky bottle product image full bottle transparent",
-  "Tomatin Cask Strength": "Tomatin Cask Strength whisky bottle product image full bottle transparent",
-  "The Glenturret 10 Peat Smoked": "The Glenturret 10 Peat Smoked whisky bottle product image full bottle transparent",
-  "Old Pulteney Huddart": "Old Pulteney Huddart whisky bottle product image full bottle transparent",
-  "Bruichladdich The Classic Laddie": "Bruichladdich The Classic Laddie whisky bottle product image full bottle transparent",
-  "Port Charlotte 10": "Port Charlotte 10 whisky bottle product image full bottle transparent",
-  "Octomore 16.1": "Octomore 16.1 whisky bottle product image full bottle transparent",
-  "Octomore 16.2": "Octomore 16.2 whisky bottle product image full bottle transparent",
-  "Octomore 16.3": "Octomore 16.3 whisky bottle product image full bottle transparent",
-  "Ardbeg Uigeadail": "Ardbeg Uigeadail whisky bottle product image full bottle transparent",
-  "Laphroaig 10 Sherry Oak Finish": "Laphroaig 10 Sherry Oak Finish whisky bottle product image full bottle transparent",
-  "Caol Ila 12": "Caol Ila 12 whisky bottle product image full bottle transparent",
-  "Kilchoman Machir Bay Cask Strength": "Kilchoman Machir Bay Cask Strength whisky bottle product image full bottle transparent",
-  "Lagavulin 16": "Lagavulin 16 whisky bottle product image full bottle transparent",
-  "Bowmore 18": "Bowmore 18 whisky bottle product image full bottle transparent",
-  "Arran 10": "Arran 10 whisky bottle product image full bottle transparent",
-  "Arran Sherry Cask": "Arran Sherry Cask whisky bottle product image full bottle transparent",
-  "Arran Amarone Cask Finish": "Arran Amarone Cask Finish whisky bottle product image full bottle transparent",
-  "Highland Park 15 Viking Heart": "Highland Park 15 Viking Heart whisky bottle product image full bottle transparent",
-  "Isle of Raasay Peated Na Sia Single Cask Series 1": "Isle of Raasay Peated Na Sia Single Cask Series 1 whisky bottle product image full bottle transparent",
-  "Tobermory 12": "Tobermory 12 whisky bottle product image full bottle transparent",
-  "Auchentoshan Three Wood": "Auchentoshan Three Wood whisky bottle product image full bottle transparent",
-  "The Epicurean Glasgow Edition": "The Epicurean Glasgow Edition whisky bottle product image full bottle transparent",
-  "Johnnie Walker Black Label 12": "Johnnie Walker Black Label 12 whisky bottle product image full bottle transparent",
-  "Johnnie Walker Green Label 15": "Johnnie Walker Green Label 15 whisky bottle product image full bottle transparent",
-  "Johnnie Walker Blue Label": "Johnnie Walker Blue Label whisky bottle product image full bottle transparent",
-  "Dewar's 18 Mizunara Cask Finish": "Dewar's 18 Mizunara Cask Finish whisky bottle product image full bottle transparent",
-  "Naked Malt": "Naked Malt whisky bottle product image full bottle transparent",
-  "Scallywag": "Scallywag whisky bottle product image full bottle transparent",
-  "Cutty Sark Prohibition Edition": "Cutty Sark Prohibition Edition whisky bottle product image full bottle transparent",
-  "Mellow Corn": "Mellow Corn whisky bottle product image full bottle transparent",
-  "Wild Turkey 101 8 Year": "Wild Turkey 101 8 Year whisky bottle product image full bottle transparent",
-  "Wild Turkey Rare Breed Bourbon": "Wild Turkey Rare Breed Bourbon whisky bottle product image full bottle transparent",
-  "Eagle Rare 10": "Eagle Rare 10 whisky bottle product image full bottle transparent",
-  "Four Roses Single Barrel": "Four Roses Single Barrel whisky bottle product image full bottle transparent",
-  "Maker's Mark Cask Strength": "Maker's Mark Cask Strength whisky bottle product image full bottle transparent",
-  "Woodford Reserve Double Oaked": "Woodford Reserve Double Oaked whisky bottle product image full bottle transparent",
-  "E.H. Taylor Single Barrel": "E.H. Taylor Single Barrel whisky bottle product image full bottle transparent",
-  "Angel's Envy Bourbon": "Angel's Envy Bourbon whisky bottle product image full bottle transparent",
-  "Sagamore Spirit Double Oak Rye": "Sagamore Spirit Double Oak Rye whisky bottle product image full bottle transparent",
-  "Sagamore Spirit Cask Strength Rye": "Sagamore Spirit Cask Strength Rye whisky bottle product image full bottle transparent",
-  "WhistlePig 12 Old World Rye": "WhistlePig 12 Old World Rye whisky bottle product image full bottle transparent",
-  "Michter's US*1 Single Barrel Rye": "Michter's US*1 Single Barrel Rye whisky bottle product image full bottle transparent",
-  "Russell's Reserve Single Barrel Rye": "Russell's Reserve Single Barrel Rye whisky bottle product image full bottle transparent",
-  "E.H. Taylor Straight Rye": "E.H. Taylor Straight Rye whisky bottle product image full bottle transparent",
-  "High West A Midwinter Night's Dram": "High West A Midwinter Night's Dram whisky bottle product image full bottle transparent",
-  "Bernheim Wheat Whiskey": "Bernheim Wheat Whiskey whisky bottle product image full bottle transparent",
-  "Jack Daniel's Old No.7": "Jack Daniel's Old No.7 whisky bottle product image full bottle transparent",
-  "Charbay R5 Final Lot": "Charbay R5 Final Lot whisky bottle product image full bottle transparent",
-  "Barrell Seagrass": "Barrell Seagrass whisky bottle product image full bottle transparent",
-  "Redbreast 12": "Redbreast 12 whisky bottle product image full bottle transparent",
-  "Bushmills 10": "Bushmills 10 whisky bottle product image full bottle transparent",
-  "Limavady Single Malt": "Limavady Single Malt whisky bottle product image full bottle transparent",
-  "Jameson Black Barrel": "Jameson Black Barrel whisky bottle product image full bottle transparent",
-  "The Busker Triple Cask": "The Busker Triple Cask whisky bottle product image full bottle transparent",
-  "West Cork Calvados Cask Finish": "West Cork Calvados Cask Finish whisky bottle product image full bottle transparent",
-  "Natterjack Cask Strength": "Natterjack Cask Strength whisky bottle product image full bottle transparent",
-  "Yamazaki Distiller's Reserve": "Yamazaki Distiller's Reserve whisky bottle product image full bottle transparent",
-  "Yamazaki 12": "Yamazaki 12 whisky bottle product image full bottle transparent",
-  "Yoichi Single Malt": "Yoichi Single Malt whisky bottle product image full bottle transparent",
-  "Miyagikyo Single Malt": "Miyagikyo Single Malt whisky bottle product image full bottle transparent",
-  "Taketsuru Pure Malt": "Taketsuru Pure Malt whisky bottle product image full bottle transparent",
-  "Hibiki Japanese Harmony": "Hibiki Japanese Harmony whisky bottle product image full bottle transparent",
-  "Kirin Fuji Single Grain": "Kirin Fuji Single Grain whisky bottle product image full bottle transparent",
-  "SHINDO Experimental 02": "SHINDO Experimental 02 whisky bottle product image full bottle transparent",
-  "Canadian 12 Year Blended Whisky": "Canadian 12 Year Blended Whisky whisky bottle product image full bottle transparent",
-  "Kavalan Distillery Select": "Kavalan Distillery Select whisky bottle product image full bottle transparent",
-  "Kavalan Solist Vinho Barrique": "Kavalan Solist Vinho Barrique whisky bottle product image full bottle transparent",
-  "Kavalan Solist Oloroso Sherry": "Kavalan Solist Oloroso Sherry whisky bottle product image full bottle transparent",
-  "Amrut Indian Single Malt": "Amrut Indian Single Malt whisky bottle product image full bottle transparent",
-  "Paul John Peated Select Cask": "Paul John Peated Select Cask whisky bottle product image full bottle transparent",
-  "Starward Nova": "Starward Nova whisky bottle product image full bottle transparent",
-  "Alfred Giraud Horizon": "Alfred Giraud Horizon whisky bottle product image full bottle transparent",
-  "Alfred Giraud Harmonie": "Alfred Giraud Harmonie whisky bottle product image full bottle transparent",
-  "Ki One Tiger": "Ki One Tiger whisky bottle product image full bottle transparent",
-  "Ki One Unicorn": "Ki One Unicorn whisky bottle product image full bottle transparent",
-  "Ki One Eagle Cask Strength": "Ki One Eagle Cask Strength whisky bottle product image full bottle transparent",
-  "Ki One x Chef Edward Lee Edition": "Ki One x Chef Edward Lee Edition whisky bottle product image full bottle transparent",
-  "Kim Chang-soo Whisky Gimpo 2024": "Kim Chang-soo Whisky Gimpo 2024 whisky bottle product image full bottle transparent",
-  "Kim Chang-soo Whisky Year of the Horse 2026": "Kim Chang-soo Whisky Year of the Horse 2026 whisky bottle product image full bottle transparent"
+  "Glenfiddich 12":"Glenfiddich 12 whisky bottle product image full bottle transparent",
+  "Glenfiddich 15 Solera":"Glenfiddich 15 Solera whisky bottle product image full bottle transparent",
+  "Glenfiddich 18":"Glenfiddich 18 whisky bottle product image full bottle transparent",
+  "The Glenlivet 12":"The Glenlivet 12 whisky bottle product image full bottle transparent",
+  "The Glenlivet 15 French Oak":"The Glenlivet 15 French Oak whisky bottle product image full bottle transparent",
+  "The Macallan 12 Sherry Oak":"The Macallan 12 Sherry Oak whisky bottle product image full bottle transparent",
+  "The Macallan 12 Double Cask":"The Macallan 12 Double Cask whisky bottle product image full bottle transparent",
+  "The Balvenie 12 DoubleWood":"The Balvenie 12 DoubleWood whisky bottle product image full bottle transparent",
+  "The Balvenie 14 Caribbean Cask":"The Balvenie 14 Caribbean Cask whisky bottle product image full bottle transparent",
+  "Aberlour 12 Double Cask":"Aberlour 12 Double Cask whisky bottle product image full bottle transparent",
+  "Aberlour A’bunadh":"Aberlour A’bunadh whisky bottle product image full bottle transparent",
+  "Glenfarclas 12":"Glenfarclas 12 whisky bottle product image full bottle transparent",
+  "Glenfarclas 15":"Glenfarclas 15 whisky bottle product image full bottle transparent",
+  "Tamdhu 12":"Tamdhu 12 whisky bottle product image full bottle transparent",
+  "The Glenrothes 12":"The Glenrothes 12 whisky bottle product image full bottle transparent",
+  "BenRiach The Original Ten":"BenRiach The Original Ten whisky bottle product image full bottle transparent",
+  "Mortlach 12":"Mortlach 12 whisky bottle product image full bottle transparent",
+  "Glenmorangie Original 10":"Glenmorangie Original 10 whisky bottle product image full bottle transparent",
+  "Glenmorangie Lasanta":"Glenmorangie Lasanta whisky bottle product image full bottle transparent",
+  "Glenmorangie Quinta Ruban 14":"Glenmorangie Quinta Ruban 14 whisky bottle product image full bottle transparent",
+  "The Dalmore 12":"The Dalmore 12 whisky bottle product image full bottle transparent",
+  "The Dalmore 15":"The Dalmore 15 whisky bottle product image full bottle transparent",
+  "Clynelish 14":"Clynelish 14 whisky bottle product image full bottle transparent",
+  "Oban 14":"Oban 14 whisky bottle product image full bottle transparent",
+  "Old Pulteney 12":"Old Pulteney 12 whisky bottle product image full bottle transparent",
+  "Deanston 12":"Deanston 12 whisky bottle product image full bottle transparent",
+  "Deanston Virgin Oak":"Deanston Virgin Oak whisky bottle product image full bottle transparent",
+  "Glengoyne 12":"Glengoyne 12 whisky bottle product image full bottle transparent",
+  "The GlenDronach 12":"The GlenDronach 12 whisky bottle product image full bottle transparent",
+  "The GlenDronach 15 Revival":"The GlenDronach 15 Revival whisky bottle product image full bottle transparent",
+  "Edradour 10":"Edradour 10 whisky bottle product image full bottle transparent",
+  "Balblair 12":"Balblair 12 whisky bottle product image full bottle transparent",
+  "Tomatin 12":"Tomatin 12 whisky bottle product image full bottle transparent",
+  "Auchentoshan 12":"Auchentoshan 12 whisky bottle product image full bottle transparent",
+  "Auchentoshan Three Wood":"Auchentoshan Three Wood whisky bottle product image full bottle transparent",
+  "Glenkinchie 12":"Glenkinchie 12 whisky bottle product image full bottle transparent",
+  "Bladnoch Vinaya":"Bladnoch Vinaya whisky bottle product image full bottle transparent",
+  "Lagavulin 16":"Lagavulin 16 Year Old official whisky bottle full bottle product image box",
+  "Laphroaig 10":"Laphroaig 10 whisky bottle product image full bottle transparent",
+  "Laphroaig Quarter Cask":"Laphroaig Quarter Cask whisky bottle product image full bottle transparent",
+  "Ardbeg 10":"Ardbeg Ten Years Old official whisky bottle full bottle product image transparent",
+  "Ardbeg Uigeadail":"Ardbeg Uigeadail whisky bottle product image full bottle transparent",
+  "Ardbeg Corryvreckan":"Ardbeg Corryvreckan whisky bottle product image full bottle transparent",
+  "Bowmore 12":"Bowmore 12 whisky bottle product image full bottle transparent",
+  "Bowmore 15":"Bowmore 15 whisky bottle product image full bottle transparent",
+  "Caol Ila 12":"Caol Ila 12 whisky bottle product image full bottle transparent",
+  "Bruichladdich The Classic Laddie":"Bruichladdich The Classic Laddie whisky bottle product image full bottle transparent",
+  "Port Charlotte 10":"Port Charlotte 10 whisky bottle product image full bottle transparent",
+  "Octomore 14.1":"Octomore 14.1 whisky bottle product image full bottle transparent",
+  "Bunnahabhain 12":"Bunnahabhain 12 whisky bottle product image full bottle transparent",
+  "Kilchoman Sanaig":"Kilchoman Sanaig whisky bottle product image full bottle transparent",
+  "Talisker 10":"Talisker 10 whisky bottle product image full bottle transparent",
+  "Talisker Distillers Edition":"Talisker Distillers Edition whisky bottle product image full bottle transparent",
+  "Highland Park 12":"Highland Park 12 whisky bottle product image full bottle transparent",
+  "Arran 10":"Arran 10 whisky bottle product image full bottle transparent",
+  "Arran Sherry Cask":"Arran Sherry Cask whisky bottle product image full bottle transparent",
+  "Jura 10":"Jura 10 whisky bottle product image full bottle transparent",
+  "Ledaig 10":"Ledaig 10 whisky bottle product image full bottle transparent",
+  "Springbank 10":"Springbank 10 whisky bottle product image full bottle transparent",
+  "Springbank 15":"Springbank 15 whisky bottle product image full bottle transparent",
+  "Kilkerran 12":"Kilkerran 12 whisky bottle product image full bottle transparent",
+  "Glen Scotia Double Cask":"Glen Scotia Double Cask whisky bottle product image full bottle transparent",
+  "Glen Scotia Victoriana":"Glen Scotia Victoriana whisky bottle product image full bottle transparent",
+  "Johnnie Walker Black Label 12":"Johnnie Walker Black Label 12 whisky bottle product image full bottle transparent",
+  "Johnnie Walker Double Black":"Johnnie Walker Double Black whisky bottle product image full bottle transparent",
+  "Johnnie Walker Green Label 15":"Johnnie Walker Green Label 15 whisky bottle product image full bottle transparent",
+  "Johnnie Walker Blue Label":"Johnnie Walker Blue Label whisky bottle product image full bottle transparent",
+  "Chivas Regal 12":"Chivas Regal 12 whisky bottle product image full bottle transparent",
+  "Chivas Regal 18":"Chivas Regal 18 whisky bottle product image full bottle transparent",
+  "Monkey Shoulder":"Monkey Shoulder Blended Malt Scotch whisky bottle product image full bottle",
+  "Compass Box Peat Monster":"Compass Box Peat Monster whisky bottle product image full bottle transparent",
+  "Jameson Irish Whiskey":"Jameson Irish Whiskey whisky bottle product image full bottle transparent",
+  "Jameson Black Barrel":"Jameson Black Barrel whisky bottle product image full bottle transparent",
+  "Bushmills 10":"Bushmills 10 whisky bottle product image full bottle transparent",
+  "Redbreast 12":"Redbreast 12 whisky bottle product image full bottle transparent",
+  "Redbreast 12 Cask Strength":"Redbreast 12 Cask Strength whisky bottle product image full bottle transparent",
+  "Green Spot":"Green Spot whisky bottle product image full bottle transparent",
+  "Teeling Small Batch":"Teeling Small Batch whisky bottle product image full bottle transparent",
+  "Buffalo Trace Bourbon":"Buffalo Trace Bourbon whisky bottle product image full bottle transparent",
+  "Eagle Rare 10":"Eagle Rare 10 whisky bottle product image full bottle transparent",
+  "Woodford Reserve Distiller’s Select":"Woodford Reserve Distiller’s Select whisky bottle product image full bottle transparent",
+  "Woodford Reserve Double Oaked":"Woodford Reserve Double Oaked whisky bottle product image full bottle transparent",
+  "Maker’s Mark":"Maker’s Mark whisky bottle product image full bottle transparent",
+  "Maker’s Mark 46":"Maker’s Mark 46 whisky bottle product image full bottle transparent",
+  "Maker’s Mark Cask Strength":"Maker’s Mark Cask Strength whisky bottle product image full bottle transparent",
+  "Wild Turkey 101 Bourbon":"Wild Turkey 101 Bourbon whisky bottle product image full bottle transparent",
+  "Russell’s Reserve 10":"Russell’s Reserve 10 whisky bottle product image full bottle transparent",
+  "Four Roses Single Barrel":"Four Roses Single Barrel whisky bottle product image full bottle transparent",
+  "Bulleit Bourbon":"Bulleit Bourbon whisky bottle product image full bottle transparent",
+  "Knob Creek 9":"Knob Creek 9 whisky bottle product image full bottle transparent",
+  "Elijah Craig Small Batch":"Elijah Craig Small Batch whisky bottle product image full bottle transparent",
+  "Old Forester 1920 Prohibition Style":"Old Forester 1920 Prohibition Style bourbon bottle product image full bottle",
+  "Rittenhouse Straight Rye":"Rittenhouse Straight Rye whisky bottle product image full bottle transparent",
+  "Jack Daniel’s Old No.7":"Jack Daniel’s Old No.7 whisky bottle product image full bottle transparent",
+  "George Dickel No.12":"George Dickel No.12 Tennessee Whisky bottle product image full bottle",
+  "Westward American Single Malt":"Westward American Single Malt whisky bottle product image full bottle transparent",
+  "Crown Royal Northern Harvest Rye":"Crown Royal Northern Harvest Rye whisky bottle product image full bottle transparent",
+  "Lot No. 40 Rye":"Lot No. 40 Rye whisky bottle product image full bottle transparent",
+  "Canadian Club 12":"Canadian Club 12 whisky bottle product image full bottle transparent",
+  "Yamazaki 12":"Yamazaki 12 whisky bottle product image full bottle transparent",
+  "Hakushu Distiller’s Reserve":"Hakushu Distiller’s Reserve whisky bottle product image full bottle transparent",
+  "Hibiki Japanese Harmony":"Hibiki Japanese Harmony whisky bottle product image full bottle transparent",
+  "Nikka From The Barrel":"Nikka From The Barrel whisky bottle product image full bottle transparent",
+  "Nikka Coffey Grain":"Nikka Coffey Grain whisky bottle product image full bottle transparent",
+  "Kavalan Classic":"Kavalan Classic whisky bottle product image full bottle transparent",
+  "Kavalan Solist Vinho Barrique":"Kavalan Solist Vinho Barrique whisky bottle product image full bottle transparent",
+  "Amrut Fusion":"Amrut Fusion whisky bottle product image full bottle transparent",
+  "Paul John Edited":"Paul John Edited whisky bottle product image full bottle transparent",
+  "Starward Nova":"Starward Nova whisky bottle product image full bottle transparent",
+  "Starward Two-Fold":"Starward Two-Fold whisky bottle product image full bottle transparent",
+  "M&H Classic":"M&H Classic whisky bottle product image full bottle transparent",
+  "M&H Elements Sherry":"M&H Elements Sherry whisky bottle product image full bottle transparent",
+  "Mackmyra Svensk Ek":"Mackmyra Svensk Ek whisky bottle product image full bottle transparent",
+  "Ki One Batch 1":"Ki One Batch 1 whisky bottle product image full bottle transparent",
+  "Stauning Rye":"Stauning Rye whisky bottle product image full bottle transparent",
+  "Woodford Reserve Wheat Whiskey":"Woodford Reserve Wheat Whiskey whisky bottle product image full bottle transparent",
+  "Dry Fly Straight Washington Wheat Whiskey":"Dry Fly Straight Washington Wheat Whiskey whisky bottle product image full bottle transparent",
+  "Bernheim Barrel Proof Wheat Whiskey":"Bernheim Barrel Proof Wheat Whiskey whisky bottle product image full bottle transparent",
+  "Mortlach 16":"Mortlach 16 whisky bottle product image full bottle transparent",
+  "Laphroaig Lore":"Laphroaig Lore whisky bottle product image full bottle transparent",
+  "Arran Amarone Cask Finish":"Arran Amarone Cask Finish whisky bottle product image full bottle transparent",
+  "Kavalan Concertmaster Port Cask Finish":"Kavalan Concertmaster Port Cask Finish whisky bottle product image full bottle transparent",
+  "Glenfiddich 21 Gran Reserva":"Glenfiddich 21 Gran Reserva whisky bottle product image full bottle transparent",
+  "Tullamore D.E.W. XO Caribbean Rum Cask Finish":"Tullamore D.E.W. XO Caribbean Rum Cask Finish whisky bottle product image full bottle transparent",
+  "The Glenlivet 14 Cognac Cask Selection":"The Glenlivet 14 Cognac Cask Selection whisky bottle product image full bottle transparent",
+  "Yamazaki Distiller’s Reserve":"Yamazaki Distiller’s Reserve whisky bottle product image full bottle transparent",
+  "Ki One Tiger":"Ki One Tiger whisky bottle product image full bottle transparent",
+  "Ki One Eagle":"Ki One Eagle Edition Korean Single Malt whisky bottle full bottle",
+  "Ki One Unicorn":"Ki One Unicorn whisky bottle product image full bottle transparent",
+  "The Macallan 15 Double Cask":"The Macallan 15 Double Cask whisky bottle product image full bottle transparent",
+  "The Macallan 18 Sherry Oak":"The Macallan 18 Sherry Oak whisky bottle product image full bottle",
+  "The Balvenie 16 French Oak":"The Balvenie 16 French Oak whisky bottle product image full bottle transparent",
+  "The Balvenie 21 PortWood":"The Balvenie 21 PortWood whisky bottle product image full bottle transparent",
+  "Aberlour 16 Double Cask":"Aberlour 16 Double Cask whisky bottle product image full bottle transparent",
+  "Aberlour 18 Double Sherry Cask":"Aberlour 18 Double Sherry Cask whisky bottle product image full bottle transparent",
+  "Glenfarclas 21":"Glenfarclas 21 whisky bottle product image full bottle transparent",
+  "Glenfarclas 105 Cask Strength":"Glenfarclas 105 Cask Strength whisky bottle product image full bottle transparent",
+  "Tamdhu 15":"Tamdhu 15 whisky bottle product image full bottle transparent",
+  "Tamdhu Batch Strength":"Tamdhu Batch Strength whisky bottle product image full bottle transparent",
+  "The Glenrothes 18":"The Glenrothes 18 whisky bottle product image full bottle transparent",
+  "The Glenrothes Whisky Maker’s Cut":"The Glenrothes Whisky Maker’s Cut whisky bottle product image full bottle transparent",
+  "BenRiach The Twelve":"BenRiach The Twelve whisky bottle product image full bottle transparent",
+  "BenRiach The Smoky Ten":"BenRiach The Smoky Ten whisky bottle product image full bottle transparent",
+  "Mortlach 20 Cowie’s Blue Seal":"Mortlach 20 Cowie’s Blue Seal whisky bottle product image full bottle transparent",
+  "Mortlach 14 Alexander’s Way":"Mortlach 14 Alexander’s Way whisky bottle product image full bottle transparent",
+  "The Dalmore Cigar Malt Reserve":"The Dalmore Cigar Malt Reserve whisky bottle product image full bottle transparent",
+  "The Dalmore King Alexander III":"The Dalmore King Alexander III whisky bottle product image full bottle transparent",
+  "Clynelish Distillers Edition":"Clynelish Distillers Edition whisky bottle product image full bottle transparent",
+  "Clynelish 12 Special Release":"Clynelish 12 Special Release whisky bottle product image full bottle transparent",
+  "Oban Little Bay":"Oban Little Bay whisky bottle product image full bottle transparent",
+  "Oban Distillers Edition":"Oban Distillers Edition whisky bottle product image full bottle transparent",
+  "Old Pulteney 15":"Old Pulteney 15 whisky bottle product image full bottle transparent",
+  "Old Pulteney 18":"Old Pulteney 18 whisky bottle product image full bottle transparent",
+  "Deanston 18":"Deanston 18 whisky bottle product image full bottle transparent",
+  "Glengoyne 15":"Glengoyne 15 whisky bottle product image full bottle transparent",
+  "Glengoyne 21":"Glengoyne 21 whisky bottle product image full bottle transparent",
+  "The GlenDronach 18 Allardice":"The GlenDronach 18 Allardice whisky bottle product image full bottle transparent",
+  "Edradour 12 Caledonia":"Edradour 12 Caledonia whisky bottle product image full bottle transparent",
+  "Ballechin 10":"Ballechin 10 whisky bottle product image full bottle transparent",
+  "Balblair 15":"Balblair 15 whisky bottle product image full bottle transparent",
+  "Balblair 18":"Balblair 18 whisky bottle product image full bottle transparent",
+  "Tomatin 14 Port Casks":"Tomatin 14 Port Casks whisky bottle product image full bottle transparent",
+  "Tomatin 18":"Tomatin 18 Year Old whisky bottle product image full bottle",
+  "Auchentoshan American Oak":"Auchentoshan American Oak whisky bottle product image full bottle transparent",
+  "Bladnoch Samsara":"Bladnoch Samsara whisky bottle product image full bottle transparent",
+  "Bladnoch Alinta":"Bladnoch Alinta Single Malt whisky bottle product image full bottle",
+  "Lagavulin 8":"Lagavulin 8 whisky bottle product image full bottle transparent",
+  "Lagavulin Distillers Edition":"Lagavulin Distillers Edition whisky bottle product image full bottle transparent",
+  "Bowmore 18":"Bowmore 18 whisky bottle product image full bottle transparent",
+  "Caol Ila Distillers Edition":"Caol Ila Distillers Edition whisky bottle product image full bottle transparent",
+  "Caol Ila Moch":"Caol Ila Moch whisky bottle product image full bottle transparent",
+  "Bunnahabhain 18":"Bunnahabhain 18 whisky bottle product image full bottle transparent",
+  "Bunnahabhain Stiùireadair":"Bunnahabhain Stiùireadair whisky bottle product image full bottle transparent",
+  "Kilchoman Machir Bay":"Kilchoman Machir Bay whisky bottle product image full bottle transparent",
+  "Kilchoman Loch Gorm":"Kilchoman Loch Gorm whisky bottle product image full bottle transparent",
+  "Talisker 18":"Talisker 18 whisky bottle product image full bottle transparent",
+  "Highland Park 15 Viking Heart":"Highland Park 15 Viking Heart whisky bottle product image full bottle transparent",
+  "Highland Park 18 Viking Pride":"Highland Park 18 Viking Pride whisky bottle product image full bottle transparent",
+  "Jura 12":"Jura 12 whisky bottle product image full bottle transparent",
+  "Jura Seven Wood":"Jura Seven Wood whisky bottle product image full bottle transparent",
+  "Ledaig Rioja Cask Finish":"Ledaig Rioja Cask Finish whisky bottle product image full bottle transparent",
+  "Ledaig 18":"Ledaig 18 whisky bottle product image full bottle transparent",
+  "Springbank 12 Cask Strength":"Springbank 12 Cask Strength whisky bottle product image full bottle transparent",
+  "Kilkerran Heavily Peated Batch":"Kilkerran Heavily Peated Batch whisky bottle product image full bottle transparent",
+  "Kilkerran 16":"Kilkerran 16 whisky bottle product image full bottle transparent",
+  "Glen Scotia 15":"Glen Scotia 15 whisky bottle product image full bottle transparent",
+  "Chivas Regal 25":"Chivas Regal 25 whisky bottle product image full bottle transparent",
+  "Chivas Regal Mizunara":"Chivas Regal Mizunara whisky bottle product image full bottle transparent",
+  "Monkey Shoulder Smokey Monkey":"Monkey Shoulder Smokey Monkey whisky bottle product image full bottle transparent",
+  "Compass Box Orchard House":"Compass Box Orchard House whisky bottle product image full bottle",
+  "Compass Box The Spice Tree":"Compass Box The Spice Tree whisky bottle product image full bottle transparent",
+  "Jameson Caskmates Stout Edition":"Jameson Caskmates Stout Edition whisky bottle product image full bottle transparent",
+  "Jameson 18":"Jameson 18 whisky bottle product image full bottle transparent",
+  "Bushmills Black Bush":"Bushmills Black Bush whisky bottle product image full bottle transparent",
+  "Bushmills 16":"Bushmills 16 whisky bottle product image full bottle transparent",
+  "Redbreast 15":"Redbreast 15 whisky bottle product image full bottle transparent",
+  "Yellow Spot 12":"Yellow Spot 12 whisky bottle product image full bottle transparent",
+  "Red Spot 15":"Red Spot 15 whisky bottle product image full bottle transparent",
+  "Teeling Single Grain":"Teeling Single Grain whisky bottle product image full bottle transparent",
+  "Teeling Single Malt":"Teeling Single Malt whisky bottle product image full bottle transparent",
+  "Tullamore D.E.W. 12 Special Reserve":"Tullamore D.E.W. 12 Special Reserve whisky bottle product image full bottle transparent",
+  "Tullamore D.E.W. 14 Single Malt":"Tullamore D.E.W. 14 Year Old Single Malt whisky bottle full bottle",
+  "Weller Special Reserve":"Weller Special Reserve whisky bottle product image full bottle transparent",
+  "E.H. Taylor Small Batch":"E.H. Taylor Small Batch whisky bottle product image full bottle transparent",
+  "Blanton’s Original Single Barrel":"Blanton's Original Single Barrel Bourbon bottle product image full bottle",
+  "Wild Turkey Rare Breed Bourbon":"Wild Turkey Rare Breed Bourbon whisky bottle product image full bottle transparent",
+  "Four Roses Small Batch":"Four Roses Small Batch whisky bottle product image full bottle transparent",
+  "Four Roses Small Batch Select":"Four Roses Small Batch Select whisky bottle product image full bottle transparent",
+  "Bulleit Rye":"Bulleit Rye whisky bottle product image full bottle transparent",
+  "Bulleit 10 Year Bourbon":"Bulleit 10 Year Bourbon whisky bottle product image full bottle transparent",
+  "Knob Creek Single Barrel Reserve":"Knob Creek Single Barrel Reserve whisky bottle product image full bottle transparent",
+  "Knob Creek Rye":"Knob Creek Rye whisky bottle product image full bottle transparent",
+  "Elijah Craig Barrel Proof":"Elijah Craig Barrel Proof bourbon bottle product image full bottle",
+  "Elijah Craig Toasted Barrel":"Elijah Craig Toasted Barrel whisky bottle product image full bottle transparent",
+  "Larceny Small Batch":"Larceny Small Batch whisky bottle product image full bottle transparent",
+  "Bernheim 7 Year Wheat Whiskey":"Bernheim 7 Year Wheat Whiskey bottle product image full bottle",
+  "Old Forester 100 Proof Bourbon":"Old Forester 100 Proof Bourbon whisky bottle product image full bottle transparent",
+  "Old Forester Statesman":"Old Forester Statesman whisky bottle product image full bottle transparent",
+  "Jack Daniel’s Single Barrel Select":"Jack Daniel’s Single Barrel Select whisky bottle product image full bottle transparent",
+  "Jack Daniel’s Bonded":"Jack Daniel’s Bonded whisky bottle product image full bottle transparent",
+  "George Dickel Bottled in Bond":"George Dickel Bottled in Bond Tennessee whisky bottle product image full bottle",
+  "George Dickel Barrel Select":"George Dickel Barrel Select whisky bottle product image full bottle transparent",
+  "Westward Stout Cask":"Westward Stout Cask whisky bottle product image full bottle transparent",
+  "Westward Pinot Noir Cask":"Westward Pinot Noir Cask whisky bottle product image full bottle transparent",
+  "Dry Fly Bourbon 101":"Dry Fly Bourbon 101 whisky bottle product image full bottle transparent",
+  "Dry Fly Port Finish Wheat Whiskey":"Dry Fly Port Finish Wheat Whiskey whisky bottle product image full bottle transparent",
+  "Crown Royal Deluxe":"Crown Royal Deluxe whisky bottle product image full bottle",
+  "Crown Royal Black":"Crown Royal Black whisky bottle product image full bottle transparent",
+  "Lot No. 40 Dark Oak Rye":"Lot No. 40 Dark Oak Rye whisky bottle product image full bottle transparent",
+  "Lot No. 40 Cask Strength Rye":"Lot No. 40 Cask Strength Rye whisky bottle product image full bottle transparent",
+  "Canadian Club 1858":"Canadian Club 1858 whisky bottle product image full bottle",
+  "Canadian Club 100% Rye":"Canadian Club 100% Rye whisky bottle product image full bottle transparent",
+  "Yamazaki 18":"Yamazaki 18 whisky bottle product image full bottle transparent",
+  "Hakushu 12":"Hakushu 12 whisky bottle product image full bottle transparent",
+  "Hakushu 18":"Hakushu 18 whisky bottle product image full bottle transparent",
+  "Hibiki Blender’s Choice":"Hibiki Blender’s Choice whisky bottle product image full bottle transparent",
+  "Hibiki 21":"Hibiki 21 Japanese whisky bottle product image full bottle",
+  "Yoichi Single Malt":"Yoichi Single Malt whisky bottle product image full bottle transparent",
+  "Miyagikyo Single Malt":"Nikka Miyagikyo Single Malt official whisky bottle 700ml full bottle",
+  "Amrut Indian Single Malt":"Amrut Indian Single Malt whisky bottle product image full bottle transparent",
+  "Amrut Naarangi":"Amrut Naarangi whisky bottle product image full bottle transparent",
+  "Paul John Brilliance":"Paul John Brilliance whisky bottle product image full bottle transparent",
+  "Paul John Bold":"Paul John Bold whisky bottle product image full bottle transparent",
+  "Starward Solera":"Starward Solera whisky bottle product image full bottle transparent",
+  "M&H Apex Dead Sea":"M&H Apex Dead Sea whisky bottle product image full bottle transparent",
+  "M&H Apex Pomegranate Wine Cask":"M&H Apex Pomegranate Wine Cask whisky bottle product image full bottle transparent",
+  "Mackmyra Brukswhisky":"Mackmyra Brukswhisky whisky bottle product image full bottle transparent",
+  "Stauning KAOS":"Stauning KAOS whisky bottle product image full bottle transparent",
+  "Stauning Bastard":"Stauning Bastard rye whisky bottle product image full bottle"
 };
 
 function bottleSlug(name){
@@ -1119,13 +1560,6 @@ const SEARCH_TRANSLATIONS={
 };
 
 const BRAND_KO_ALIASES=[
-  [/GlenAllachie/i,["글렌알라키","글렌알라키8"]], [/Benromach/i,["벤로막"]], [/Aultmore/i,["올트모어"]], [/Glenglassaugh/i,["글렌글라사","글렌글라소"]],
-  [/Glenturret/i,["글렌터렛","글렌 터렛"]], [/Smokehead/i,["스모크헤드"]], [/Tobermory/i,["토버모리"]], [/Epicurean/i,["에피큐리안"]],
-  [/Dewar/i,["듀어스"]], [/Cutty Sark/i,["커티샥"]], [/Mellow Corn/i,["멜로우콘","멜로우 콘"]], [/Evan Williams/i,["에반윌리엄스","에반 윌리엄스"]],
-  [/Angel's Envy|Angel’s Envy/i,["엔젤스엔비","엔젤스 엔비"]], [/Michter/i,["믹터스"]], [/Sazerac/i,["사즈락"]], [/Sagamore/i,["사가모어"]],
-  [/Yellow Rose/i,["옐로우로즈","옐로우 로즈"]], [/Charbay/i,["샤베이","차베이"]], [/Limavady/i,["리마바디"]], [/Busker/i,["버스커"]],
-  [/West Cork/i,["웨스트콕","웨스트 코크"]], [/Natterjack/i,["내터잭","나터잭"]], [/Suntory The Chita|The Chita/i,["산토리치타","산토리 치타","치타"]],
-  [/Taketsuru/i,["타케츠루"]], [/High Coast/i,["하이코스트","하이 코스트"]], [/Kim Chang-soo|Kim Changsoo/i,["김창수","김창수위스키"]], [/Alfred Giraud/i,["알프레드지로","알프레드 지로"]],
   [/Glenfiddich/i,["글렌피딕","글랜피딕"]], [/Glenlivet/i,["글렌리벳","글렌리벳트"]], [/Macallan/i,["맥캘란","매캘란","마캘란"]],
   [/Balvenie/i,["발베니"]], [/Aberlour/i,["아벨라워","아벨라우어"]], [/Glenfarclas/i,["글렌파클라스","글랜파클라스"]], [/Tamdhu/i,["탐두"]],
   [/Glenrothes/i,["글렌로티스","글렌로더스"]], [/BenRiach/i,["벤리악","벤리치"]], [/Mortlach/i,["모틀락"]], [/Glenmorangie/i,["글렌모렌지","글렌모랑지"]],
@@ -1143,9 +1577,6 @@ const BRAND_KO_ALIASES=[
   [/Knob Creek/i,["놉크릭","노브크릭"]], [/Elijah Craig/i,["엘리자크레이그","일라이자 크레이그"]], [/Old Forester/i,["올드포레스터","올드 포레스터"]], [/Rittenhouse/i,["리튼하우스"]],
   [/Jack Daniel/i,["잭다니엘","잭 다니엘"]], [/George Dickel/i,["조지디켈","조지 디켈"]], [/Westward/i,["웨스트워드"]], [/Crown Royal/i,["크라운로얄","크라운 로얄"]], [/Lot No\. 40/i,["랏넘버40","롯넘버40","로트넘버40"]], [/Canadian Club/i,["캐나디안클럽","캐나디안 클럽"]],
   [/Yamazaki/i,["야마자키"]], [/Hakushu/i,["하쿠슈","하쿠슈"]], [/Hibiki/i,["히비키"]], [/Nikka/i,["니카"]], [/Yoichi/i,["요이치"]], [/Miyagikyo/i,["미야기쿄"]],
-
-  [/SHINDO/i,["신도","신도익스페리멘탈"]], [/Raasay/i,["라세이","라세이싱글몰트"]], [/Barrell/i,["배럴","배럴씨그라스"]], [/WhistlePig/i,["휘슬피그"]],
-  [/Naked Malt/i,["네이키드몰트","네이키드 몰트"]], [/Scallywag/i,["스칼리웩"]], [/GlenDronach Cask Bottling/i,["글렌드로낙캐스크바틀링"]], [/Edward Lee/i,["에드워드리","에드워드 리"]],
   [/Kavalan/i,["카발란"]], [/Amrut/i,["암룻","암루트"]], [/Paul John/i,["폴존","폴 존"]], [/Starward/i,["스타워드"]], [/M&H/i,["밀크앤허니","밀크 앤 허니","MNH"]], [/Mackmyra/i,["맥미라","마크미라"]], [/Ki One/i,["기원","키원"]], [/Stauning/i,["스타우닝"]], [/Blanton/i,["블랑톤","블랜튼"]], [/Weller/i,["웰러"]], [/E\.H\. Taylor/i,["테일러","EH테일러"]], [/Larceny/i,["라세니","라르세니"]], [/Bernheim/i,["번하임"]], [/Dry Fly/i,["드라이플라이","드라이 플라이"]]
 ];
 
@@ -1170,7 +1601,7 @@ function brandAliasesForName(name){
   return out;
 }
 function searchBlob(w){
-  const parts=[w.id,w.name,noteFor(w),w.visible===false?'비노출':'노출'];
+  const parts=[w.id,w.name,PRODUCT_KO_NAMES[w.name]||'',noteFor(w),w.visible===false?'비노출':'노출'];
   parts.push(...brandAliasesForName(w.name));
   FIELD_ORDER.forEach(k=>{
     parts.push(w[k],FLABELS[k]);
@@ -1220,30 +1651,50 @@ let S={
 function normalizeWs(list){return (list||[]).map(migrateWhisky);}
 function rawSeed(){return RAW.map(([id,name,mat,cask,ori,flv,str,bod,peat])=>({id,name,mat,cask,ori,flv,str,bod,peat,img:'',visible:true,note:''}));}
 
+/* ═══════════════ ACTUAL STOCK EXPOSURE LOCK ═══════════════
+   Supabase에 예전 상품이나 추가 상품이 남아 있어도
+   고객 화면에는 RAW에 정의된 실제 입고 130종만 노출한다.
+*/
+function stockKey(name){
+  return String(name||'')
+    .toLowerCase()
+    .replace(/[’‘`´]/g,"'")
+    .replace(/[^a-z0-9가-힣]+/g,'')
+    .trim();
+}
+const ACTUAL_STOCK_KEYS=new Set(RAW.map(r=>stockKey(r[1])));
+function isActualStock(w){return ACTUAL_STOCK_KEYS.has(stockKey(w&&w.name));}
+function mergeActualStock(dbRows){
+  const dbMap=new Map(normalizeWs(dbRows||[]).map(w=>[stockKey(w.name),w]));
+  return normalizeWs(rawSeed()).map(seed=>{
+    const saved=dbMap.get(stockKey(seed.name));
+    if(!saved)return seed;
+    return migrateWhisky({
+      ...seed,
+      img:saved.img||'',
+      note:saved.note||'',
+      visible:saved.visible!==false
+    });
+  });
+}
+
 async function loadWs(){
   S.loading=true;render();
   try{
-    const seed=rawSeed();
-    const{data,error}=await db.from('whiskies').select('*')
-      .gte('id',DATASET_MIN_ID).lte('id',DATASET_MAX_ID).order('id');
+    const{data,error}=await db.from('whiskies').select('*').order('id');
     if(error)throw error;
-
-    const loaded=normalizeWs(data||[]).filter(w=>CORE_ID_SET.has(Number(w.id)));
-    const loadedIds=new Set(loaded.map(w=>Number(w.id)));
-    const missing=seed.filter(w=>!loadedIds.has(Number(w.id)));
-
-    if(missing.length){
-      const{error:ie}=await db.from('whiskies').insert(missing);
+    if(data&&data.length>0){
+      // DB 전체를 그대로 쓰지 않고 실제 입고 RAW 130종과 이름이 일치하는 저장값만 병합
+      S.ws=mergeActualStock(data);
+    }else{
+      const seed=rawSeed();
+      const{error:ie}=await db.from('whiskies').insert(seed);
       if(ie)throw ie;
+      S.ws=normalizeWs(seed);
     }
-
-    const merged=[...loaded,...missing]
-      .filter(w=>CORE_ID_SET.has(Number(w.id)))
-      .sort((a,b)=>Number(a.id)-Number(b.id));
-    S.ws=normalizeWs(merged);
   }catch(e){
     console.error('Supabase loadWs 오류:',e);
-    S.ws=normalizeWs(rawSeed()).filter(w=>CORE_ID_SET.has(Number(w.id)));
+    S.ws=normalizeWs(rawSeed());
     S.supabaseError=true;
   }
   S.loading=false;render();
@@ -1253,7 +1704,7 @@ async function loadWs(){
 function saveWs(){}
 
 /* ═══════════════ UTILITIES ═══════════════ */
-function visibleWs(){return S.ws.filter(w=>CORE_ID_SET.has(Number(w.id))&&w.visible!==false);}
+function visibleWs(){return S.ws.filter(w=>w.visible!==false&&isActualStock(w));}
 function cnt(axId,subId){return visibleWs().filter(w=>w[axId]===subId).length;}
 function tag(label,bg,t){return`<span class="tag bilingual-tag" style="background:${bg};color:${t};">${label}</span>`;}
 function strTag(v){const c=SC[v]||{bg:'#181818',t:'#444'};return tag(valueText('str',v),c.bg,c.t);}
@@ -1389,9 +1840,9 @@ ${hdr('WHISKY GUIDE','분류 방법을 선택하세요',false,adminBtn)}
 ${renderSupabaseError()}
 <div class="guide-intro">
   <p class="guide-kicker">SPIRIT CORE LAB</p>
-  <h1 class="guide-title">Core 100 Whisky Navigator</h1>
-  <p class="guide-copy">선별한 100병을 원료, 캐스크, 원산지, 향미, 도수, 바디, 피트감의 7축으로 비교하는 테이스팅 가이드입니다.</p>
-  <div class="search-shell"><input class="main-search-input" type="text" inputmode="search" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="한글/영문 검색 · 예: 셰리, 아일라, 버번, 기원" value="${esc(S.q||'')}" oncompositionstart="handleSearchCompositionStart()" oncompositionend="handleSearchCompositionEnd(this)" oninput="handleSearchInput(this)"/></div>
+  <h1 class="guide-title">Whisky Flavor Navigator</h1>
+  <p class="guide-copy">원료, 캐스크, 원산지, 향미, 도수, 바디, 피트감을 기준으로 현재 리스트를 빠르게 좁혀보는 테이스팅 가이드입니다.</p>
+  <div class="search-shell"><input class="main-search-input" type="text" inputmode="search" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="한글/영문 검색 · 예: 맥캘란, 셰리, 아일라, 버번" value="${esc(S.q||'')}" oncompositionstart="handleSearchCompositionStart()" oncompositionend="handleSearchCompositionEnd(this)" oninput="handleSearchInput(this)"/></div>
 </div>
 ${quickHtml}
 <div style="padding:8px 16px 16px;display:flex;flex-direction:column;gap:10px;">${cards}</div>
@@ -1468,10 +1919,9 @@ ${hdr(`${ax.ko} · ${ax.label}`,`${sub.ko}  ·  ${sub.id}`,true)}
 /* ─── ADMIN ─── */
 function renderAdmin(){
   const q=S.adminQ;
-  const coreWs=S.ws.filter(w=>CORE_ID_SET.has(Number(w.id)));
-  const filtered=coreWs.filter(w=>!q||matchesSearch(w,q));
-  const visibleCount=coreWs.filter(w=>w.visible!==false).length;
-  const hiddenCount=coreWs.length-visibleCount;
+  const filtered=S.ws.filter(w=>!q||matchesSearch(w,q));
+  const visibleCount=S.ws.filter(w=>w.visible!==false).length;
+  const hiddenCount=S.ws.length-visibleCount;
 
   function editForm(isNew){
     const d=isNew?S.newDraft:S.editDraft;
@@ -1531,7 +1981,7 @@ ${tagFor('mat',w.mat,'#141414','#7a7a7a')}${tagFor('flv',w.flv,'#0c1208','#50703
 <div style="display:flex;flex-direction:column;gap:5px;flex-shrink:0;">
 <button class="btn ${isVisible?'btn-red':'btn-gold'}" onclick="toggleVisible(${w.id})" style="font-size:13px;padding:4px 10px;">${isVisible?'비노출':'노출'}</button>
 <button class="btn" onclick="startEdit(${w.id})" style="font-size:13px;padding:4px 10px;">편집</button>
-
+<button class="btn btn-red" onclick="delW(${w.id})" style="font-size:13px;padding:4px 10px;">삭제</button>
 </div></div></div>`;
   }).join('');
 
@@ -1544,15 +1994,15 @@ ${tagFor('mat',w.mat,'#141414','#7a7a7a')}${tagFor('flv',w.flv,'#0c1208','#50703
 <div class="hdr" style="background:#080505;border-bottom-color:#2a1010;">
 ${HOME_LOGO}
 <div style="flex:1;"><p style="font-size:15px;color:#a03030;letter-spacing:.28em;margin:0;">ADMIN PANEL</p>
-<p style="font-size:13px;color:#7a3a46;letter-spacing:.15em;margin:0;">CORE 100 고정 · 노출 / 비노출 및 정보 편집</p></div>
+<p style="font-size:13px;color:#7a3a46;letter-spacing:.15em;margin:0;">노출 / 비노출 관리 가능</p></div>
 ${logoutBtn}</div>
 <div style="padding:14px 16px;">
 <div style="display:flex;gap:8px;margin-bottom:12px;align-items:center;">
 <input type="text" placeholder="위스키명, 원산지, 원료, 향미, 캐스크 검색..." value="${esc(S.adminQ)}" oninput="S.adminQ=this.value;render()" style="flex:1;"/>
-<span class="status-chip status-visible" style="white-space:nowrap;">CORE 100 LOCKED</span>
+<button class="btn btn-gold" onclick="S.addMode=!S.addMode;S.editId=null;render()" style="white-space:nowrap;font-size:13px;padding:7px 12px;">${S.addMode?'✕ 닫기':'+ 추가'}</button>
 </div>
-
-<p style="font-size:13px;color:#777777;letter-spacing:.18em;margin-bottom:10px;">CORE ${CORE_ID_SET.size}종 · 노출 ${visibleCount}종 · 비노출 ${hiddenCount}종 · 검색 ${filtered.length}종</p>
+${S.addMode?editForm(true):''}
+<p style="font-size:13px;color:#777777;letter-spacing:.18em;margin-bottom:10px;">전체 ${S.ws.length}종 · 노출 ${visibleCount}종 · 비노출 ${hiddenCount}종 · 검색 ${filtered.length}종</p>
 ${rows}
 </div></div>`;
 }
@@ -1722,7 +2172,7 @@ function confirmEdit(){
   S.editId=null;render();
   (async()=>{
     try{
-      const{error}=await db.from('whiskies').update(updated).eq('id',updated.id);
+      const{error}=await db.from('whiskies').upsert(updated,{onConflict:'id'});
       if(error)throw error;
     }catch(e){console.error('confirmEdit 오류:',e);alert('저장 중 오류가 발생했습니다.');}
   })();
@@ -1735,7 +2185,7 @@ function toggleVisible(id){
   render();
   (async()=>{
     try{
-      const{error}=await db.from('whiskies').update({visible:newVis}).eq('id',id);
+      const current=S.ws.find(x=>x.id===id); const{error}=await db.from('whiskies').upsert({...current,visible:newVis},{onConflict:'id'});
       if(error)throw error;
     }catch(e){
       // 롤백
@@ -1745,10 +2195,37 @@ function toggleVisible(id){
   })();
 }
 function delW(id){
-  alert('CORE 100 고정 모드에서는 항목을 삭제할 수 없습니다. 필요하면 비노출로 전환하세요.');
+  if(!confirm('이 위스키를 삭제하시겠습니까?'))return;
+  const prev=[...S.ws];
+  S.ws=S.ws.filter(w=>w.id!==id);
+  if(S.editId===id)S.editId=null;
+  render();
+  (async()=>{
+    try{
+      const{error}=await db.from('whiskies').delete().eq('id',id);
+      if(error)throw error;
+    }catch(e){
+      S.ws=prev;render();
+      console.error('delW 오류:',e);alert('삭제 중 오류가 발생했습니다.');
+    }
+  })();
 }
 function confirmAdd(){
-  alert('CORE 100 고정 모드에서는 새 항목을 추가할 수 없습니다.');
+  if(!S.newDraft.name||!S.newDraft.name.trim()){alert('이름을 입력해주세요.');return;}
+  const maxId=S.ws.reduce((m,w)=>Math.max(m,w.id),0);
+  const newW={...S.newDraft,id:maxId+1,visible:true,note:''};
+  S.ws.push(newW);
+  S.newDraft={name:'',mat:'Single Malt',cask:'Ex-Bourbon / Virgin Oak',ori:'Scotland / Speyside',flv:'Fruity & Tropical',str:'Standard',bod:'Medium & Smooth',peat:'None',visible:true};
+  S.addMode=false;render();
+  (async()=>{
+    try{
+      const{error}=await db.from('whiskies').insert(newW);
+      if(error)throw error;
+    }catch(e){
+      S.ws=S.ws.filter(w=>w.id!==newW.id);
+      render();console.error('confirmAdd 오류:',e);alert('추가 중 오류가 발생했습니다.');
+    }
+  })();
 }
 function resetData(){
   if(!confirm('모든 데이터를 초기값으로 되돌리겠습니까?\n이 작업은 되돌릴 수 없습니다.'))return;
@@ -1758,7 +2235,7 @@ function resetData(){
   render();
   (async()=>{
     try{
-      await db.from('whiskies').delete().gte('id',DATASET_MIN_ID).lte('id',DATASET_MAX_ID);
+      await db.from('whiskies').delete().neq('id',0);
       const{error}=await db.from('whiskies').insert(seed);
       if(error)throw error;
     }catch(e){console.error('resetData 오류:',e);alert('초기화 중 오류가 발생했습니다.');}
