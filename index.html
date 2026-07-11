@@ -10,7 +10,6 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="SPIRIT CORE LAB">
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;background:#060606;overflow-x:hidden}
@@ -519,144 +518,1546 @@ textarea:focus{border-color:#d83a63;box-shadow:0 0 0 3px rgba(216,58,99,.09);}
 <script>
 
 const RAW=[
-  [1,"1792 Small Batch","Corn-Based","Bourbon / American Oak","USA / Kentucky","Sweet Pastry & Honey","Full Strength","Rich & Oily","None"],
-  [2,"The Glenlivet 18","Malted Barley","Mixed / Multiple Cask","Scotland / Speyside","Dried Fruit & Sherry","Standard","Rich & Oily","None"],
-  [3,"The Glenturret 12","Malted Barley","Sherry / Wine / Port","Scotland / Highland","Dried Fruit & Sherry","Full Strength","Rich & Oily","None"],
-  [4,"Glenfarclas 15","Malted Barley","Sherry / Wine / Port","Scotland / Speyside","Chocolate & Coffee","Full Strength","Rich & Oily","None"],
-  [5,"Glengoyne 12","Malted Barley","Mixed / Multiple Cask","Scotland / Highland","Fruity & Tropical","Standard","Medium & Smooth","None"],
-  [6,"The Glen Grant 12","Malted Barley","Mixed / Multiple Cask","Scotland / Speyside","Fruity & Tropical","Standard","Light & Crisp","None"],
-  [7,"The Glen Grant 18","Malted Barley","Bourbon / American Oak","Scotland / Speyside","Fruity & Tropical","Standard","Medium & Smooth","None"],
-  [8,"Glenglassaugh 12","Malted Barley","Mixed / Multiple Cask","Scotland / Highland","Fruity & Tropical","Full Strength","Medium & Smooth","None"],
-  [9,"The GlenDronach 12","Malted Barley","Sherry / Wine / Port","Scotland / Highland","Dried Fruit & Sherry","Standard","Rich & Oily","None"],
-  [10,"The GlenDronach 18 Allardice","Malted Barley","Sherry / Wine / Port","Scotland / Highland","Chocolate & Coffee","Full Strength","Rich & Oily","None"],
-  [11,"The Glenrothes 12","Malted Barley","Sherry / Wine / Port","Scotland / Speyside","Fruity & Tropical","Standard","Medium & Smooth","None"],
-  [12,"The Glenlivet 12","Malted Barley","Mixed / Multiple Cask","Scotland / Speyside","Fruity & Tropical","Standard","Light & Crisp","None"],
-  [13,"Glenmorangie The Original 12","Malted Barley","Bourbon / American Oak","Scotland / Highland","Citrus & Zesty","Standard","Light & Crisp","None"],
-  [14,"Glenmorangie The Nectar 16","Malted Barley","Sherry / Wine / Port","Scotland / Highland","Sweet Pastry & Honey","Full Strength","Rich & Oily","None"],
-  [15,"Glenmorangie Signet","Malted Barley","Mixed / Multiple Cask","Scotland / Highland","Chocolate & Coffee","Full Strength","Rich & Oily","None"],
-  [16,"The GlenAllachie 12","Malted Barley","Sherry / Wine / Port","Scotland / Speyside","Dried Fruit & Sherry","Full Strength","Rich & Oily","None"],
-  [17,"The GlenAllachie 8","Malted Barley","Sherry / Wine / Port","Scotland / Speyside","Dried Fruit & Sherry","Full Strength","Rich & Oily","None"],
-  [18,"The Glenturret 10 Peat Smoked","Malted Barley","Mixed / Multiple Cask","Scotland / Highland","Dried Fruit & Sherry","High Proof","Rich & Oily","Heavy Peat"],
-  [19,"The Glenturret Triple Wood","Malted Barley","Mixed / Multiple Cask","Scotland / Highland","Dried Fruit & Sherry","Full Strength","Medium & Smooth","None"],
-  [20,"Glenfiddich 12","Malted Barley","Mixed / Multiple Cask","Scotland / Speyside","Fruity & Tropical","Standard","Medium & Smooth","None"],
-  [21,"Glenfiddich 18","Malted Barley","Mixed / Multiple Cask","Scotland / Speyside","Dried Fruit & Sherry","Standard","Medium & Smooth","None"],
-  [22,"Ki One Unicorn","Malted Barley","Bourbon / American Oak","New World / South Korea","Earthy & Leather","Full Strength","Rich & Oily","Medium Peat"],
-  [23,"Ki One Tiger","Malted Barley","Sherry / Wine / Port","New World / South Korea","Fruity & Tropical","Full Strength","Medium & Smooth","None"],
-  [24,"Ki One Eagle","Malted Barley","Bourbon / American Oak","New World / South Korea","Woody & Oaky","Standard","Medium & Smooth","None"],
-  [25,"Kim Chang-soo Whisky 51.7","Malted Barley","Sherry / Wine / Port","New World / South Korea","Dried Fruit & Sherry","High Proof","Rich & Oily","Medium Peat"],
-  [26,"Knob Creek Rye","Rye-Based","Bourbon / American Oak","USA / Kentucky","Spicy & Aromatic","High Proof","Medium & Smooth","None"],
-  [27,"Knob Creek Kentucky Straight Bourbon","Corn-Based","Bourbon / American Oak","USA / Kentucky","Woody & Oaky","High Proof","Rich & Oily","None"],
-  [28,"Naked Malt","Malted Barley","Sherry / Wine / Port","Scotland / All Regions","Dried Fruit & Sherry","Standard","Medium & Smooth","None"],
-  [29,"The Dalmore 12","Malted Barley","Sherry / Wine / Port","Scotland / Highland","Chocolate & Coffee","Standard","Medium & Smooth","None"],
-  [30,"The Dalmore Cigar Malt Reserve","Malted Barley","Sherry / Wine / Port","Scotland / Highland","Chocolate & Coffee","Full Strength","Rich & Oily","None"],
-  [31,"The Dalmore King Alexander III","Malted Barley","Sherry / Wine / Port","Scotland / Highland","Dried Fruit & Sherry","Standard","Rich & Oily","None"],
-  [32,"Dewar's 12","Mixed Grain","Mixed / Multiple Cask","Scotland / All Regions","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [33,"Dewar's 18 Mizunara Cask Finish","Mixed Grain","Special / Experimental","Scotland / All Regions","Woody & Oaky","Standard","Rich & Oily","None"],
-  [34,"Deanston Virgin Oak","Malted Barley","Bourbon / American Oak","Scotland / Highland","Sweet Pastry & Honey","Full Strength","Medium & Smooth","None"],
-  [35,"Lagavulin 16","Malted Barley","Mixed / Multiple Cask","Scotland / Islay","Dried Fruit & Sherry","Standard","Rich & Oily","Heavy Peat"],
-  [36,"Lagavulin 8","Malted Barley","Bourbon / American Oak","Scotland / Islay","Citrus & Zesty","Full Strength","Medium & Smooth","Heavy Peat"],
-  [37,"Laphroaig 10","Malted Barley","Bourbon / American Oak","Scotland / Islay","Savory & Umami","Standard","Rich & Oily","Heavy Peat"],
-  [38,"Laphroaig Quarter Cask","Malted Barley","Bourbon / American Oak","Scotland / Islay","Woody & Oaky","Full Strength","Rich & Oily","Heavy Peat"],
-  [39,"Russell's Reserve Single Barrel","Corn-Based","Bourbon / American Oak","USA / Kentucky","Spicy & Aromatic","High Proof","Rich & Oily","None"],
-  [40,"Russell's Reserve 10","Corn-Based","Bourbon / American Oak","USA / Kentucky","Woody & Oaky","Full Strength","Medium & Smooth","None"],
-  [41,"Redbreast 12","Malted & Unmalted Barley","Mixed / Multiple Cask","Ireland","Dried Fruit & Sherry","Standard","Rich & Oily","None"],
-  [42,"Rebel 100 Kentucky Straight Bourbon","Corn-Based","Bourbon / American Oak","USA / Kentucky","Sweet Pastry & Honey","High Proof","Rich & Oily","None"],
-  [43,"Royal Brackla 12","Malted Barley","Sherry / Wine / Port","Scotland / Highland","Fruity & Tropical","Full Strength","Medium & Smooth","None"],
-  [44,"Royal Brackla 18","Malted Barley","Sherry / Wine / Port","Scotland / Highland","Dried Fruit & Sherry","Full Strength","Rich & Oily","None"],
-  [45,"Royal Salute 21","Mixed Grain","Mixed / Multiple Cask","Scotland / All Regions","Dried Fruit & Sherry","Standard","Rich & Oily","None"],
-  [46,"Loch Lomond 12","Malted Barley","Mixed / Multiple Cask","Scotland / Highland","Fruity & Tropical","Full Strength","Medium & Smooth","Light Peat"],
-  [47,"The Macallan 12 Double Cask","Malted Barley","Sherry / Wine / Port","Scotland / Speyside","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [48,"Maker's Mark","Corn-Based","Bourbon / American Oak","USA / Kentucky","Sweet Pastry & Honey","Full Strength","Medium & Smooth","None"],
-  [49,"Mellow Corn","Corn-Based","Bourbon / American Oak","USA / Kentucky","Malty & Cereal","High Proof","Medium & Smooth","None"],
-  [50,"Monkey Shoulder","Malted Barley","Bourbon / American Oak","Scotland / All Regions","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [51,"Michter's US*1 Small Batch Bourbon","Corn-Based","Bourbon / American Oak","USA / Kentucky","Sweet Pastry & Honey","Full Strength","Rich & Oily","None"],
-  [52,"Michter's US*1 Unblended American Whiskey","Mixed Grain","Bourbon / American Oak","USA / Kentucky","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [53,"Ballantine's Glenburgie 12","Malted Barley","Mixed / Multiple Cask","Scotland / Speyside","Fruity & Tropical","Standard","Medium & Smooth","None"],
-  [54,"Ballantine's 21","Mixed Grain","Mixed / Multiple Cask","Scotland / All Regions","Dried Fruit & Sherry","Standard","Rich & Oily","None"],
-  [55,"Ballantine's Masters","Mixed Grain","Mixed / Multiple Cask","Scotland / All Regions","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [56,"The Balvenie 12 DoubleWood","Malted Barley","Sherry / Wine / Port","Scotland / Speyside","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [57,"The Balvenie 14 Caribbean Cask","Malted Barley","Rum / Brandy / Spirit Cask","Scotland / Speyside","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [58,"The Balvenie 16 French Oak","Malted Barley","Sherry / Wine / Port","Scotland / Speyside","Floral & Herbal","Full Strength","Medium & Smooth","None"],
-  [59,"The Busker Triple Cask","Mixed Grain","Mixed / Multiple Cask","Ireland","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [60,"Benromach 10","Malted Barley","Mixed / Multiple Cask","Scotland / Speyside","Malty & Cereal","Standard","Medium & Smooth","Light Peat"],
-  [61,"Benriach The Smoky Ten","Malted Barley","Mixed / Multiple Cask","Scotland / Speyside","Sweet Pastry & Honey","Full Strength","Medium & Smooth","Medium Peat"],
-  [62,"Benriach 16","Malted Barley","Mixed / Multiple Cask","Scotland / Speyside","Fruity & Tropical","Standard","Rich & Oily","None"],
-  [63,"Benchmark Old No. 8","Corn-Based","Bourbon / American Oak","USA / Kentucky","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [64,"Bowmore 12","Malted Barley","Sherry / Wine / Port","Scotland / Islay","Chocolate & Coffee","Standard","Medium & Smooth","Light Peat"],
-  [65,"Bowmore 18","Malted Barley","Sherry / Wine / Port","Scotland / Islay","Chocolate & Coffee","Standard","Rich & Oily","Light Peat"],
-  [66,"Bushmills 10","Malted Barley","Mixed / Multiple Cask","Ireland","Fruity & Tropical","Standard","Light & Crisp","None"],
-  [67,"Bushmills 12","Malted Barley","Mixed / Multiple Cask","Ireland","Dried Fruit & Sherry","Standard","Medium & Smooth","None"],
-  [68,"Bulleit Rye","Rye-Based","Bourbon / American Oak","USA / Kentucky","Spicy & Aromatic","Full Strength","Medium & Smooth","None"],
-  [69,"Bulleit Bourbon","Corn-Based","Bourbon / American Oak","USA / Kentucky","Spicy & Aromatic","Full Strength","Medium & Smooth","None"],
-  [70,"Brenne French Single Malt","Malted Barley","Rum / Brandy / Spirit Cask","New World / Other","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [71,"Hibiki Japanese Harmony","Mixed Grain","Mixed / Multiple Cask","Japan","Floral & Herbal","Standard","Medium & Smooth","None"],
-  [72,"Smokehead Original","Malted Barley","Bourbon / American Oak","Scotland / Islay","Malty & Cereal","Standard","Rich & Oily","Heavy Peat"],
-  [73,"Starward Nova","Malted Barley","Sherry / Wine / Port","New World / Other","Winey & Tannic","Standard","Medium & Smooth","None"],
-  [74,"Chivas Regal 12","Mixed Grain","Mixed / Multiple Cask","Scotland / All Regions","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [75,"The Singleton of Dufftown 12","Malted Barley","Bourbon / American Oak","Scotland / Speyside","Fruity & Tropical","Standard","Medium & Smooth","None"],
-  [76,"Ardbeg 10","Malted Barley","Bourbon / American Oak","Scotland / Islay","Citrus & Zesty","Full Strength","Medium & Smooth","Heavy Peat"],
-  [77,"Ardbeg Uigeadail","Malted Barley","Sherry / Wine / Port","Scotland / Islay","Dried Fruit & Sherry","High Proof","Rich & Oily","Heavy Peat"],
-  [78,"Arran 10","Malted Barley","Mixed / Multiple Cask","Scotland / Islands","Citrus & Zesty","Full Strength","Medium & Smooth","None"],
-  [79,"Arran Sherry Cask","Malted Barley","Sherry / Wine / Port","Scotland / Islands","Dried Fruit & Sherry","High Proof","Rich & Oily","None"],
-  [80,"Aberlour 12 Double Cask","Malted Barley","Sherry / Wine / Port","Scotland / Speyside","Dried Fruit & Sherry","Standard","Medium & Smooth","None"],
-  [81,"Aberlour 16","Malted Barley","Sherry / Wine / Port","Scotland / Speyside","Dried Fruit & Sherry","Standard","Rich & Oily","None"],
-  [82,"Bårelegs Battle Axe","Malted Barley","Bourbon / American Oak","Scotland / Islay","Savory & Umami","High Proof","Rich & Oily","Heavy Peat"],
-  [83,"Alfred Giraud Horizon","Malted Barley","Mixed / Multiple Cask","New World / Other","Woody & Oaky","Full Strength","Medium & Smooth","None"],
-  [84,"Amrut Indian Single Malt","Malted Barley","Bourbon / American Oak","New World / India","Malty & Cereal","Full Strength","Medium & Smooth","None"],
-  [85,"Yamazaki 12","Malted Barley","Mixed / Multiple Cask","Japan","Fruity & Tropical","Standard","Medium & Smooth","None"],
-  [86,"Yamazaki Distiller's Reserve","Malted Barley","Mixed / Multiple Cask","Japan","Fruity & Tropical","Standard","Medium & Smooth","None"],
-  [87,"Evan Williams Bottled-in-Bond","Corn-Based","Bourbon / American Oak","USA / Kentucky","Nutty & Toasty","High Proof","Rich & Oily","None"],
-  [88,"Evan Williams Black Label","Corn-Based","Bourbon / American Oak","USA / Kentucky","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [89,"Aberfeldy 16","Malted Barley","Sherry / Wine / Port","Scotland / Highland","Sweet Pastry & Honey","Standard","Rich & Oily","None"],
-  [90,"The Epicurean","Malted Barley","Bourbon / American Oak","Scotland / Lowland","Citrus & Zesty","Full Strength","Light & Crisp","None"],
-  [91,"Angel's Envy Kentucky Straight Bourbon","Corn-Based","Sherry / Wine / Port","USA / Kentucky","Winey & Tannic","Standard","Rich & Oily","None"],
-  [92,"Oban 14","Malted Barley","Bourbon / American Oak","Scotland / Highland","Fruity & Tropical","Standard","Medium & Smooth","Light Peat"],
-  [93,"Old Parr 12","Mixed Grain","Mixed / Multiple Cask","Scotland / All Regions","Malty & Cereal","Standard","Medium & Smooth","Light Peat"],
-  [94,"Wild Turkey 101 8 Year","Corn-Based","Bourbon / American Oak","USA / Kentucky","Spicy & Aromatic","High Proof","Rich & Oily","None"],
-  [95,"Wild Turkey 101 Rye","Rye-Based","Bourbon / American Oak","USA / Kentucky","Spicy & Aromatic","High Proof","Rich & Oily","None"],
-  [96,"Wild Turkey Rare Breed","Corn-Based","Bourbon / American Oak","USA / Kentucky","Spicy & Aromatic","High Proof","Rich & Oily","None"],
-  [97,"Wild Turkey Master's Keep Triumph","Rye-Based","Bourbon / American Oak","USA / Kentucky","Spicy & Aromatic","High Proof","Rich & Oily","None"],
-  [98,"Nikka Yoichi Single Malt","Malted Barley","Mixed / Multiple Cask","Japan","Spicy & Aromatic","Full Strength","Rich & Oily","Medium Peat"],
-  [99,"Woodford Reserve","Corn-Based","Bourbon / American Oak","USA / Kentucky","Nutty & Toasty","Standard","Medium & Smooth","None"],
-  [100,"West Cork Calvados Cask Finish","Malted Barley","Rum / Brandy / Spirit Cask","Ireland","Fruity & Tropical","Standard","Medium & Smooth","None"],
-  [101,"Eagle Rare 10","Corn-Based","Bourbon / American Oak","USA / Kentucky","Woody & Oaky","Full Strength","Medium & Smooth","None"],
-  [102,"Jack Daniel's Old No. 7","Corn-Based","Bourbon / American Oak","USA / Tennessee","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [103,"Jameson Black Barrel","Mixed Grain","Mixed / Multiple Cask","Ireland","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [104,"Jameson Standard","Mixed Grain","Mixed / Multiple Cask","Ireland","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [105,"Johnnie Walker Red Label","Mixed Grain","Mixed / Multiple Cask","Scotland / All Regions","Spicy & Aromatic","Standard","Light & Crisp","Light Peat"],
-  [106,"Johnnie Walker Black Label","Mixed Grain","Mixed / Multiple Cask","Scotland / All Regions","Sweet Pastry & Honey","Standard","Medium & Smooth","Medium Peat"],
-  [107,"Johnnie Walker Black Ruby","Mixed Grain","Mixed / Multiple Cask","Scotland / All Regions","Fruity & Tropical","Standard","Medium & Smooth","Light Peat"],
-  [108,"Johnnie Walker Blue Label","Mixed Grain","Mixed / Multiple Cask","Scotland / All Regions","Sweet Pastry & Honey","Standard","Rich & Oily","Light Peat"],
-  [109,"Johnnie Walker Platinum Label 18","Mixed Grain","Mixed / Multiple Cask","Scotland / All Regions","Dried Fruit & Sherry","Standard","Rich & Oily","Light Peat"],
-  [110,"Jura Origin 10","Malted Barley","Bourbon / American Oak","Scotland / Islands","Malty & Cereal","Standard","Medium & Smooth","None"],
-  [111,"Jim Beam White Label","Corn-Based","Bourbon / American Oak","USA / Kentucky","Sweet Pastry & Honey","Standard","Light & Crisp","None"],
-  [112,"Jim Beam Rye","Rye-Based","Bourbon / American Oak","USA / Kentucky","Spicy & Aromatic","Standard","Medium & Smooth","None"],
-  [113,"Kavalan Solist Vinho Barrique","Malted Barley","Sherry / Wine / Port","New World / Taiwan","Winey & Tannic","High Proof","Rich & Oily","None"],
-  [114,"Canadian Club Classic 12","Mixed Grain","Mixed / Multiple Cask","Canada","Sweet Pastry & Honey","Standard","Medium & Smooth","None"],
-  [115,"Caol Ila 12","Malted Barley","Bourbon / American Oak","Scotland / Islay","Citrus & Zesty","Standard","Medium & Smooth","Medium Peat"],
-  [116,"Cragganmore 12","Malted Barley","Mixed / Multiple Cask","Scotland / Speyside","Malty & Cereal","Standard","Medium & Smooth","Light Peat"],
-  [117,"Nikka Taketsuru Pure Malt","Malted Barley","Mixed / Multiple Cask","Japan","Fruity & Tropical","Standard","Medium & Smooth","Light Peat"],
-  [118,"Talisker Special Release 2023","Malted Barley","Sherry / Wine / Port","Scotland / Islands","Savory & Umami","High Proof","Rich & Oily","Medium Peat"],
-  [119,"Tamnavulin Sauvignon Blanc Cask","Malted Barley","Sherry / Wine / Port","Scotland / Speyside","Citrus & Zesty","Standard","Light & Crisp","None"],
-  [120,"Tamnavulin Sherry Cask","Malted Barley","Sherry / Wine / Port","Scotland / Speyside","Dried Fruit & Sherry","Standard","Medium & Smooth","None"],
-  [121,"Tamnavulin Pinot Noir Cask","Malted Barley","Sherry / Wine / Port","Scotland / Speyside","Winey & Tannic","Standard","Medium & Smooth","None"],
-  [122,"Four Roses Single Barrel","Corn-Based","Bourbon / American Oak","USA / Kentucky","Fruity & Tropical","High Proof","Rich & Oily","None"],
-  [123,"Paul John Brilliance","Malted Barley","Bourbon / American Oak","New World / India","Sweet Pastry & Honey","Full Strength","Medium & Smooth","None"],
-  [124,"Highland Park 12","Malted Barley","Sherry / Wine / Port","Scotland / Islands","Sweet Pastry & Honey","Standard","Medium & Smooth","Light Peat"],
-  [125,"Highland Park 15","Malted Barley","Sherry / Wine / Port","Scotland / Islands","Sweet Pastry & Honey","Full Strength","Rich & Oily","Light Peat"],
-  [126,"High West Rendezvous Rye","Rye-Based","Bourbon / American Oak","USA / Other","Spicy & Aromatic","Full Strength","Rich & Oily","None"],
-  [127,"High West Bourbon","Corn-Based","Bourbon / American Oak","USA / Other","Sweet Pastry & Honey","Full Strength","Medium & Smooth","None"],
-  [128,"Heaven's Door Double Barrel","Mixed Grain","Bourbon / American Oak","USA / Other","Woody & Oaky","High Proof","Rich & Oily","None"],
-  [129,"Fuji Sanroku Signature Blend","Mixed Grain","Mixed / Multiple Cask","Japan","Fruity & Tropical","High Proof","Rich & Oily","None"],
-  [130, "Glen Scotia Double Cask", "Malted Barley", "Mixed / Multiple Cask", "Scotland / Campbeltown", "Dried Fruit & Sherry", "Full Strength", "Medium & Smooth", "None"],
-  [131, "Bernheim Original Kentucky Straight Wheat Whiskey", "Wheat-Based", "Bourbon / American Oak", "USA / Kentucky", "Sweet Pastry & Honey", "Full Strength", "Medium & Smooth", "None"],
-  [132, "The Hakushu 12 Year Old", "Malted Barley", "Mixed / Multiple Cask", "Japan", "Floral & Herbal", "Standard", "Light & Crisp", "Light Peat"],
-  [133, "The Hakushu Distiller's Reserve", "Malted Barley", "Mixed / Multiple Cask", "Japan", "Floral & Herbal", "Standard", "Light & Crisp", "Light Peat"],
-  [134, "Signatory Edradour 10 Year Old UCF", "Malted Barley", "Sherry / Wine / Port", "Scotland / Highland", "Dried Fruit & Sherry", "Full Strength", "Rich & Oily", "None"],
-  [135, "Bunnahabhain 12 Year Old", "Malted Barley", "Mixed / Multiple Cask", "Scotland / Islay", "Dried Fruit & Sherry", "Full Strength", "Rich & Oily", "None"],
-  [136, "Glenfiddich 23 Grand Cru", "Malted Barley", "Sherry / Wine / Port", "Scotland / Speyside", "Sweet Pastry & Honey", "Standard", "Medium & Smooth", "None"],
-  [137, "Talisker 10 Year Old", "Malted Barley", "Bourbon / American Oak", "Scotland / Islands", "Spicy & Aromatic", "Full Strength", "Medium & Smooth", "Medium Peat"],
-  [138, "Jack Daniel's Single Barrel Barrel Strength", "Corn-Based", "Bourbon / American Oak", "USA / Tennessee", "Sweet Pastry & Honey", "High Proof", "Rich & Oily", "None"]
+  [
+    1,
+    "1792 Small Batch",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Sweet Pastry & Honey",
+    "Full Strength",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    2,
+    "The Glenlivet 18",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Speyside",
+    "Dried Fruit & Sherry",
+    "Standard",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    3,
+    "The Glenturret 12",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Highland",
+    "Dried Fruit & Sherry",
+    "Full Strength",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    4,
+    "Glenfarclas 15",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Chocolate & Coffee",
+    "Full Strength",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    5,
+    "Glengoyne 12",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Highland",
+    "Fruity & Tropical",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    6,
+    "The Glen Grant 12",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Speyside",
+    "Fruity & Tropical",
+    "Standard",
+    "Light & Crisp",
+    "None"
+  ],
+  [
+    7,
+    "The Glen Grant 18",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Speyside",
+    "Fruity & Tropical",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    8,
+    "Glenglassaugh 12",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Highland",
+    "Fruity & Tropical",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    9,
+    "The GlenDronach 12",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Highland",
+    "Dried Fruit & Sherry",
+    "Standard",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    10,
+    "The GlenDronach 18 Allardice",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Highland",
+    "Chocolate & Coffee",
+    "Full Strength",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    11,
+    "The Glenrothes 12",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Fruity & Tropical",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    12,
+    "The Glenlivet 12",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Speyside",
+    "Fruity & Tropical",
+    "Standard",
+    "Light & Crisp",
+    "None"
+  ],
+  [
+    13,
+    "Glenmorangie The Original 12",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Highland",
+    "Citrus & Zesty",
+    "Standard",
+    "Light & Crisp",
+    "None"
+  ],
+  [
+    14,
+    "Glenmorangie The Nectar 16",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Highland",
+    "Sweet Pastry & Honey",
+    "Full Strength",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    15,
+    "Glenmorangie Signet",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Highland",
+    "Chocolate & Coffee",
+    "Full Strength",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    16,
+    "The GlenAllachie 12",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Dried Fruit & Sherry",
+    "Full Strength",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    17,
+    "The GlenAllachie 8",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Dried Fruit & Sherry",
+    "Full Strength",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    18,
+    "The Glenturret 10 Peat Smoked",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Highland",
+    "Dried Fruit & Sherry",
+    "High Proof",
+    "Rich & Oily",
+    "Heavy Peat"
+  ],
+  [
+    19,
+    "The Glenturret Triple Wood",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Highland",
+    "Dried Fruit & Sherry",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    20,
+    "Glenfiddich 12",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Speyside",
+    "Fruity & Tropical",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    21,
+    "Glenfiddich 18",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Speyside",
+    "Dried Fruit & Sherry",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    22,
+    "Ki One Unicorn",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "New World / South Korea",
+    "Earthy & Leather",
+    "Full Strength",
+    "Rich & Oily",
+    "Medium Peat"
+  ],
+  [
+    23,
+    "Ki One Tiger",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "New World / South Korea",
+    "Fruity & Tropical",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    24,
+    "Ki One Eagle",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "New World / South Korea",
+    "Woody & Oaky",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    25,
+    "Kim Chang-soo Whisky 51.7",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "New World / South Korea",
+    "Dried Fruit & Sherry",
+    "High Proof",
+    "Rich & Oily",
+    "Medium Peat"
+  ],
+  [
+    26,
+    "Knob Creek Rye",
+    "Rye-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Spicy & Aromatic",
+    "High Proof",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    27,
+    "Knob Creek Kentucky Straight Bourbon",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Woody & Oaky",
+    "High Proof",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    28,
+    "Naked Malt",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / All Regions",
+    "Dried Fruit & Sherry",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    29,
+    "The Dalmore 12",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Highland",
+    "Chocolate & Coffee",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    30,
+    "The Dalmore Cigar Malt Reserve",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Highland",
+    "Chocolate & Coffee",
+    "Full Strength",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    31,
+    "The Dalmore King Alexander III",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Highland",
+    "Dried Fruit & Sherry",
+    "Standard",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    32,
+    "Dewar's 12",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Scotland / All Regions",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    33,
+    "Dewar's 18 Mizunara Cask Finish",
+    "Mixed Grain",
+    "Special / Experimental",
+    "Scotland / All Regions",
+    "Woody & Oaky",
+    "Standard",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    34,
+    "Deanston Virgin Oak",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Highland",
+    "Sweet Pastry & Honey",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    35,
+    "Lagavulin 16",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Islay",
+    "Dried Fruit & Sherry",
+    "Standard",
+    "Rich & Oily",
+    "Heavy Peat"
+  ],
+  [
+    36,
+    "Lagavulin 8",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Islay",
+    "Citrus & Zesty",
+    "Full Strength",
+    "Medium & Smooth",
+    "Heavy Peat"
+  ],
+  [
+    37,
+    "Laphroaig 10",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Islay",
+    "Savory & Umami",
+    "Standard",
+    "Rich & Oily",
+    "Heavy Peat"
+  ],
+  [
+    38,
+    "Laphroaig Quarter Cask",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Islay",
+    "Woody & Oaky",
+    "Full Strength",
+    "Rich & Oily",
+    "Heavy Peat"
+  ],
+  [
+    39,
+    "Russell's Reserve Single Barrel",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Spicy & Aromatic",
+    "High Proof",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    40,
+    "Russell's Reserve 10",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Woody & Oaky",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    41,
+    "Redbreast 12",
+    "Malted & Unmalted Barley",
+    "Mixed / Multiple Cask",
+    "Ireland",
+    "Dried Fruit & Sherry",
+    "Standard",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    42,
+    "Rebel 100 Kentucky Straight Bourbon",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Sweet Pastry & Honey",
+    "High Proof",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    43,
+    "Royal Brackla 12",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Highland",
+    "Fruity & Tropical",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    44,
+    "Royal Brackla 18",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Highland",
+    "Dried Fruit & Sherry",
+    "Full Strength",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    45,
+    "Royal Salute 21",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Scotland / All Regions",
+    "Dried Fruit & Sherry",
+    "Standard",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    46,
+    "Loch Lomond 12",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Highland",
+    "Fruity & Tropical",
+    "Full Strength",
+    "Medium & Smooth",
+    "Light Peat"
+  ],
+  [
+    47,
+    "The Macallan 12 Double Cask",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    48,
+    "Maker's Mark",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Sweet Pastry & Honey",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    49,
+    "Mellow Corn",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Malty & Cereal",
+    "High Proof",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    50,
+    "Monkey Shoulder",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / All Regions",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    51,
+    "Michter's US*1 Small Batch Bourbon",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Sweet Pastry & Honey",
+    "Full Strength",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    52,
+    "Michter's US*1 Unblended American Whiskey",
+    "Mixed Grain",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    53,
+    "Ballantine's Glenburgie 12",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Speyside",
+    "Fruity & Tropical",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    54,
+    "Ballantine's 21",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Scotland / All Regions",
+    "Dried Fruit & Sherry",
+    "Standard",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    55,
+    "Ballantine's Masters",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Scotland / All Regions",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    56,
+    "The Balvenie 12 DoubleWood",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    57,
+    "The Balvenie 14 Caribbean Cask",
+    "Malted Barley",
+    "Rum / Brandy / Spirit Cask",
+    "Scotland / Speyside",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    58,
+    "The Balvenie 16 French Oak",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Floral & Herbal",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    59,
+    "The Busker Triple Cask",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Ireland",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    60,
+    "Benromach 10",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Speyside",
+    "Malty & Cereal",
+    "Standard",
+    "Medium & Smooth",
+    "Light Peat"
+  ],
+  [
+    61,
+    "Benriach The Smoky Ten",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Speyside",
+    "Sweet Pastry & Honey",
+    "Full Strength",
+    "Medium & Smooth",
+    "Medium Peat"
+  ],
+  [
+    62,
+    "Benriach 16",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Speyside",
+    "Fruity & Tropical",
+    "Standard",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    63,
+    "Benchmark Old No. 8",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    64,
+    "Bowmore 12",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Islay",
+    "Chocolate & Coffee",
+    "Standard",
+    "Medium & Smooth",
+    "Light Peat"
+  ],
+  [
+    65,
+    "Bowmore 18",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Islay",
+    "Chocolate & Coffee",
+    "Standard",
+    "Rich & Oily",
+    "Light Peat"
+  ],
+  [
+    66,
+    "Bushmills 10",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Ireland",
+    "Fruity & Tropical",
+    "Standard",
+    "Light & Crisp",
+    "None"
+  ],
+  [
+    67,
+    "Bushmills 12",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Ireland",
+    "Dried Fruit & Sherry",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    68,
+    "Bulleit Rye",
+    "Rye-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Spicy & Aromatic",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    69,
+    "Bulleit Bourbon",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Spicy & Aromatic",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    70,
+    "Brenne French Single Malt",
+    "Malted Barley",
+    "Rum / Brandy / Spirit Cask",
+    "New World / Other",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    71,
+    "Hibiki Japanese Harmony",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Japan",
+    "Floral & Herbal",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    72,
+    "Smokehead Original",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Islay",
+    "Malty & Cereal",
+    "Standard",
+    "Rich & Oily",
+    "Heavy Peat"
+  ],
+  [
+    73,
+    "Starward Nova",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "New World / Other",
+    "Winey & Tannic",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    74,
+    "Chivas Regal 12",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Scotland / All Regions",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    75,
+    "The Singleton of Dufftown 12",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Speyside",
+    "Fruity & Tropical",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    76,
+    "Ardbeg 10",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Islay",
+    "Citrus & Zesty",
+    "Full Strength",
+    "Medium & Smooth",
+    "Heavy Peat"
+  ],
+  [
+    77,
+    "Ardbeg Uigeadail",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Islay",
+    "Dried Fruit & Sherry",
+    "High Proof",
+    "Rich & Oily",
+    "Heavy Peat"
+  ],
+  [
+    78,
+    "Arran 10",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Islands",
+    "Citrus & Zesty",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    79,
+    "Arran Sherry Cask",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Islands",
+    "Dried Fruit & Sherry",
+    "High Proof",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    80,
+    "Aberlour 12 Double Cask",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Dried Fruit & Sherry",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    81,
+    "Aberlour 16",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Dried Fruit & Sherry",
+    "Standard",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    82,
+    "Bårelegs Battle Axe",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Islay",
+    "Savory & Umami",
+    "High Proof",
+    "Rich & Oily",
+    "Heavy Peat"
+  ],
+  [
+    83,
+    "Alfred Giraud Horizon",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "New World / Other",
+    "Woody & Oaky",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    84,
+    "Amrut Indian Single Malt",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "New World / India",
+    "Malty & Cereal",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    85,
+    "Yamazaki 12",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Japan",
+    "Fruity & Tropical",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    86,
+    "Yamazaki Distiller's Reserve",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Japan",
+    "Fruity & Tropical",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    87,
+    "Evan Williams Bottled-in-Bond",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Nutty & Toasty",
+    "High Proof",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    88,
+    "Evan Williams Black Label",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    89,
+    "Aberfeldy 16",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Highland",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    90,
+    "The Epicurean",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Lowland",
+    "Citrus & Zesty",
+    "Full Strength",
+    "Light & Crisp",
+    "None"
+  ],
+  [
+    91,
+    "Angel's Envy Kentucky Straight Bourbon",
+    "Corn-Based",
+    "Sherry / Wine / Port",
+    "USA / Kentucky",
+    "Winey & Tannic",
+    "Standard",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    92,
+    "Oban 14",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Highland",
+    "Fruity & Tropical",
+    "Standard",
+    "Medium & Smooth",
+    "Light Peat"
+  ],
+  [
+    93,
+    "Old Parr 12",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Scotland / All Regions",
+    "Malty & Cereal",
+    "Standard",
+    "Medium & Smooth",
+    "Light Peat"
+  ],
+  [
+    94,
+    "Wild Turkey 101 8 Year",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Spicy & Aromatic",
+    "High Proof",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    95,
+    "Wild Turkey 101 Rye",
+    "Rye-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Spicy & Aromatic",
+    "High Proof",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    96,
+    "Wild Turkey Rare Breed",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Spicy & Aromatic",
+    "High Proof",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    97,
+    "Wild Turkey Master's Keep Triumph",
+    "Rye-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Spicy & Aromatic",
+    "High Proof",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    98,
+    "Nikka Yoichi Single Malt",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Japan",
+    "Spicy & Aromatic",
+    "Full Strength",
+    "Rich & Oily",
+    "Medium Peat"
+  ],
+  [
+    99,
+    "Woodford Reserve",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Nutty & Toasty",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    100,
+    "West Cork Calvados Cask Finish",
+    "Malted Barley",
+    "Rum / Brandy / Spirit Cask",
+    "Ireland",
+    "Fruity & Tropical",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    101,
+    "Eagle Rare 10",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Woody & Oaky",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    102,
+    "Jack Daniel's Old No. 7",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Tennessee",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    103,
+    "Jameson Black Barrel",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Ireland",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    104,
+    "Jameson Standard",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Ireland",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    105,
+    "Johnnie Walker Red Label",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Scotland / All Regions",
+    "Spicy & Aromatic",
+    "Standard",
+    "Light & Crisp",
+    "Light Peat"
+  ],
+  [
+    106,
+    "Johnnie Walker Black Label",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Scotland / All Regions",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "Medium Peat"
+  ],
+  [
+    107,
+    "Johnnie Walker Black Ruby",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Scotland / All Regions",
+    "Fruity & Tropical",
+    "Standard",
+    "Medium & Smooth",
+    "Light Peat"
+  ],
+  [
+    108,
+    "Johnnie Walker Blue Label",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Scotland / All Regions",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Rich & Oily",
+    "Light Peat"
+  ],
+  [
+    109,
+    "Johnnie Walker Platinum Label 18",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Scotland / All Regions",
+    "Dried Fruit & Sherry",
+    "Standard",
+    "Rich & Oily",
+    "Light Peat"
+  ],
+  [
+    110,
+    "Jura Origin 10",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Islands",
+    "Malty & Cereal",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    111,
+    "Jim Beam White Label",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Light & Crisp",
+    "None"
+  ],
+  [
+    112,
+    "Jim Beam Rye",
+    "Rye-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Spicy & Aromatic",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    113,
+    "Kavalan Solist Vinho Barrique",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "New World / Taiwan",
+    "Winey & Tannic",
+    "High Proof",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    114,
+    "Canadian Club Classic 12",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Canada",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    115,
+    "Caol Ila 12",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Islay",
+    "Citrus & Zesty",
+    "Standard",
+    "Medium & Smooth",
+    "Medium Peat"
+  ],
+  [
+    116,
+    "Cragganmore 12",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Speyside",
+    "Malty & Cereal",
+    "Standard",
+    "Medium & Smooth",
+    "Light Peat"
+  ],
+  [
+    117,
+    "Nikka Taketsuru Pure Malt",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Japan",
+    "Fruity & Tropical",
+    "Standard",
+    "Medium & Smooth",
+    "Light Peat"
+  ],
+  [
+    118,
+    "Talisker Special Release 2023",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Islands",
+    "Savory & Umami",
+    "High Proof",
+    "Rich & Oily",
+    "Medium Peat"
+  ],
+  [
+    119,
+    "Tamnavulin Sauvignon Blanc Cask",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Citrus & Zesty",
+    "Standard",
+    "Light & Crisp",
+    "None"
+  ],
+  [
+    120,
+    "Tamnavulin Sherry Cask",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Dried Fruit & Sherry",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    121,
+    "Tamnavulin Pinot Noir Cask",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Winey & Tannic",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    122,
+    "Four Roses Single Barrel",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Fruity & Tropical",
+    "High Proof",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    123,
+    "Paul John Brilliance",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "New World / India",
+    "Sweet Pastry & Honey",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    124,
+    "Highland Park 12",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Islands",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "Light Peat"
+  ],
+  [
+    125,
+    "Highland Park 15",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Islands",
+    "Sweet Pastry & Honey",
+    "Full Strength",
+    "Rich & Oily",
+    "Light Peat"
+  ],
+  [
+    126,
+    "High West Rendezvous Rye",
+    "Rye-Based",
+    "Bourbon / American Oak",
+    "USA / Other",
+    "Spicy & Aromatic",
+    "Full Strength",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    127,
+    "High West Bourbon",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Other",
+    "Sweet Pastry & Honey",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    128,
+    "Heaven's Door Double Barrel",
+    "Mixed Grain",
+    "Bourbon / American Oak",
+    "USA / Other",
+    "Woody & Oaky",
+    "High Proof",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    129,
+    "Fuji Sanroku Signature Blend",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Japan",
+    "Fruity & Tropical",
+    "High Proof",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    130,
+    "Glen Scotia Double Cask",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Campbeltown",
+    "Dried Fruit & Sherry",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    131,
+    "Bernheim Original Kentucky Straight Wheat Whiskey",
+    "Wheat-Based",
+    "Bourbon / American Oak",
+    "USA / Kentucky",
+    "Sweet Pastry & Honey",
+    "Full Strength",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    132,
+    "The Hakushu 12 Year Old",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Japan",
+    "Floral & Herbal",
+    "Standard",
+    "Light & Crisp",
+    "Light Peat"
+  ],
+  [
+    133,
+    "The Hakushu Distiller's Reserve",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Japan",
+    "Floral & Herbal",
+    "Standard",
+    "Light & Crisp",
+    "Light Peat"
+  ],
+  [
+    135,
+    "Bunnahabhain 12 Year Old",
+    "Malted Barley",
+    "Mixed / Multiple Cask",
+    "Scotland / Islay",
+    "Dried Fruit & Sherry",
+    "Full Strength",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    136,
+    "Glenfiddich 23 Grand Cru",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Sweet Pastry & Honey",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    137,
+    "Talisker 10 Year Old",
+    "Malted Barley",
+    "Bourbon / American Oak",
+    "Scotland / Islands",
+    "Spicy & Aromatic",
+    "Full Strength",
+    "Medium & Smooth",
+    "Medium Peat"
+  ],
+  [
+    138,
+    "Jack Daniel's Single Barrel Barrel Strength",
+    "Corn-Based",
+    "Bourbon / American Oak",
+    "USA / Tennessee",
+    "Sweet Pastry & Honey",
+    "High Proof",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    139,
+    "The Macallan A Night on Earth – The First Light",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Fruity & Tropical",
+    "Standard",
+    "Medium & Smooth",
+    "None"
+  ],
+  [
+    140,
+    "The Macallan Harmony Collection Inspired by Phoenix Honey Orchid Tea",
+    "Malted Barley",
+    "Sherry / Wine / Port",
+    "Scotland / Speyside",
+    "Floral & Herbal",
+    "Standard",
+    "Rich & Oily",
+    "None"
+  ],
+  [
+    141,
+    "Ballantine's 30 Year Old",
+    "Mixed Grain",
+    "Mixed / Multiple Cask",
+    "Scotland / All Regions",
+    "Fruity & Tropical",
+    "Standard",
+    "Rich & Oily",
+    "None"
+  ]
 ];;
 
 const AXES=[
@@ -745,13 +2146,10 @@ const OPTS={
 };
 const FLABELS={mat:"원료 (Material)",cask:"숙성 캐스크 (Cask)",ori:"원산지 (Origin)",flv:"향미 (Flavor)",str:"도수 (Strength)",bod:"바디 (Body)",peat:"피트 강도 (Peat Intensity)"};
 
-const STORAGE_KEY='sc_ws_v12_actual_stock_138'; // (레거시 키, 더 이상 사용 안 함)
+const STORAGE_KEY='sc_ws_v14_local_stock_140';
 
 const ADMIN_PIN='1994';
 const PIN_SESSION_KEY='spirit_core_admin_pin_unlocked';
-const SUPABASE_URL  = 'https://qmyhhergbtoojhihbour.supabase.co';
-const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFteWhoZXJnYnRvb2poaWhib3VyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk3MDA3NjAsImV4cCI6MjA5NTI3Njc2MH0.JCV48pzWoa_BLHmj1EtmDLuAIaqrag7O06qq6peNn60';
-const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
 const FIELD_ORDER=['mat','cask','ori','flv','str','bod','peat'];
 const VALUE_ALIASES={
   "Single Malt":"Malted Barley",
@@ -792,10 +2190,7 @@ const PRODUCT_MIGRATIONS={
 };
 
 const PRODUCT_KO_NAMES={
-  "1792 Small Batch": "1792 스몰 배치",
-  "The Glenlivet 18": "글렌리벳 18년",
-  "The Glenturret 12": "글렌터렛 12년",
-  "Glenfarclas 15": "글렌파클라스 15년",
+  "1792 Small Batch": "1792 스몰배치",
   "Glengoyne 12": "글렌고인 12년",
   "The Glen Grant 12": "글렌그란트 12년",
   "The Glen Grant 18": "글렌그란트 18년",
@@ -804,134 +2199,141 @@ const PRODUCT_KO_NAMES={
   "The GlenDronach 18 Allardice": "글렌드로낙 18년",
   "The Glenrothes 12": "글렌로티스 12년",
   "The Glenlivet 12": "글렌리벳 12년",
-  "Glenmorangie The Original 12": "글렌모렌지 12년 디 오리지널",
+  "The Glenlivet 18": "글렌리벳 18년",
+  "Glenmorangie The Original 12": "글렌모렌지 12년 디오리지널",
   "Glenmorangie The Nectar 16": "글렌모렌지 16년 더 넥타",
   "Glenmorangie Signet": "글렌모렌지 시그넷",
+  "Glen Scotia Double Cask": "글렌스코시아 더블캐스크",
   "The GlenAllachie 12": "글렌알라키 12년",
   "The GlenAllachie 8": "글렌알라키 8년",
-  "The Glenturret 10 Peat Smoked": "글렌터렛 10년 피트 스모크",
-  "The Glenturret Triple Wood": "글렌터렛 트리플 우드",
+  "The Glenturret 10 Peat Smoked": "글렌터렛 10년 피트스모크",
+  "The Glenturret 12": "글렌터렛 12년",
+  "The Glenturret Triple Wood": "글렌터렛 트리플우드",
+  "Glenfarclas 15": "글렌파클라스 15년",
   "Glenfiddich 12": "글렌피딕 12년",
   "Glenfiddich 18": "글렌피딕 18년",
+  "Glenfiddich 23 Grand Cru": "글렌피딕 23년 그랑크루",
+  "Ki One Eagle": "기원 독수리",
   "Ki One Unicorn": "기원 유니콘",
   "Ki One Tiger": "기원 호랑이",
-  "Ki One Eagle": "기원 독수리",
-  "Kim Chang-soo Whisky 51.7": "김창수 위스키 51.7",
-  "Knob Creek Rye": "놉 크릭 라이",
-  "Knob Creek Kentucky Straight Bourbon": "놉 크릭 버번",
-  "Naked Malt": "네이키드 몰트",
+  "Kim Chang-soo Whisky 51.7": "김창수위스키 51.7",
+  "Knob Creek Rye": "납 크릭 라이",
+  "Knob Creek Kentucky Straight Bourbon": "납 크릭 버번",
+  "Naked Malt": "네이키드몰트 블랜디드",
   "The Dalmore 12": "달모어 12년",
-  "The Dalmore Cigar Malt Reserve": "달모어 시가 몰트 리저브",
+  "The Dalmore Cigar Malt Reserve": "달모어 시가몰트 리저브",
   "The Dalmore King Alexander III": "달모어 킹 알렉산더 3세",
   "Dewar's 12": "듀어스 12년",
-  "Dewar's 18 Mizunara Cask Finish": "듀어스 18년 미즈나라 캐스크 피니시",
-  "Deanston Virgin Oak": "딘스톤 버진 오크",
+  "Dewar's 18 Mizunara Cask Finish": "듀어스 18년 미즈나라캐스크",
+  "Deanston Virgin Oak": "딘스톤 버진오크",
   "Lagavulin 16": "라가불린 16년",
   "Lagavulin 8": "라가불린 8년",
   "Laphroaig 10": "라프로익 10년",
-  "Laphroaig Quarter Cask": "라프로익 쿼터 캐스크",
-  "Russell's Reserve Single Barrel": "러셀 리저브 싱글 배럴",
+  "Laphroaig Quarter Cask": "라프로익 쿼터캐스크",
   "Russell's Reserve 10": "러셀 리저브 10년",
+  "Russell's Reserve Single Barrel": "러셀 리저브 싱글배럴",
   "Redbreast 12": "레드브레스트 12년",
-  "Rebel 100 Kentucky Straight Bourbon": "레벨 100 스트레이트 버번",
-  "Royal Brackla 12": "로얄 브라클라 12년",
-  "Royal Brackla 18": "로얄 브라클라 18년",
-  "Royal Salute 21": "로얄 살루트 21년",
-  "Loch Lomond 12": "로크 로몬드 12년",
-  "The Macallan 12 Double Cask": "맥캘란 12년 더블 캐스크",
+  "Rebel 100 Kentucky Straight Bourbon": "레벨옐 스트레이트 버번 100프루프",
+  "Royal Brackla 12": "로얄브라클라 12년",
+  "Royal Brackla 18": "로얄브라클라 18년",
+  "Royal Salute 21": "로얄살루트 21년",
+  "Loch Lomond 12": "로크로몬드 12년",
+  "The Macallan 12 Double Cask": "맥캘란 12년 더블캐스크",
+  "The Macallan A Night on Earth – The First Light": "맥캘란 나이트 온 어스 더 퍼스트 라이트",
+  "The Macallan Harmony Collection Inspired by Phoenix Honey Orchid Tea": "맥캘란 더 하모니 징",
   "Maker's Mark": "메이커스 마크",
   "Mellow Corn": "멜로우 콘",
   "Monkey Shoulder": "몽키 숄더",
-  "Michter's US*1 Small Batch Bourbon": "믹터스 스몰 배치 버번",
+  "Michter's US*1 Small Batch Bourbon": "믹터스 스몰배치",
   "Michter's US*1 Unblended American Whiskey": "믹터스 언블렌디드 아메리칸",
-  "Ballantine's Glenburgie 12": "발렌타인 글렌버기 12년",
+  "Ballantine's Glenburgie 12": "발렌타인 12년 글렌버기",
   "Ballantine's 21": "발렌타인 21년",
+  "Ballantine's 30 Year Old": "발렌타인 30년",
   "Ballantine's Masters": "발렌타인 마스터스",
   "The Balvenie 12 DoubleWood": "발베니 12년 더블우드",
   "The Balvenie 14 Caribbean Cask": "발베니 14년 캐리비안 캐스크",
-  "The Balvenie 16 French Oak": "발베니 16년 프렌치 오크",
-  "The Busker Triple Cask": "버스커 트리플 캐스크",
+  "The Balvenie 16 French Oak": "발베니 16년 프렌치오크",
+  "The Busker Triple Cask": "버스커 트리플캐스크",
   "Benromach 10": "벤로막 10년",
-  "Benriach The Smoky Ten": "벤리악 스모키 10년",
   "Benriach 16": "벤리악 16년",
-  "Benchmark Old No. 8": "벤치마크 올드 No. 8",
+  "Benriach The Smoky Ten": "벤리악 스모키 10년",
+  "Benchmark Old No. 8": "벤치마크위스키(No.8)",
   "Bowmore 12": "보모어 12년",
   "Bowmore 18": "보모어 18년",
+  "Bunnahabhain 12 Year Old": "부나하벤 12년",
   "Bushmills 10": "부쉬밀 10년",
   "Bushmills 12": "부쉬밀 12년",
   "Bulleit Rye": "불렛 라이",
   "Bulleit Bourbon": "불렛 버번",
-  "Brenne French Single Malt": "브렌 프렌치 싱글 몰트",
-  "Hibiki Japanese Harmony": "산토리 히비키 하모니",
+  "Brenne French Single Malt": "브렌 프렌치 싱글몰트",
   "Smokehead Original": "스모크헤드 오리지널",
   "Starward Nova": "스타워드 노바",
-  "Chivas Regal 12": "시바스 리갈 12년",
+  "Chivas Regal 12": "시바스리갈 12년",
   "The Singleton of Dufftown 12": "싱글톤 더프타운 12년",
   "Ardbeg 10": "아드벡 10년",
   "Ardbeg Uigeadail": "아드벡 우거다일",
   "Arran 10": "아란 10년",
-  "Arran Sherry Cask": "아란 셰리 캐스크",
-  "Aberlour 12 Double Cask": "아벨라워 12년 더블 캐스크",
+  "Arran Sherry Cask": "아란 쉐리 캐스크",
+  "Aberlour 12 Double Cask": "아벨라워 12년 더블캐스크",
   "Aberlour 16": "아벨라워 16년",
-  "Bårelegs Battle Axe": "베어레그스 배틀 액스 (아일라 보이즈)",
-  "Alfred Giraud Horizon": "알프레드 지로 호라이즌",
-  "Amrut Indian Single Malt": "암룻 인디언 싱글 몰트",
+  "Bårelegs Battle Axe": "아일라보이즈배틀엑스",
+  "Alfred Giraud Horizon": "알프레드지로호라이즌",
+  "Amrut Indian Single Malt": "암룻인디언",
   "Yamazaki 12": "야마자키 12년",
-  "Yamazaki Distiller's Reserve": "야마자키 디스틸러스 리저브",
-  "Evan Williams Bottled-in-Bond": "에반 윌리엄스 바틀드 인 본드",
+  "Yamazaki Distiller's Reserve": "야마자키 DR",
+  "Evan Williams Bottled-in-Bond": "에반 윌리엄스 BIB",
   "Evan Williams Black Label": "에반 윌리엄스 블랙",
-  "Aberfeldy 16": "애버펠디 16년",
+  "Aberfeldy 16": "에버펠디 16년",
   "The Epicurean": "에피큐리안",
-  "Angel's Envy Kentucky Straight Bourbon": "엔젤스 엔비",
+  "Angel's Envy Kentucky Straight Bourbon": "엔젤스엔비",
   "Oban 14": "오반 14년",
-  "Old Parr 12": "올드 파 12년",
-  "Wild Turkey 101 8 Year": "와일드 터키 101 8년",
-  "Wild Turkey 101 Rye": "와일드 터키 101 라이",
-  "Wild Turkey Rare Breed": "와일드 터키 레어 브리드",
-  "Wild Turkey Master's Keep Triumph": "와일드 터키 마스터스 킵 트라이엄프",
-  "Nikka Yoichi Single Malt": "요이치 싱글 몰트",
+  "Old Parr 12": "올드파 12년",
+  "Wild Turkey 101 8 Year": "와일드터키 101 8년",
+  "Wild Turkey 101 Rye": "와일드터키 101 라이",
+  "Wild Turkey Rare Breed": "와일드터키 레어브리드",
+  "Wild Turkey Master's Keep Triumph": "와일드터키 마스터스킵 트라이엄프",
+  "Nikka Yoichi Single Malt": "요이치 싱글몰트",
   "Woodford Reserve": "우드포드 리저브",
-  "West Cork Calvados Cask Finish": "웨스트 콕 아이리시 칼바도스 캐스크",
-  "Eagle Rare 10": "이글 레어 10년",
+  "West Cork Calvados Cask Finish": "웨스트콕 아이리쉬 칼바도스캐스크",
+  "Eagle Rare 10": "이글레어 10년",
   "Jack Daniel's Old No. 7": "잭 다니엘스",
-  "Jameson Black Barrel": "제임슨 블랙 배럴",
+  "Jack Daniel's Single Barrel Barrel Strength": "잭다니엘 싱글배럴 배럴스트렝스",
+  "Jameson Black Barrel": "제임슨 블랙배럴",
   "Jameson Standard": "제임슨 스탠다드",
   "Johnnie Walker Red Label": "조니워커 레드",
   "Johnnie Walker Black Label": "조니워커 블랙",
-  "Johnnie Walker Black Ruby": "조니워커 블랙 루비",
+  "Johnnie Walker Black Ruby": "조니워커 블랙루비",
   "Johnnie Walker Blue Label": "조니워커 블루",
-  "Johnnie Walker Platinum Label 18": "조니워커 플래티넘 18년",
-  "Jura Origin 10": "주라 오리진 10년",
-  "Jim Beam White Label": "짐빔 화이트",
-  "Jim Beam Rye": "짐빔 라이",
+  "Johnnie Walker Platinum Label 18": "조니워커 플래티넘",
+  "Jura Origin 10": "주라 10년",
+  "Jim Beam Rye": "짐 빔 라이",
+  "Jim Beam White Label": "짐 빔 화이트",
   "Kavalan Solist Vinho Barrique": "카발란 솔리스트 비노 바리크",
   "Canadian Club Classic 12": "캐나디언 클럽 12년",
   "Caol Ila 12": "쿨일라 12년",
-  "Cragganmore 12": "크래건모어 12년",
-  "Nikka Taketsuru Pure Malt": "타케츠루 퓨어 몰트",
-  "Talisker Special Release 2023": "탈리스커 SR 2023",
-  "Tamnavulin Sauvignon Blanc Cask": "탐나불린 소비뇽 블랑 캐스크",
-  "Tamnavulin Sherry Cask": "탐나불린 셰리 캐스크",
-  "Tamnavulin Pinot Noir Cask": "탐나불린 피노 누아 캐스크",
-  "Four Roses Single Barrel": "포 로지스 싱글 배럴",
-  "Paul John Brilliance": "폴 존 브릴리언스",
+  "Cragganmore 12": "크래겐모어 12년",
+  "Nikka Taketsuru Pure Malt": "타케츠루 퓨어몰트",
+  "Talisker 10 Year Old": "탈리스커 10년",
+  "Talisker Special Release 2023": "탈리스커 SR2023",
+  "Tamnavulin Sauvignon Blanc Cask": "탐나불린 쇼비뇽블랑 캐스크",
+  "Tamnavulin Sherry Cask": "탐나불린 쉐리캐스크",
+  "Tamnavulin Pinot Noir Cask": "탐나불린 피노누아캐스크",
+  "Four Roses Single Barrel": "포로지스 싱글배럴",
+  "Paul John Brilliance": "폴존 브릴리언스",
   "Highland Park 12": "하이랜드 파크 12년",
   "Highland Park 15": "하이랜드 파크 15년",
-  "High West Rendezvous Rye": "하이 웨스트 랑데뷰 라이",
-  "High West Bourbon": "하이 웨스트 버번",
-  "Heaven's Door Double Barrel": "헤븐스 도어 더블 배럴",
-  "Fuji Sanroku Signature Blend": "후지산로쿠 시그니처 블렌드",
-  "Glen Scotia Double Cask": "글렌스코시아 더블 캐스크",
-  "Bernheim Original Kentucky Straight Wheat Whiskey": "번하임 오리지널",
+  "High West Rendezvous Rye": "하이웨스트 랑데뷰",
+  "High West Bourbon": "하이웨스트 버번",
   "The Hakushu 12 Year Old": "하쿠슈 12년",
-  "The Hakushu Distiller's Reserve": "하쿠슈 디스틸러스 리저브",
-  "Signatory Edradour 10 Year Old UCF": "시그나토리 에드라두어 10년 UCF",
-  "Bunnahabhain 12 Year Old": "부나하벤 12년",
-  "Glenfiddich 23 Grand Cru": "글렌피딕 23년 그랑 크루",
-  "Talisker 10 Year Old": "탈리스커 10년",
-  "Jack Daniel's Single Barrel Barrel Strength": "잭다니엘 싱글배럴 배럴 스트렝스"
+  "The Hakushu Distiller's Reserve": "하쿠슈 DR",
+  "Heaven's Door Double Barrel": "헤븐스 도어 더블배럴",
+  "Fuji Sanroku Signature Blend": "후지산로쿠 시그니처 블랜드",
+  "Hibiki Japanese Harmony": "히비키 하모니",
+  "Bernheim Original Kentucky Straight Wheat Whiskey": "번하임 오리지널"
 };
-const PRODUCT_DETAILS={"1792 Small Batch":{"id":1,"name":"1792 Small Batch","abv":46.85,"abvText":"","caskDetail":"새 미국산 화이트 오크 차드 배럴에서 숙성한 켄터키 스트레이트 버번.","profile":"카라멜과 바닐라의 단맛 위에 잘 익은 사과, 후추, 계피가 겹치는 농밀한 버번입니다. 46.85%의 도수가 단맛을 흐리지 않으면서 오크와 향신료를 또렷하게 살립니다.","ops":"카라멜과 바닐라의 단맛 위에 잘 익은 사과, 후추, 계피가 겹치는 농밀한 버번입니다."},"The Glenlivet 18":{"id":2,"name":"The Glenlivet 18","abv":40.0,"abvText":"","caskDetail":"퍼스트필·세컨드필 아메리칸 오크와 셰리 계열 캐스크를 조합한 장기 숙성.","profile":"말린 과일, 오렌지, 토피와 은은한 견과류가 부드럽게 이어지는 전형적인 장기 숙성 스페이사이드입니다. 자극보다 균형과 매끄러운 질감이 중심입니다.","ops":"말린 과일, 오렌지, 토피와 은은한 견과류가 부드럽게 이어지는 전형적인 장기 숙성 스페이사이드입니다."},"The Glenturret 12":{"id":3,"name":"The Glenturret 12","abv":46.4,"abvText":"46.2–46.4% · 릴리스별 상이","caskDetail":"올로로소·페드로 히메네즈 셰리 시즌드 유러피언·아메리칸 오크 캐스크 중심 숙성. 릴리스에 따라 리필 캐스크가 보조적으로 포함될 수 있습니다.","profile":"캐러멜라이즈드 시트러스, 바닐라, 계피와 건과일이 먼저 나타나고 생강·넛맥·토스트 오크가 길게 이어지는 하이랜드 싱글몰트입니다. 셰리 시즌드 유러피언 오크의 구조감과 아메리칸 오크의 밝은 단맛이 함께 드러납니다.","ops":"캐러멜라이즈드 시트러스, 바닐라, 계피와 건과일이 먼저 나타나고 생강·넛맥·토스트 오크가 길게 이어지는 하이랜드 싱글몰트입니다.","abvMin":46.2,"abvMax":46.4},"Glenfarclas 15":{"id":4,"name":"Glenfarclas 15","abv":46.0,"abvText":"","caskDetail":"올로로소 셰리 시즌드 캐스크 중심의 전통적인 숙성.","profile":"건포도, 호두, 다크초콜릿, 커피와 말린 오렌지가 진하게 겹치는 고전적인 셰리 몰트입니다. 46%의 오일리한 질감과 약간의 황·가죽 뉘앙스가 개성을 만듭니다.","ops":"건포도, 호두, 다크초콜릿, 커피와 말린 오렌지가 진하게 겹치는 고전적인 셰리 몰트입니다."},"Glengoyne 12":{"id":5,"name":"Glengoyne 12","abv":43.0,"abvText":"","caskDetail":"퍼스트필 유러피언 오크 셰리 캐스크, 퍼스트필 버번 캐스크, 리필 캐스크의 조합.","profile":"사과, 레몬, 꿀, 구운 아몬드와 은은한 오크가 깨끗하게 이어집니다. 셰리 풍미가 과하지 않고 증류소 특유의 맑고 정돈된 과실감이 중심입니다.","ops":"사과, 레몬, 꿀, 구운 아몬드와 은은한 오크가 깨끗하게 이어집니다."},"The Glen Grant 12":{"id":6,"name":"The Glen Grant 12","abv":43.0,"abvText":"","caskDetail":"핸드 셀렉티드 엑스버번 배럴과 올로로소 셰리 캐스크를 함께 사용.","profile":"배·사과·꿀과 아몬드, 파이 크러스트가 산뜻하게 펼쳐지는 밝은 스페이사이드입니다. 셰리 캐스크가 무게를 더하지만 전체 인상은 가볍고 깨끗합니다.","ops":"배·사과·꿀과 아몬드, 파이 크러스트가 산뜻하게 펼쳐지는 밝은 스페이사이드입니다."},"The Glen Grant 18":{"id":7,"name":"The Glen Grant 18","abv":43.0,"abvText":"","caskDetail":"엄선한 엑스버번 배럴과 리메이드 혹스헤드에서 장기 숙성.","profile":"바닐라, 버터스카치, 건포도와 은은한 베이킹 스파이스가 정교하게 이어집니다. 18년 숙성임에도 과도하게 오키하지 않고 우아한 과실과 몰트가 남습니다.","ops":"바닐라, 버터스카치, 건포도와 은은한 베이킹 스파이스가 정교하게 이어집니다."},"Glenglassaugh 12":{"id":8,"name":"Glenglassaugh 12","abv":45.0,"abvText":"","caskDetail":"버번 캐스크, 셰리 캐스크, 레드와인 캐스크를 조합한 숙성.","profile":"잘 익은 복숭아와 망고, 바닐라, 건포도, 약한 와인 탄닌이 풍성하게 나타납니다. 45%의 도수가 과실의 밝음과 오크의 구조감을 함께 유지합니다.","ops":"잘 익은 복숭아와 망고, 바닐라, 건포도, 약한 와인 탄닌이 풍성하게 나타납니다."},"The GlenDronach 12":{"id":9,"name":"The GlenDronach 12","abv":43.0,"abvText":"","caskDetail":"페드로 히메네즈와 올로로소 셰리 캐스크 숙성.","profile":"건포도, 무화과, 초콜릿, 생강과 오렌지 껍질이 진득하게 이어지는 대표적인 셰리 몰트입니다. 단맛이 분명하지만 스파이스와 오크가 마무리를 잡습니다.","ops":"건포도, 무화과, 초콜릿, 생강과 오렌지 껍질이 진득하게 이어지는 대표적인 셰리 몰트입니다."},"The GlenDronach 18 Allardice":{"id":10,"name":"The GlenDronach 18 Allardice","abv":46.0,"abvText":"","caskDetail":"올로로소 셰리 캐스크에서 18년 숙성.","profile":"다크초콜릿, 커피, 검은 체리, 건포도와 오래된 가죽이 깊게 겹칩니다. 농축된 셰리와 묵직한 질감, 길고 드라이한 피니시가 핵심입니다.","ops":"다크초콜릿, 커피, 검은 체리, 건포도와 오래된 가죽이 깊게 겹칩니다."},"The Glenrothes 12":{"id":11,"name":"The Glenrothes 12","abv":40.0,"abvText":"","caskDetail":"셰리 시즌드 유러피언 오크와 아메리칸 오크 캐스크 중심 숙성.","profile":"바닐라, 바나나, 레몬, 멜론과 가벼운 계피가 부드럽게 연결됩니다. 셰리 캐스크 사용에도 무겁기보다 밝고 크리미한 과실형에 가깝습니다.","ops":"바닐라, 바나나, 레몬, 멜론과 가벼운 계피가 부드럽게 연결됩니다."},"The Glenlivet 12":{"id":12,"name":"The Glenlivet 12","abv":40.0,"abvText":"","caskDetail":"아메리칸 오크와 유러피언 오크를 함께 사용하는 더블 오크 숙성.","profile":"파인애플, 배, 시트러스, 바닐라와 부드러운 몰트가 가볍게 펼쳐집니다. 알코올 자극이 낮고 깨끗해 스페이사이드 입문형의 기준점이 됩니다.","ops":"파인애플, 배, 시트러스, 바닐라와 부드러운 몰트가 가볍게 펼쳐집니다."},"Glenmorangie The Original 12":{"id":13,"name":"Glenmorangie The Original 12","abv":40.0,"abvText":"","caskDetail":"퍼스트필·세컨드필 엑스버번 캐스크에서 12년 숙성.","profile":"레몬, 복숭아, 바닐라, 꽃과 코코넛이 밝고 매끈하게 이어집니다. 가벼운 질감과 깨끗한 시트러스가 중심인 하이랜드 몰트입니다.","ops":"레몬, 복숭아, 바닐라, 꽃과 코코넛이 밝고 매끈하게 이어집니다."},"Glenmorangie The Nectar 16":{"id":14,"name":"Glenmorangie The Nectar 16","abv":46.0,"abvText":"","caskDetail":"버번 캐스크 장기 숙성 후 소테른·몽바지약·모스카텔 등 스위트 화이트와인 계열 캐스크 피니시.","profile":"레몬 타르트, 꿀, 바닐라 커스터드, 살구와 흰 꽃이 풍부하게 나타납니다. 디저트 와인 캐스크의 달콤함을 46%의 질감으로 밀도 있게 표현합니다.","ops":"레몬 타르트, 꿀, 바닐라 커스터드, 살구와 흰 꽃이 풍부하게 나타납니다."},"Glenmorangie Signet":{"id":15,"name":"Glenmorangie Signet","abv":46.0,"abvText":"","caskDetail":"고온 로스팅한 초콜릿 몰트 원액과 장기 숙성 원액을 아메리칸 오크·셰리 계열 등 복합 캐스크로 구성하며 세부 비율은 비공개.","profile":"에스프레소, 다크초콜릿, 오렌지, 계피와 벨벳 같은 질감이 독특하게 겹칩니다. 캐스크보다 로스팅 몰트에서 오는 커피·카카오 캐릭터가 제품의 핵심입니다.","ops":"에스프레소, 다크초콜릿, 오렌지, 계피와 벨벳 같은 질감이 독특하게 겹칩니다."},"The GlenAllachie 12":{"id":16,"name":"The GlenAllachie 12","abv":46.0,"abvText":"","caskDetail":"PX·올로로소 셰리 펀천, 버진 오크와 와인 캐스크 원액을 조합한 현대적 멀티 캐스크 숙성.","profile":"건포도, 꿀, 모카, 바나나와 계피가 진하고 달게 펼쳐집니다. 46%의 오일리한 질감과 적극적인 캐스크 풍미가 특징입니다.","ops":"건포도, 꿀, 모카, 바나나와 계피가 진하고 달게 펼쳐집니다."},"The GlenAllachie 8":{"id":17,"name":"The GlenAllachie 8","abv":46.0,"abvText":"","caskDetail":"PX·올로로소 셰리 캐스크와 버진 오크·와인 계열 캐스크를 조합.","profile":"건포도, 당밀, 헤더 꿀, 계피와 코코아가 젊고 힘 있게 나타납니다. 12년보다 오크와 알코올이 직선적이지만 캐스크 풍미는 충분히 진합니다.","ops":"건포도, 당밀, 헤더 꿀, 계피와 코코아가 젊고 힘 있게 나타납니다."},"The Glenturret 10 Peat Smoked":{"id":18,"name":"The Glenturret 10 Peat Smoked","abv":50.0,"abvText":"46.6–50.0% · 릴리스별 상이","caskDetail":"퍼스트필·세컨드필 유러피언 및 아메리칸 오크 캐스크를 혼합 사용한 피티드 몰트.","profile":"훈연, 말린 과일, 오렌지, 바닐라와 후추가 밀도 있게 펼쳐집니다. 연도별 릴리스에 따라 병입 도수가 달라지며, 달콤한 피트 스모크와 아메리칸·유러피언 오크의 건과일·향신료가 함께 나타나는 스타일입니다.","ops":"훈연, 말린 과일, 오렌지, 바닐라와 후추가 밀도 있게 펼쳐집니다.","abvMin":46.6,"abvMax":50.0},"The Glenturret Triple Wood":{"id":19,"name":"The Glenturret Triple Wood","abv":44.0,"abvText":"44.0–45.0% · 릴리스별 상이","caskDetail":"아메리칸 오크 셰리, 유러피언 오크 셰리, 엑스버번의 트리플 우드 구성.","profile":"사과, 배, 바닐라 토피, 생강, 계피와 부드러운 오크가 균형 있게 이어집니다. 아메리칸·유러피언 오크 셰리 시즌드 캐스크와 버번 배럴을 조합하며, 릴리스별 도수 차이보다 밝은 과실과 부드러운 우드 스파이스가 중심입니다.","ops":"사과, 배, 바닐라 토피, 생강, 계피와 부드러운 오크가 균형 있게 이어집니다.","abvMin":44.0,"abvMax":45.0},"Glenfiddich 12":{"id":20,"name":"Glenfiddich 12","abv":40.0,"abvText":"","caskDetail":"아메리칸 오크 엑스버번 캐스크와 스페인산 셰리 오크 캐스크 숙성.","profile":"배, 풋사과, 꿀, 몰트와 아주 약한 오크가 산뜻하게 이어집니다. 가볍고 명확한 과일 향으로 싱글몰트 입문의 대표 기준점입니다.","ops":"배, 풋사과, 꿀, 몰트와 아주 약한 오크가 산뜻하게 이어집니다."},"Glenfiddich 18":{"id":21,"name":"Glenfiddich 18","abv":40.0,"abvText":"","caskDetail":"올로로소 셰리 캐스크와 아메리칸 오크 버번 캐스크 원액을 소규모 배치로 결합.","profile":"구운 사과, 건과일, 계피, 오크와 토피가 차분하게 겹칩니다. 18년 숙성의 부드러움과 절제된 셰리 풍미가 중심입니다.","ops":"구운 사과, 건과일, 계피, 오크와 토피가 차분하게 겹칩니다."},"Ki One Unicorn":{"id":22,"name":"Ki One Unicorn","abv":46.0,"abvText":"","caskDetail":"피티드 몰트를 사용하고 아메리칸 오크 계열 캐스크에서 숙성했으며 세부 배합은 비공개.","profile":"낙엽, 젖은 흙, 모닥불 연기와 오렌지 껍질, 동양 향신료가 독특하게 겹칩니다. 한국 기후 숙성의 빠른 오크 반응과 피트가 개성을 만듭니다.","ops":"낙엽, 젖은 흙, 모닥불 연기와 오렌지 껍질, 동양 향신료가 독특하게 겹칩니다."},"Ki One Tiger":{"id":23,"name":"Ki One Tiger","abv":46.0,"abvText":"","caskDetail":"셰리 캐스크와 와인 캐스크 원액을 블렌딩.","profile":"잘 익은 자두, 건포도, 꿀, 버터스카치와 넛맥이 달고 크리미하게 이어집니다. 와인 캐스크의 과실감이 한국 숙성의 스파이스와 결합합니다.","ops":"잘 익은 자두, 건포도, 꿀, 버터스카치와 넛맥이 달고 크리미하게 이어집니다."},"Ki One Eagle":{"id":24,"name":"Ki One Eagle","abv":43.0,"abvText":"","caskDetail":"켄터키 퍼스트필 버번 캐스크와 미주리산 뉴 오크를 블렌딩.","profile":"카라멜, 바닐라, 바나나, 넛맥과 깊은 오크가 뚜렷합니다. 새 오크와 버번 캐스크의 차링 풍미가 제품의 중심입니다.","ops":"카라멜, 바닐라, 바나나, 넛맥과 깊은 오크가 뚜렷합니다."},"Kim Chang-soo Whisky 51.7":{"id":25,"name":"Kim Chang-soo Whisky 51.7","abv":51.7,"abvText":"","caskDetail":"퍼스트필 유러피언 올로로소 셰리 혹스헤드 싱글 캐스크로 알려진 2025 바 에디션.","profile":"짙은 베리와 건포도, 흑설탕, 정향, 젖은 흙과 재가 강하게 겹칩니다. 셰리의 단맛보다 피트·향신료·산미가 더 날카롭게 느껴지는 고도수 싱글 캐스크입니다.","ops":"짙은 베리와 건포도, 흑설탕, 정향, 젖은 흙과 재가 강하게 겹칩니다."},"Knob Creek Rye":{"id":26,"name":"Knob Creek Rye","abv":50.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴에서 숙성한 켄터키 스트레이트 라이.","profile":"호밀 특유의 후추, 딜, 민트와 바닐라·카라멜이 50%에서 선명하게 나타납니다. 단맛과 드라이한 스파이스가 균형을 이루는 정석적인 라이입니다.","ops":"호밀 특유의 후추, 딜, 민트와 바닐라·카라멜이 50%에서 선명하게 나타납니다."},"Knob Creek Kentucky Straight Bourbon":{"id":27,"name":"Knob Creek Kentucky Straight Bourbon","abv":50.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 화이트 오크 배럴 숙성.","profile":"진한 바닐라, 카라멜, 구운 견과, 오크와 계피가 농축되어 있습니다. 50%의 힘과 9년 숙성의 우디함이 전면에 나오는 클래식 버번입니다.","ops":"진한 바닐라, 카라멜, 구운 견과, 오크와 계피가 농축되어 있습니다."},"Naked Malt":{"id":28,"name":"Naked Malt","abv":40.0,"abvText":"","caskDetail":"셰리 캐스크에서 추가 숙성한 블렌디드 몰트 구성.","profile":"건포도, 코코아, 체리와 부드러운 몰트가 편안하게 이어집니다. 진한 셰리 폭탄보다는 달콤하고 크리미한 블렌디드 몰트에 가깝습니다.","ops":"건포도, 코코아, 체리와 부드러운 몰트가 편안하게 이어집니다."},"The Dalmore 12":{"id":29,"name":"The Dalmore 12","abv":40.0,"abvText":"","caskDetail":"아메리칸 화이트 오크 엑스버번 숙성 후 올로로소 셰리 캐스크 피니시.","profile":"오렌지 마멀레이드, 초콜릿, 커피, 계피와 부드러운 오크가 이어집니다. 셰리의 건과일보다는 달모어 특유의 감귤·카카오 인상이 중심입니다.","ops":"오렌지 마멀레이드, 초콜릿, 커피, 계피와 부드러운 오크가 이어집니다."},"The Dalmore Cigar Malt Reserve":{"id":30,"name":"The Dalmore Cigar Malt Reserve","abv":44.0,"abvText":"","caskDetail":"아메리칸 화이트 오크 숙성 후 마투살렘 올로로소 셰리와 카베르네 소비뇽 와인 캐스크를 포함한 복합 피니시.","profile":"오렌지, 건포도, 계피, 다크초콜릿과 와인 탄닌이 풍부하고 묵직합니다. 이름처럼 시가와 어울릴 정도의 농축된 단맛과 향신료가 특징입니다.","ops":"오렌지, 건포도, 계피, 다크초콜릿과 와인 탄닌이 풍부하고 묵직합니다."},"The Dalmore King Alexander III":{"id":31,"name":"The Dalmore King Alexander III","abv":40.0,"abvText":"","caskDetail":"버번·올로로소 셰리·마데이라·마르살라·포트·카베르네 소비뇽 등 여러 캐스크를 복합 사용.","profile":"오렌지, 자두, 초콜릿, 커피, 향신료가 층층이 나타나는 복합적인 달모어입니다. 각 캐스크가 강하게 튀기보다 부드럽고 고급스럽게 통합됩니다.","ops":"오렌지, 자두, 초콜릿, 커피, 향신료가 층층이 나타나는 복합적인 달모어입니다."},"Dewar's 12":{"id":32,"name":"Dewar's 12","abv":40.0,"abvText":"","caskDetail":"블렌딩 후 오크 캐스크에서 다시 숙성하는 더블 에이징 공정.","profile":"꿀, 바닐라, 사과, 버터스카치와 가벼운 스모크가 매끄럽게 이어집니다. 부드러운 질감과 균형이 중심인 데일리 블렌디드 스카치입니다.","ops":"꿀, 바닐라, 사과, 버터스카치와 가벼운 스모크가 매끄럽게 이어집니다."},"Dewar's 18 Mizunara Cask Finish":{"id":33,"name":"Dewar's 18 Mizunara Cask Finish","abv":40.0,"abvText":"","caskDetail":"18년 숙성 블렌디드 스카치를 일본산 미즈나라 오크 캐스크에서 추가 피니시한 40% 제품입니다. 일반 듀어스 18년과 8년 Japanese Smooth 미즈나라 제품과 구분합니다.","profile":"꿀과 바닐라, 과수원 과일, 코코넛, 샌들우드와 부드러운 우드 스파이스가 매끄럽게 이어집니다. 18년 숙성 원액의 둥근 질감 위에 미즈나라 특유의 향목·향신료 뉘앙스가 절제되어 나타납니다.","ops":"꿀과 바닐라, 과수원 과일, 코코넛, 샌들우드와 부드러운 우드 스파이스가 매끄럽게 이어집니다."},"Deanston Virgin Oak":{"id":34,"name":"Deanston Virgin Oak","abv":46.3,"abvText":"","caskDetail":"엑스버번 캐스크 숙성 후 버진 아메리칸 오크의 강한 영향을 부여.","profile":"꿀, 레몬, 바닐라, 코코넛과 생목·후추가 생동감 있게 나타납니다. 젊은 몰트의 곡물감과 새 오크의 달고 매운 풍미가 직접적입니다.","ops":"꿀, 레몬, 바닐라, 코코넛과 생목·후추가 생동감 있게 나타납니다."},"Lagavulin 16":{"id":35,"name":"Lagavulin 16","abv":43.0,"abvText":"","caskDetail":"주로 리필 아메리칸 오크 캐스크에 일부 셰리 계열 캐스크 원액을 조합.","profile":"요오드, 해초, 모닥불, 말린 과일과 바닐라가 깊고 안정적으로 이어집니다. 피트가 강하지만 16년 숙성으로 모서리가 둥글고 오일리합니다.","ops":"요오드, 해초, 모닥불, 말린 과일과 바닐라가 깊고 안정적으로 이어집니다."},"Lagavulin 8":{"id":36,"name":"Lagavulin 8","abv":48.0,"abvText":"","caskDetail":"리필 아메리칸 오크·엑스버번 캐스크 중심 숙성.","profile":"레몬 껍질, 재, 후추, 바다 소금과 가벼운 바닐라가 날카롭게 펼쳐집니다. 16년보다 젊고 건조하며 피트의 직선적인 힘이 강조됩니다.","ops":"레몬 껍질, 재, 후추, 바다 소금과 가벼운 바닐라가 날카롭게 펼쳐집니다."},"Laphroaig 10":{"id":37,"name":"Laphroaig 10","abv":40.0,"abvText":"","caskDetail":"엑스버번 배럴 중심 숙성.","profile":"요오드, 소독약, 해초, 재와 바닐라가 강하게 충돌하는 대표적인 메디시널 아일라입니다. 낮은 도수에도 증류소 캐릭터가 매우 뚜렷합니다.","ops":"요오드, 소독약, 해초, 재와 바닐라가 강하게 충돌하는 대표적인 메디시널 아일라입니다."},"Laphroaig Quarter Cask":{"id":38,"name":"Laphroaig Quarter Cask","abv":48.0,"abvText":"","caskDetail":"엑스버번 배럴 숙성 후 소형 쿼터 캐스크에서 추가 숙성.","profile":"강한 요오드와 장작 연기, 코코넛, 바닐라, 후추와 진한 오크가 두껍게 나타납니다. 작은 캐스크의 빠른 추출로 10년보다 달고 우디합니다.","ops":"강한 요오드와 장작 연기, 코코넛, 바닐라, 후추와 진한 오크가 두껍게 나타납니다."},"Russell's Reserve Single Barrel":{"id":39,"name":"Russell's Reserve Single Barrel","abv":55.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 싱글 배럴 숙성.","profile":"바닐라, 체리, 담배, 계피와 짙은 오크가 배럴마다 조금씩 다른 농도로 나타납니다. 55%의 높은 도수와 싱글 배럴 특유의 개성이 핵심입니다.","ops":"바닐라, 체리, 담배, 계피와 짙은 오크가 배럴마다 조금씩 다른 농도로 나타납니다."},"Russell's Reserve 10":{"id":40,"name":"Russell's Reserve 10","abv":45.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴에서 10년 숙성.","profile":"바닐라, 오렌지, 가죽, 후추와 숙성 오크가 차분하게 이어집니다. 고도수보다 10년 숙성에서 오는 균형과 드라이한 나무 향이 중심입니다.","ops":"바닐라, 오렌지, 가죽, 후추와 숙성 오크가 차분하게 이어집니다."},"Redbreast 12":{"id":41,"name":"Redbreast 12","abv":40.0,"abvText":"","caskDetail":"엑스버번 배럴과 올로로소 셰리 버트에서 숙성한 싱글 팟 스틸 위스키.","profile":"구운 사과, 건포도, 견과류, 크리스마스 스파이스와 크리미한 질감이 풍부합니다. 맥아·비맥아 보리에서 오는 오일리함과 후추 향이 아이리시 몰트와 차별됩니다.","ops":"구운 사과, 건포도, 견과류, 크리스마스 스파이스와 크리미한 질감이 풍부합니다."},"Rebel 100 Kentucky Straight Bourbon":{"id":42,"name":"Rebel 100 Kentucky Straight Bourbon","abv":50.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성의 위티드 버번.","profile":"카라멜, 꿀, 바닐라, 구운 빵과 계피가 달고 묵직하게 이어집니다. 밀을 부원료로 사용해 50%임에도 호밀 버번보다 둥근 단맛을 냅니다.","ops":"카라멜, 꿀, 바닐라, 구운 빵과 계피가 달고 묵직하게 이어집니다."},"Royal Brackla 12":{"id":43,"name":"Royal Brackla 12","abv":46.0,"abvText":"","caskDetail":"아메리칸 오크 숙성 후 올로로소 셰리 캐스크 피니시.","profile":"복숭아, 검은 체리, 초콜릿 아몬드와 흑설탕이 풍성하게 나타납니다. 46%·논칠필터의 두꺼운 질감과 셰리 피니시가 현대적인 하이랜드 스타일을 만듭니다.","ops":"복숭아, 검은 체리, 초콜릿 아몬드와 흑설탕이 풍성하게 나타납니다."},"Royal Brackla 18":{"id":44,"name":"Royal Brackla 18","abv":46.0,"abvText":"","caskDetail":"아메리칸 오크에서 18년 숙성 후 팔로 코르타도 셰리 캐스크 피니시.","profile":"무화과, 호두, 다크초콜릿, 오렌지 껍질과 드라이한 셰리 탄닌이 길게 이어집니다. 12년보다 건과일과 견과, 숙성 오크가 깊습니다.","ops":"무화과, 호두, 다크초콜릿, 오렌지 껍질과 드라이한 셰리 탄닌이 길게 이어집니다."},"Royal Salute 21":{"id":45,"name":"Royal Salute 21","abv":40.0,"abvText":"","caskDetail":"스코틀랜드 여러 지역의 장기 숙성 몰트·그레인 원액을 복합 캐스크에서 블렌딩하며 세부 구성은 비공개.","profile":"복숭아, 배, 헤이즐넛, 꿀과 은은한 스모크가 매우 부드럽게 통합됩니다. 특정 향보다 매끄러운 질감과 균형이 제품 가치의 중심입니다.","ops":"복숭아, 배, 헤이즐넛, 꿀과 은은한 스모크가 매우 부드럽게 통합됩니다."},"Loch Lomond 12":{"id":46,"name":"Loch Lomond 12","abv":46.0,"abvText":"","caskDetail":"엑스버번, 리필 캐스크, 리차드 오크 캐스크를 조합.","profile":"복숭아, 배, 바닐라, 비스킷과 약한 피트 스모크가 균형 있게 나타납니다. 과실형 하이랜드 몰트에 은은한 스모크가 복합성을 더합니다.","ops":"복숭아, 배, 바닐라, 비스킷과 약한 피트 스모크가 균형 있게 나타납니다."},"The Macallan 12 Double Cask":{"id":47,"name":"The Macallan 12 Double Cask","abv":40.0,"abvText":"","caskDetail":"셰리로 시즌한 아메리칸 오크와 유러피언 오크 캐스크 숙성.","profile":"바닐라, 꿀, 오렌지, 건포도와 부드러운 오크가 달고 매끈하게 이어집니다. 유러피언 오크의 스파이스보다 아메리칸 오크의 바닐라가 비교적 선명합니다.","ops":"바닐라, 꿀, 오렌지, 건포도와 부드러운 오크가 달고 매끈하게 이어집니다."},"Maker's Mark":{"id":48,"name":"Maker's Mark","abv":45.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성의 위티드 버번.","profile":"바닐라, 캐러멜, 구운 견과와 부드러운 밀빵 향이 둥글게 이어집니다. 호밀 대신 밀을 사용해 스파이스가 낮고 달콤한 질감이 강조됩니다.","ops":"바닐라, 캐러멜, 구운 견과와 부드러운 밀빵 향이 둥글게 이어집니다."},"Mellow Corn":{"id":49,"name":"Mellow Corn","abv":50.0,"abvText":"","caskDetail":"버번에 한 번 사용한 오크 배럴에서 숙성한 스트레이트 콘 위스키.","profile":"버터 팝콘, 옥수수 시리얼, 바닐라, 꿀과 가벼운 오크가 독특하게 나타납니다. 새 오크가 아닌 사용 배럴 덕분에 곡물 자체가 전면에 남습니다.","ops":"버터 팝콘, 옥수수 시리얼, 바닐라, 꿀과 가벼운 오크가 독특하게 나타납니다."},"Monkey Shoulder":{"id":50,"name":"Monkey Shoulder","abv":40.0,"abvText":"","caskDetail":"스페이사이드 몰트 원액을 주로 엑스버번 캐스크에서 숙성해 블렌딩.","profile":"바닐라, 꿀, 오렌지, 몰트와 약한 향신료가 부드럽게 이어집니다. 블렌디드 몰트 특유의 편안한 단맛과 믹서 적응력이 좋습니다.","ops":"바닐라, 꿀, 오렌지, 몰트와 약한 향신료가 부드럽게 이어집니다."},"Michter's US*1 Small Batch Bourbon":{"id":51,"name":"Michter's US*1 Small Batch Bourbon","abv":45.7,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴에서 소규모 배치 숙성.","profile":"카라멜, 바닐라, 구운 견과, 살구와 후추가 정돈되어 나타납니다. 강한 단맛보다 드라이한 오크와 균형 잡힌 스파이스가 미터스의 특징입니다.","ops":"카라멜, 바닐라, 구운 견과, 살구와 후추가 정돈되어 나타납니다."},"Michter's US*1 Unblended American Whiskey":{"id":52,"name":"Michter's US*1 Unblended American Whiskey","abv":41.7,"abvText":"","caskDetail":"위스키를 담았던 아메리칸 화이트 오크 배럴에서 숙성한 켄터키산 언블렌디드 아메리칸 위스키. 새 오크 사용 의무가 있는 버번과 구분됩니다.","profile":"버터스카치, 바닐라, 말린 과일과 부드러운 오크가 가볍고 달게 이어집니다. 새 차드 오크의 강한 탄닌이 없어 원액의 부드러움이 강조됩니다.","ops":"버터스카치, 바닐라, 말린 과일과 부드러운 오크가 가볍고 달게 이어집니다."},"Ballantine's Glenburgie 12":{"id":53,"name":"Ballantine's Glenburgie 12","abv":40.0,"abvText":"","caskDetail":"발렌타인 블렌드의 핵심 몰트인 글렌버기 증류소의 12년 숙성 싱글몰트입니다. 공식 제품 페이지는 구체적인 캐스크 종류와 비율을 공개하지 않으므로 특정 오크 계열로 단정하지 않습니다.","profile":"토피 애플, 배와 과수원 과일, 바닐라, 은은한 견과와 향신료가 부드럽게 이어집니다. 밝고 크리미한 과실감이 중심이며 발렌타인 블렌드의 핵심 몰트 성격을 단독으로 확인하기 좋습니다.","ops":"토피 애플, 배와 과수원 과일, 바닐라, 은은한 견과와 향신료가 부드럽게 이어집니다."},"Ballantine's 21":{"id":54,"name":"Ballantine's 21","abv":40.0,"abvText":"","caskDetail":"21년 이상 숙성한 몰트·그레인 위스키를 다양한 오크 캐스크에서 블렌딩하며 세부 비율 비공개.","profile":"건과일, 꿀, 헤이즐넛, 꽃과 은은한 스모크가 매우 부드럽게 통합됩니다. 연산의 오크감보다 섬세한 블렌딩과 긴 여운이 중심입니다.","ops":"건과일, 꿀, 헤이즐넛, 꽃과 은은한 스모크가 매우 부드럽게 통합됩니다."},"Ballantine's Masters":{"id":55,"name":"Ballantine's Masters","abv":40.0,"abvText":"","caskDetail":"장기 숙성 몰트·그레인 원액을 복합 캐스크에서 블렌딩하며 세부 구성은 비공개.","profile":"꿀, 배, 바닐라, 초콜릿과 은은한 오크가 편안하게 이어집니다. 발렌타인 특유의 부드러운 과실과 크리미한 질감을 강조한 제품입니다.","ops":"꿀, 배, 바닐라, 초콜릿과 은은한 오크가 편안하게 이어집니다."},"The Balvenie 12 DoubleWood":{"id":56,"name":"The Balvenie 12 DoubleWood","abv":40.0,"abvText":"","caskDetail":"아메리칸 오크 엑스버번 숙성 후 유러피언 오크 올로로소 셰리 캐스크에서 추가 숙성.","profile":"꿀, 바닐라, 건포도, 계피와 견과류가 부드럽고 안정적으로 이어집니다. 더블우드 방식의 대표적인 균형형 셰리 몰트입니다.","ops":"꿀, 바닐라, 건포도, 계피와 견과류가 부드럽고 안정적으로 이어집니다."},"The Balvenie 14 Caribbean Cask":{"id":57,"name":"The Balvenie 14 Caribbean Cask","abv":43.0,"abvText":"","caskDetail":"전통 오크 캐스크 숙성 후 캐리비안 럼 캐스크에서 피니시.","profile":"바닐라, 토피, 망고, 바나나와 따뜻한 향신료가 달고 풍성하게 이어집니다. 럼 캐스크가 당밀과 열대과일의 뉘앙스를 더합니다.","ops":"바닐라, 토피, 망고, 바나나와 따뜻한 향신료가 달고 풍성하게 이어집니다."},"The Balvenie 16 French Oak":{"id":58,"name":"The Balvenie 16 French Oak","abv":47.6,"abvText":"","caskDetail":"아메리칸 오크 숙성 후 프랑스 샤랑트 지역의 피노 데 샤랑트 캐스크 피니시.","profile":"자몽, 꽃, 생강, 꿀과 은은한 포도 단맛이 밝고 드라이하게 이어집니다. 47.6%의 선명한 산미와 허브·시트러스가 독특합니다.","ops":"자몽, 꽃, 생강, 꿀과 은은한 포도 단맛이 밝고 드라이하게 이어집니다."},"The Busker Triple Cask":{"id":59,"name":"The Busker Triple Cask","abv":40.0,"abvText":"","caskDetail":"버번, 셰리, 마르살라 캐스크의 트리플 캐스크 숙성.","profile":"바닐라, 건포도, 자두, 꿀과 가벼운 향신료가 부드럽게 이어집니다. 세 캐스크의 특징이 강하게 튀기보다 대중적인 단맛으로 통합됩니다.","ops":"바닐라, 건포도, 자두, 꿀과 가벼운 향신료가 부드럽게 이어집니다."},"Benromach 10":{"id":60,"name":"Benromach 10","abv":43.0,"abvText":"","caskDetail":"퍼스트필 버번 캐스크와 셰리 캐스크 숙성 후 올로로소 셰리 캐스크에서 마무리.","profile":"몰트, 사과, 견과, 셰리와 은은한 모닥불 연기가 고전적으로 어우러집니다. 가벼운 피트와 직화 증류소 캐릭터가 현대 스페이사이드와 차별됩니다.","ops":"몰트, 사과, 견과, 셰리와 은은한 모닥불 연기가 고전적으로 어우러집니다."},"Benriach The Smoky Ten":{"id":61,"name":"Benriach The Smoky Ten","abv":46.0,"abvText":"","caskDetail":"버번 배럴, 자메이카 럼 캐스크, 구운 버진 오크 캐스크의 3종 숙성.","profile":"훈연, 꿀, 사과, 바닐라와 열대과일이 밝고 달게 겹칩니다. 피트가 강하지만 럼과 버진 오크의 단맛이 공격성을 완화합니다.","ops":"훈연, 꿀, 사과, 바닐라와 열대과일이 밝고 달게 겹칩니다."},"Benriach 16":{"id":62,"name":"Benriach 16","abv":43.0,"abvText":"","caskDetail":"버번·셰리·버진 오크 등 복수 캐스크를 사용한 장기 숙성.","profile":"배, 사과, 꿀, 헤이즐넛과 부드러운 오크가 풍성하게 이어집니다. 16년 숙성의 둥근 질감과 과실 중심 밸런스가 특징입니다.","ops":"배, 사과, 꿀, 헤이즐넛과 부드러운 오크가 풍성하게 이어집니다."},"Benchmark Old No. 8":{"id":63,"name":"Benchmark Old No. 8","abv":40.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성.","profile":"카라멜, 바닐라, 땅콩과 가벼운 계피가 단순하고 직선적으로 나타납니다. 가볍고 편한 켄터키 버번의 기본형입니다.","ops":"카라멜, 바닐라, 땅콩과 가벼운 계피가 단순하고 직선적으로 나타납니다."},"Bowmore 12":{"id":64,"name":"Bowmore 12","abv":40.0,"abvText":"","caskDetail":"엑스버번 캐스크와 셰리 캐스크 원액을 조합.","profile":"레몬, 꿀, 초콜릿, 해풍과 부드러운 연기가 균형 있게 이어집니다. 피트 강도는 낮지만 아일라의 해양성과 코코아 뉘앙스가 분명합니다.","ops":"레몬, 꿀, 초콜릿, 해풍과 부드러운 연기가 균형 있게 이어집니다."},"Bowmore 18":{"id":65,"name":"Bowmore 18","abv":43.0,"abvText":"","caskDetail":"버번 캐스크와 올로로소 셰리 캐스크 장기 숙성.","profile":"다크초콜릿, 건과일, 오렌지, 해초와 부드러운 스모크가 깊게 겹칩니다. 18년 숙성으로 피트가 둥글어지고 셰리·오크가 전면에 나옵니다.","ops":"다크초콜릿, 건과일, 오렌지, 해초와 부드러운 스모크가 깊게 겹칩니다."},"Bushmills 10":{"id":66,"name":"Bushmills 10","abv":40.0,"abvText":"","caskDetail":"엑스버번 배럴과 셰리 캐스크를 사용한 10년 숙성.","profile":"사과, 배, 바닐라, 꿀과 가벼운 초콜릿이 깨끗하게 이어집니다. 3회 증류의 가벼운 질감과 몰트 과실이 중심입니다.","ops":"사과, 배, 바닐라, 꿀과 가벼운 초콜릿이 깨끗하게 이어집니다."},"Bushmills 12":{"id":67,"name":"Bushmills 12","abv":40.0,"abvText":"","caskDetail":"버번, 셰리, 마르살라 캐스크를 포함한 복합 숙성.","profile":"건포도, 사과, 꿀, 초콜릿과 향신료가 부드럽고 풍성하게 이어집니다. 10년보다 와인 캐스크의 단맛과 질감이 확실히 증가합니다.","ops":"건포도, 사과, 꿀, 초콜릿과 향신료가 부드럽고 풍성하게 이어집니다."},"Bulleit Rye":{"id":68,"name":"Bulleit Rye","abv":45.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성의 고호밀 라이.","profile":"후추, 딜, 민트, 바닐라와 오렌지가 드라이하고 산뜻하게 나타납니다. 95% 호밀 매시빌 특유의 날카로운 허브·스파이스가 중심입니다.","ops":"후추, 딜, 민트, 바닐라와 오렌지가 드라이하고 산뜻하게 나타납니다."},"Bulleit Bourbon":{"id":69,"name":"Bulleit Bourbon","abv":45.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성의 고호밀 버번.","profile":"오렌지, 바닐라, 체리, 후추와 오크가 드라이하게 이어집니다. 일반 버번보다 호밀 비중이 높아 달콤함 뒤에 스파이스가 길게 남습니다.","ops":"오렌지, 바닐라, 체리, 후추와 오크가 드라이하게 이어집니다."},"Brenne French Single Malt":{"id":70,"name":"Brenne French Single Malt","abv":40.0,"abvText":"","caskDetail":"프렌치 오크와 코냑 캐스크를 중심으로 숙성한 프렌치 싱글몰트.","profile":"바나나, 크렘브륄레, 바닐라, 코코넛과 포도 향이 매우 달고 향긋하게 나타납니다. 코냑 캐스크와 프렌치 오크가 디저트 같은 질감을 만듭니다.","ops":"바나나, 크렘브륄레, 바닐라, 코코넛과 포도 향이 매우 달고 향긋하게 나타납니다."},"Hibiki Japanese Harmony":{"id":71,"name":"Hibiki Japanese Harmony","abv":43.0,"abvText":"","caskDetail":"야마자키·하쿠슈 몰트와 치타 그레인을 아메리칸 화이트 오크, 셰리, 미즈나라 등 다양한 캐스크로 블렌딩.","profile":"오렌지 껍질, 꿀, 장미, 백단향과 부드러운 오크가 섬세하게 이어집니다. 특정 캐스크보다 일본식 블렌딩의 균형과 향의 투명함이 핵심입니다.","ops":"오렌지 껍질, 꿀, 장미, 백단향과 부드러운 오크가 섬세하게 이어집니다."},"Smokehead Original":{"id":72,"name":"Smokehead Original","abv":43.0,"abvText":"","caskDetail":"증류소 비공개 아일라 싱글몰트를 주로 엑스버번 계열 캐스크에서 숙성.","profile":"재, 숯, 해초, 레몬과 바닐라가 직선적이고 강하게 나타납니다. 복잡한 숙성감보다 젊고 공격적인 스모크가 중심입니다.","ops":"재, 숯, 해초, 레몬과 바닐라가 직선적이고 강하게 나타납니다."},"Starward Nova":{"id":73,"name":"Starward Nova","abv":41.0,"abvText":"","caskDetail":"호주산 레드와인 배럴에서 주로 숙성한 멜버른 싱글몰트.","profile":"딸기, 자두, 바닐라, 초콜릿과 와인 탄닌이 생동감 있게 나타납니다. 따뜻한 기후와 레드와인 캐스크가 젊고 과즙감 있는 스타일을 만듭니다.","ops":"딸기, 자두, 바닐라, 초콜릿과 와인 탄닌이 생동감 있게 나타납니다."},"Chivas Regal 12":{"id":74,"name":"Chivas Regal 12","abv":40.0,"abvText":"","caskDetail":"스페이사이드 몰트와 그레인 원액을 다양한 오크 캐스크에서 숙성해 블렌딩.","profile":"사과, 꿀, 바닐라, 헤이즐넛과 약한 허브가 부드럽게 이어집니다. 가볍고 크리미한 질감이 대중적인 블렌디드 스카치의 기준점입니다.","ops":"사과, 꿀, 바닐라, 헤이즐넛과 약한 허브가 부드럽게 이어집니다."},"The Singleton of Dufftown 12":{"id":75,"name":"The Singleton of Dufftown 12","abv":40.0,"abvText":"","caskDetail":"주로 아메리칸 오크 엑스버번 캐스크와 일부 유러피언 오크 캐스크 숙성.","profile":"사과, 배, 견과, 바닐라와 가벼운 에스프레소가 부드럽게 이어집니다. 둥글고 달콤한 더프타운 스타일로 접근성이 높습니다.","ops":"사과, 배, 견과, 바닐라와 가벼운 에스프레소가 부드럽게 이어집니다."},"Ardbeg 10":{"id":76,"name":"Ardbeg 10","abv":46.0,"abvText":"","caskDetail":"퍼스트필·세컨드필 엑스버번 캐스크 숙성.","profile":"레몬, 타르, 재, 바다 소금과 바닐라가 선명하고 드라이하게 이어집니다. 46% 논칠필터로 피트의 질감과 시트러스가 뚜렷합니다.","ops":"레몬, 타르, 재, 바다 소금과 바닐라가 선명하고 드라이하게 이어집니다."},"Ardbeg Uigeadail":{"id":77,"name":"Ardbeg Uigeadail","abv":54.2,"abvText":"","caskDetail":"엑스버번 캐스크와 올로로소 셰리 캐스크 원액을 고도수로 결합.","profile":"훈연, 건포도, 에스프레소, 당밀과 후추가 폭발적으로 겹칩니다. 강한 피트와 진한 셰리, 54.2%의 질감이 동시에 전면에 나옵니다.","ops":"훈연, 건포도, 에스프레소, 당밀과 후추가 폭발적으로 겹칩니다."},"Arran 10":{"id":78,"name":"Arran 10","abv":46.0,"abvText":"","caskDetail":"퍼스트필 엑스버번 배럴과 셰리 혹스헤드 숙성.","profile":"레몬, 사과, 바닐라, 몰트와 가벼운 계피가 깨끗하고 오일리하게 이어집니다. 자연색·논칠필터의 선명한 몰트 질감이 장점입니다.","ops":"레몬, 사과, 바닐라, 몰트와 가벼운 계피가 깨끗하고 오일리하게 이어집니다."},"Arran Sherry Cask":{"id":79,"name":"Arran Sherry Cask","abv":55.8,"abvText":"","caskDetail":"퍼스트필 셰리 혹스헤드에서 전 기간 숙성한 캐스크 스트렝스.","profile":"건포도, 무화과, 다크초콜릿, 생강과 오렌지가 강하고 진득하게 나타납니다. 55.8%의 열감과 셰리 탄닌이 길게 이어집니다.","ops":"건포도, 무화과, 다크초콜릿, 생강과 오렌지가 강하고 진득하게 나타납니다."},"Aberlour 12 Double Cask":{"id":80,"name":"Aberlour 12 Double Cask","abv":40.0,"abvText":"","caskDetail":"전통 오크와 셰리 오크 캐스크를 함께 사용한 더블 캐스크 숙성.","profile":"사과, 건포도, 계피, 초콜릿과 부드러운 오크가 달고 편안하게 이어집니다. 셰리 풍미가 과하지 않아 데일리 스페이사이드에 가깝습니다.","ops":"사과, 건포도, 계피, 초콜릿과 부드러운 오크가 달고 편안하게 이어집니다."},"Aberlour 16":{"id":81,"name":"Aberlour 16","abv":40.0,"abvText":"","caskDetail":"버번 캐스크와 셰리 캐스크를 조합한 16년 숙성.","profile":"건포도, 자두, 초콜릿, 견과와 부드러운 오크가 깊고 매끈하게 이어집니다. 12년보다 단맛과 숙성감이 증가하지만 자극은 낮습니다.","ops":"건포도, 자두, 초콜릿, 견과와 부드러운 오크가 깊고 매끈하게 이어집니다."},"Bårelegs Battle Axe":{"id":82,"name":"Bårelegs Battle Axe","abv":55.7,"abvText":"","caskDetail":"증류소 비공개 아일라 피티드 싱글몰트를 리필 버번 캐스크에서 숙성해 캐스크 스트렝스로 병입.","profile":"숯, 재, 요오드, 바다 소금, 레몬과 바닐라가 거칠고 강하게 나타납니다. 리필 버번 캐스크 덕분에 나무보다 피트와 증류 캐릭터가 전면에 남습니다.","ops":"숯, 재, 요오드, 바다 소금, 레몬과 바닐라가 거칠고 강하게 나타납니다."},"Alfred Giraud Horizon":{"id":83,"name":"Alfred Giraud Horizon","abv":46.1,"abvText":"","caskDetail":"코냑·뉴 프렌치 오크·아메리칸 오크를 기반으로 보르도 그랑 크뤼, 피노 데 샤랑트 등 총 14종 캐스크를 활용하고 올드 코냑 캐스크에서 최종 매리지.","profile":"포도, 배, 프렌치 오크, 꿀과 섬세한 향신료가 신선하면서도 복합적으로 이어집니다. 많은 캐스크를 사용하지만 과도한 단맛보다 우아한 과실과 나무의 결이 중심입니다.","ops":"포도, 배, 프렌치 오크, 꿀과 섬세한 향신료가 신선하면서도 복합적으로 이어집니다."},"Amrut Indian Single Malt":{"id":84,"name":"Amrut Indian Single Malt","abv":46.0,"abvText":"","caskDetail":"엑스버번 배럴과 뉴 아메리칸 오크 캐스크 중심 숙성.","profile":"보리, 꿀, 살구, 바닐라와 후추가 따뜻하고 풍부하게 나타납니다. 인도의 고온 숙성으로 젊은 연산에도 농축된 오크와 열대과일이 느껴집니다.","ops":"보리, 꿀, 살구, 바닐라와 후추가 따뜻하고 풍부하게 나타납니다."},"Yamazaki 12":{"id":85,"name":"Yamazaki 12","abv":43.0,"abvText":"","caskDetail":"아메리칸 오크, 스페인산 셰리 오크, 일본산 미즈나라 오크 등 다양한 캐스크 숙성.","profile":"복숭아, 파인애플, 오렌지, 코코넛, 향목과 은은한 계피가 정교하게 겹칩니다. 과실의 밝음과 미즈나라의 향신목 뉘앙스가 균형을 이룹니다.","ops":"복숭아, 파인애플, 오렌지, 코코넛, 향목과 은은한 계피가 정교하게 겹칩니다."},"Yamazaki Distiller's Reserve":{"id":86,"name":"Yamazaki Distiller's Reserve","abv":43.0,"abvText":"","caskDetail":"아메리칸 오크, 셰리, 보르도 와인, 미즈나라 등 여러 캐스크를 조합.","profile":"딸기, 복숭아, 코코넛, 바닐라와 계피가 밝고 생동감 있게 나타납니다. 12년보다 젊고 와인 과실과 오크 스파이스가 직선적입니다.","ops":"딸기, 복숭아, 코코넛, 바닐라와 계피가 밝고 생동감 있게 나타납니다."},"Evan Williams Bottled-in-Bond":{"id":87,"name":"Evan Williams Bottled-in-Bond","abv":50.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴에서 최소 4년 숙성한 Bottled-in-Bond.","profile":"카라멜, 땅콩, 바닐라, 계피와 구운 오크가 진하고 정직하게 나타납니다. 50% 고정 도수와 전통적인 켄터키 풍미가 핵심입니다.","ops":"카라멜, 땅콩, 바닐라, 계피와 구운 오크가 진하고 정직하게 나타납니다."},"Evan Williams Black Label":{"id":88,"name":"Evan Williams Black Label","abv":43.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성.","profile":"카라멜, 바닐라, 땅콩, 사과와 가벼운 오크가 부드럽게 이어집니다. 전형적인 켄터키 버번의 단맛을 부담 없이 보여줍니다.","ops":"카라멜, 바닐라, 땅콩, 사과와 가벼운 오크가 부드럽게 이어집니다."},"Aberfeldy 16":{"id":89,"name":"Aberfeldy 16","abv":40.0,"abvText":"","caskDetail":"버번 캐스크 숙성 후 올로로소 셰리 캐스크에서 추가 숙성.","profile":"꿀, 사과, 오렌지, 건포도와 밀랍 같은 질감이 부드럽게 이어집니다. 셰리보다 애버펠디 특유의 꿀과 왁시한 몰트가 중심입니다.","ops":"꿀, 사과, 오렌지, 건포도와 밀랍 같은 질감이 부드럽게 이어집니다."},"The Epicurean":{"id":90,"name":"The Epicurean","abv":46.2,"abvText":"","caskDetail":"로우랜드 몰트 원액을 주로 아메리칸 오크 계열 캐스크에서 숙성해 블렌딩.","profile":"레몬, 풋사과, 허브, 보리와 바닐라가 가볍고 선명하게 이어집니다. 46.2%임에도 질감은 경쾌하고 시트러스가 중심입니다.","ops":"레몬, 풋사과, 허브, 보리와 바닐라가 가볍고 선명하게 이어집니다."},"Angel's Envy Kentucky Straight Bourbon":{"id":91,"name":"Angel's Envy Kentucky Straight Bourbon","abv":43.3,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크에서 숙성 후 포트 와인 캐스크 피니시.","profile":"바닐라, 메이플, 건포도, 체리와 포트 와인의 달콤한 과실이 풍부합니다. 버번의 카라멜에 와인 캐스크의 베리와 탄닌이 더해집니다.","ops":"바닐라, 메이플, 건포도, 체리와 포트 와인의 달콤한 과실이 풍부합니다."},"Oban 14":{"id":92,"name":"Oban 14","abv":43.0,"abvText":"","caskDetail":"리필 아메리칸 오크와 유러피언 오크 캐스크를 사용하며 세부 배합은 비공개.","profile":"오렌지, 사과, 꿀, 바다 소금과 은은한 연기가 오일리하게 이어집니다. 피트가 강하지 않으면서 해안 몰트의 짭짤함과 왁시함이 특징입니다.","ops":"오렌지, 사과, 꿀, 바다 소금과 은은한 연기가 오일리하게 이어집니다."},"Old Parr 12":{"id":93,"name":"Old Parr 12","abv":40.0,"abvText":"","caskDetail":"크래건모어 등 몰트와 그레인 원액을 복합 오크에서 블렌딩하며 일부 피티드 원액 포함.","profile":"몰트, 오렌지, 꿀, 가죽과 은은한 스모크가 차분하게 이어집니다. 올드 스타일 블렌디드 스카치의 구수함과 약한 피트가 특징입니다.","ops":"몰트, 오렌지, 꿀, 가죽과 은은한 스모크가 차분하게 이어집니다."},"Wild Turkey 101 8 Year":{"id":94,"name":"Wild Turkey 101 8 Year","abv":50.5,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴에서 8년 숙성.","profile":"카라멜, 바닐라, 오렌지, 계피와 강한 오크가 101프루프에서 농축되어 있습니다. 8년 숙성으로 일반 101보다 나무와 깊이가 더 분명합니다.","ops":"카라멜, 바닐라, 오렌지, 계피와 강한 오크가 101프루프에서 농축되어 있습니다."},"Wild Turkey 101 Rye":{"id":95,"name":"Wild Turkey 101 Rye","abv":50.5,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성의 켄터키 스트레이트 라이.","profile":"후추, 민트, 바닐라, 캐러멜과 오크가 힘 있게 이어집니다. 고호밀 라이보다 버번 계열의 단맛과 바디가 더 크게 느껴집니다.","ops":"후추, 민트, 바닐라, 캐러멜과 오크가 힘 있게 이어집니다."},"Wild Turkey Rare Breed":{"id":96,"name":"Wild Turkey Rare Breed","abv":58.4,"abvText":"56.4–58.4% · 시장·릴리스별 상이","caskDetail":"6년·8년·12년 버번 원액을 블렌딩한 배럴 스트렝스.","profile":"바닐라, 꿀, 대추, 후추, 담배와 강한 차드 오크가 농축되어 나타나는 배럴 스트렝스 버번입니다. 시장·릴리스에 따라 112.8 proof와 116.8 proof 등 병입 도수가 달라질 수 있어 병 라벨 확인이 필요합니다.","ops":"바닐라, 꿀, 대추, 후추, 담배와 강한 차드 오크가 농축되어 나타나는 배럴 스트렝스 버번입니다.","abvMin":56.4,"abvMax":58.4},"Wild Turkey Master's Keep Triumph":{"id":97,"name":"Wild Turkey Master's Keep Triumph","abv":52.0,"abvText":"","caskDetail":"10년 숙성 켄터키 스트레이트 라이를 새 차드 오크에서 숙성.","profile":"꿀, 정향, 다크초콜릿, 대추, 모카와 검은 후추가 깊고 묵직하게 이어집니다. 장기 숙성 라이의 오크와 스파이스가 고급스럽게 통합됩니다.","ops":"꿀, 정향, 다크초콜릿, 대추, 모카와 검은 후추가 깊고 묵직하게 이어집니다."},"Nikka Yoichi Single Malt":{"id":98,"name":"Nikka Yoichi Single Malt","abv":45.0,"abvText":"","caskDetail":"엑스버번, 셰리, 뉴 오크 등 다양한 캐스크를 조합한 요이치 몰트.","profile":"사과, 레몬, 몰트, 후추와 석탄 화로 같은 건조한 스모크가 이어집니다. 일본 과실감과 스코틀랜드식 피트·직화 캐릭터가 공존합니다.","ops":"사과, 레몬, 몰트, 후추와 석탄 화로 같은 건조한 스모크가 이어집니다."},"Woodford Reserve":{"id":99,"name":"Woodford Reserve","abv":43.2,"abvText":"43.2–45.2% · 시장별 상이","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성. 현재 값은 국내에서 흔한 700ml·1L 유통판 기준이며 미국 750ml는 45.2%가 존재.","profile":"카라멜, 코코아, 체리, 오렌지와 베이킹 스파이스가 균형 있게 이어지는 켄터키 스트레이트 버번입니다. 동일 제품도 시장에 따라 43.2% 또는 45.2%로 유통되므로 실제 병 라벨의 도수를 기준으로 안내해야 합니다.","ops":"카라멜, 코코아, 체리, 오렌지와 베이킹 스파이스가 균형 있게 이어지는 켄터키 스트레이트 버번입니다.","abvMin":43.2,"abvMax":45.2},"West Cork Calvados Cask Finish":{"id":100,"name":"West Cork Calvados Cask Finish","abv":43.0,"abvText":"","caskDetail":"퍼스트필 버번 캐스크 숙성 후 칼바도스 캐스크 피니시.","profile":"청사과, 배, 바닐라, 아몬드와 사과 브랜디의 산뜻한 과실이 이어집니다. 칼바도스 피니시가 아이리시 몰트에 신선한 사과와 드라이함을 더합니다.","ops":"청사과, 배, 바닐라, 아몬드와 사과 브랜디의 산뜻한 과실이 이어집니다."},"Eagle Rare 10":{"id":101,"name":"Eagle Rare 10","abv":45.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴에서 최소 10년 숙성하고, 현행 제품은 소규모 배치로 병입하는 켄터키 스트레이트 버번입니다.","profile":"체리, 오렌지, 바닐라, 가죽과 드라이한 오크가 차분하게 이어집니다. 10년 숙성의 균형과 비교적 우아한 과실이 핵심입니다.","ops":"체리, 오렌지, 바닐라, 가죽과 드라이한 오크가 차분하게 이어집니다."},"Jack Daniel's Old No. 7":{"id":102,"name":"Jack Daniel's Old No. 7","abv":40.0,"abvText":"","caskDetail":"증류액을 약 10피트 두께의 단풍나무 숯으로 차콜 멜로잉한 뒤, 새로 차링한 아메리칸 오크 배럴에서 숙성합니다.","profile":"바나나, 바닐라, 캐러멜, 구운 견과와 부드러운 오크가 이어집니다. 차콜 멜로잉은 숙성 전에 거친 성분을 정돈하며, 발효·증류·숙성이 합쳐져 특유의 달콤한 과실과 오크 캐릭터를 만듭니다.","ops":"바나나, 바닐라, 캐러멜, 구운 견과와 부드러운 오크가 이어집니다."},"Jameson Black Barrel":{"id":103,"name":"Jameson Black Barrel","abv":40.0,"abvText":"","caskDetail":"버번·셰리 캐스크 숙성 원액 중 더블 차드 버번 배럴의 비중을 높여 블렌딩.","profile":"바닐라, 토피, 구운 견과, 사과와 향신료가 진하고 크리미합니다. 일반 제임슨보다 차링 오크와 팟 스틸 원액의 풍미가 강화됩니다.","ops":"바닐라, 토피, 구운 견과, 사과와 향신료가 진하고 크리미합니다."},"Jameson Standard":{"id":104,"name":"Jameson Standard","abv":40.0,"abvText":"","caskDetail":"팟 스틸 위스키와 파인 그레인 위스키를 블렌딩해 3회 증류하고, 오크 캐스크에서 최소 4년 숙성한 제임슨의 기본 제품입니다. 연산 표기가 없는 NAS 블렌디드 아이리시 위스키입니다.","profile":"가벼운 꽃향과 달콤한 곡물, 바닐라, 견과류, 은은한 셰리 과실과 우드 스파이스가 부드럽게 이어집니다. 강한 캐스크 개성보다 매끄러운 질감과 균형이 중심입니다.","ops":"가벼운 꽃향과 달콤한 곡물, 바닐라, 견과류, 은은한 셰리 과실과 우드 스파이스가 부드럽게 이어집니다."},"Johnnie Walker Red Label":{"id":105,"name":"Johnnie Walker Red Label","abv":40.0,"abvText":"","caskDetail":"스코틀랜드 여러 지역의 몰트·그레인 원액을 복합 캐스크에서 블렌딩.","profile":"계피, 후추, 사과, 바닐라와 직선적인 스모크가 가볍게 나타납니다. 믹서에서 존재감을 내도록 향신료와 알코올감이 선명한 블렌드입니다.","ops":"계피, 후추, 사과, 바닐라와 직선적인 스모크가 가볍게 나타납니다."},"Johnnie Walker Black Label":{"id":106,"name":"Johnnie Walker Black Label","abv":40.0,"abvText":"","caskDetail":"12년 이상 숙성 몰트·그레인 원액을 버번·셰리 계열 등 복합 캐스크에서 블렌딩.","profile":"바닐라, 건과일, 오렌지, 향신료와 부드러운 스모크가 균형 있게 이어집니다. 블렌디드 스카치에서 스모크와 단맛의 기준점 역할을 합니다.","ops":"바닐라, 건과일, 오렌지, 향신료와 부드러운 스모크가 균형 있게 이어집니다."},"Johnnie Walker Black Ruby":{"id":107,"name":"Johnnie Walker Black Ruby","abv":40.0,"abvText":"","caskDetail":"레드와인 캐스크와 버번 캐스크에서 숙성한 원액을 중심으로 블렌딩.","profile":"블랙베리, 자두, 꿀, 바닐라와 은은한 스모크가 달고 과즙감 있게 나타납니다. 블랙 라벨의 스모크 구조에 붉은 과일과 와인 단맛을 강조한 스타일입니다.","ops":"블랙베리, 자두, 꿀, 바닐라와 은은한 스모크가 달고 과즙감 있게 나타납니다."},"Johnnie Walker Blue Label":{"id":108,"name":"Johnnie Walker Blue Label","abv":40.0,"abvText":"","caskDetail":"희소한 장기 숙성 몰트·그레인 원액을 다양한 캐스크에서 블렌딩하며 구성 비공개.","profile":"꿀, 헤이즐넛, 다크초콜릿, 말린 과일과 은은한 스모크가 매우 매끄럽게 이어집니다. 강한 개성보다 층위와 질감, 긴 균형이 핵심입니다.","ops":"꿀, 헤이즐넛, 다크초콜릿, 말린 과일과 은은한 스모크가 매우 매끄럽게 이어집니다."},"Johnnie Walker Platinum Label 18":{"id":109,"name":"Johnnie Walker Platinum Label 18","abv":40.0,"abvText":"","caskDetail":"18년 이상 숙성 몰트·그레인 원액을 다양한 오크 캐스크에서 블렌딩.","profile":"아몬드, 건과일, 바닐라, 오렌지와 은은한 스모크가 부드럽고 길게 이어집니다. 블랙 라벨의 구조를 더 숙성되고 크리미하게 확장한 스타일입니다.","ops":"아몬드, 건과일, 바닐라, 오렌지와 은은한 스모크가 부드럽고 길게 이어집니다."},"Jura Origin 10":{"id":110,"name":"Jura Origin 10","abv":40.0,"abvText":"40.0–43.0% · 시장별 상이","caskDetail":"구형 Jura Origin 10은 아메리칸 화이트 오크 엑스버번 캐스크에서 10년 숙성한 제품입니다. 현행 Jura 10의 올로로소 셰리 피니시 제품과 구분해야 합니다.","profile":"꿀, 몰트, 바닐라, 사과, 오렌지 껍질과 가벼운 해양성·훈연 뉘앙스가 담백하게 이어집니다. 강한 피트 제품은 아니며, 구형 Origin은 현행 Jura 10보다 셰리 영향이 적고 엑스버번 중심의 밝은 인상입니다.","ops":"꿀, 몰트, 바닐라, 사과, 오렌지 껍질과 가벼운 해양성·훈연 뉘앙스가 담백하게 이어집니다.","abvMin":40.0,"abvMax":43.0},"Jim Beam White Label":{"id":111,"name":"Jim Beam White Label","abv":40.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성.","profile":"바닐라, 카라멜, 옥수수, 땅콩과 가벼운 오크가 단순하고 달게 이어집니다. 버번과 하이볼의 가장 기본적인 풍미 구조를 보여줍니다.","ops":"바닐라, 카라멜, 옥수수, 땅콩과 가벼운 오크가 단순하고 달게 이어집니다."},"Jim Beam Rye":{"id":112,"name":"Jim Beam Rye","abv":40.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성의 프리프루프 라이.","profile":"후추, 민트, 바닐라, 곡물과 가벼운 오크가 산뜻하게 나타납니다. 낮은 도수로 라이 스파이스를 부담 없이 경험할 수 있습니다.","ops":"후추, 민트, 바닐라, 곡물과 가벼운 오크가 산뜻하게 나타납니다."},"Kavalan Solist Vinho Barrique":{"id":113,"name":"Kavalan Solist Vinho Barrique","abv":0.0,"abvText":"50.0–59.9%","caskDetail":"레드·화이트 와인을 담았던 아메리칸 오크 배럴을 토스트·리차링해 단일 캐스크로 전 기간 숙성한 캐스크 스트렝스.","profile":"망고, 멜론, 키위, 바닐라, 다크초콜릿과 후추가 폭발적으로 나타나는 단일 캐스크·캐스크 스트렝스 위스키입니다. 공식 범위는 50.0–59.9%이며 실제 ABV와 세부 풍미는 각 병 라벨과 캐스크 번호에 따라 달라집니다.","ops":"망고, 멜론, 키위, 바닐라, 다크초콜릿과 후추가 폭발적으로 나타나는 단일 캐스크·캐스크 스트렝스 위스키입니다.","abvMin":50.0,"abvMax":59.9},"Canadian Club Classic 12":{"id":114,"name":"Canadian Club Classic 12","abv":40.0,"abvText":"","caskDetail":"캐나다산 몰트·그레인 원액을 주로 사용 오크·아메리칸 오크 캐스크에서 12년 숙성.","profile":"카라멜, 바닐라, 호밀 향신료와 부드러운 오크가 가볍고 매끄럽게 이어집니다. 캐나다 블렌드 특유의 편안함에 숙성감이 더해집니다.","ops":"카라멜, 바닐라, 호밀 향신료와 부드러운 오크가 가볍고 매끄럽게 이어집니다."},"Caol Ila 12":{"id":115,"name":"Caol Ila 12","abv":43.0,"abvText":"","caskDetail":"리필 아메리칸 오크 엑스버번 캐스크 중심 숙성.","profile":"레몬, 배, 올리브 오일, 해초, 재와 깨끗한 연기가 선명하게 이어집니다. 피트가 강하지만 무겁기보다 드라이하고 미네랄한 아일라입니다.","ops":"레몬, 배, 올리브 오일, 해초, 재와 깨끗한 연기가 선명하게 이어집니다."},"Cragganmore 12":{"id":116,"name":"Cragganmore 12","abv":40.0,"abvText":"","caskDetail":"리필 아메리칸 오크와 유러피언 오크 캐스크를 복합 사용.","profile":"몰트, 꿀, 사과, 허브, 약한 연기와 복합 향신료가 차분하게 이어집니다. 화려한 과일보다 곡물과 허브, 미묘한 스모크가 중심입니다.","ops":"몰트, 꿀, 사과, 허브, 약한 연기와 복합 향신료가 차분하게 이어집니다."},"Nikka Taketsuru Pure Malt":{"id":117,"name":"Nikka Taketsuru Pure Malt","abv":43.0,"abvText":"","caskDetail":"요이치와 미야기쿄 몰트 원액을 버번·셰리 등 다양한 캐스크에서 숙성해 블렌딩.","profile":"사과, 복숭아, 몰트, 초콜릿과 은은한 스모크가 균형 있게 이어집니다. 요이치의 힘과 미야기쿄의 과실을 부드럽게 결합한 퓨어 몰트입니다.","ops":"사과, 복숭아, 몰트, 초콜릿과 은은한 스모크가 균형 있게 이어집니다."},"Talisker Special Release 2023":{"id":118,"name":"Talisker Special Release 2023","abv":59.7,"abvText":"","caskDetail":"아메리칸 오크 숙성 후 포르투갈 루비 포트 캐스크 피니시한 2023 스페셜 릴리즈.","profile":"검은 베리, 자두, 후추, 바다 소금과 강한 스모크가 59.7%에서 폭발적으로 나타납니다. 포트의 과실과 탈리스커의 후추·해양성이 선명하게 충돌합니다.","ops":"검은 베리, 자두, 후추, 바다 소금과 강한 스모크가 59.7%에서 폭발적으로 나타납니다."},"Tamnavulin Sauvignon Blanc Cask":{"id":119,"name":"Tamnavulin Sauvignon Blanc Cask","abv":40.0,"abvText":"","caskDetail":"아메리칸 오크 숙성 후 소비뇽 블랑 와인 캐스크 피니시.","profile":"레몬, 청사과, 구스베리, 바닐라와 허브가 가볍고 산뜻하게 이어집니다. 화이트와인 캐스크의 산미와 풀향이 명확한 입문형 피니시입니다.","ops":"레몬, 청사과, 구스베리, 바닐라와 허브가 가볍고 산뜻하게 이어집니다."},"Tamnavulin Sherry Cask":{"id":120,"name":"Tamnavulin Sherry Cask","abv":40.0,"abvText":"","caskDetail":"아메리칸 오크 숙성 원액과 셰리 캐스크 숙성·피니시 원액을 조합.","profile":"건포도, 오렌지, 초콜릿, 계피와 바닐라가 달고 부드럽게 이어집니다. 강한 셰리 폭탄보다 접근성 높은 데일리 셰리 몰트입니다.","ops":"건포도, 오렌지, 초콜릿, 계피와 바닐라가 달고 부드럽게 이어집니다."},"Tamnavulin Pinot Noir Cask":{"id":121,"name":"Tamnavulin Pinot Noir Cask","abv":40.0,"abvText":"","caskDetail":"아메리칸 오크 숙성 후 피노 누아 레드와인 캐스크 피니시.","profile":"딸기, 체리, 자두, 바닐라와 가벼운 와인 탄닌이 산뜻하게 나타납니다. 붉은 과실이 중심이며 질감은 무겁지 않습니다.","ops":"딸기, 체리, 자두, 바닐라와 가벼운 와인 탄닌이 산뜻하게 나타납니다."},"Four Roses Single Barrel":{"id":122,"name":"Four Roses Single Barrel","abv":50.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 싱글 배럴 숙성.","profile":"체리, 자두, 바닐라, 코코아와 베이킹 스파이스가 풍부하게 나타납니다. 고호밀 매시빌과 50% 도수가 과일·향신료를 선명하게 만듭니다.","ops":"체리, 자두, 바닐라, 코코아와 베이킹 스파이스가 풍부하게 나타납니다."},"Paul John Brilliance":{"id":123,"name":"Paul John Brilliance","abv":46.0,"abvText":"","caskDetail":"퍼스트필 엑스버번 배럴에서 숙성.","profile":"꿀, 사과, 바나나, 바닐라와 후추가 밝고 풍부하게 나타납니다. 인도 고온 숙성의 농축감은 있으나 피트가 없어 접근성이 좋습니다.","ops":"꿀, 사과, 바나나, 바닐라와 후추가 밝고 풍부하게 나타납니다."},"Highland Park 12":{"id":124,"name":"Highland Park 12","abv":40.0,"abvText":"","caskDetail":"셰리 시즌드 유러피언·아메리칸 오크 캐스크를 중심으로 숙성.","profile":"꿀, 오렌지, 헤더, 계피와 은은한 피트 스모크가 균형 있게 이어집니다. 셰리 단맛과 오크 향신료, 섬 피트가 과하지 않게 결합됩니다.","ops":"꿀, 오렌지, 헤더, 계피와 은은한 피트 스모크가 균형 있게 이어집니다."},"Highland Park 15":{"id":125,"name":"Highland Park 15","abv":44.0,"abvText":"","caskDetail":"셰리 시즌드 유러피언·아메리칸 오크 캐스크에서 15년 숙성.","profile":"파인애플, 꿀, 계피, 건과일과 부드러운 피트가 풍성하게 이어집니다. 12년보다 과실과 오크의 깊이가 늘고 질감이 더 크리미합니다.","ops":"파인애플, 꿀, 계피, 건과일과 부드러운 피트가 풍성하게 이어집니다."},"High West Rendezvous Rye":{"id":126,"name":"High West Rendezvous Rye","abv":46.0,"abvText":"","caskDetail":"다양한 연산과 매시빌의 스트레이트 라이를 새 차드 오크 숙성 후 블렌딩.","profile":"민트, 계피, 후추, 말린 과일과 바닐라가 복합적으로 이어집니다. 단일 증류소 라이보다 블렌딩에서 오는 층위와 달콤함이 특징입니다.","ops":"민트, 계피, 후추, 말린 과일과 바닐라가 복합적으로 이어집니다."},"High West Bourbon":{"id":127,"name":"High West Bourbon","abv":46.0,"abvText":"","caskDetail":"여러 주의 스트레이트 버번을 새 차드 오크 숙성 후 블렌딩.","profile":"카라멜, 꿀, 바닐라, 살구와 계피가 부드럽고 밝게 이어집니다. 고도수이지만 과도한 오크보다 블렌딩의 균형과 과일이 중심입니다.","ops":"카라멜, 꿀, 바닐라, 살구와 계피가 부드럽고 밝게 이어집니다."},"Heaven's Door Double Barrel":{"id":128,"name":"Heaven's Door Double Barrel","abv":50.0,"abvText":"","caskDetail":"두 종류의 스트레이트 버번과 한 종류의 스트레이트 라이를 각각 새 오크에서 5년 이상 숙성한 뒤, 강하게 차링한 새 오크에서 6~12개월 추가 숙성.","profile":"카라멜, 다크 바닐라, 오렌지, 후추와 강한 토스트 오크가 두껍게 이어집니다. 버번의 단맛과 라이 스파이스, 2차 새 오크의 차링이 핵심입니다.","ops":"카라멜, 다크 바닐라, 오렌지, 후추와 강한 토스트 오크가 두껍게 이어집니다."},"Fuji Sanroku Signature Blend":{"id":129,"name":"Fuji Sanroku Signature Blend","abv":50.0,"abvText":"","caskDetail":"몰트·그레인 원액을 다양한 아메리칸 오크 계열 캐스크에서 숙성해 블렌딩하며 세부 비율은 비공개.","profile":"복숭아, 배, 바닐라, 카카오와 향신료가 50%에서 진하고 매끄럽게 이어집니다. 일본 블렌드 특유의 정돈감과 높은 도수의 밀도가 함께 나타납니다.","ops":"복숭아, 배, 바닐라, 카카오와 향신료가 50%에서 진하고 매끄럽게 이어집니다."},"Glen Scotia Double Cask":{"id": 130, "name": "Glen Scotia Double Cask", "abv": 46.0, "abvText": "46%", "caskDetail": "퍼스트필 버번 캐스크 숙성 후 Pedro Ximénez 셰리 캐스크에서 피니시한 캠벨타운 싱글몰트.", "profile": "바닐라, 사과, 배, 바다 소금기 위에 PX 셰리의 건과일·토피·스파이스가 붙는 캠벨타운 몰트입니다.", "ops": "캠벨타운 특유의 바닷바람과 오일리한 몰트감 위에 버번 캐스크의 바닐라, PX 셰리 피니시의 건과일·토피 단맛이 더해집니다. 짭짤함과 달콤함이 균형을 이루는 싱글몰트입니다."},"Bernheim Original Kentucky Straight Wheat Whiskey":{"id": 131, "name": "Bernheim Original Kentucky Straight Wheat Whiskey", "abv": 45.0, "abvText": "45%", "caskDetail": "밀 51% 기반의 켄터키 스트레이트 위트 위스키. 새 차링 오크 숙성.", "profile": "꿀, 바닐라, 구운 빵, 부드러운 곡물 단맛이 둥글게 이어지는 진짜 위트 위스키입니다.", "ops": "밀을 주원료로 만든 켄터키 스트레이트 위트 위스키입니다. 꿀, 바닐라, 구운 빵과 부드러운 곡물 단맛이 둥글게 이어지며, 버번보다 질감이 온화하고 매끄럽습니다."},"The Hakushu 12 Year Old":{"id": 132, "name": "The Hakushu 12 Year Old", "abv": 43.0, "abvText": "43%", "caskDetail": "하쿠슈 증류소의 12년 숙성 일본 싱글몰트. 다양한 캐스크 원액을 블렌딩.", "profile": "청사과, 민트, 풋허브, 유자계 시트러스와 아주 얇은 스모크가 산림감 있게 이어집니다.", "ops": "숲을 연상시키는 민트, 허브, 청사과와 유자 같은 시트러스가 맑게 올라옵니다. 얇은 스모크가 산림감과 청량한 피니시를 만드는 일본 싱글몰트입니다."},"The Hakushu Distiller's Reserve":{"id": 133, "name": "The Hakushu Distiller's Reserve", "abv": 43.0, "abvText": "43%", "caskDetail": "NAS 하쿠슈 싱글몰트. 산뜻하고 허벌한 원액 중심의 Distiller’s Reserve.", "profile": "민트, 멜론, 오이, 레몬 껍질, 신선한 허브와 섬세한 스모크가 가볍게 납니다.", "ops": "어린 초록 과실, 민트, 오이, 레몬 껍질 같은 산뜻한 향이 중심입니다. 질감은 가볍고 깨끗하며, 은은한 스모크가 피니시를 정돈합니다."},"Signatory Edradour 10 Year Old UCF":{"id": 134, "name": "Signatory Edradour 10 Year Old UCF", "abv": 46.0, "abvText": "46% / 병 라벨 확인", "caskDetail": "Signatory Vintage Un-Chillfiltered Collection. 주로 퍼스트필 올로로소 셰리 벗 계열로 유통되는 10년, 46%, 논칠필터 독립병입. 병입 배치별 캐스크 번호는 라벨 기준입니다.", "profile": "건포도, 자두, 초콜릿, 견과, 가죽, 스파이스가 구식 셰리 몰트처럼 두껍게 납니다.", "ops": "논칠필터 46% 병입 특유의 질감이 살아 있는 독립병입 에드라두어입니다. 건포도, 자두, 초콜릿, 견과, 스파이스가 겹치며 작은 증류소 특유의 밀도감이 느껴집니다."},"Bunnahabhain 12 Year Old":{"id": 135, "name": "Bunnahabhain 12 Year Old", "abv": 46.3, "abvText": "46.3%", "caskDetail": "버번 캐스크와 셰리 캐스크 숙성. 논칠필터, 내추럴 컬러.", "profile": "말린 과일, 견과, 바닐라, 엷은 해풍과 짭짤한 단맛이 이어지는 비피트 아일라 몰트입니다.", "ops": "아일라 싱글몰트지만 피트보다 말린 과일, 견과, 바닐라, 부드러운 해풍과 짭짤한 단맛이 중심입니다. 무겁지 않은 셰리감과 해안 몰트의 균형이 좋습니다."},"Glenfiddich 23 Grand Cru":{"id": 136, "name": "Glenfiddich 23 Grand Cru", "abv": 40.0, "abvText": "40%", "caskDetail": "아메리칸 오크와 유러피언 오크 캐스크에서 23년 숙성 후 프렌치 큐베 와인 캐스크에서 피니시한 스페이사이드 싱글몰트.", "profile": "배, 사과꽃, 브리오슈, 바닐라 크림, 꿀이 섬세하게 이어지는 기념일용 프리미엄 몰트입니다.", "ops": "23년 숙성 원액을 프렌치 큐베 캐스크로 마무리한 프리미엄 스페이사이드입니다. 배, 사과꽃, 브리오슈, 바닐라 크림과 꿀이 섬세하게 이어지며 피니시는 우아하고 깨끗합니다."},"Talisker 10 Year Old":{"id": 137, "name": "Talisker 10 Year Old", "abv": 45.8, "abvText": "45.8%", "caskDetail": "스카이 섬 싱글몰트. 주로 버번계 아메리칸 오크 중심의 해안·피트 스타일.", "profile": "바다 소금, 후추, 시트러스, 몰트 단맛, 건조한 피트 스모크가 선명한 아일랜즈 몰트입니다.", "ops": "스카이 섬 특유의 바다 소금기, 검은 후추, 시트러스와 건조한 피트 스모크가 선명합니다. 달콤한 몰트 뒤로 짭짤하고 스파이시한 피니시가 길게 남습니다."},"Jack Daniel's Single Barrel Barrel Strength":{"id": 138, "name": "Jack Daniel's Single Barrel Barrel Strength", "abv": 65.0, "abvText": "62.5–70% / 병 라벨 확인", "caskDetail": "싱글 배럴 테네시 위스키를 배럴 스트렝스로 병입. 배럴마다 도수 차이가 큼.", "profile": "바나나, 바닐라, 브라운슈가, 토스티드 오크, 캔디드 스파이스가 고도수로 폭발합니다.", "ops": "싱글 배럴 테네시 위스키를 물로 낮추지 않고 강한 도수로 병입한 스타일입니다. 바나나, 바닐라, 브라운슈가, 토스티드 오크, 캔디드 스파이스가 진하고 폭발적으로 펼쳐집니다."},"Glen Scotia Double Cask Single Malt Scotch Whisky":{"id": 130, "name": "Glen Scotia Double Cask", "abv": 46.0, "abvText": "46%", "caskDetail": "퍼스트필 버번 캐스크 숙성 후 Pedro Ximénez 셰리 캐스크에서 피니시한 캠벨타운 싱글몰트.", "profile": "바닐라, 사과, 배, 바다 소금기 위에 PX 셰리의 건과일·토피·스파이스가 붙는 캠벨타운 몰트입니다.", "ops": "캠벨타운 특유의 바닷바람과 오일리한 몰트감 위에 버번 캐스크의 바닐라, PX 셰리 피니시의 건과일·토피 단맛이 더해집니다. 짭짤함과 달콤함이 균형을 이루는 싱글몰트입니다."},"Bernheim Original":{"id": 131, "name": "Bernheim Original Kentucky Straight Wheat Whiskey", "abv": 45.0, "abvText": "45%", "caskDetail": "밀 51% 기반의 켄터키 스트레이트 위트 위스키. 새 차링 오크 숙성.", "profile": "꿀, 바닐라, 구운 빵, 부드러운 곡물 단맛이 둥글게 이어지는 진짜 위트 위스키입니다.", "ops": "밀을 주원료로 만든 켄터키 스트레이트 위트 위스키입니다. 꿀, 바닐라, 구운 빵과 부드러운 곡물 단맛이 둥글게 이어지며, 버번보다 질감이 온화하고 매끄럽습니다."},"Hakushu 12":{"id": 132, "name": "The Hakushu 12 Year Old", "abv": 43.0, "abvText": "43%", "caskDetail": "하쿠슈 증류소의 12년 숙성 일본 싱글몰트. 다양한 캐스크 원액을 블렌딩.", "profile": "청사과, 민트, 풋허브, 유자계 시트러스와 아주 얇은 스모크가 산림감 있게 이어집니다.", "ops": "숲을 연상시키는 민트, 허브, 청사과와 유자 같은 시트러스가 맑게 올라옵니다. 얇은 스모크가 산림감과 청량한 피니시를 만드는 일본 싱글몰트입니다."},"Hakushu Distiller's Reserve":{"id": 133, "name": "The Hakushu Distiller's Reserve", "abv": 43.0, "abvText": "43%", "caskDetail": "NAS 하쿠슈 싱글몰트. 산뜻하고 허벌한 원액 중심의 Distiller’s Reserve.", "profile": "민트, 멜론, 오이, 레몬 껍질, 신선한 허브와 섬세한 스모크가 가볍게 납니다.", "ops": "어린 초록 과실, 민트, 오이, 레몬 껍질 같은 산뜻한 향이 중심입니다. 질감은 가볍고 깨끗하며, 은은한 스모크가 피니시를 정돈합니다."},"Signatory Edradour 10 UCF":{"id": 134, "name": "Signatory Edradour 10 Year Old UCF", "abv": 46.0, "abvText": "46% / 병 라벨 확인", "caskDetail": "Signatory Vintage Un-Chillfiltered Collection. 주로 퍼스트필 올로로소 셰리 벗 계열로 유통되는 10년, 46%, 논칠필터 독립병입. 병입 배치별 캐스크 번호는 라벨 기준입니다.", "profile": "건포도, 자두, 초콜릿, 견과, 가죽, 스파이스가 구식 셰리 몰트처럼 두껍게 납니다.", "ops": "논칠필터 46% 병입 특유의 질감이 살아 있는 독립병입 에드라두어입니다. 건포도, 자두, 초콜릿, 견과, 스파이스가 겹치며 작은 증류소 특유의 밀도감이 느껴집니다."},"Bunnahabhain 12":{"id": 135, "name": "Bunnahabhain 12 Year Old", "abv": 46.3, "abvText": "46.3%", "caskDetail": "버번 캐스크와 셰리 캐스크 숙성. 논칠필터, 내추럴 컬러.", "profile": "말린 과일, 견과, 바닐라, 엷은 해풍과 짭짤한 단맛이 이어지는 비피트 아일라 몰트입니다.", "ops": "아일라 싱글몰트지만 피트보다 말린 과일, 견과, 바닐라, 부드러운 해풍과 짭짤한 단맛이 중심입니다. 무겁지 않은 셰리감과 해안 몰트의 균형이 좋습니다."},"Glenfiddich Grand Cru 23":{"id": 136, "name": "Glenfiddich 23 Grand Cru", "abv": 40.0, "abvText": "40%", "caskDetail": "아메리칸 오크와 유러피언 오크 캐스크에서 23년 숙성 후 프렌치 큐베 와인 캐스크에서 피니시한 스페이사이드 싱글몰트.", "profile": "배, 사과꽃, 브리오슈, 바닐라 크림, 꿀이 섬세하게 이어지는 기념일용 프리미엄 몰트입니다.", "ops": "23년 숙성 원액을 프렌치 큐베 캐스크로 마무리한 프리미엄 스페이사이드입니다. 배, 사과꽃, 브리오슈, 바닐라 크림과 꿀이 섬세하게 이어지며 피니시는 우아하고 깨끗합니다."},"Talisker 10":{"id": 137, "name": "Talisker 10 Year Old", "abv": 45.8, "abvText": "45.8%", "caskDetail": "스카이 섬 싱글몰트. 주로 버번계 아메리칸 오크 중심의 해안·피트 스타일.", "profile": "바다 소금, 후추, 시트러스, 몰트 단맛, 건조한 피트 스모크가 선명한 아일랜즈 몰트입니다.", "ops": "스카이 섬 특유의 바다 소금기, 검은 후추, 시트러스와 건조한 피트 스모크가 선명합니다. 달콤한 몰트 뒤로 짭짤하고 스파이시한 피니시가 길게 남습니다."},"Jack Daniel's Single Barrel Barrel Strength":{"id": 138, "name": "Jack Daniel's Single Barrel Barrel Strength", "abv": 65.0, "abvText": "62.5–70% / 병 라벨 확인", "caskDetail": "싱글 배럴 테네시 위스키를 배럴 스트렝스로 병입. 배럴마다 도수 차이가 큼.", "profile": "바나나, 바닐라, 브라운슈가, 토스티드 오크, 캔디드 스파이스가 고도수로 폭발합니다.", "ops": "싱글 배럴 테네시 위스키를 물로 낮추지 않고 강한 도수로 병입한 스타일입니다. 바나나, 바닐라, 브라운슈가, 토스티드 오크, 캔디드 스파이스가 진하고 폭발적으로 펼쳐집니다."}};
+const PRODUCT_SEARCH_NAMES={"1792 Small Batch":["1792 스몰배치","1792 Small Batch","1792小批次波本","1792 スモールバッチ"],"Glengoyne 12":["글렌고인 12년","Glengoyne 12 Year Old","格兰哥尼12年","グレンゴイン 12年"],"The Glen Grant 12":["글렌그란트 12년","The Glen Grant 12 Year Old","格兰冠12年","ザ・グレングラント 12年"],"The Glen Grant 18":["글렌그란트 18년","The Glen Grant 18 Year Old","格兰冠18年","ザ・グレングラント 18年"],"Glenglassaugh 12":["글렌글라사 12년","Glenglassaugh 12 Year Old","格兰格拉索12年","グレングラッサ 12年"],"The GlenDronach 12":["글렌드로낙 12년","The GlenDronach 12 Year Old","格兰多纳12年","グレンドロナック 12年"],"The GlenDronach 18 Allardice":["글렌드로낙 18년","The GlenDronach 18 Year Old Allardice","格兰多纳18年阿勒代斯","グレンドロナック 18年 アラダイス"],"The Glenrothes 12":["글렌로티스 12년","The Glenrothes 12 Year Old","格兰路思12年","ザ・グレンロセス 12年"],"The Glenlivet 12":["글렌리벳 12년","The Glenlivet 12 Year Old","格兰利威12年","ザ・グレンリベット 12年"],"The Glenlivet 18":["글렌리벳 18년","The Glenlivet 18 Year Old","格兰利威18年","ザ・グレンリベット 18年"],"Glenmorangie The Original 12":["글렌모렌지 12년 디오리지널","Glenmorangie The Original 12 Years Old","格兰杰经典12年","グレンモーレンジィ オリジナル 12年"],"Glenmorangie The Nectar 16":["글렌모렌지 16년 더 넥타","Glenmorangie The Nectar 16 Years Old","格兰杰“蜜意”16年","グレンモーレンジィ ザ・ネクター 16年"],"Glenmorangie Signet":["글렌모렌지 시그넷","Glenmorangie Signet","格兰杰稀印","グレンモーレンジィ シグネット"],"Glen Scotia Double Cask":["글렌스코시아 더블캐스크","Glen Scotia Double Cask","格兰帝双桶","グレンスコシア ダブルカスク"],"The GlenAllachie 12":["글렌알라키 12년","The GlenAllachie 12 Year Old","格兰艾乐奇12年","グレンアラヒー 12年"],"The GlenAllachie 8":["글렌알라키 8년","The GlenAllachie 8 Year Old","格兰艾乐奇8年","グレンアラヒー 8年"],"The Glenturret 10 Peat Smoked":["글렌터렛 10년 피트스모크","The Glenturret 10 Years Old Peat Smoked","格兰塔雷10年泥煤烟熏","ザ・グレンタレット 10年 ピーテッド"],"The Glenturret 12":["글렌터렛 12년","The Glenturret 12 Years Old","格兰塔雷12年","ザ・グレンタレット 12年"],"The Glenturret Triple Wood":["글렌터렛 트리플우드","The Glenturret Triple Wood","格兰塔雷三桶","ザ・グレンタレット トリプルウッド"],"Glenfarclas 15":["글렌파클라스 15년","Glenfarclas 15 Years Old","格兰花格15年","グレンファークラス 15年"],"Glenfiddich 12":["글렌피딕 12년","Glenfiddich 12 Year Old","格兰菲迪12年","グレンフィディック 12年"],"Glenfiddich 18":["글렌피딕 18년","Glenfiddich 18 Year Old","格兰菲迪18年","グレンフィディック 18年"],"Glenfiddich 23 Grand Cru":["글렌피딕 23년 그랑크루","Glenfiddich Grand Cru 23 Year Old","格兰菲迪23年格兰库","グレンフィディック グランクリュ 23年"],"Ki One Eagle":["기원 독수리","Ki One Eagle","KI ONE 雄鹰","キ・ワン イーグル"],"Ki One Unicorn":["기원 유니콘","Ki One Unicorn","KI ONE 独角兽","キ・ワン ユニコーン"],"Ki One Tiger":["기원 호랑이","Ki One Tiger","KI ONE 猛虎","キ・ワン タイガー"],"Kim Chang-soo Whisky 51.7":["김창수위스키 51.7","Kim Chang-soo Whisky 51.7","金昌洙威士忌51.7","キム・チャンス ウイスキー 51.7"],"Knob Creek Rye":["납 크릭 라이","Knob Creek Rye","诺布溪黑麦","ノブクリーク ライ"],"Knob Creek Kentucky Straight Bourbon":["납 크릭 버번","Knob Creek Kentucky Straight Bourbon Whiskey","诺布溪波本","ノブクリーク バーボン"],"Naked Malt":["네이키드몰트 블랜디드","Naked Malt Blended Malt Scotch Whisky","裸雀调和麦芽苏格兰威士忌","ネイキッドモルト ブレンデッドモルト"],"The Dalmore 12":["달모어 12년","The Dalmore 12 Year Old","达尔摩12年","ザ・ダルモア 12年"],"The Dalmore Cigar Malt Reserve":["달모어 시가몰트 리저브","The Dalmore Cigar Malt Reserve","达尔摩雪茄三桶","ザ・ダルモア シガーモルト リザーブ"],"The Dalmore King Alexander III":["달모어 킹 알렉산더 3세","The Dalmore King Alexander III","达尔摩亚历山大三世","ザ・ダルモア キング・アレキサンダー3世"],"Dewar's 12":["듀어스 12년","Dewar's 12 Year Old","帝王12年","デュワーズ 12年"],"Dewar's 18 Mizunara Cask Finish":["듀어스 18년 미즈나라캐스크","Dewar's 18 Year Old Mizunara Cask Finish","帝王18年水楢桶收尾","デュワーズ 18年 ミズナラカスクフィニッシュ"],"Deanston Virgin Oak":["딘스톤 버진오크","Deanston Virgin Oak","汀斯顿维珍橡木","ディーンストン ヴァージンオーク"],"Lagavulin 16":["라가불린 16년","Lagavulin 16 Year Old","乐加维林16年","ラガヴーリン 16年"],"Lagavulin 8":["라가불린 8년","Lagavulin 8 Year Old","乐加维林8年","ラガヴーリン 8年"],"Laphroaig 10":["라프로익 10년","Laphroaig 10 Year Old","拉弗格10年","ラフロイグ 10年"],"Laphroaig Quarter Cask":["라프로익 쿼터캐스크","Laphroaig Quarter Cask","拉弗格四分之一桶","ラフロイグ クォーターカスク"],"Russell's Reserve 10":["러셀 리저브 10년","Russell's Reserve 10 Year Old","罗素珍藏10年","ラッセルズ・リザーブ 10年"],"Russell's Reserve Single Barrel":["러셀 리저브 싱글배럴","Russell's Reserve Single Barrel Bourbon","罗素珍藏单桶波本","ラッセルズ・リザーブ シングルバレル"],"Redbreast 12":["레드브레스트 12년","Redbreast 12 Year Old","红胸知更鸟12年","レッドブレスト 12年"],"Rebel 100 Kentucky Straight Bourbon":["레벨옐 스트레이트 버번 100프루프","Rebel Yell 100 Proof Kentucky Straight Bourbon Whiskey","Rebel Yell 100 Proof肯塔基波本","レベル・イェール 100プルーフ"],"Royal Brackla 12":["로얄브라클라 12년","Royal Brackla 12 Year Old","皇家布莱克拉12年","ロイヤル・ブラックラ 12年"],"Royal Brackla 18":["로얄브라클라 18년","Royal Brackla 18 Year Old","皇家布莱克拉18年","ロイヤル・ブラックラ 18年"],"Royal Salute 21":["로얄살루트 21년","Royal Salute 21 Year Old","皇家礼炮21年","ロイヤルサルート 21年"],"Loch Lomond 12":["로크로몬드 12년","Loch Lomond 12 Year Old","罗曼湖12年","ロッホローモンド 12年"],"The Macallan 12 Double Cask":["맥캘란 12년 더블캐스크","The Macallan Double Cask 12 Years Old","麦卡伦双桶12年","ザ・マッカラン ダブルカスク 12年"],"The Macallan A Night on Earth – The First Light":["맥캘란 나이트 온 어스 더 퍼스트 라이트","The Macallan A Night on Earth – The First Light","麦卡伦地球之夜·初光","ザ・マッカラン ア・ナイト・オン・アース ザ・ファーストライト"],"The Macallan Harmony Collection Inspired by Phoenix Honey Orchid Tea":["맥캘란 더 하모니 징","The Macallan Harmony Collection Inspired by Phoenix Honey Orchid Tea","麦卡伦臻彩系列·凤凰单丛蜜兰香茶","ザ・マッカラン ハーモニー・コレクション インスパイアード・バイ・フェニックス・ハニー・オーキッド・ティー"],"Maker's Mark":["메이커스 마크","Maker's Mark","美格","メーカーズマーク"],"Mellow Corn":["멜로우 콘","Mellow Corn","Mellow Corn醇香玉米威士忌","メローコーン"],"Monkey Shoulder":["몽키 숄더","Monkey Shoulder","三只猴子","モンキーショルダー"],"Michter's US*1 Small Batch Bourbon":["믹터스 스몰배치","Michter's US*1 Small Batch Bourbon","酩帝诗US*1小批次波本","ミクターズ US*1 スモールバッチ バーボン"],"Michter's US*1 Unblended American Whiskey":["믹터스 언블렌디드 아메리칸","Michter's US*1 Unblended American Whiskey","酩帝诗US*1美国威士忌","ミクターズ US*1 アンブレンデッド アメリカンウイスキー"],"Ballantine's Glenburgie 12":["발렌타인 12년 글렌버기","Ballantine's Glenburgie 12 Year Old","百龄坛格兰伯吉12年","バランタイン グレンバーギー 12年"],"Ballantine's 21":["발렌타인 21년","Ballantine's 21 Year Old","百龄坛21年","バランタイン 21年"],"Ballantine's 30 Year Old":["발렌타인 30년","Ballantine's 30 Year Old","百龄坛30年","バランタイン 30年"],"Ballantine's Masters":["발렌타인 마스터스","Ballantine's Master's","百龄坛大师精选","バランタイン マスターズ"],"The Balvenie 12 DoubleWood":["발베니 12년 더블우드","The Balvenie DoubleWood 12 Year Old","百富双桶12年","ザ・バルヴェニー ダブルウッド 12年"],"The Balvenie 14 Caribbean Cask":["발베니 14년 캐리비안 캐스크","The Balvenie Caribbean Cask 14 Year Old","百富加勒比海桶14年","ザ・バルヴェニー カリビアンカスク 14年"],"The Balvenie 16 French Oak":["발베니 16년 프렌치오크","The Balvenie French Oak 16 Year Old","百富法国橡木桶16年","ザ・バルヴェニー フレンチオーク 16年"],"The Busker Triple Cask":["버스커 트리플캐스크","The Busker Triple Cask Triple Smooth","巴斯克三桶","ザ・バスカー トリプルカスク"],"Benromach 10":["벤로막 10년","Benromach 10 Year Old","本诺曼克10年","ベンロマック 10年"],"Benriach 16":["벤리악 16년","Benriach The Sixteen","本利亚克16年","ベンリアック 16年"],"Benriach The Smoky Ten":["벤리악 스모키 10년","Benriach The Smoky Ten","本利亚克烟熏十年","ベンリアック ザ・スモーキー・テン"],"Benchmark Old No. 8":["벤치마크위스키(No.8)","Benchmark No. 8","Benchmark No.8波本","ベンチマーク No.8"],"Bowmore 12":["보모어 12년","Bowmore 12 Year Old","波摩12年","ボウモア 12年"],"Bowmore 18":["보모어 18년","Bowmore 18 Year Old","波摩18年","ボウモア 18年"],"Bunnahabhain 12 Year Old":["부나하벤 12년","Bunnahabhain 12 Year Old","布纳哈本12年","ブナハーブン 12年"],"Bushmills 10":["부쉬밀 10년","Bushmills 10 Year Old Single Malt","布什米尔10年单一麦芽","ブッシュミルズ 10年 シングルモルト"],"Bushmills 12":["부쉬밀 12년","Bushmills 12 Year Old Single Malt","布什米尔12年单一麦芽","ブッシュミルズ 12年 シングルモルト"],"Bulleit Rye":["불렛 라이","Bulleit Rye","布莱特黑麦","ブレット ライ"],"Bulleit Bourbon":["불렛 버번","Bulleit Bourbon","布莱特波本","ブレット バーボン"],"Brenne French Single Malt":["브렌 프렌치 싱글몰트","Brenne French Single Malt Whisky","布伦法国单一麦芽","ブレンヌ フレンチ シングルモルト"],"Smokehead Original":["스모크헤드 오리지널","Smokehead Original","烟熏头原版","スモークヘッド オリジナル"],"Starward Nova":["스타워드 노바","Starward Nova","星向新星","スターワード ノヴァ"],"Chivas Regal 12":["시바스리갈 12년","Chivas Regal 12 Year Old","芝华士12年","シーバスリーガル 12年"],"The Singleton of Dufftown 12":["싱글톤 더프타운 12년","The Singleton of Dufftown 12 Year Old","达夫镇苏格登12年","シングルトン・オブ・ダフタウン 12年"],"Ardbeg 10":["아드벡 10년","Ardbeg Ten Years Old","阿贝10年","アードベッグ 10年"],"Ardbeg Uigeadail":["아드벡 우거다일","Ardbeg Uigeadail","阿贝乌干达","アードベッグ ウーガダール"],"Arran 10":["아란 10년","Arran 10 Year Old","阿兰10年","アラン 10年"],"Arran Sherry Cask":["아란 쉐리 캐스크","Arran Sherry Cask 'The Bodega'","阿兰雪莉桶“酒窖”","アラン シェリーカスク ザ・ボデガ"],"Aberlour 12 Double Cask":["아벨라워 12년 더블캐스크","Aberlour 12 Year Old Double Cask Matured","亚伯乐12年双桶","アベラワー 12年 ダブルカスクマチュアード"],"Aberlour 16":["아벨라워 16년","Aberlour 16 Year Old","亚伯乐16年","アベラワー 16年"],"Bårelegs Battle Axe":["아일라보이즈배틀엑스","The Islay Boys Bårelegs Battle Axe Islay Single Malt","艾雷男孩“战斧”艾雷单一麦芽","ザ・アイラ・ボーイズ ベアレッグス バトルアックス"],"Alfred Giraud Horizon":["알프레드지로호라이즌","Alfred Giraud Horizon","阿尔弗雷德·吉罗地平线","アルフレッド・ジロー ホライゾン"],"Amrut Indian Single Malt":["암룻인디언","Amrut Indian Single Malt Whisky","阿穆特印度单一麦芽","アムルット インディアン シングルモルト"],"Yamazaki 12":["야마자키 12년","Yamazaki 12 Year Old","山崎12年","山崎 12年"],"Yamazaki Distiller's Reserve":["야마자키 DR","Yamazaki Distiller's Reserve","山崎酿造者珍藏","山崎 ディスティラーズリザーブ"],"Evan Williams Bottled-in-Bond":["에반 윌리엄스 BIB","Evan Williams Bottled-in-Bond","埃文·威廉姆斯保税仓","エヴァン・ウィリアムス ボトルド・イン・ボンド"],"Evan Williams Black Label":["에반 윌리엄스 블랙","Evan Williams Black Label","埃文·威廉姆斯黑标","エヴァン・ウィリアムス ブラックラベル"],"Aberfeldy 16":["에버펠디 16년","Aberfeldy 16 Year Old","艾柏迪16年","アバフェルディ 16年"],"The Epicurean":["에피큐리안","The Epicurean","伊壁鸠鲁","ザ・エピキュリアン"],"Angel's Envy Kentucky Straight Bourbon":["엔젤스엔비","Angel's Envy Kentucky Straight Bourbon Whiskey Finished in Port Wine Barrels","天使之嫉波本波特桶收尾","エンジェルズ・エンヴィ"],"Oban 14":["오반 14년","Oban 14 Year Old","欧本14年","オーバン 14年"],"Old Parr 12":["올드파 12년","Grand Old Parr 12 Year Old","老帕尔12年","オールドパー 12年"],"Wild Turkey 101 8 Year":["와일드터키 101 8년","Wild Turkey 101 8 Year Old","野火鸡101 8年","ワイルドターキー 101 8年"],"Wild Turkey 101 Rye":["와일드터키 101 라이","Wild Turkey 101 Rye","野火鸡101黑麦","ワイルドターキー 101 ライ"],"Wild Turkey Rare Breed":["와일드터키 레어브리드","Wild Turkey Rare Breed","野火鸡珍藏桶强","ワイルドターキー レアブリード"],"Wild Turkey Master's Keep Triumph":["와일드터키 마스터스킵 트라이엄프","Wild Turkey Master's Keep Triumph","野火鸡大师珍藏凯旋","ワイルドターキー マスターズキープ トライアンフ"],"Nikka Yoichi Single Malt":["요이치 싱글몰트","Yoichi Single Malt","余市单一麦芽","シングルモルト余市"],"Woodford Reserve":["우드포드 리저브","Woodford Reserve Kentucky Straight Bourbon Whiskey","伍德福德珍藏波本","ウッドフォードリザーブ"],"West Cork Calvados Cask Finish":["웨스트콕 아이리쉬 칼바도스캐스크","West Cork Calvados Cask Finish","西科克卡尔瓦多斯桶收尾","ウエストコーク カルヴァドスカスクフィニッシュ"],"Eagle Rare 10":["이글레어 10년","Eagle Rare 10 Year Old","鹰珍10年","イーグルレア 10年"],"Jack Daniel's Old No. 7":["잭 다니엘스","Jack Daniel's Old No. 7 Tennessee Whiskey","杰克丹尼老7号","ジャックダニエル オールド No.7"],"Jack Daniel's Single Barrel Barrel Strength":["잭다니엘 싱글배럴 배럴스트렝스","Jack Daniel's Single Barrel Barrel Strength Tennessee Whiskey","杰克丹尼单桶桶强","ジャックダニエル シングルバレル バレルストレングス"],"Jameson Black Barrel":["제임슨 블랙배럴","Jameson Black Barrel","尊美醇黑桶","ジェムソン ブラックバレル"],"Jameson Standard":["제임슨 스탠다드","Jameson Irish Whiskey","尊美醇爱尔兰威士忌","ジェムソン スタンダード"],"Johnnie Walker Red Label":["조니워커 레드","Johnnie Walker Red Label","尊尼获加红牌","ジョニーウォーカー レッドラベル"],"Johnnie Walker Black Label":["조니워커 블랙","Johnnie Walker Black Label","尊尼获加黑牌","ジョニーウォーカー ブラックラベル"],"Johnnie Walker Black Ruby":["조니워커 블랙루비","Johnnie Walker Black Ruby","尊尼获加黑红宝石","ジョニーウォーカー ブラックルビー"],"Johnnie Walker Blue Label":["조니워커 블루","Johnnie Walker Blue Label","尊尼获加蓝牌","ジョニーウォーカー ブルーラベル"],"Johnnie Walker Platinum Label 18":["조니워커 플래티넘","Johnnie Walker Platinum Label 18 Year Old","尊尼获加铂金18年","ジョニーウォーカー プラチナムラベル 18年"],"Jura Origin 10":["주라 10년","Jura 10 Year Old","朱拉10年","ジュラ 10年"],"Jim Beam Rye":["짐 빔 라이","Jim Beam Rye","金宾黑麦","ジムビーム ライ"],"Jim Beam White Label":["짐 빔 화이트","Jim Beam Kentucky Straight Bourbon Whiskey","金宾白标","ジムビーム ホワイト"],"Kavalan Solist Vinho Barrique":["카발란 솔리스트 비노 바리크","Kavalan Solist Vinho Barrique Single Cask Strength","噶玛兰经典独奏Vinho葡萄酒桶原酒","カバラン ソリスト ヴィーニョ・バリック"],"Canadian Club Classic 12":["캐나디언 클럽 12년","Canadian Club 12 Year Old","加拿大俱乐部12年","カナディアンクラブ 12年"],"Caol Ila 12":["쿨일라 12년","Caol Ila 12 Year Old","卡尔里拉12年","カリラ 12年"],"Cragganmore 12":["크래겐모어 12년","Cragganmore 12 Year Old","克拉格摩尔12年","クラガンモア 12年"],"Nikka Taketsuru Pure Malt":["타케츠루 퓨어몰트","Taketsuru Pure Malt","竹鹤纯麦","竹鶴ピュアモルト"],"Talisker 10 Year Old":["탈리스커 10년","Talisker 10 Year Old","泰斯卡10年","タリスカー 10年"],"Talisker Special Release 2023":["탈리스커 SR2023","Talisker Special Release 2023 – The Wild Explorador","泰斯卡2023特别版“狂野探险家”","タリスカー スペシャルリリース 2023 ザ・ワイルド・エクスプロラドール"],"Tamnavulin Sauvignon Blanc Cask":["탐나불린 쇼비뇽블랑 캐스크","Tamnavulin Sauvignon Blanc Cask Edition","塔木岭长相思桶","タムナヴーリン ソーヴィニヨンブラン カスクエディション"],"Tamnavulin Sherry Cask":["탐나불린 쉐리캐스크","Tamnavulin Sherry Cask Edition","塔木岭雪莉桶","タムナヴーリン シェリーカスク エディション"],"Tamnavulin Pinot Noir Cask":["탐나불린 피노누아캐스크","Tamnavulin Pinot Noir Cask Edition","塔木岭黑皮诺桶","タムナヴーリン ピノノワール カスクエディション"],"Four Roses Single Barrel":["포로지스 싱글배럴","Four Roses Single Barrel","四玫瑰单桶","フォアローゼズ シングルバレル"],"Paul John Brilliance":["폴존 브릴리언스","Paul John Brilliance","保罗约翰璀璨","ポール・ジョン ブリリアンス"],"Highland Park 12":["하이랜드 파크 12년","Highland Park 12 Year Old Viking Honour","高原骑士12年维京荣耀","ハイランドパーク 12年 ヴァイキング・オナー"],"Highland Park 15":["하이랜드 파크 15년","Highland Park 15 Year Old Viking Heart","高原骑士15年维京之心","ハイランドパーク 15年 ヴァイキング・ハート"],"High West Rendezvous Rye":["하이웨스트 랑데뷰","High West Rendezvous Rye","高西会合点黑麦","ハイウエスト ランデブーライ"],"High West Bourbon":["하이웨스트 버번","High West Bourbon","高西波本","ハイウエスト バーボン"],"The Hakushu 12 Year Old":["하쿠슈 12년","Hakushu 12 Year Old","白州12年","白州 12年"],"The Hakushu Distiller's Reserve":["하쿠슈 DR","Hakushu Distiller's Reserve","白州酿造者珍藏","白州 ディスティラーズリザーブ"],"Heaven's Door Double Barrel":["헤븐스 도어 더블배럴","Heaven's Door Double Barrel Whiskey","天堂之门双桶威士忌","ヘブンズドア ダブルバレル"],"Fuji Sanroku Signature Blend":["후지산로쿠 시그니처 블랜드","Fuji Sanroku Signature Blend","富士山麓签名调和","富士山麓 シグニチャーブレンド"],"Hibiki Japanese Harmony":["히비키 하모니","Hibiki Japanese Harmony","响和风醇韵","響 ジャパニーズハーモニー"],"Bernheim Original Kentucky Straight Wheat Whiskey":["번하임 오리지널","Bernheim Original Kentucky Straight Wheat Whiskey","伯恩海姆原版肯塔基纯小麦威士忌","バーンハイム オリジナル ケンタッキー ストレート ウィートウイスキー"]};
+
+const PRODUCT_DETAILS={"1792 Small Batch":{"id":1,"name":"1792 Small Batch","abv":46.85,"abvText":"","caskDetail":"새 미국산 화이트 오크 차드 배럴에서 숙성한 켄터키 스트레이트 버번.","profile":"카라멜과 바닐라의 단맛 위에 잘 익은 사과, 후추, 계피가 겹치는 농밀한 버번입니다. 46.85%의 도수가 단맛을 흐리지 않으면서 오크와 향신료를 또렷하게 살립니다.","ops":"카라멜과 바닐라의 단맛 위에 잘 익은 사과, 후추, 계피가 겹치는 농밀한 버번입니다."},"The Glenlivet 18":{"id":2,"name":"The Glenlivet 18","abv":40.0,"abvText":"","caskDetail":"퍼스트필·세컨드필 아메리칸 오크와 셰리 계열 캐스크를 조합한 장기 숙성.","profile":"말린 과일, 오렌지, 토피와 은은한 견과류가 부드럽게 이어지는 전형적인 장기 숙성 스페이사이드입니다. 자극보다 균형과 매끄러운 질감이 중심입니다.","ops":"말린 과일, 오렌지, 토피와 은은한 견과류가 부드럽게 이어지는 전형적인 장기 숙성 스페이사이드입니다."},"The Glenturret 12":{"id":3,"name":"The Glenturret 12","abv":46.4,"abvText":"46.2–46.4% · 릴리스별 상이","caskDetail":"올로로소·페드로 히메네즈 셰리 시즌드 유러피언·아메리칸 오크 캐스크 중심 숙성. 릴리스에 따라 리필 캐스크가 보조적으로 포함될 수 있습니다.","profile":"캐러멜라이즈드 시트러스, 바닐라, 계피와 건과일이 먼저 나타나고 생강·넛맥·토스트 오크가 길게 이어지는 하이랜드 싱글몰트입니다. 셰리 시즌드 유러피언 오크의 구조감과 아메리칸 오크의 밝은 단맛이 함께 드러납니다.","ops":"캐러멜라이즈드 시트러스, 바닐라, 계피와 건과일이 먼저 나타나고 생강·넛맥·토스트 오크가 길게 이어지는 하이랜드 싱글몰트입니다.","abvMin":46.2,"abvMax":46.4},"Glenfarclas 15":{"id":4,"name":"Glenfarclas 15","abv":46.0,"abvText":"","caskDetail":"올로로소 셰리 시즌드 캐스크 중심의 전통적인 숙성.","profile":"건포도, 호두, 다크초콜릿, 커피와 말린 오렌지가 진하게 겹치는 고전적인 셰리 몰트입니다. 46%의 오일리한 질감과 약간의 황·가죽 뉘앙스가 개성을 만듭니다.","ops":"건포도, 호두, 다크초콜릿, 커피와 말린 오렌지가 진하게 겹치는 고전적인 셰리 몰트입니다."},"Glengoyne 12":{"id":5,"name":"Glengoyne 12","abv":43.0,"abvText":"","caskDetail":"퍼스트필 유러피언 오크 셰리 캐스크, 퍼스트필 버번 캐스크, 리필 캐스크의 조합.","profile":"사과, 레몬, 꿀, 구운 아몬드와 은은한 오크가 깨끗하게 이어집니다. 셰리 풍미가 과하지 않고 증류소 특유의 맑고 정돈된 과실감이 중심입니다.","ops":"사과, 레몬, 꿀, 구운 아몬드와 은은한 오크가 깨끗하게 이어집니다."},"The Glen Grant 12":{"id":6,"name":"The Glen Grant 12","abv":43.0,"abvText":"","caskDetail":"핸드 셀렉티드 엑스버번 배럴과 올로로소 셰리 캐스크를 함께 사용.","profile":"배·사과·꿀과 아몬드, 파이 크러스트가 산뜻하게 펼쳐지는 밝은 스페이사이드입니다. 셰리 캐스크가 무게를 더하지만 전체 인상은 가볍고 깨끗합니다.","ops":"배·사과·꿀과 아몬드, 파이 크러스트가 산뜻하게 펼쳐지는 밝은 스페이사이드입니다."},"The Glen Grant 18":{"id":7,"name":"The Glen Grant 18","abv":43.0,"abvText":"","caskDetail":"엄선한 엑스버번 배럴과 리메이드 혹스헤드에서 장기 숙성.","profile":"바닐라, 버터스카치, 건포도와 은은한 베이킹 스파이스가 정교하게 이어집니다. 18년 숙성임에도 과도하게 오키하지 않고 우아한 과실과 몰트가 남습니다.","ops":"바닐라, 버터스카치, 건포도와 은은한 베이킹 스파이스가 정교하게 이어집니다."},"Glenglassaugh 12":{"id":8,"name":"Glenglassaugh 12","abv":45.0,"abvText":"","caskDetail":"버번 캐스크, 셰리 캐스크, 레드와인 캐스크를 조합한 숙성.","profile":"잘 익은 복숭아와 망고, 바닐라, 건포도, 약한 와인 탄닌이 풍성하게 나타납니다. 45%의 도수가 과실의 밝음과 오크의 구조감을 함께 유지합니다.","ops":"잘 익은 복숭아와 망고, 바닐라, 건포도, 약한 와인 탄닌이 풍성하게 나타납니다."},"The GlenDronach 12":{"id":9,"name":"The GlenDronach 12","abv":43.0,"abvText":"","caskDetail":"페드로 히메네즈와 올로로소 셰리 캐스크 숙성.","profile":"건포도, 무화과, 초콜릿, 생강과 오렌지 껍질이 진득하게 이어지는 대표적인 셰리 몰트입니다. 단맛이 분명하지만 스파이스와 오크가 마무리를 잡습니다.","ops":"건포도, 무화과, 초콜릿, 생강과 오렌지 껍질이 진득하게 이어지는 대표적인 셰리 몰트입니다."},"The GlenDronach 18 Allardice":{"id":10,"name":"The GlenDronach 18 Allardice","abv":46.0,"abvText":"","caskDetail":"올로로소 셰리 캐스크에서 18년 숙성.","profile":"다크초콜릿, 커피, 검은 체리, 건포도와 오래된 가죽이 깊게 겹칩니다. 농축된 셰리와 묵직한 질감, 길고 드라이한 피니시가 핵심입니다.","ops":"다크초콜릿, 커피, 검은 체리, 건포도와 오래된 가죽이 깊게 겹칩니다."},"The Glenrothes 12":{"id":11,"name":"The Glenrothes 12","abv":40.0,"abvText":"","caskDetail":"셰리 시즌드 유러피언 오크와 아메리칸 오크 캐스크 중심 숙성.","profile":"바닐라, 바나나, 레몬, 멜론과 가벼운 계피가 부드럽게 연결됩니다. 셰리 캐스크 사용에도 무겁기보다 밝고 크리미한 과실형에 가깝습니다.","ops":"바닐라, 바나나, 레몬, 멜론과 가벼운 계피가 부드럽게 연결됩니다."},"The Glenlivet 12":{"id":12,"name":"The Glenlivet 12","abv":40.0,"abvText":"","caskDetail":"아메리칸 오크와 유러피언 오크를 함께 사용하는 더블 오크 숙성.","profile":"파인애플, 배, 시트러스, 바닐라와 부드러운 몰트가 가볍게 펼쳐집니다. 알코올 자극이 낮고 깨끗해 스페이사이드 입문형의 기준점이 됩니다.","ops":"파인애플, 배, 시트러스, 바닐라와 부드러운 몰트가 가볍게 펼쳐집니다."},"Glenmorangie The Original 12":{"id":13,"name":"Glenmorangie The Original 12","abv":40.0,"abvText":"","caskDetail":"퍼스트필·세컨드필 엑스버번 캐스크에서 12년 숙성.","profile":"레몬, 복숭아, 바닐라, 꽃과 코코넛이 밝고 매끈하게 이어집니다. 가벼운 질감과 깨끗한 시트러스가 중심인 하이랜드 몰트입니다.","ops":"레몬, 복숭아, 바닐라, 꽃과 코코넛이 밝고 매끈하게 이어집니다."},"Glenmorangie The Nectar 16":{"id":14,"name":"Glenmorangie The Nectar 16","abv":46.0,"abvText":"","caskDetail":"버번 캐스크 장기 숙성 후 소테른·몽바지약·모스카텔 등 스위트 화이트와인 계열 캐스크 피니시.","profile":"레몬 타르트, 꿀, 바닐라 커스터드, 살구와 흰 꽃이 풍부하게 나타납니다. 디저트 와인 캐스크의 달콤함을 46%의 질감으로 밀도 있게 표현합니다.","ops":"레몬 타르트, 꿀, 바닐라 커스터드, 살구와 흰 꽃이 풍부하게 나타납니다."},"Glenmorangie Signet":{"id":15,"name":"Glenmorangie Signet","abv":46.0,"abvText":"","caskDetail":"고온 로스팅한 초콜릿 몰트 원액과 장기 숙성 원액을 아메리칸 오크·셰리 계열 등 복합 캐스크로 구성하며 세부 비율은 비공개.","profile":"에스프레소, 다크초콜릿, 오렌지, 계피와 벨벳 같은 질감이 독특하게 겹칩니다. 캐스크보다 로스팅 몰트에서 오는 커피·카카오 캐릭터가 제품의 핵심입니다.","ops":"에스프레소, 다크초콜릿, 오렌지, 계피와 벨벳 같은 질감이 독특하게 겹칩니다."},"The GlenAllachie 12":{"id":16,"name":"The GlenAllachie 12","abv":46.0,"abvText":"","caskDetail":"PX·올로로소 셰리 펀천, 버진 오크와 와인 캐스크 원액을 조합한 현대적 멀티 캐스크 숙성.","profile":"건포도, 꿀, 모카, 바나나와 계피가 진하고 달게 펼쳐집니다. 46%의 오일리한 질감과 적극적인 캐스크 풍미가 특징입니다.","ops":"건포도, 꿀, 모카, 바나나와 계피가 진하고 달게 펼쳐집니다."},"The GlenAllachie 8":{"id":17,"name":"The GlenAllachie 8","abv":46.0,"abvText":"","caskDetail":"PX·올로로소 셰리 캐스크와 버진 오크·와인 계열 캐스크를 조합.","profile":"건포도, 당밀, 헤더 꿀, 계피와 코코아가 젊고 힘 있게 나타납니다. 12년보다 오크와 알코올이 직선적이지만 캐스크 풍미는 충분히 진합니다.","ops":"건포도, 당밀, 헤더 꿀, 계피와 코코아가 젊고 힘 있게 나타납니다."},"The Glenturret 10 Peat Smoked":{"id":18,"name":"The Glenturret 10 Peat Smoked","abv":50.0,"abvText":"46.6–50.0% · 릴리스별 상이","caskDetail":"퍼스트필·세컨드필 유러피언 및 아메리칸 오크 캐스크를 혼합 사용한 피티드 몰트.","profile":"훈연, 말린 과일, 오렌지, 바닐라와 후추가 밀도 있게 펼쳐집니다. 연도별 릴리스에 따라 병입 도수가 달라지며, 달콤한 피트 스모크와 아메리칸·유러피언 오크의 건과일·향신료가 함께 나타나는 스타일입니다.","ops":"훈연, 말린 과일, 오렌지, 바닐라와 후추가 밀도 있게 펼쳐집니다.","abvMin":46.6,"abvMax":50.0},"The Glenturret Triple Wood":{"id":19,"name":"The Glenturret Triple Wood","abv":44.0,"abvText":"44.0–45.0% · 릴리스별 상이","caskDetail":"아메리칸 오크 셰리, 유러피언 오크 셰리, 엑스버번의 트리플 우드 구성.","profile":"사과, 배, 바닐라 토피, 생강, 계피와 부드러운 오크가 균형 있게 이어집니다. 아메리칸·유러피언 오크 셰리 시즌드 캐스크와 버번 배럴을 조합하며, 릴리스별 도수 차이보다 밝은 과실과 부드러운 우드 스파이스가 중심입니다.","ops":"사과, 배, 바닐라 토피, 생강, 계피와 부드러운 오크가 균형 있게 이어집니다.","abvMin":44.0,"abvMax":45.0},"Glenfiddich 12":{"id":20,"name":"Glenfiddich 12","abv":40.0,"abvText":"","caskDetail":"아메리칸 오크 엑스버번 캐스크와 스페인산 셰리 오크 캐스크 숙성.","profile":"배, 풋사과, 꿀, 몰트와 아주 약한 오크가 산뜻하게 이어집니다. 가볍고 명확한 과일 향으로 싱글몰트 입문의 대표 기준점입니다.","ops":"배, 풋사과, 꿀, 몰트와 아주 약한 오크가 산뜻하게 이어집니다."},"Glenfiddich 18":{"id":21,"name":"Glenfiddich 18","abv":40.0,"abvText":"","caskDetail":"올로로소 셰리 캐스크와 아메리칸 오크 버번 캐스크 원액을 소규모 배치로 결합.","profile":"구운 사과, 건과일, 계피, 오크와 토피가 차분하게 겹칩니다. 18년 숙성의 부드러움과 절제된 셰리 풍미가 중심입니다.","ops":"구운 사과, 건과일, 계피, 오크와 토피가 차분하게 겹칩니다."},"Ki One Unicorn":{"id":22,"name":"Ki One Unicorn","abv":46.0,"abvText":"","caskDetail":"피티드 몰트를 사용하고 아메리칸 오크 계열 캐스크에서 숙성했으며 세부 배합은 비공개.","profile":"낙엽, 젖은 흙, 모닥불 연기와 오렌지 껍질, 동양 향신료가 독특하게 겹칩니다. 한국 기후 숙성의 빠른 오크 반응과 피트가 개성을 만듭니다.","ops":"낙엽, 젖은 흙, 모닥불 연기와 오렌지 껍질, 동양 향신료가 독특하게 겹칩니다."},"Ki One Tiger":{"id":23,"name":"Ki One Tiger","abv":46.0,"abvText":"","caskDetail":"셰리 캐스크와 와인 캐스크 원액을 블렌딩.","profile":"잘 익은 자두, 건포도, 꿀, 버터스카치와 넛맥이 달고 크리미하게 이어집니다. 와인 캐스크의 과실감이 한국 숙성의 스파이스와 결합합니다.","ops":"잘 익은 자두, 건포도, 꿀, 버터스카치와 넛맥이 달고 크리미하게 이어집니다."},"Ki One Eagle":{"id":24,"name":"Ki One Eagle","abv":43.0,"abvText":"","caskDetail":"켄터키 퍼스트필 버번 캐스크와 미주리산 뉴 오크를 블렌딩.","profile":"카라멜, 바닐라, 바나나, 넛맥과 깊은 오크가 뚜렷합니다. 새 오크와 버번 캐스크의 차링 풍미가 제품의 중심입니다.","ops":"카라멜, 바닐라, 바나나, 넛맥과 깊은 오크가 뚜렷합니다."},"Kim Chang-soo Whisky 51.7":{"id":25,"name":"Kim Chang-soo Whisky 51.7","abv":51.7,"abvText":"","caskDetail":"퍼스트필 유러피언 올로로소 셰리 혹스헤드 싱글 캐스크로 알려진 2025 바 에디션.","profile":"짙은 베리와 건포도, 흑설탕, 정향, 젖은 흙과 재가 강하게 겹칩니다. 셰리의 단맛보다 피트·향신료·산미가 더 날카롭게 느껴지는 고도수 싱글 캐스크입니다.","ops":"짙은 베리와 건포도, 흑설탕, 정향, 젖은 흙과 재가 강하게 겹칩니다."},"Knob Creek Rye":{"id":26,"name":"Knob Creek Rye","abv":50.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴에서 숙성한 켄터키 스트레이트 라이.","profile":"호밀 특유의 후추, 딜, 민트와 바닐라·카라멜이 50%에서 선명하게 나타납니다. 단맛과 드라이한 스파이스가 균형을 이루는 정석적인 라이입니다.","ops":"호밀 특유의 후추, 딜, 민트와 바닐라·카라멜이 50%에서 선명하게 나타납니다."},"Knob Creek Kentucky Straight Bourbon":{"id":27,"name":"Knob Creek Kentucky Straight Bourbon","abv":50.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 화이트 오크 배럴 숙성.","profile":"진한 바닐라, 카라멜, 구운 견과, 오크와 계피가 농축되어 있습니다. 50%의 힘과 9년 숙성의 우디함이 전면에 나오는 클래식 버번입니다.","ops":"진한 바닐라, 카라멜, 구운 견과, 오크와 계피가 농축되어 있습니다."},"Naked Malt":{"id":28,"name":"Naked Malt","abv":40.0,"abvText":"","caskDetail":"셰리 캐스크에서 추가 숙성한 블렌디드 몰트 구성.","profile":"건포도, 코코아, 체리와 부드러운 몰트가 편안하게 이어집니다. 진한 셰리 폭탄보다는 달콤하고 크리미한 블렌디드 몰트에 가깝습니다.","ops":"건포도, 코코아, 체리와 부드러운 몰트가 편안하게 이어집니다."},"The Dalmore 12":{"id":29,"name":"The Dalmore 12","abv":40.0,"abvText":"","caskDetail":"아메리칸 화이트 오크 엑스버번 숙성 후 올로로소 셰리 캐스크 피니시.","profile":"오렌지 마멀레이드, 초콜릿, 커피, 계피와 부드러운 오크가 이어집니다. 셰리의 건과일보다는 달모어 특유의 감귤·카카오 인상이 중심입니다.","ops":"오렌지 마멀레이드, 초콜릿, 커피, 계피와 부드러운 오크가 이어집니다."},"The Dalmore Cigar Malt Reserve":{"id":30,"name":"The Dalmore Cigar Malt Reserve","abv":44.0,"abvText":"","caskDetail":"아메리칸 화이트 오크 숙성 후 마투살렘 올로로소 셰리와 카베르네 소비뇽 와인 캐스크를 포함한 복합 피니시.","profile":"오렌지, 건포도, 계피, 다크초콜릿과 와인 탄닌이 풍부하고 묵직합니다. 이름처럼 시가와 어울릴 정도의 농축된 단맛과 향신료가 특징입니다.","ops":"오렌지, 건포도, 계피, 다크초콜릿과 와인 탄닌이 풍부하고 묵직합니다."},"The Dalmore King Alexander III":{"id":31,"name":"The Dalmore King Alexander III","abv":40.0,"abvText":"","caskDetail":"버번·올로로소 셰리·마데이라·마르살라·포트·카베르네 소비뇽 등 여러 캐스크를 복합 사용.","profile":"오렌지, 자두, 초콜릿, 커피, 향신료가 층층이 나타나는 복합적인 달모어입니다. 각 캐스크가 강하게 튀기보다 부드럽고 고급스럽게 통합됩니다.","ops":"오렌지, 자두, 초콜릿, 커피, 향신료가 층층이 나타나는 복합적인 달모어입니다."},"Dewar's 12":{"id":32,"name":"Dewar's 12","abv":40.0,"abvText":"","caskDetail":"블렌딩 후 오크 캐스크에서 다시 숙성하는 더블 에이징 공정.","profile":"꿀, 바닐라, 사과, 버터스카치와 가벼운 스모크가 매끄럽게 이어집니다. 부드러운 질감과 균형이 중심인 데일리 블렌디드 스카치입니다.","ops":"꿀, 바닐라, 사과, 버터스카치와 가벼운 스모크가 매끄럽게 이어집니다."},"Dewar's 18 Mizunara Cask Finish":{"id":33,"name":"Dewar's 18 Mizunara Cask Finish","abv":40.0,"abvText":"","caskDetail":"18년 숙성 블렌디드 스카치를 일본산 미즈나라 오크 캐스크에서 추가 피니시한 40% 제품입니다. 일반 듀어스 18년과 8년 Japanese Smooth 미즈나라 제품과 구분합니다.","profile":"꿀과 바닐라, 과수원 과일, 코코넛, 샌들우드와 부드러운 우드 스파이스가 매끄럽게 이어집니다. 18년 숙성 원액의 둥근 질감 위에 미즈나라 특유의 향목·향신료 뉘앙스가 절제되어 나타납니다.","ops":"꿀과 바닐라, 과수원 과일, 코코넛, 샌들우드와 부드러운 우드 스파이스가 매끄럽게 이어집니다."},"Deanston Virgin Oak":{"id":34,"name":"Deanston Virgin Oak","abv":46.3,"abvText":"","caskDetail":"엑스버번 캐스크 숙성 후 버진 아메리칸 오크의 강한 영향을 부여.","profile":"꿀, 레몬, 바닐라, 코코넛과 생목·후추가 생동감 있게 나타납니다. 젊은 몰트의 곡물감과 새 오크의 달고 매운 풍미가 직접적입니다.","ops":"꿀, 레몬, 바닐라, 코코넛과 생목·후추가 생동감 있게 나타납니다."},"Lagavulin 16":{"id":35,"name":"Lagavulin 16","abv":43.0,"abvText":"","caskDetail":"주로 리필 아메리칸 오크 캐스크에 일부 셰리 계열 캐스크 원액을 조합.","profile":"요오드, 해초, 모닥불, 말린 과일과 바닐라가 깊고 안정적으로 이어집니다. 피트가 강하지만 16년 숙성으로 모서리가 둥글고 오일리합니다.","ops":"요오드, 해초, 모닥불, 말린 과일과 바닐라가 깊고 안정적으로 이어집니다."},"Lagavulin 8":{"id":36,"name":"Lagavulin 8","abv":48.0,"abvText":"","caskDetail":"리필 아메리칸 오크·엑스버번 캐스크 중심 숙성.","profile":"레몬 껍질, 재, 후추, 바다 소금과 가벼운 바닐라가 날카롭게 펼쳐집니다. 16년보다 젊고 건조하며 피트의 직선적인 힘이 강조됩니다.","ops":"레몬 껍질, 재, 후추, 바다 소금과 가벼운 바닐라가 날카롭게 펼쳐집니다."},"Laphroaig 10":{"id":37,"name":"Laphroaig 10","abv":40.0,"abvText":"","caskDetail":"엑스버번 배럴 중심 숙성.","profile":"요오드, 소독약, 해초, 재와 바닐라가 강하게 충돌하는 대표적인 메디시널 아일라입니다. 낮은 도수에도 증류소 캐릭터가 매우 뚜렷합니다.","ops":"요오드, 소독약, 해초, 재와 바닐라가 강하게 충돌하는 대표적인 메디시널 아일라입니다."},"Laphroaig Quarter Cask":{"id":38,"name":"Laphroaig Quarter Cask","abv":48.0,"abvText":"","caskDetail":"엑스버번 배럴 숙성 후 소형 쿼터 캐스크에서 추가 숙성.","profile":"강한 요오드와 장작 연기, 코코넛, 바닐라, 후추와 진한 오크가 두껍게 나타납니다. 작은 캐스크의 빠른 추출로 10년보다 달고 우디합니다.","ops":"강한 요오드와 장작 연기, 코코넛, 바닐라, 후추와 진한 오크가 두껍게 나타납니다."},"Russell's Reserve Single Barrel":{"id":39,"name":"Russell's Reserve Single Barrel","abv":55.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 싱글 배럴 숙성.","profile":"바닐라, 체리, 담배, 계피와 짙은 오크가 배럴마다 조금씩 다른 농도로 나타납니다. 55%의 높은 도수와 싱글 배럴 특유의 개성이 핵심입니다.","ops":"바닐라, 체리, 담배, 계피와 짙은 오크가 배럴마다 조금씩 다른 농도로 나타납니다."},"Russell's Reserve 10":{"id":40,"name":"Russell's Reserve 10","abv":45.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴에서 10년 숙성.","profile":"바닐라, 오렌지, 가죽, 후추와 숙성 오크가 차분하게 이어집니다. 고도수보다 10년 숙성에서 오는 균형과 드라이한 나무 향이 중심입니다.","ops":"바닐라, 오렌지, 가죽, 후추와 숙성 오크가 차분하게 이어집니다."},"Redbreast 12":{"id":41,"name":"Redbreast 12","abv":40.0,"abvText":"","caskDetail":"엑스버번 배럴과 올로로소 셰리 버트에서 숙성한 싱글 팟 스틸 위스키.","profile":"구운 사과, 건포도, 견과류, 크리스마스 스파이스와 크리미한 질감이 풍부합니다. 맥아·비맥아 보리에서 오는 오일리함과 후추 향이 아이리시 몰트와 차별됩니다.","ops":"구운 사과, 건포도, 견과류, 크리스마스 스파이스와 크리미한 질감이 풍부합니다."},"Rebel 100 Kentucky Straight Bourbon":{"id":42,"name":"Rebel 100 Kentucky Straight Bourbon","abv":50.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성의 위티드 버번.","profile":"카라멜, 꿀, 바닐라, 구운 빵과 계피가 달고 묵직하게 이어집니다. 밀을 부원료로 사용해 50%임에도 호밀 버번보다 둥근 단맛을 냅니다.","ops":"카라멜, 꿀, 바닐라, 구운 빵과 계피가 달고 묵직하게 이어집니다."},"Royal Brackla 12":{"id":43,"name":"Royal Brackla 12","abv":46.0,"abvText":"","caskDetail":"아메리칸 오크 숙성 후 올로로소 셰리 캐스크 피니시.","profile":"복숭아, 검은 체리, 초콜릿 아몬드와 흑설탕이 풍성하게 나타납니다. 46%·논칠필터의 두꺼운 질감과 셰리 피니시가 현대적인 하이랜드 스타일을 만듭니다.","ops":"복숭아, 검은 체리, 초콜릿 아몬드와 흑설탕이 풍성하게 나타납니다."},"Royal Brackla 18":{"id":44,"name":"Royal Brackla 18","abv":46.0,"abvText":"","caskDetail":"아메리칸 오크에서 18년 숙성 후 팔로 코르타도 셰리 캐스크 피니시.","profile":"무화과, 호두, 다크초콜릿, 오렌지 껍질과 드라이한 셰리 탄닌이 길게 이어집니다. 12년보다 건과일과 견과, 숙성 오크가 깊습니다.","ops":"무화과, 호두, 다크초콜릿, 오렌지 껍질과 드라이한 셰리 탄닌이 길게 이어집니다."},"Royal Salute 21":{"id":45,"name":"Royal Salute 21","abv":40.0,"abvText":"","caskDetail":"스코틀랜드 여러 지역의 장기 숙성 몰트·그레인 원액을 복합 캐스크에서 블렌딩하며 세부 구성은 비공개.","profile":"복숭아, 배, 헤이즐넛, 꿀과 은은한 스모크가 매우 부드럽게 통합됩니다. 특정 향보다 매끄러운 질감과 균형이 제품 가치의 중심입니다.","ops":"복숭아, 배, 헤이즐넛, 꿀과 은은한 스모크가 매우 부드럽게 통합됩니다."},"Loch Lomond 12":{"id":46,"name":"Loch Lomond 12","abv":46.0,"abvText":"","caskDetail":"엑스버번, 리필 캐스크, 리차드 오크 캐스크를 조합.","profile":"복숭아, 배, 바닐라, 비스킷과 약한 피트 스모크가 균형 있게 나타납니다. 과실형 하이랜드 몰트에 은은한 스모크가 복합성을 더합니다.","ops":"복숭아, 배, 바닐라, 비스킷과 약한 피트 스모크가 균형 있게 나타납니다."},"The Macallan 12 Double Cask":{"id":47,"name":"The Macallan 12 Double Cask","abv":40.0,"abvText":"","caskDetail":"셰리로 시즌한 아메리칸 오크와 유러피언 오크 캐스크 숙성.","profile":"바닐라, 꿀, 오렌지, 건포도와 부드러운 오크가 달고 매끈하게 이어집니다. 유러피언 오크의 스파이스보다 아메리칸 오크의 바닐라가 비교적 선명합니다.","ops":"바닐라, 꿀, 오렌지, 건포도와 부드러운 오크가 달고 매끈하게 이어집니다."},"Maker's Mark":{"id":48,"name":"Maker's Mark","abv":45.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성의 위티드 버번.","profile":"바닐라, 캐러멜, 구운 견과와 부드러운 밀빵 향이 둥글게 이어집니다. 호밀 대신 밀을 사용해 스파이스가 낮고 달콤한 질감이 강조됩니다.","ops":"바닐라, 캐러멜, 구운 견과와 부드러운 밀빵 향이 둥글게 이어집니다."},"Mellow Corn":{"id":49,"name":"Mellow Corn","abv":50.0,"abvText":"","caskDetail":"버번에 한 번 사용한 오크 배럴에서 숙성한 스트레이트 콘 위스키.","profile":"버터 팝콘, 옥수수 시리얼, 바닐라, 꿀과 가벼운 오크가 독특하게 나타납니다. 새 오크가 아닌 사용 배럴 덕분에 곡물 자체가 전면에 남습니다.","ops":"버터 팝콘, 옥수수 시리얼, 바닐라, 꿀과 가벼운 오크가 독특하게 나타납니다."},"Monkey Shoulder":{"id":50,"name":"Monkey Shoulder","abv":40.0,"abvText":"","caskDetail":"스페이사이드 몰트 원액을 주로 엑스버번 캐스크에서 숙성해 블렌딩.","profile":"바닐라, 꿀, 오렌지, 몰트와 약한 향신료가 부드럽게 이어집니다. 블렌디드 몰트 특유의 편안한 단맛과 믹서 적응력이 좋습니다.","ops":"바닐라, 꿀, 오렌지, 몰트와 약한 향신료가 부드럽게 이어집니다."},"Michter's US*1 Small Batch Bourbon":{"id":51,"name":"Michter's US*1 Small Batch Bourbon","abv":45.7,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴에서 소규모 배치 숙성.","profile":"카라멜, 바닐라, 구운 견과, 살구와 후추가 정돈되어 나타납니다. 강한 단맛보다 드라이한 오크와 균형 잡힌 스파이스가 미터스의 특징입니다.","ops":"카라멜, 바닐라, 구운 견과, 살구와 후추가 정돈되어 나타납니다."},"Michter's US*1 Unblended American Whiskey":{"id":52,"name":"Michter's US*1 Unblended American Whiskey","abv":41.7,"abvText":"","caskDetail":"위스키를 담았던 아메리칸 화이트 오크 배럴에서 숙성한 켄터키산 언블렌디드 아메리칸 위스키. 새 오크 사용 의무가 있는 버번과 구분됩니다.","profile":"버터스카치, 바닐라, 말린 과일과 부드러운 오크가 가볍고 달게 이어집니다. 새 차드 오크의 강한 탄닌이 없어 원액의 부드러움이 강조됩니다.","ops":"버터스카치, 바닐라, 말린 과일과 부드러운 오크가 가볍고 달게 이어집니다."},"Ballantine's Glenburgie 12":{"id":53,"name":"Ballantine's Glenburgie 12","abv":40.0,"abvText":"","caskDetail":"발렌타인 블렌드의 핵심 몰트인 글렌버기 증류소의 12년 숙성 싱글몰트입니다. 공식 제품 페이지는 구체적인 캐스크 종류와 비율을 공개하지 않으므로 특정 오크 계열로 단정하지 않습니다.","profile":"토피 애플, 배와 과수원 과일, 바닐라, 은은한 견과와 향신료가 부드럽게 이어집니다. 밝고 크리미한 과실감이 중심이며 발렌타인 블렌드의 핵심 몰트 성격을 단독으로 확인하기 좋습니다.","ops":"토피 애플, 배와 과수원 과일, 바닐라, 은은한 견과와 향신료가 부드럽게 이어집니다."},"Ballantine's 21":{"id":54,"name":"Ballantine's 21","abv":40.0,"abvText":"","caskDetail":"21년 이상 숙성한 몰트·그레인 위스키를 다양한 오크 캐스크에서 블렌딩하며 세부 비율 비공개.","profile":"건과일, 꿀, 헤이즐넛, 꽃과 은은한 스모크가 매우 부드럽게 통합됩니다. 연산의 오크감보다 섬세한 블렌딩과 긴 여운이 중심입니다.","ops":"건과일, 꿀, 헤이즐넛, 꽃과 은은한 스모크가 매우 부드럽게 통합됩니다."},"Ballantine's Masters":{"id":55,"name":"Ballantine's Masters","abv":40.0,"abvText":"","caskDetail":"장기 숙성 몰트·그레인 원액을 복합 캐스크에서 블렌딩하며 세부 구성은 비공개.","profile":"꿀, 배, 바닐라, 초콜릿과 은은한 오크가 편안하게 이어집니다. 발렌타인 특유의 부드러운 과실과 크리미한 질감을 강조한 제품입니다.","ops":"꿀, 배, 바닐라, 초콜릿과 은은한 오크가 편안하게 이어집니다."},"The Balvenie 12 DoubleWood":{"id":56,"name":"The Balvenie 12 DoubleWood","abv":40.0,"abvText":"","caskDetail":"아메리칸 오크 엑스버번 숙성 후 유러피언 오크 올로로소 셰리 캐스크에서 추가 숙성.","profile":"꿀, 바닐라, 건포도, 계피와 견과류가 부드럽고 안정적으로 이어집니다. 더블우드 방식의 대표적인 균형형 셰리 몰트입니다.","ops":"꿀, 바닐라, 건포도, 계피와 견과류가 부드럽고 안정적으로 이어집니다."},"The Balvenie 14 Caribbean Cask":{"id":57,"name":"The Balvenie 14 Caribbean Cask","abv":43.0,"abvText":"","caskDetail":"전통 오크 캐스크 숙성 후 캐리비안 럼 캐스크에서 피니시.","profile":"바닐라, 토피, 망고, 바나나와 따뜻한 향신료가 달고 풍성하게 이어집니다. 럼 캐스크가 당밀과 열대과일의 뉘앙스를 더합니다.","ops":"바닐라, 토피, 망고, 바나나와 따뜻한 향신료가 달고 풍성하게 이어집니다."},"The Balvenie 16 French Oak":{"id":58,"name":"The Balvenie 16 French Oak","abv":47.6,"abvText":"","caskDetail":"아메리칸 오크 숙성 후 프랑스 샤랑트 지역의 피노 데 샤랑트 캐스크 피니시.","profile":"자몽, 꽃, 생강, 꿀과 은은한 포도 단맛이 밝고 드라이하게 이어집니다. 47.6%의 선명한 산미와 허브·시트러스가 독특합니다.","ops":"자몽, 꽃, 생강, 꿀과 은은한 포도 단맛이 밝고 드라이하게 이어집니다."},"The Busker Triple Cask":{"id":59,"name":"The Busker Triple Cask","abv":40.0,"abvText":"","caskDetail":"버번, 셰리, 마르살라 캐스크의 트리플 캐스크 숙성.","profile":"바닐라, 건포도, 자두, 꿀과 가벼운 향신료가 부드럽게 이어집니다. 세 캐스크의 특징이 강하게 튀기보다 대중적인 단맛으로 통합됩니다.","ops":"바닐라, 건포도, 자두, 꿀과 가벼운 향신료가 부드럽게 이어집니다."},"Benromach 10":{"id":60,"name":"Benromach 10","abv":43.0,"abvText":"","caskDetail":"퍼스트필 버번 캐스크와 셰리 캐스크 숙성 후 올로로소 셰리 캐스크에서 마무리.","profile":"몰트, 사과, 견과, 셰리와 은은한 모닥불 연기가 고전적으로 어우러집니다. 가벼운 피트와 직화 증류소 캐릭터가 현대 스페이사이드와 차별됩니다.","ops":"몰트, 사과, 견과, 셰리와 은은한 모닥불 연기가 고전적으로 어우러집니다."},"Benriach The Smoky Ten":{"id":61,"name":"Benriach The Smoky Ten","abv":46.0,"abvText":"","caskDetail":"버번 배럴, 자메이카 럼 캐스크, 구운 버진 오크 캐스크의 3종 숙성.","profile":"훈연, 꿀, 사과, 바닐라와 열대과일이 밝고 달게 겹칩니다. 피트가 강하지만 럼과 버진 오크의 단맛이 공격성을 완화합니다.","ops":"훈연, 꿀, 사과, 바닐라와 열대과일이 밝고 달게 겹칩니다."},"Benriach 16":{"id":62,"name":"Benriach 16","abv":43.0,"abvText":"","caskDetail":"버번·셰리·버진 오크 등 복수 캐스크를 사용한 장기 숙성.","profile":"배, 사과, 꿀, 헤이즐넛과 부드러운 오크가 풍성하게 이어집니다. 16년 숙성의 둥근 질감과 과실 중심 밸런스가 특징입니다.","ops":"배, 사과, 꿀, 헤이즐넛과 부드러운 오크가 풍성하게 이어집니다."},"Benchmark Old No. 8":{"id":63,"name":"Benchmark Old No. 8","abv":40.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성.","profile":"카라멜, 바닐라, 땅콩과 가벼운 계피가 단순하고 직선적으로 나타납니다. 가볍고 편한 켄터키 버번의 기본형입니다.","ops":"카라멜, 바닐라, 땅콩과 가벼운 계피가 단순하고 직선적으로 나타납니다."},"Bowmore 12":{"id":64,"name":"Bowmore 12","abv":40.0,"abvText":"","caskDetail":"엑스버번 캐스크와 셰리 캐스크 원액을 조합.","profile":"레몬, 꿀, 초콜릿, 해풍과 부드러운 연기가 균형 있게 이어집니다. 피트 강도는 낮지만 아일라의 해양성과 코코아 뉘앙스가 분명합니다.","ops":"레몬, 꿀, 초콜릿, 해풍과 부드러운 연기가 균형 있게 이어집니다."},"Bowmore 18":{"id":65,"name":"Bowmore 18","abv":43.0,"abvText":"","caskDetail":"버번 캐스크와 올로로소 셰리 캐스크 장기 숙성.","profile":"다크초콜릿, 건과일, 오렌지, 해초와 부드러운 스모크가 깊게 겹칩니다. 18년 숙성으로 피트가 둥글어지고 셰리·오크가 전면에 나옵니다.","ops":"다크초콜릿, 건과일, 오렌지, 해초와 부드러운 스모크가 깊게 겹칩니다."},"Bushmills 10":{"id":66,"name":"Bushmills 10","abv":40.0,"abvText":"","caskDetail":"엑스버번 배럴과 셰리 캐스크를 사용한 10년 숙성.","profile":"사과, 배, 바닐라, 꿀과 가벼운 초콜릿이 깨끗하게 이어집니다. 3회 증류의 가벼운 질감과 몰트 과실이 중심입니다.","ops":"사과, 배, 바닐라, 꿀과 가벼운 초콜릿이 깨끗하게 이어집니다."},"Bushmills 12":{"id":67,"name":"Bushmills 12","abv":40.0,"abvText":"","caskDetail":"버번, 셰리, 마르살라 캐스크를 포함한 복합 숙성.","profile":"건포도, 사과, 꿀, 초콜릿과 향신료가 부드럽고 풍성하게 이어집니다. 10년보다 와인 캐스크의 단맛과 질감이 확실히 증가합니다.","ops":"건포도, 사과, 꿀, 초콜릿과 향신료가 부드럽고 풍성하게 이어집니다."},"Bulleit Rye":{"id":68,"name":"Bulleit Rye","abv":45.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성의 고호밀 라이.","profile":"후추, 딜, 민트, 바닐라와 오렌지가 드라이하고 산뜻하게 나타납니다. 95% 호밀 매시빌 특유의 날카로운 허브·스파이스가 중심입니다.","ops":"후추, 딜, 민트, 바닐라와 오렌지가 드라이하고 산뜻하게 나타납니다."},"Bulleit Bourbon":{"id":69,"name":"Bulleit Bourbon","abv":45.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성의 고호밀 버번.","profile":"오렌지, 바닐라, 체리, 후추와 오크가 드라이하게 이어집니다. 일반 버번보다 호밀 비중이 높아 달콤함 뒤에 스파이스가 길게 남습니다.","ops":"오렌지, 바닐라, 체리, 후추와 오크가 드라이하게 이어집니다."},"Brenne French Single Malt":{"id":70,"name":"Brenne French Single Malt","abv":40.0,"abvText":"","caskDetail":"프렌치 오크와 코냑 캐스크를 중심으로 숙성한 프렌치 싱글몰트.","profile":"바나나, 크렘브륄레, 바닐라, 코코넛과 포도 향이 매우 달고 향긋하게 나타납니다. 코냑 캐스크와 프렌치 오크가 디저트 같은 질감을 만듭니다.","ops":"바나나, 크렘브륄레, 바닐라, 코코넛과 포도 향이 매우 달고 향긋하게 나타납니다."},"Hibiki Japanese Harmony":{"id":71,"name":"Hibiki Japanese Harmony","abv":43.0,"abvText":"","caskDetail":"야마자키·하쿠슈 몰트와 치타 그레인을 아메리칸 화이트 오크, 셰리, 미즈나라 등 다양한 캐스크로 블렌딩.","profile":"오렌지 껍질, 꿀, 장미, 백단향과 부드러운 오크가 섬세하게 이어집니다. 특정 캐스크보다 일본식 블렌딩의 균형과 향의 투명함이 핵심입니다.","ops":"오렌지 껍질, 꿀, 장미, 백단향과 부드러운 오크가 섬세하게 이어집니다."},"Smokehead Original":{"id":72,"name":"Smokehead Original","abv":43.0,"abvText":"","caskDetail":"증류소 비공개 아일라 싱글몰트를 주로 엑스버번 계열 캐스크에서 숙성.","profile":"재, 숯, 해초, 레몬과 바닐라가 직선적이고 강하게 나타납니다. 복잡한 숙성감보다 젊고 공격적인 스모크가 중심입니다.","ops":"재, 숯, 해초, 레몬과 바닐라가 직선적이고 강하게 나타납니다."},"Starward Nova":{"id":73,"name":"Starward Nova","abv":41.0,"abvText":"","caskDetail":"호주산 레드와인 배럴에서 주로 숙성한 멜버른 싱글몰트.","profile":"딸기, 자두, 바닐라, 초콜릿과 와인 탄닌이 생동감 있게 나타납니다. 따뜻한 기후와 레드와인 캐스크가 젊고 과즙감 있는 스타일을 만듭니다.","ops":"딸기, 자두, 바닐라, 초콜릿과 와인 탄닌이 생동감 있게 나타납니다."},"Chivas Regal 12":{"id":74,"name":"Chivas Regal 12","abv":40.0,"abvText":"","caskDetail":"스페이사이드 몰트와 그레인 원액을 다양한 오크 캐스크에서 숙성해 블렌딩.","profile":"사과, 꿀, 바닐라, 헤이즐넛과 약한 허브가 부드럽게 이어집니다. 가볍고 크리미한 질감이 대중적인 블렌디드 스카치의 기준점입니다.","ops":"사과, 꿀, 바닐라, 헤이즐넛과 약한 허브가 부드럽게 이어집니다."},"The Singleton of Dufftown 12":{"id":75,"name":"The Singleton of Dufftown 12","abv":40.0,"abvText":"","caskDetail":"주로 아메리칸 오크 엑스버번 캐스크와 일부 유러피언 오크 캐스크 숙성.","profile":"사과, 배, 견과, 바닐라와 가벼운 에스프레소가 부드럽게 이어집니다. 둥글고 달콤한 더프타운 스타일로 접근성이 높습니다.","ops":"사과, 배, 견과, 바닐라와 가벼운 에스프레소가 부드럽게 이어집니다."},"Ardbeg 10":{"id":76,"name":"Ardbeg 10","abv":46.0,"abvText":"","caskDetail":"퍼스트필·세컨드필 엑스버번 캐스크 숙성.","profile":"레몬, 타르, 재, 바다 소금과 바닐라가 선명하고 드라이하게 이어집니다. 46% 논칠필터로 피트의 질감과 시트러스가 뚜렷합니다.","ops":"레몬, 타르, 재, 바다 소금과 바닐라가 선명하고 드라이하게 이어집니다."},"Ardbeg Uigeadail":{"id":77,"name":"Ardbeg Uigeadail","abv":54.2,"abvText":"","caskDetail":"엑스버번 캐스크와 올로로소 셰리 캐스크 원액을 고도수로 결합.","profile":"훈연, 건포도, 에스프레소, 당밀과 후추가 폭발적으로 겹칩니다. 강한 피트와 진한 셰리, 54.2%의 질감이 동시에 전면에 나옵니다.","ops":"훈연, 건포도, 에스프레소, 당밀과 후추가 폭발적으로 겹칩니다."},"Arran 10":{"id":78,"name":"Arran 10","abv":46.0,"abvText":"","caskDetail":"퍼스트필 엑스버번 배럴과 셰리 혹스헤드 숙성.","profile":"레몬, 사과, 바닐라, 몰트와 가벼운 계피가 깨끗하고 오일리하게 이어집니다. 자연색·논칠필터의 선명한 몰트 질감이 장점입니다.","ops":"레몬, 사과, 바닐라, 몰트와 가벼운 계피가 깨끗하고 오일리하게 이어집니다."},"Arran Sherry Cask":{"id":79,"name":"Arran Sherry Cask","abv":55.8,"abvText":"","caskDetail":"퍼스트필 셰리 혹스헤드에서 전 기간 숙성한 캐스크 스트렝스.","profile":"건포도, 무화과, 다크초콜릿, 생강과 오렌지가 강하고 진득하게 나타납니다. 55.8%의 열감과 셰리 탄닌이 길게 이어집니다.","ops":"건포도, 무화과, 다크초콜릿, 생강과 오렌지가 강하고 진득하게 나타납니다."},"Aberlour 12 Double Cask":{"id":80,"name":"Aberlour 12 Double Cask","abv":40.0,"abvText":"","caskDetail":"전통 오크와 셰리 오크 캐스크를 함께 사용한 더블 캐스크 숙성.","profile":"사과, 건포도, 계피, 초콜릿과 부드러운 오크가 달고 편안하게 이어집니다. 셰리 풍미가 과하지 않아 데일리 스페이사이드에 가깝습니다.","ops":"사과, 건포도, 계피, 초콜릿과 부드러운 오크가 달고 편안하게 이어집니다."},"Aberlour 16":{"id":81,"name":"Aberlour 16","abv":40.0,"abvText":"","caskDetail":"버번 캐스크와 셰리 캐스크를 조합한 16년 숙성.","profile":"건포도, 자두, 초콜릿, 견과와 부드러운 오크가 깊고 매끈하게 이어집니다. 12년보다 단맛과 숙성감이 증가하지만 자극은 낮습니다.","ops":"건포도, 자두, 초콜릿, 견과와 부드러운 오크가 깊고 매끈하게 이어집니다."},"Bårelegs Battle Axe":{"id":82,"name":"Bårelegs Battle Axe","abv":55.7,"abvText":"","caskDetail":"증류소 비공개 아일라 피티드 싱글몰트를 리필 버번 캐스크에서 숙성해 캐스크 스트렝스로 병입.","profile":"숯, 재, 요오드, 바다 소금, 레몬과 바닐라가 거칠고 강하게 나타납니다. 리필 버번 캐스크 덕분에 나무보다 피트와 증류 캐릭터가 전면에 남습니다.","ops":"숯, 재, 요오드, 바다 소금, 레몬과 바닐라가 거칠고 강하게 나타납니다."},"Alfred Giraud Horizon":{"id":83,"name":"Alfred Giraud Horizon","abv":46.1,"abvText":"","caskDetail":"코냑·뉴 프렌치 오크·아메리칸 오크를 기반으로 보르도 그랑 크뤼, 피노 데 샤랑트 등 총 14종 캐스크를 활용하고 올드 코냑 캐스크에서 최종 매리지.","profile":"포도, 배, 프렌치 오크, 꿀과 섬세한 향신료가 신선하면서도 복합적으로 이어집니다. 많은 캐스크를 사용하지만 과도한 단맛보다 우아한 과실과 나무의 결이 중심입니다.","ops":"포도, 배, 프렌치 오크, 꿀과 섬세한 향신료가 신선하면서도 복합적으로 이어집니다."},"Amrut Indian Single Malt":{"id":84,"name":"Amrut Indian Single Malt","abv":46.0,"abvText":"","caskDetail":"엑스버번 배럴과 뉴 아메리칸 오크 캐스크 중심 숙성.","profile":"보리, 꿀, 살구, 바닐라와 후추가 따뜻하고 풍부하게 나타납니다. 인도의 고온 숙성으로 젊은 연산에도 농축된 오크와 열대과일이 느껴집니다.","ops":"보리, 꿀, 살구, 바닐라와 후추가 따뜻하고 풍부하게 나타납니다."},"Yamazaki 12":{"id":85,"name":"Yamazaki 12","abv":43.0,"abvText":"","caskDetail":"아메리칸 오크, 스페인산 셰리 오크, 일본산 미즈나라 오크 등 다양한 캐스크 숙성.","profile":"복숭아, 파인애플, 오렌지, 코코넛, 향목과 은은한 계피가 정교하게 겹칩니다. 과실의 밝음과 미즈나라의 향신목 뉘앙스가 균형을 이룹니다.","ops":"복숭아, 파인애플, 오렌지, 코코넛, 향목과 은은한 계피가 정교하게 겹칩니다."},"Yamazaki Distiller's Reserve":{"id":86,"name":"Yamazaki Distiller's Reserve","abv":43.0,"abvText":"","caskDetail":"아메리칸 오크, 셰리, 보르도 와인, 미즈나라 등 여러 캐스크를 조합.","profile":"딸기, 복숭아, 코코넛, 바닐라와 계피가 밝고 생동감 있게 나타납니다. 12년보다 젊고 와인 과실과 오크 스파이스가 직선적입니다.","ops":"딸기, 복숭아, 코코넛, 바닐라와 계피가 밝고 생동감 있게 나타납니다."},"Evan Williams Bottled-in-Bond":{"id":87,"name":"Evan Williams Bottled-in-Bond","abv":50.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴에서 최소 4년 숙성한 Bottled-in-Bond.","profile":"카라멜, 땅콩, 바닐라, 계피와 구운 오크가 진하고 정직하게 나타납니다. 50% 고정 도수와 전통적인 켄터키 풍미가 핵심입니다.","ops":"카라멜, 땅콩, 바닐라, 계피와 구운 오크가 진하고 정직하게 나타납니다."},"Evan Williams Black Label":{"id":88,"name":"Evan Williams Black Label","abv":43.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성.","profile":"카라멜, 바닐라, 땅콩, 사과와 가벼운 오크가 부드럽게 이어집니다. 전형적인 켄터키 버번의 단맛을 부담 없이 보여줍니다.","ops":"카라멜, 바닐라, 땅콩, 사과와 가벼운 오크가 부드럽게 이어집니다."},"Aberfeldy 16":{"id":89,"name":"Aberfeldy 16","abv":40.0,"abvText":"","caskDetail":"버번 캐스크 숙성 후 올로로소 셰리 캐스크에서 추가 숙성.","profile":"꿀, 사과, 오렌지, 건포도와 밀랍 같은 질감이 부드럽게 이어집니다. 셰리보다 애버펠디 특유의 꿀과 왁시한 몰트가 중심입니다.","ops":"꿀, 사과, 오렌지, 건포도와 밀랍 같은 질감이 부드럽게 이어집니다."},"The Epicurean":{"id":90,"name":"The Epicurean","abv":46.2,"abvText":"","caskDetail":"로우랜드 몰트 원액을 주로 아메리칸 오크 계열 캐스크에서 숙성해 블렌딩.","profile":"레몬, 풋사과, 허브, 보리와 바닐라가 가볍고 선명하게 이어집니다. 46.2%임에도 질감은 경쾌하고 시트러스가 중심입니다.","ops":"레몬, 풋사과, 허브, 보리와 바닐라가 가볍고 선명하게 이어집니다."},"Angel's Envy Kentucky Straight Bourbon":{"id":91,"name":"Angel's Envy Kentucky Straight Bourbon","abv":43.3,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크에서 숙성 후 포트 와인 캐스크 피니시.","profile":"바닐라, 메이플, 건포도, 체리와 포트 와인의 달콤한 과실이 풍부합니다. 버번의 카라멜에 와인 캐스크의 베리와 탄닌이 더해집니다.","ops":"바닐라, 메이플, 건포도, 체리와 포트 와인의 달콤한 과실이 풍부합니다."},"Oban 14":{"id":92,"name":"Oban 14","abv":43.0,"abvText":"","caskDetail":"리필 아메리칸 오크와 유러피언 오크 캐스크를 사용하며 세부 배합은 비공개.","profile":"오렌지, 사과, 꿀, 바다 소금과 은은한 연기가 오일리하게 이어집니다. 피트가 강하지 않으면서 해안 몰트의 짭짤함과 왁시함이 특징입니다.","ops":"오렌지, 사과, 꿀, 바다 소금과 은은한 연기가 오일리하게 이어집니다."},"Old Parr 12":{"id":93,"name":"Old Parr 12","abv":40.0,"abvText":"","caskDetail":"크래건모어 등 몰트와 그레인 원액을 복합 오크에서 블렌딩하며 일부 피티드 원액 포함.","profile":"몰트, 오렌지, 꿀, 가죽과 은은한 스모크가 차분하게 이어집니다. 올드 스타일 블렌디드 스카치의 구수함과 약한 피트가 특징입니다.","ops":"몰트, 오렌지, 꿀, 가죽과 은은한 스모크가 차분하게 이어집니다."},"Wild Turkey 101 8 Year":{"id":94,"name":"Wild Turkey 101 8 Year","abv":50.5,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴에서 8년 숙성.","profile":"카라멜, 바닐라, 오렌지, 계피와 강한 오크가 101프루프에서 농축되어 있습니다. 8년 숙성으로 일반 101보다 나무와 깊이가 더 분명합니다.","ops":"카라멜, 바닐라, 오렌지, 계피와 강한 오크가 101프루프에서 농축되어 있습니다."},"Wild Turkey 101 Rye":{"id":95,"name":"Wild Turkey 101 Rye","abv":50.5,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성의 켄터키 스트레이트 라이.","profile":"후추, 민트, 바닐라, 캐러멜과 오크가 힘 있게 이어집니다. 고호밀 라이보다 버번 계열의 단맛과 바디가 더 크게 느껴집니다.","ops":"후추, 민트, 바닐라, 캐러멜과 오크가 힘 있게 이어집니다."},"Wild Turkey Rare Breed":{"id":96,"name":"Wild Turkey Rare Breed","abv":58.4,"abvText":"56.4–58.4% · 시장·릴리스별 상이","caskDetail":"6년·8년·12년 버번 원액을 블렌딩한 배럴 스트렝스.","profile":"바닐라, 꿀, 대추, 후추, 담배와 강한 차드 오크가 농축되어 나타나는 배럴 스트렝스 버번입니다. 시장·릴리스에 따라 112.8 proof와 116.8 proof 등 병입 도수가 달라질 수 있어 병 라벨 확인이 필요합니다.","ops":"바닐라, 꿀, 대추, 후추, 담배와 강한 차드 오크가 농축되어 나타나는 배럴 스트렝스 버번입니다.","abvMin":56.4,"abvMax":58.4},"Wild Turkey Master's Keep Triumph":{"id":97,"name":"Wild Turkey Master's Keep Triumph","abv":52.0,"abvText":"","caskDetail":"10년 숙성 켄터키 스트레이트 라이를 새 차드 오크에서 숙성.","profile":"꿀, 정향, 다크초콜릿, 대추, 모카와 검은 후추가 깊고 묵직하게 이어집니다. 장기 숙성 라이의 오크와 스파이스가 고급스럽게 통합됩니다.","ops":"꿀, 정향, 다크초콜릿, 대추, 모카와 검은 후추가 깊고 묵직하게 이어집니다."},"Nikka Yoichi Single Malt":{"id":98,"name":"Nikka Yoichi Single Malt","abv":45.0,"abvText":"","caskDetail":"엑스버번, 셰리, 뉴 오크 등 다양한 캐스크를 조합한 요이치 몰트.","profile":"사과, 레몬, 몰트, 후추와 석탄 화로 같은 건조한 스모크가 이어집니다. 일본 과실감과 스코틀랜드식 피트·직화 캐릭터가 공존합니다.","ops":"사과, 레몬, 몰트, 후추와 석탄 화로 같은 건조한 스모크가 이어집니다."},"Woodford Reserve":{"id":99,"name":"Woodford Reserve","abv":43.2,"abvText":"43.2–45.2% · 시장별 상이","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성. 현재 값은 국내에서 흔한 700ml·1L 유통판 기준이며 미국 750ml는 45.2%가 존재.","profile":"카라멜, 코코아, 체리, 오렌지와 베이킹 스파이스가 균형 있게 이어지는 켄터키 스트레이트 버번입니다. 동일 제품도 시장에 따라 43.2% 또는 45.2%로 유통되므로 실제 병 라벨의 도수를 기준으로 안내해야 합니다.","ops":"카라멜, 코코아, 체리, 오렌지와 베이킹 스파이스가 균형 있게 이어지는 켄터키 스트레이트 버번입니다.","abvMin":43.2,"abvMax":45.2},"West Cork Calvados Cask Finish":{"id":100,"name":"West Cork Calvados Cask Finish","abv":43.0,"abvText":"","caskDetail":"퍼스트필 버번 캐스크 숙성 후 칼바도스 캐스크 피니시.","profile":"청사과, 배, 바닐라, 아몬드와 사과 브랜디의 산뜻한 과실이 이어집니다. 칼바도스 피니시가 아이리시 몰트에 신선한 사과와 드라이함을 더합니다.","ops":"청사과, 배, 바닐라, 아몬드와 사과 브랜디의 산뜻한 과실이 이어집니다."},"Eagle Rare 10":{"id":101,"name":"Eagle Rare 10","abv":45.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴에서 최소 10년 숙성하고, 현행 제품은 소규모 배치로 병입하는 켄터키 스트레이트 버번입니다.","profile":"체리, 오렌지, 바닐라, 가죽과 드라이한 오크가 차분하게 이어집니다. 10년 숙성의 균형과 비교적 우아한 과실이 핵심입니다.","ops":"체리, 오렌지, 바닐라, 가죽과 드라이한 오크가 차분하게 이어집니다."},"Jack Daniel's Old No. 7":{"id":102,"name":"Jack Daniel's Old No. 7","abv":40.0,"abvText":"","caskDetail":"증류액을 약 10피트 두께의 단풍나무 숯으로 차콜 멜로잉한 뒤, 새로 차링한 아메리칸 오크 배럴에서 숙성합니다.","profile":"바나나, 바닐라, 캐러멜, 구운 견과와 부드러운 오크가 이어집니다. 차콜 멜로잉은 숙성 전에 거친 성분을 정돈하며, 발효·증류·숙성이 합쳐져 특유의 달콤한 과실과 오크 캐릭터를 만듭니다.","ops":"바나나, 바닐라, 캐러멜, 구운 견과와 부드러운 오크가 이어집니다."},"Jameson Black Barrel":{"id":103,"name":"Jameson Black Barrel","abv":40.0,"abvText":"","caskDetail":"버번·셰리 캐스크 숙성 원액 중 더블 차드 버번 배럴의 비중을 높여 블렌딩.","profile":"바닐라, 토피, 구운 견과, 사과와 향신료가 진하고 크리미합니다. 일반 제임슨보다 차링 오크와 팟 스틸 원액의 풍미가 강화됩니다.","ops":"바닐라, 토피, 구운 견과, 사과와 향신료가 진하고 크리미합니다."},"Jameson Standard":{"id":104,"name":"Jameson Standard","abv":40.0,"abvText":"","caskDetail":"팟 스틸 위스키와 파인 그레인 위스키를 블렌딩해 3회 증류하고, 오크 캐스크에서 최소 4년 숙성한 제임슨의 기본 제품입니다. 연산 표기가 없는 NAS 블렌디드 아이리시 위스키입니다.","profile":"가벼운 꽃향과 달콤한 곡물, 바닐라, 견과류, 은은한 셰리 과실과 우드 스파이스가 부드럽게 이어집니다. 강한 캐스크 개성보다 매끄러운 질감과 균형이 중심입니다.","ops":"가벼운 꽃향과 달콤한 곡물, 바닐라, 견과류, 은은한 셰리 과실과 우드 스파이스가 부드럽게 이어집니다."},"Johnnie Walker Red Label":{"id":105,"name":"Johnnie Walker Red Label","abv":40.0,"abvText":"","caskDetail":"스코틀랜드 여러 지역의 몰트·그레인 원액을 복합 캐스크에서 블렌딩.","profile":"계피, 후추, 사과, 바닐라와 직선적인 스모크가 가볍게 나타납니다. 믹서에서 존재감을 내도록 향신료와 알코올감이 선명한 블렌드입니다.","ops":"계피, 후추, 사과, 바닐라와 직선적인 스모크가 가볍게 나타납니다."},"Johnnie Walker Black Label":{"id":106,"name":"Johnnie Walker Black Label","abv":40.0,"abvText":"","caskDetail":"12년 이상 숙성 몰트·그레인 원액을 버번·셰리 계열 등 복합 캐스크에서 블렌딩.","profile":"바닐라, 건과일, 오렌지, 향신료와 부드러운 스모크가 균형 있게 이어집니다. 블렌디드 스카치에서 스모크와 단맛의 기준점 역할을 합니다.","ops":"바닐라, 건과일, 오렌지, 향신료와 부드러운 스모크가 균형 있게 이어집니다."},"Johnnie Walker Black Ruby":{"id":107,"name":"Johnnie Walker Black Ruby","abv":40.0,"abvText":"","caskDetail":"레드와인 캐스크와 버번 캐스크에서 숙성한 원액을 중심으로 블렌딩.","profile":"블랙베리, 자두, 꿀, 바닐라와 은은한 스모크가 달고 과즙감 있게 나타납니다. 블랙 라벨의 스모크 구조에 붉은 과일과 와인 단맛을 강조한 스타일입니다.","ops":"블랙베리, 자두, 꿀, 바닐라와 은은한 스모크가 달고 과즙감 있게 나타납니다."},"Johnnie Walker Blue Label":{"id":108,"name":"Johnnie Walker Blue Label","abv":40.0,"abvText":"","caskDetail":"희소한 장기 숙성 몰트·그레인 원액을 다양한 캐스크에서 블렌딩하며 구성 비공개.","profile":"꿀, 헤이즐넛, 다크초콜릿, 말린 과일과 은은한 스모크가 매우 매끄럽게 이어집니다. 강한 개성보다 층위와 질감, 긴 균형이 핵심입니다.","ops":"꿀, 헤이즐넛, 다크초콜릿, 말린 과일과 은은한 스모크가 매우 매끄럽게 이어집니다."},"Johnnie Walker Platinum Label 18":{"id":109,"name":"Johnnie Walker Platinum Label 18","abv":40.0,"abvText":"","caskDetail":"18년 이상 숙성 몰트·그레인 원액을 다양한 오크 캐스크에서 블렌딩.","profile":"아몬드, 건과일, 바닐라, 오렌지와 은은한 스모크가 부드럽고 길게 이어집니다. 블랙 라벨의 구조를 더 숙성되고 크리미하게 확장한 스타일입니다.","ops":"아몬드, 건과일, 바닐라, 오렌지와 은은한 스모크가 부드럽고 길게 이어집니다."},"Jura Origin 10":{"id":110,"name":"Jura Origin 10","abv":40.0,"abvText":"40.0–43.0% · 시장별 상이","caskDetail":"구형 Jura Origin 10은 아메리칸 화이트 오크 엑스버번 캐스크에서 10년 숙성한 제품입니다. 현행 Jura 10의 올로로소 셰리 피니시 제품과 구분해야 합니다.","profile":"꿀, 몰트, 바닐라, 사과, 오렌지 껍질과 가벼운 해양성·훈연 뉘앙스가 담백하게 이어집니다. 강한 피트 제품은 아니며, 구형 Origin은 현행 Jura 10보다 셰리 영향이 적고 엑스버번 중심의 밝은 인상입니다.","ops":"꿀, 몰트, 바닐라, 사과, 오렌지 껍질과 가벼운 해양성·훈연 뉘앙스가 담백하게 이어집니다.","abvMin":40.0,"abvMax":43.0},"Jim Beam White Label":{"id":111,"name":"Jim Beam White Label","abv":40.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성.","profile":"바닐라, 카라멜, 옥수수, 땅콩과 가벼운 오크가 단순하고 달게 이어집니다. 버번과 하이볼의 가장 기본적인 풍미 구조를 보여줍니다.","ops":"바닐라, 카라멜, 옥수수, 땅콩과 가벼운 오크가 단순하고 달게 이어집니다."},"Jim Beam Rye":{"id":112,"name":"Jim Beam Rye","abv":40.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 배럴 숙성의 프리프루프 라이.","profile":"후추, 민트, 바닐라, 곡물과 가벼운 오크가 산뜻하게 나타납니다. 낮은 도수로 라이 스파이스를 부담 없이 경험할 수 있습니다.","ops":"후추, 민트, 바닐라, 곡물과 가벼운 오크가 산뜻하게 나타납니다."},"Kavalan Solist Vinho Barrique":{"id":113,"name":"Kavalan Solist Vinho Barrique","abv":0.0,"abvText":"50.0–59.9%","caskDetail":"레드·화이트 와인을 담았던 아메리칸 오크 배럴을 토스트·리차링해 단일 캐스크로 전 기간 숙성한 캐스크 스트렝스.","profile":"망고, 멜론, 키위, 바닐라, 다크초콜릿과 후추가 폭발적으로 나타나는 단일 캐스크·캐스크 스트렝스 위스키입니다. 공식 범위는 50.0–59.9%이며 실제 ABV와 세부 풍미는 각 병 라벨과 캐스크 번호에 따라 달라집니다.","ops":"망고, 멜론, 키위, 바닐라, 다크초콜릿과 후추가 폭발적으로 나타나는 단일 캐스크·캐스크 스트렝스 위스키입니다.","abvMin":50.0,"abvMax":59.9},"Canadian Club Classic 12":{"id":114,"name":"Canadian Club Classic 12","abv":40.0,"abvText":"","caskDetail":"캐나다산 몰트·그레인 원액을 주로 사용 오크·아메리칸 오크 캐스크에서 12년 숙성.","profile":"카라멜, 바닐라, 호밀 향신료와 부드러운 오크가 가볍고 매끄럽게 이어집니다. 캐나다 블렌드 특유의 편안함에 숙성감이 더해집니다.","ops":"카라멜, 바닐라, 호밀 향신료와 부드러운 오크가 가볍고 매끄럽게 이어집니다."},"Caol Ila 12":{"id":115,"name":"Caol Ila 12","abv":43.0,"abvText":"","caskDetail":"리필 아메리칸 오크 엑스버번 캐스크 중심 숙성.","profile":"레몬, 배, 올리브 오일, 해초, 재와 깨끗한 연기가 선명하게 이어집니다. 피트가 강하지만 무겁기보다 드라이하고 미네랄한 아일라입니다.","ops":"레몬, 배, 올리브 오일, 해초, 재와 깨끗한 연기가 선명하게 이어집니다."},"Cragganmore 12":{"id":116,"name":"Cragganmore 12","abv":40.0,"abvText":"","caskDetail":"리필 아메리칸 오크와 유러피언 오크 캐스크를 복합 사용.","profile":"몰트, 꿀, 사과, 허브, 약한 연기와 복합 향신료가 차분하게 이어집니다. 화려한 과일보다 곡물과 허브, 미묘한 스모크가 중심입니다.","ops":"몰트, 꿀, 사과, 허브, 약한 연기와 복합 향신료가 차분하게 이어집니다."},"Nikka Taketsuru Pure Malt":{"id":117,"name":"Nikka Taketsuru Pure Malt","abv":43.0,"abvText":"","caskDetail":"요이치와 미야기쿄 몰트 원액을 버번·셰리 등 다양한 캐스크에서 숙성해 블렌딩.","profile":"사과, 복숭아, 몰트, 초콜릿과 은은한 스모크가 균형 있게 이어집니다. 요이치의 힘과 미야기쿄의 과실을 부드럽게 결합한 퓨어 몰트입니다.","ops":"사과, 복숭아, 몰트, 초콜릿과 은은한 스모크가 균형 있게 이어집니다."},"Talisker Special Release 2023":{"id":118,"name":"Talisker Special Release 2023","abv":59.7,"abvText":"","caskDetail":"아메리칸 오크 숙성 후 포르투갈 루비 포트 캐스크 피니시한 2023 스페셜 릴리즈.","profile":"검은 베리, 자두, 후추, 바다 소금과 강한 스모크가 59.7%에서 폭발적으로 나타납니다. 포트의 과실과 탈리스커의 후추·해양성이 선명하게 충돌합니다.","ops":"검은 베리, 자두, 후추, 바다 소금과 강한 스모크가 59.7%에서 폭발적으로 나타납니다."},"Tamnavulin Sauvignon Blanc Cask":{"id":119,"name":"Tamnavulin Sauvignon Blanc Cask","abv":40.0,"abvText":"","caskDetail":"아메리칸 오크 숙성 후 소비뇽 블랑 와인 캐스크 피니시.","profile":"레몬, 청사과, 구스베리, 바닐라와 허브가 가볍고 산뜻하게 이어집니다. 화이트와인 캐스크의 산미와 풀향이 명확한 입문형 피니시입니다.","ops":"레몬, 청사과, 구스베리, 바닐라와 허브가 가볍고 산뜻하게 이어집니다."},"Tamnavulin Sherry Cask":{"id":120,"name":"Tamnavulin Sherry Cask","abv":40.0,"abvText":"","caskDetail":"아메리칸 오크 숙성 원액과 셰리 캐스크 숙성·피니시 원액을 조합.","profile":"건포도, 오렌지, 초콜릿, 계피와 바닐라가 달고 부드럽게 이어집니다. 강한 셰리 폭탄보다 접근성 높은 데일리 셰리 몰트입니다.","ops":"건포도, 오렌지, 초콜릿, 계피와 바닐라가 달고 부드럽게 이어집니다."},"Tamnavulin Pinot Noir Cask":{"id":121,"name":"Tamnavulin Pinot Noir Cask","abv":40.0,"abvText":"","caskDetail":"아메리칸 오크 숙성 후 피노 누아 레드와인 캐스크 피니시.","profile":"딸기, 체리, 자두, 바닐라와 가벼운 와인 탄닌이 산뜻하게 나타납니다. 붉은 과실이 중심이며 질감은 무겁지 않습니다.","ops":"딸기, 체리, 자두, 바닐라와 가벼운 와인 탄닌이 산뜻하게 나타납니다."},"Four Roses Single Barrel":{"id":122,"name":"Four Roses Single Barrel","abv":50.0,"abvText":"","caskDetail":"새로 차링한 아메리칸 오크 싱글 배럴 숙성.","profile":"체리, 자두, 바닐라, 코코아와 베이킹 스파이스가 풍부하게 나타납니다. 고호밀 매시빌과 50% 도수가 과일·향신료를 선명하게 만듭니다.","ops":"체리, 자두, 바닐라, 코코아와 베이킹 스파이스가 풍부하게 나타납니다."},"Paul John Brilliance":{"id":123,"name":"Paul John Brilliance","abv":46.0,"abvText":"","caskDetail":"퍼스트필 엑스버번 배럴에서 숙성.","profile":"꿀, 사과, 바나나, 바닐라와 후추가 밝고 풍부하게 나타납니다. 인도 고온 숙성의 농축감은 있으나 피트가 없어 접근성이 좋습니다.","ops":"꿀, 사과, 바나나, 바닐라와 후추가 밝고 풍부하게 나타납니다."},"Highland Park 12":{"id":124,"name":"Highland Park 12","abv":40.0,"abvText":"","caskDetail":"셰리 시즌드 유러피언·아메리칸 오크 캐스크를 중심으로 숙성.","profile":"꿀, 오렌지, 헤더, 계피와 은은한 피트 스모크가 균형 있게 이어집니다. 셰리 단맛과 오크 향신료, 섬 피트가 과하지 않게 결합됩니다.","ops":"꿀, 오렌지, 헤더, 계피와 은은한 피트 스모크가 균형 있게 이어집니다."},"Highland Park 15":{"id":125,"name":"Highland Park 15","abv":44.0,"abvText":"","caskDetail":"셰리 시즌드 유러피언·아메리칸 오크 캐스크에서 15년 숙성.","profile":"파인애플, 꿀, 계피, 건과일과 부드러운 피트가 풍성하게 이어집니다. 12년보다 과실과 오크의 깊이가 늘고 질감이 더 크리미합니다.","ops":"파인애플, 꿀, 계피, 건과일과 부드러운 피트가 풍성하게 이어집니다."},"High West Rendezvous Rye":{"id":126,"name":"High West Rendezvous Rye","abv":46.0,"abvText":"","caskDetail":"다양한 연산과 매시빌의 스트레이트 라이를 새 차드 오크 숙성 후 블렌딩.","profile":"민트, 계피, 후추, 말린 과일과 바닐라가 복합적으로 이어집니다. 단일 증류소 라이보다 블렌딩에서 오는 층위와 달콤함이 특징입니다.","ops":"민트, 계피, 후추, 말린 과일과 바닐라가 복합적으로 이어집니다."},"High West Bourbon":{"id":127,"name":"High West Bourbon","abv":46.0,"abvText":"","caskDetail":"여러 주의 스트레이트 버번을 새 차드 오크 숙성 후 블렌딩.","profile":"카라멜, 꿀, 바닐라, 살구와 계피가 부드럽고 밝게 이어집니다. 고도수이지만 과도한 오크보다 블렌딩의 균형과 과일이 중심입니다.","ops":"카라멜, 꿀, 바닐라, 살구와 계피가 부드럽고 밝게 이어집니다."},"Heaven's Door Double Barrel":{"id":128,"name":"Heaven's Door Double Barrel","abv":50.0,"abvText":"","caskDetail":"두 종류의 스트레이트 버번과 한 종류의 스트레이트 라이를 각각 새 오크에서 5년 이상 숙성한 뒤, 강하게 차링한 새 오크에서 6~12개월 추가 숙성.","profile":"카라멜, 다크 바닐라, 오렌지, 후추와 강한 토스트 오크가 두껍게 이어집니다. 버번의 단맛과 라이 스파이스, 2차 새 오크의 차링이 핵심입니다.","ops":"카라멜, 다크 바닐라, 오렌지, 후추와 강한 토스트 오크가 두껍게 이어집니다."},"Fuji Sanroku Signature Blend":{"id":129,"name":"Fuji Sanroku Signature Blend","abv":50.0,"abvText":"","caskDetail":"몰트·그레인 원액을 다양한 아메리칸 오크 계열 캐스크에서 숙성해 블렌딩하며 세부 비율은 비공개.","profile":"복숭아, 배, 바닐라, 카카오와 향신료가 50%에서 진하고 매끄럽게 이어집니다. 일본 블렌드 특유의 정돈감과 높은 도수의 밀도가 함께 나타납니다.","ops":"복숭아, 배, 바닐라, 카카오와 향신료가 50%에서 진하고 매끄럽게 이어집니다."},"Glen Scotia Double Cask":{"id":130,"name":"Glen Scotia Double Cask","abv":46.0,"abvText":"46%","caskDetail":"퍼스트필 버번 캐스크 숙성 후 Pedro Ximénez 셰리 캐스크에서 피니시한 캠벨타운 싱글몰트.","profile":"바닐라, 사과, 배, 바다 소금기 위에 PX 셰리의 건과일·토피·스파이스가 붙는 캠벨타운 몰트입니다.","ops":"캠벨타운 특유의 바닷바람과 오일리한 몰트감 위에 버번 캐스크의 바닐라, PX 셰리 피니시의 건과일·토피 단맛이 더해집니다. 짭짤함과 달콤함이 균형을 이루는 싱글몰트입니다."},"Bernheim Original Kentucky Straight Wheat Whiskey":{"id":131,"name":"Bernheim Original Kentucky Straight Wheat Whiskey","abv":45.0,"abvText":"45%","caskDetail":"밀 51% 기반의 켄터키 스트레이트 위트 위스키. 새 차링 오크 숙성.","profile":"꿀, 바닐라, 구운 빵, 부드러운 곡물 단맛이 둥글게 이어지는 진짜 위트 위스키입니다.","ops":"밀을 주원료로 만든 켄터키 스트레이트 위트 위스키입니다. 꿀, 바닐라, 구운 빵과 부드러운 곡물 단맛이 둥글게 이어지며, 버번보다 질감이 온화하고 매끄럽습니다."},"The Hakushu 12 Year Old":{"id":132,"name":"The Hakushu 12 Year Old","abv":43.0,"abvText":"43%","caskDetail":"하쿠슈 증류소의 12년 숙성 일본 싱글몰트. 다양한 캐스크 원액을 블렌딩.","profile":"청사과, 민트, 풋허브, 유자계 시트러스와 아주 얇은 스모크가 산림감 있게 이어집니다.","ops":"숲을 연상시키는 민트, 허브, 청사과와 유자 같은 시트러스가 맑게 올라옵니다. 얇은 스모크가 산림감과 청량한 피니시를 만드는 일본 싱글몰트입니다."},"The Hakushu Distiller's Reserve":{"id":133,"name":"The Hakushu Distiller's Reserve","abv":43.0,"abvText":"43%","caskDetail":"NAS 하쿠슈 싱글몰트. 산뜻하고 허벌한 원액 중심의 Distiller’s Reserve.","profile":"민트, 멜론, 오이, 레몬 껍질, 신선한 허브와 섬세한 스모크가 가볍게 납니다.","ops":"어린 초록 과실, 민트, 오이, 레몬 껍질 같은 산뜻한 향이 중심입니다. 질감은 가볍고 깨끗하며, 은은한 스모크가 피니시를 정돈합니다."},"Signatory Edradour 10 Year Old UCF":{"id":134,"name":"Signatory Edradour 10 Year Old UCF","abv":46.0,"abvText":"46% / 병 라벨 확인","caskDetail":"Signatory Vintage Un-Chillfiltered Collection. 주로 퍼스트필 올로로소 셰리 벗 계열로 유통되는 10년, 46%, 논칠필터 독립병입. 병입 배치별 캐스크 번호는 라벨 기준입니다.","profile":"건포도, 자두, 초콜릿, 견과, 가죽, 스파이스가 구식 셰리 몰트처럼 두껍게 납니다.","ops":"논칠필터 46% 병입 특유의 질감이 살아 있는 독립병입 에드라두어입니다. 건포도, 자두, 초콜릿, 견과, 스파이스가 겹치며 작은 증류소 특유의 밀도감이 느껴집니다."},"Bunnahabhain 12 Year Old":{"id":135,"name":"Bunnahabhain 12 Year Old","abv":46.3,"abvText":"46.3%","caskDetail":"버번 캐스크와 셰리 캐스크 숙성. 논칠필터, 내추럴 컬러.","profile":"말린 과일, 견과, 바닐라, 엷은 해풍과 짭짤한 단맛이 이어지는 비피트 아일라 몰트입니다.","ops":"아일라 싱글몰트지만 피트보다 말린 과일, 견과, 바닐라, 부드러운 해풍과 짭짤한 단맛이 중심입니다. 무겁지 않은 셰리감과 해안 몰트의 균형이 좋습니다."},"Glenfiddich 23 Grand Cru":{"id":136,"name":"Glenfiddich 23 Grand Cru","abv":40.0,"abvText":"40%","caskDetail":"아메리칸 오크와 유러피언 오크 캐스크에서 23년 숙성 후 프렌치 큐베 와인 캐스크에서 피니시한 스페이사이드 싱글몰트.","profile":"배, 사과꽃, 브리오슈, 바닐라 크림, 꿀이 섬세하게 이어지는 기념일용 프리미엄 몰트입니다.","ops":"23년 숙성 원액을 프렌치 큐베 캐스크로 마무리한 프리미엄 스페이사이드입니다. 배, 사과꽃, 브리오슈, 바닐라 크림과 꿀이 섬세하게 이어지며 피니시는 우아하고 깨끗합니다."},"Talisker 10 Year Old":{"id":137,"name":"Talisker 10 Year Old","abv":45.8,"abvText":"45.8%","caskDetail":"스카이 섬 싱글몰트. 주로 버번계 아메리칸 오크 중심의 해안·피트 스타일.","profile":"바다 소금, 후추, 시트러스, 몰트 단맛, 건조한 피트 스모크가 선명한 아일랜즈 몰트입니다.","ops":"스카이 섬 특유의 바다 소금기, 검은 후추, 시트러스와 건조한 피트 스모크가 선명합니다. 달콤한 몰트 뒤로 짭짤하고 스파이시한 피니시가 길게 남습니다."},"Jack Daniel's Single Barrel Barrel Strength":{"id":138,"name":"Jack Daniel's Single Barrel Barrel Strength","abv":65.0,"abvText":"62.5–70% / 병 라벨 확인","caskDetail":"싱글 배럴 테네시 위스키를 배럴 스트렝스로 병입. 배럴마다 도수 차이가 큼.","profile":"바나나, 바닐라, 브라운슈가, 토스티드 오크, 캔디드 스파이스가 고도수로 폭발합니다.","ops":"싱글 배럴 테네시 위스키를 물로 낮추지 않고 강한 도수로 병입한 스타일입니다. 바나나, 바닐라, 브라운슈가, 토스티드 오크, 캔디드 스파이스가 진하고 폭발적으로 펼쳐집니다."},"Glen Scotia Double Cask Single Malt Scotch Whisky":{"id":130,"name":"Glen Scotia Double Cask","abv":46.0,"abvText":"46%","caskDetail":"퍼스트필 버번 캐스크 숙성 후 Pedro Ximénez 셰리 캐스크에서 피니시한 캠벨타운 싱글몰트.","profile":"바닐라, 사과, 배, 바다 소금기 위에 PX 셰리의 건과일·토피·스파이스가 붙는 캠벨타운 몰트입니다.","ops":"캠벨타운 특유의 바닷바람과 오일리한 몰트감 위에 버번 캐스크의 바닐라, PX 셰리 피니시의 건과일·토피 단맛이 더해집니다. 짭짤함과 달콤함이 균형을 이루는 싱글몰트입니다."},"Bernheim Original":{"id":131,"name":"Bernheim Original Kentucky Straight Wheat Whiskey","abv":45.0,"abvText":"45%","caskDetail":"밀 51% 기반의 켄터키 스트레이트 위트 위스키. 새 차링 오크 숙성.","profile":"꿀, 바닐라, 구운 빵, 부드러운 곡물 단맛이 둥글게 이어지는 진짜 위트 위스키입니다.","ops":"밀을 주원료로 만든 켄터키 스트레이트 위트 위스키입니다. 꿀, 바닐라, 구운 빵과 부드러운 곡물 단맛이 둥글게 이어지며, 버번보다 질감이 온화하고 매끄럽습니다."},"Hakushu 12":{"id":132,"name":"The Hakushu 12 Year Old","abv":43.0,"abvText":"43%","caskDetail":"하쿠슈 증류소의 12년 숙성 일본 싱글몰트. 다양한 캐스크 원액을 블렌딩.","profile":"청사과, 민트, 풋허브, 유자계 시트러스와 아주 얇은 스모크가 산림감 있게 이어집니다.","ops":"숲을 연상시키는 민트, 허브, 청사과와 유자 같은 시트러스가 맑게 올라옵니다. 얇은 스모크가 산림감과 청량한 피니시를 만드는 일본 싱글몰트입니다."},"Hakushu Distiller's Reserve":{"id":133,"name":"The Hakushu Distiller's Reserve","abv":43.0,"abvText":"43%","caskDetail":"NAS 하쿠슈 싱글몰트. 산뜻하고 허벌한 원액 중심의 Distiller’s Reserve.","profile":"민트, 멜론, 오이, 레몬 껍질, 신선한 허브와 섬세한 스모크가 가볍게 납니다.","ops":"어린 초록 과실, 민트, 오이, 레몬 껍질 같은 산뜻한 향이 중심입니다. 질감은 가볍고 깨끗하며, 은은한 스모크가 피니시를 정돈합니다."},"Signatory Edradour 10 UCF":{"id":134,"name":"Signatory Edradour 10 Year Old UCF","abv":46.0,"abvText":"46% / 병 라벨 확인","caskDetail":"Signatory Vintage Un-Chillfiltered Collection. 주로 퍼스트필 올로로소 셰리 벗 계열로 유통되는 10년, 46%, 논칠필터 독립병입. 병입 배치별 캐스크 번호는 라벨 기준입니다.","profile":"건포도, 자두, 초콜릿, 견과, 가죽, 스파이스가 구식 셰리 몰트처럼 두껍게 납니다.","ops":"논칠필터 46% 병입 특유의 질감이 살아 있는 독립병입 에드라두어입니다. 건포도, 자두, 초콜릿, 견과, 스파이스가 겹치며 작은 증류소 특유의 밀도감이 느껴집니다."},"Bunnahabhain 12":{"id":135,"name":"Bunnahabhain 12 Year Old","abv":46.3,"abvText":"46.3%","caskDetail":"버번 캐스크와 셰리 캐스크 숙성. 논칠필터, 내추럴 컬러.","profile":"말린 과일, 견과, 바닐라, 엷은 해풍과 짭짤한 단맛이 이어지는 비피트 아일라 몰트입니다.","ops":"아일라 싱글몰트지만 피트보다 말린 과일, 견과, 바닐라, 부드러운 해풍과 짭짤한 단맛이 중심입니다. 무겁지 않은 셰리감과 해안 몰트의 균형이 좋습니다."},"Glenfiddich Grand Cru 23":{"id":136,"name":"Glenfiddich 23 Grand Cru","abv":40.0,"abvText":"40%","caskDetail":"아메리칸 오크와 유러피언 오크 캐스크에서 23년 숙성 후 프렌치 큐베 와인 캐스크에서 피니시한 스페이사이드 싱글몰트.","profile":"배, 사과꽃, 브리오슈, 바닐라 크림, 꿀이 섬세하게 이어지는 기념일용 프리미엄 몰트입니다.","ops":"23년 숙성 원액을 프렌치 큐베 캐스크로 마무리한 프리미엄 스페이사이드입니다. 배, 사과꽃, 브리오슈, 바닐라 크림과 꿀이 섬세하게 이어지며 피니시는 우아하고 깨끗합니다."},"Talisker 10":{"id":137,"name":"Talisker 10 Year Old","abv":45.8,"abvText":"45.8%","caskDetail":"스카이 섬 싱글몰트. 주로 버번계 아메리칸 오크 중심의 해안·피트 스타일.","profile":"바다 소금, 후추, 시트러스, 몰트 단맛, 건조한 피트 스모크가 선명한 아일랜즈 몰트입니다.","ops":"스카이 섬 특유의 바다 소금기, 검은 후추, 시트러스와 건조한 피트 스모크가 선명합니다. 달콤한 몰트 뒤로 짭짤하고 스파이시한 피니시가 길게 남습니다."},"The Macallan A Night on Earth – The First Light":{"id":139,"name":"The Macallan A Night on Earth – The First Light","abv":43.0,"abvText":"","caskDetail":"셰리 시즌드 유러피언·아메리칸 오크 캐스크를 중심으로 숙성하고, 일부 엑스버번 캐스크를 소량 조합했습니다.","profile":"잘 익은 복숭아와 바닐라, 토피, 따뜻한 베이킹 스파이스가 부드럽게 이어지는 한정판 맥캘란입니다. 셰리 시즌드 오크의 과실감에 버번 캐스크의 밝은 단맛이 보조적으로 더해집니다.","ops":"복숭아, 바닐라, 토피와 따뜻한 향신료가 부드럽게 이어지는 밝고 과실 중심의 맥캘란입니다."},"The Macallan Harmony Collection Inspired by Phoenix Honey Orchid Tea":{"id":140,"name":"The Macallan Harmony Collection Inspired by Phoenix Honey Orchid Tea","abv":43.9,"abvText":"","caskDetail":"아메리칸 오크 셰리 시즌드 캐스크를 중심으로 유러피언 오크 셰리 시즌드 캐스크와 일부 엑스버번 캐스크를 조합했습니다.","profile":"피닉스 허니 오키드 티에서 영감을 받은 하모니 컬렉션으로, 복숭아와 꽃, 꿀, 이국적인 과실과 은은한 로스티드 오크가 겹칩니다. 셰리 시즌드 오크의 구조감 위에 버번 캐스크의 단맛이 가볍게 더해집니다.","ops":"복숭아와 꽃, 꿀, 차 향과 은은한 로스티드 오크가 겹치는 화사하고 우아한 맥캘란입니다."},"Ballantine's 30 Year Old":{"id":141,"name":"Ballantine's 30 Year Old","abv":40.0,"abvText":"","caskDetail":"30년 이상 숙성한 희귀 몰트·그레인 원액을 블렌딩한 장기 숙성 블렌디드 스카치.","profile":"잘 익은 배와 복숭아, 꿀, 바닐라와 오래 숙성된 오크가 매끄럽게 이어집니다. 강한 자극보다 농축된 과실감과 긴 숙성에서 오는 부드러운 깊이가 중심입니다.","ops":"배와 복숭아, 꿀, 바닐라와 오래 숙성된 오크가 매끄럽게 이어지는 장기 숙성 블렌디드 스카치입니다."}};
 const PRODUCT_NOTES=Object.fromEntries(Object.entries(PRODUCT_DETAILS).map(([name,d])=>[name,d.ops||'']));
 const CUSTOMER_FEATURE_REWRITES={"캠벨타운 입문용. 스프링뱅크·킬커란 공백을 메우는 해안·셰리·몰티 포지션.":"캠벨타운 특유의 바닷바람과 오일리한 몰트감 위에 버번 캐스크의 바닐라, PX 셰리 피니시의 건과일·토피 단맛이 더해집니다. 짭짤함과 달콤함이 균형을 이루는 싱글몰트입니다.","위티드 버번이 아니라 Wheat Whiskey로 설명. Maker's Mark·Weller와 구분할 것.":"밀을 주원료로 만든 켄터키 스트레이트 위트 위스키입니다. 꿀, 바닐라, 구운 빵과 부드러운 곡물 단맛이 둥글게 이어지며, 버번보다 질감이 온화하고 매끄럽습니다.","일본 싱글몰트·허벌·라이트 피트 축. 야마자키류 단맛과 구분해서 설명.":"숲을 연상시키는 민트, 허브, 청사과와 유자 같은 시트러스가 맑게 올라옵니다. 얇은 스모크가 산림감과 청량한 피니시를 만드는 일본 싱글몰트입니다.","하쿠슈 12보다 더 산뜻하고 허벌. 하이볼 또는 가벼운 니트 추천.":"어린 초록 과실, 민트, 오이, 레몬 껍질 같은 산뜻한 향이 중심입니다. 질감은 가볍고 깨끗하며, 은은한 스모크가 피니시를 정돈합니다.","병마다 빈티지·캐스크 번호가 다를 수 있음. 셰리 캐스크가 아니면 숙성 캐스크 값을 수정할 것.":"논칠필터 46% 병입 특유의 질감이 살아 있는 독립병입 에드라두어입니다. 건포도, 자두, 초콜릿, 견과, 스파이스가 겹치며 작은 증류소 특유의 밀도감이 느껴집니다.","아일라 입문·비피트 아일라 설명용. 피트 위스키로 팔면 안 됨.":"아일라 싱글몰트지만 피트보다 말린 과일, 견과, 바닐라, 부드러운 해풍과 짭짤한 단맛이 중심입니다. 무겁지 않은 셰리감과 해안 몰트의 균형이 좋습니다.","프리미엄·기념일·샴페인 감성. 맛의 강도보다 스토리와 질감으로 판매.":"23년 숙성 원액을 프렌치 큐베 캐스크로 마무리한 프리미엄 스페이사이드입니다. 배, 사과꽃, 브리오슈, 바닐라 크림과 꿀이 섬세하게 이어지며 피니시는 우아하고 깨끗합니다.","해안·후추·중간 피트 축의 기준점. 라프로익·아드벡보다 약한 피트로 설명.":"스카이 섬 특유의 바다 소금기, 검은 후추, 시트러스와 건조한 피트 스모크가 선명합니다. 달콤한 몰트 뒤로 짭짤하고 스파이시한 피니시가 길게 남습니다.","High Proof 핵심 바틀. 주문 전 도수 고지 필수. 첫 잔은 소량 가수 추천.":"싱글 배럴 테네시 위스키를 물로 낮추지 않고 강한 도수로 병입한 스타일입니다. 바나나, 바닐라, 브라운슈가, 토스티드 오크, 캔디드 스파이스가 진하고 폭발적으로 펼쳐집니다."};
 function customerFeatureText(productName,note,fallback=''){
@@ -1079,7 +2481,11 @@ const BOTTLE_IMAGE_QUERY_OVERRIDES={
   "High West Rendezvous Rye": "\"High West Rendezvous Rye\" \"bottle\" -bourbon -double rye -miniature -gift -case",
   "High West Bourbon": "\"High West Bourbon\" \"bottle\" -rendezvous -double rye -miniature -gift -case",
   "Heaven's Door Double Barrel": "\"Heaven's Door Double Barrel Whiskey\" \"bottle\" -straight bourbon -rye -miniature -gift -case",
-  "Fuji Sanroku Signature Blend": "\"Fuji Sanroku Signature Blend\" \"50%\" \"bottle\" -miniature -gift -case"
+  "Fuji Sanroku Signature Blend": "\"Fuji Sanroku Signature Blend\" \"50%\" \"bottle\" -miniature -gift -case",
+  "The Macallan A Night on Earth – The First Light": "\"The Macallan A Night on Earth The First Light\" bottle 700ml 43% -miniature -glass -case",
+  "The Macallan Harmony Collection Inspired by Phoenix Honey Orchid Tea": "\"The Macallan Harmony Collection Inspired by Phoenix Honey Orchid Tea\" bottle 700ml -miniature -glass -case",
+  "Ballantine's 30 Year Old": "\"Ballantine's 30 Year Old\" bottle 700ml 40% -miniature -glass -case",
+  "Bernheim Original Kentucky Straight Wheat Whiskey": "\"Bernheim Original Kentucky Straight Wheat Whiskey\" bottle 750ml 45% -miniature -glass -case"
 };
 
 function bottleSlug(name){
@@ -1127,7 +2533,7 @@ function tagFor(k,v,bg,t){
   return tag(valueText(k,v),bg,t);
 }
 const PRICE_UNIT_LABEL='';
-const PRICE_LOOKUP={"1792 Small Batch":["1792 스몰배치",5000,6931],"The Glenlivet 18":["글렌리벳 18년",21000,6583],"The Glenturret 12":["글렌터렛 12년",10000,41126],"Glenfarclas 15":["글렌파클라스 15년",12000,40074],"Glengoyne 12":["글렌고인 12년",8000,75322],"The Glen Grant 12":["글렌그란트 12년",8000,6829],"The Glen Grant 18":["글렌그란트 18년",20000,6862],"Glenglassaugh 12":["글렌글라사 12년",9000,41076],"The GlenDronach 12":["글렌드로낙 12년",9000,41079],"The GlenDronach 18 Allardice":["글렌드로낙 18년",27000,6015],"The Glenrothes 12":["글렌로티스 12년",7000,6585],"The Glenlivet 12":["글렌리벳 12년",8000,6096],"Glenmorangie The Original 12":["글렌모렌지 12년 디오리지널",7000,41271],"Glenmorangie The Nectar 16":["글렌모렌지 16년 더 넥타",12000,41080],"Glenmorangie Signet":["글렌모렌지 시그넷",27000,6481],"The GlenAllachie 12":["글렌알라키 12년",10000,40242],"The GlenAllachie 8":["글렌알라키 8년",8000,40362],"The Glenturret 10 Peat Smoked":["글렌터렛 10년 피트스모크",9000,41127],"The Glenturret Triple Wood":["글렌터렛 트리플우드",8000,41125],"Glenfiddich 12":["글렌피딕 12년",8000,6604],"Glenfiddich 18":["글렌피딕 18년",18000,6600],"Ki One Unicorn":["기원 유니콘",10000,41273],"Ki One Tiger":["기원 호랑이",9000,41195],"Ki One Eagle":["기원 독수리",8000,41213],"Kim Chang-soo Whisky 51.7":["김창수위스키 51.7",20000,41340],"Knob Creek Rye":["납 크릭 라이",6000,6701],"Knob Creek Kentucky Straight Bourbon":["납 크릭 버번",6000,6883],"Naked Malt":["네이키드몰트 블랜디드",5000,6983],"The Dalmore 12":["달모어 12년",10000,6221],"The Dalmore Cigar Malt Reserve":["달모어 시가몰트 리저브",21000,6223],"The Dalmore King Alexander III":["달모어 킹 알렉산더 3세",39000,40289],"Dewar's 12":["듀어스 12년",5000,6020],"Dewar's 18 Mizunara Cask Finish":["듀어스 18년 미즈나라캐스크",13000,41545],"Deanston Virgin Oak":["딘스톤 버진오크",5000,75241],"Lagavulin 16":["라가불린 16년",15000,6688],"Lagavulin 8":["라가불린 8년",10000,6069],"Laphroaig 10":["라프로익 10년",6000,6818],"Laphroaig Quarter Cask":["라프로익 쿼터캐스크",7000,6690],"Russell's Reserve Single Barrel":["러셀 리저브 싱글배럴",8000,40235],"Russell's Reserve 10":["러셀 리저브 10년",7000,6839],"Redbreast 12":["레드브레스트 12년",10000,40695],"Rebel 100 Kentucky Straight Bourbon":["레벨옐 스트레이트 버번 100프루프",5000,6316],"Royal Brackla 12":["로얄브라클라 12년",9000,40985],"Royal Brackla 18":["로얄브라클라 18년",22000,41071],"Royal Salute 21":["로얄살루트 21년",23000,64019],"Loch Lomond 12":["로크로몬드 12년",9000,6087],"The Macallan 12 Double Cask":["맥캘란 12년 더블캐스크",9000,41484],"Maker's Mark":["메이커스 마크",5000,6021],"Mellow Corn":["멜로우 콘",5000,40270],"Monkey Shoulder":["몽키 숄더",5000,6530],"Michter's US*1 Small Batch Bourbon":["믹터스 스몰배치",8000,6793],"Michter's US*1 Unblended American Whiskey":["믹터스 언블렌디드 아메리칸",8000,6241],"Ballantine's Glenburgie 12":["발렌타인 12년 글렌버기",8000,6921],"Ballantine's 21":["발렌타인 21년",20000,6577],"Ballantine's Masters":["발렌타인 마스터스",7000,6573],"The Balvenie 12 DoubleWood":["발베니 12년 더블우드",9000,6606],"The Balvenie 14 Caribbean Cask":["발베니 14년 캐리비안 캐스크",14000,6594],"The Balvenie 16 French Oak":["발베니 16년 프렌치오크",23000,40574],"The Busker Triple Cask":["버스커 트리플캐스크",5000,40535],"Benromach 10":["벤로막 10년",8000,6928],"Benriach The Smoky Ten":["벤리악 스모키 10년",8000,40554],"Benriach 16":["벤리악 16년",17000,40752],"Benchmark Old No. 8":["벤치마크위스키(No.8)",5000,6932],"Bowmore 12":["보모어 12년",7000,6685],"Bowmore 18":["보모어 18년",17000,6838],"Bushmills 10":["부쉬밀 10년",7000,6567],"Bushmills 12":["부쉬밀 12년",9000,40641],"Bulleit Rye":["불렛 라이",7000,6296],"Bulleit Bourbon":["불렛 버번",6000,6295],"Brenne French Single Malt":["브렌 프렌치 싱글몰트",10000,40511],"Hibiki Japanese Harmony":["히비키 하모니",10000,5995],"Smokehead Original":["스모크헤드 오리지널",5000,75049],"Starward Nova":["스타워드 노바",9000,40484],"Chivas Regal 12":["시바스리갈 12년",5000,6500],"The Singleton of Dufftown 12":["싱글톤 더프타운 12년",6000,6195],"Ardbeg 10":["아드벡 10년",9000,6263],"Ardbeg Uigeadail":["아드벡 우거다일",14000,6483],"Arran 10":["아란 10년",7000,6463],"Arran Sherry Cask":["아란 쉐리 캐스크",10000,6584],"Aberlour 12 Double Cask":["아벨라워 12년 더블캐스크",10000,6518],"Aberlour 16":["아벨라워 16년",22000,6079],"Bårelegs Battle Axe":["아일라보이즈배틀엑스",7000,40848],"Alfred Giraud Horizon":["알프레드지로호라이즌",15000,41096],"Amrut Indian Single Malt":["암룻인디언",8000,40005],"Yamazaki 12":["야마자키 12년",22000,6004],"Yamazaki Distiller's Reserve":["야마자키 DR",11000,5998],"Evan Williams Bottled-in-Bond":["에반 윌리엄스 BIB",5000,40982],"Evan Williams Black Label":["에반 윌리엄스 블랙",5000,40543],"Aberfeldy 16":["에버펠디 16년",10000,41131],"The Epicurean":["에피큐리안",8000,40009],"Angel's Envy Kentucky Straight Bourbon":["엔젤스엔비",6000,40923],"Oban 14":["오반 14년",12000,6422],"Old Parr 12":["올드파 12년",5000,6259],"Wild Turkey 101 8 Year":["와일드터키 101 8년",5000,6905],"Wild Turkey 101 Rye":["와일드터키 101 라이",5000,40941],"Wild Turkey Rare Breed":["와일드터키 레어브리드",8000,6929],"Wild Turkey Master's Keep Triumph":["와일드터키 마스터스킵 트라이엄프",26000,41231],"Nikka Yoichi Single Malt":["요이치 싱글몰트",10000,41253],"Woodford Reserve":["우드포드 리저브",7000,6430],"West Cork Calvados Cask Finish":["웨스트콕 아이리쉬 칼바도스캐스크",5000,60073],"Eagle Rare 10":["이글레어 10년",9000,6924],"Jack Daniel's Old No. 7":["잭 다니엘스",5000,6370],"Jameson Black Barrel":["제임슨 블랙배럴",5000,6176],"Jameson Standard":["제임슨 스탠다드",5000,6363],"Johnnie Walker Red Label":["조니워커 레드",5000,6282],"Johnnie Walker Black Label":["조니워커 블랙",5000,6272],"Johnnie Walker Black Ruby":["조니워커 블랙루비",6000,41264],"Johnnie Walker Blue Label":["조니워커 블루",24000,6290],"Johnnie Walker Platinum Label 18":["조니워커 플래티넘",14000,6294],"Jura Origin 10":["주라 10년",6000,6089],"Jim Beam White Label":["짐 빔 화이트",5000,6362],"Jim Beam Rye":["짐 빔 라이",5000,40349],"Kavalan Solist Vinho Barrique":["카발란 솔리스트 비노 바리크",30000,40549],"Canadian Club Classic 12":["캐나디언 클럽 12년",5000,6550],"Caol Ila 12":["쿨일라 12년",9000,40710],"Cragganmore 12":["크래겐모어 12년",8000,6299],"Nikka Taketsuru Pure Malt":["타케츠루 퓨어몰트",10000,41252],"Talisker Special Release 2023":["탈리스커 SR2023",14000,40771],"Tamnavulin Sauvignon Blanc Cask":["탐나불린 쇼비뇽블랑 캐스크",5000,40456],"Tamnavulin Sherry Cask":["탐나불린 쉐리캐스크",5000,40175],"Tamnavulin Pinot Noir Cask":["탐나불린 피노누아캐스크",5000,40233],"Four Roses Single Barrel":["포로지스 싱글배럴",8000,41350],"Paul John Brilliance":["폴존 브릴리언스",8000,40527],"Highland Park 12":["하이랜드 파크 12년",7000,6691],"Highland Park 15":["하이랜드 파크 15년",15000,41351],"High West Rendezvous Rye":["하이웨스트 랑데뷰",8000,75331],"High West Bourbon":["하이웨스트 버번",6000,75329],"Heaven's Door Double Barrel":["헤븐스 도어 더블배럴",7000,40606],"Fuji Sanroku Signature Blend":["후지산로쿠 시그니처 블랜드",11000,40850],"Glen Scotia Double Cask":["글렌스코시아 더블 캐스크",0,0],"Bernheim Original Kentucky Straight Wheat Whiskey":["번하임 오리지널",0,0],"The Hakushu 12 Year Old":["하쿠슈 12년",0,0],"The Hakushu Distiller's Reserve":["하쿠슈 디스틸러스 리저브",0,0],"Signatory Edradour 10 Year Old UCF":["시그나토리 에드라두어 10년 UCF",0,0],"Bunnahabhain 12 Year Old":["부나하벤 12년",0,0],"Glenfiddich 23 Grand Cru":["글렌피딕 23년 그랑 크루",0,0],"Talisker 10 Year Old":["탈리스커 10년",0,0],"Jack Daniel's Single Barrel Barrel Strength":["잭다니엘 싱글배럴 배럴 스트렝스",0,0]};
+const PRICE_LOOKUP={"1792 Small Batch":["1792 스몰배치",6000,6931],"Glengoyne 12":["글렌고인 12년",9000,75322],"The Glen Grant 12":["글렌그란트 12년",9000,6829],"The Glen Grant 18":["글렌그란트 18년",22000,6862],"Glenglassaugh 12":["글렌글라사 12년",9000,41076],"The GlenDronach 12":["글렌드로낙 12년",10000,41079],"The GlenDronach 18 Allardice":["글렌드로낙 18년",30000,6015],"The Glenrothes 12":["글렌로티스 12년",8000,6585],"The Glenlivet 12":["글렌리벳 12년",9000,6096],"The Glenlivet 18":["글렌리벳 18년",22000,6583],"Glenmorangie The Original 12":["글렌모렌지 12년 디오리지널",8000,41271],"Glenmorangie The Nectar 16":["글렌모렌지 16년 더 넥타",14000,41080],"Glenmorangie Signet":["글렌모렌지 시그넷",29000,6481],"Glen Scotia Double Cask":["글렌스코시아 더블캐스크",10000,0],"The GlenAllachie 12":["글렌알라키 12년",12000,40242],"The GlenAllachie 8":["글렌알라키 8년",8000,40362],"The Glenturret 10 Peat Smoked":["글렌터렛 10년 피트스모크",9000,41127],"The Glenturret 12":["글렌터렛 12년",10000,41126],"The Glenturret Triple Wood":["글렌터렛 트리플우드",9000,41125],"Glenfarclas 15":["글렌파클라스 15년",14000,40074],"Glenfiddich 12":["글렌피딕 12년",9000,6604],"Glenfiddich 18":["글렌피딕 18년",20000,6600],"Glenfiddich 23 Grand Cru":["글렌피딕 23년 그랑크루",49000,0],"Ki One Eagle":["기원 독수리",10000,41273],"Ki One Unicorn":["기원 유니콘",10000,41195],"Ki One Tiger":["기원 호랑이",9000,41213],"Kim Chang-soo Whisky 51.7":["김창수위스키 51.7",22000,41340],"Knob Creek Rye":["납 크릭 라이",6000,6701],"Knob Creek Kentucky Straight Bourbon":["납 크릭 버번",6000,6883],"Naked Malt":["네이키드몰트 블랜디드",5000,6983],"The Dalmore 12":["달모어 12년",11000,6221],"The Dalmore Cigar Malt Reserve":["달모어 시가몰트 리저브",22000,6223],"The Dalmore King Alexander III":["달모어 킹 알렉산더 3세",43000,40289],"Dewar's 12":["듀어스 12년",5000,6020],"Dewar's 18 Mizunara Cask Finish":["듀어스 18년 미즈나라캐스크",14000,41545],"Deanston Virgin Oak":["딘스톤 버진오크",5000,75241],"Lagavulin 16":["라가불린 16년",16000,6688],"Lagavulin 8":["라가불린 8년",11000,6069],"Laphroaig 10":["라프로익 10년",6000,6818],"Laphroaig Quarter Cask":["라프로익 쿼터캐스크",8000,6690],"Russell's Reserve 10":["러셀 리저브 10년",9000,40235],"Russell's Reserve Single Barrel":["러셀 리저브 싱글배럴",8000,6839],"Redbreast 12":["레드브레스트 12년",11000,40695],"Rebel 100 Kentucky Straight Bourbon":["레벨옐 스트레이트 버번 100프루프",5000,6316],"Royal Brackla 12":["로얄브라클라 12년",10000,40985],"Royal Brackla 18":["로얄브라클라 18년",24000,41071],"Royal Salute 21":["로얄살루트 21년",25000,64019],"Loch Lomond 12":["로크로몬드 12년",9000,6087],"The Macallan 12 Double Cask":["맥캘란 12년 더블캐스크",10000,41484],"The Macallan A Night on Earth – The First Light":["맥캘란 나이트 온 어스 더 퍼스트 라이트",21000,0],"The Macallan Harmony Collection Inspired by Phoenix Honey Orchid Tea":["맥캘란 더 하모니 징",34000,0],"Maker's Mark":["메이커스 마크",5000,6021],"Mellow Corn":["멜로우 콘",5000,40270],"Monkey Shoulder":["몽키 숄더",5000,6530],"Michter's US*1 Small Batch Bourbon":["믹터스 스몰배치",9000,6793],"Michter's US*1 Unblended American Whiskey":["믹터스 언블렌디드 아메리칸",9000,6241],"Ballantine's Glenburgie 12":["발렌타인 12년 글렌버기",8000,6921],"Ballantine's 21":["발렌타인 21년",22000,6577],"Ballantine's 30 Year Old":["발렌타인 30년",52000,0],"Ballantine's Masters":["발렌타인 마스터스",7000,6573],"The Balvenie 12 DoubleWood":["발베니 12년 더블우드",10000,6606],"The Balvenie 14 Caribbean Cask":["발베니 14년 캐리비안 캐스크",16000,6594],"The Balvenie 16 French Oak":["발베니 16년 프렌치오크",25000,40574],"The Busker Triple Cask":["버스커 트리플캐스크",5000,40535],"Benromach 10":["벤로막 10년",8000,6928],"Benriach 16":["벤리악 16년",18000,40554],"Benriach The Smoky Ten":["벤리악 스모키 10년",10000,40752],"Benchmark Old No. 8":["벤치마크위스키(No.8)",5000,6932],"Bowmore 12":["보모어 12년",8000,6685],"Bowmore 18":["보모어 18년",19000,6838],"Bunnahabhain 12 Year Old":["부나하벤 12년",11000,0],"Bushmills 10":["부쉬밀 10년",8000,6567],"Bushmills 12":["부쉬밀 12년",10000,40641],"Bulleit Rye":["불렛 라이",7000,6296],"Bulleit Bourbon":["불렛 버번",6000,6295],"Brenne French Single Malt":["브렌 프렌치 싱글몰트",11000,40511],"Smokehead Original":["스모크헤드 오리지널",5000,75049],"Starward Nova":["스타워드 노바",10000,40484],"Chivas Regal 12":["시바스리갈 12년",5000,6500],"The Singleton of Dufftown 12":["싱글톤 더프타운 12년",7000,6195],"Ardbeg 10":["아드벡 10년",10000,6263],"Ardbeg Uigeadail":["아드벡 우거다일",15000,6483],"Arran 10":["아란 10년",7000,6463],"Arran Sherry Cask":["아란 쉐리 캐스크",11000,6584],"Aberlour 12 Double Cask":["아벨라워 12년 더블캐스크",11000,6518],"Aberlour 16":["아벨라워 16년",24000,6079],"Bårelegs Battle Axe":["아일라보이즈배틀엑스",8000,40848],"Alfred Giraud Horizon":["알프레드지로호라이즌",16000,41096],"Amrut Indian Single Malt":["암룻인디언",9000,40005],"Yamazaki 12":["야마자키 12년",24000,6004],"Yamazaki Distiller's Reserve":["야마자키 DR",12000,5998],"Evan Williams Bottled-in-Bond":["에반 윌리엄스 BIB",5000,40982],"Evan Williams Black Label":["에반 윌리엄스 블랙",5000,40543],"Aberfeldy 16":["에버펠디 16년",11000,41131],"The Epicurean":["에피큐리안",9000,40009],"Angel's Envy Kentucky Straight Bourbon":["엔젤스엔비",7000,40923],"Oban 14":["오반 14년",13000,6422],"Old Parr 12":["올드파 12년",5000,6259],"Wild Turkey 101 8 Year":["와일드터키 101 8년",6000,6905],"Wild Turkey 101 Rye":["와일드터키 101 라이",6000,40941],"Wild Turkey Rare Breed":["와일드터키 레어브리드",9000,6929],"Wild Turkey Master's Keep Triumph":["와일드터키 마스터스킵 트라이엄프",29000,41231],"Nikka Yoichi Single Malt":["요이치 싱글몰트",11000,41253],"Woodford Reserve":["우드포드 리저브",7000,6430],"West Cork Calvados Cask Finish":["웨스트콕 아이리쉬 칼바도스캐스크",5000,60073],"Eagle Rare 10":["이글레어 10년",9000,6924],"Jack Daniel's Old No. 7":["잭 다니엘스",5000,6370],"Jack Daniel's Single Barrel Barrel Strength":["잭다니엘 싱글배럴 배럴스트렝스",11000,0],"Jameson Black Barrel":["제임슨 블랙배럴",5000,6176],"Jameson Standard":["제임슨 스탠다드",5000,6363],"Johnnie Walker Red Label":["조니워커 레드",5000,6282],"Johnnie Walker Black Label":["조니워커 블랙",5000,6272],"Johnnie Walker Black Ruby":["조니워커 블랙루비",6000,41264],"Johnnie Walker Blue Label":["조니워커 블루",27000,6290],"Johnnie Walker Platinum Label 18":["조니워커 플래티넘",15000,6294],"Jura Origin 10":["주라 10년",6000,6089],"Jim Beam Rye":["짐 빔 라이",5000,6362],"Jim Beam White Label":["짐 빔 화이트",5000,40349],"Kavalan Solist Vinho Barrique":["카발란 솔리스트 비노 바리크",32000,40549],"Canadian Club Classic 12":["캐나디언 클럽 12년",5000,6550],"Caol Ila 12":["쿨일라 12년",9000,40710],"Cragganmore 12":["크래겐모어 12년",9000,6299],"Nikka Taketsuru Pure Malt":["타케츠루 퓨어몰트",11000,41252],"Talisker 10 Year Old":["탈리스커 10년",9000,0],"Talisker Special Release 2023":["탈리스커 SR2023",15000,40771],"Tamnavulin Sauvignon Blanc Cask":["탐나불린 쇼비뇽블랑 캐스크",5000,40456],"Tamnavulin Sherry Cask":["탐나불린 쉐리캐스크",5000,40175],"Tamnavulin Pinot Noir Cask":["탐나불린 피노누아캐스크",5000,40233],"Four Roses Single Barrel":["포로지스 싱글배럴",9000,41350],"Paul John Brilliance":["폴존 브릴리언스",9000,40527],"Highland Park 12":["하이랜드 파크 12년",8000,6691],"Highland Park 15":["하이랜드 파크 15년",16000,41351],"High West Rendezvous Rye":["하이웨스트 랑데뷰",9000,75331],"High West Bourbon":["하이웨스트 버번",6000,75329],"The Hakushu 12 Year Old":["하쿠슈 12년",28000,0],"The Hakushu Distiller's Reserve":["하쿠슈 DR",14000,0],"Heaven's Door Double Barrel":["헤븐스 도어 더블배럴",8000,40606],"Fuji Sanroku Signature Blend":["후지산로쿠 시그니처 블랜드",12000,40850],"Hibiki Japanese Harmony":["히비키 하모니",11000,5995],"Bernheim Original Kentucky Straight Wheat Whiskey":["번하임 오리지널",8000,0]};
 const PRICE_DISPLAY_TO_ORIGINAL=Object.fromEntries(Object.entries(PRICE_LOOKUP).map(([k,v])=>[v[0],k]));
 function originalNameOf(name){return PRICE_DISPLAY_TO_ORIGINAL[String(name||'')]||String(name||'');}
 function priceInfoOf(name){return PRICE_LOOKUP[originalNameOf(name)]||PRICE_LOOKUP[String(name||'')]||null;}
@@ -1363,7 +2769,20 @@ function brandAliasesForName(name){
   return out;
 }
 function searchBlob(w){
-  const d=productDetail(w);const adminTerms=(S.isAdmin||isAuthorizedAdmin())?noteFor(w):'';const original=w.sc_original_name||w.name;const parts=[w.id,w.name,original,PRODUCT_KO_NAMES[original]||PRODUCT_KO_NAMES[w.name]||'',adminTerms,d.abvText||'',w.visible===false?'비노출':'노출',w.price?`${w.price}원 가격`:'가격 미등록',w.abv?`ABV ${w.abv}% ${w.abv}도`:'ABV 미등록'];
+  const d=productDetail(w);
+  const adminTerms=(S.isAdmin||isAuthorizedAdmin())?noteFor(w):'';
+  const original=w.sc_original_name||w.name;
+  const localizedNames=PRODUCT_SEARCH_NAMES[original]||PRODUCT_SEARCH_NAMES[w.name]||[];
+  const parts=[
+    w.id,w.name,original,
+    PRODUCT_KO_NAMES[original]||PRODUCT_KO_NAMES[w.name]||'',
+    ...localizedNames,
+    adminTerms,
+    d.abvText||'',
+    w.visible===false?'비노출':'노출',
+    w.price?`${w.price}원 가격`:'가격 미등록',
+    w.abv?`ABV ${w.abv}% ${w.abv}도`:'ABV 미등록'
+  ];
   parts.push(...brandAliasesForName(original));
   FIELD_ORDER.forEach(k=>{
     parts.push(w[k],FLABELS[k]);
@@ -1398,7 +2817,7 @@ const PC={"None":{bg:"#181818",t:"#555"},"Light Peat":{bg:"#1a1a10",t:"#8b8654"}
 
 let S={
   scr:'splash',ax:null,sub:null,q:'',
-  loading:true,supabaseError:false,dbEmpty:false,
+  loading:true,dataError:false,dataEmpty:false,
   ws:RAW.map(([id,name,mat,cask,ori,flv,str,bod,peat])=>{const p=priceInfoOf(name),dn=p?p[0]:name,d=PRODUCT_DETAILS[name]||{};return {id,name:dn,sc_original_name:name,code:p?p[2]:0,mat,cask,ori,flv,str:strengthClassFromAbv(d.abv,str),bod,peat,abv:normalizeAbv(d.abv),img:'',visible:true,note:d.ops||'',price:p?p[1]:0};}),
   isAdmin:false,showLogin:false,pinInput:'',pinError:'',
   editId:null,editDraft:{},
@@ -1446,7 +2865,7 @@ function mergeActualStock(dbRows){
       str:saved.str,abv:normalizeAbv(saved.abv)||seed.abv,bod:saved.bod,peat:saved.peat,
       img:renamedLegacy?'':(isLegacySearchThumb(saved.img)?'':(saved.img||'')),
       note:renamedLegacy?seed.note:(String(saved.note||'').trim()?saved.note:seed.note),
-      price:normalizePrice(saved.price),visible:saved.visible!==false,
+      price:normalizePrice(saved.price)||normalizePrice(seed.price),visible:saved.visible!==false,
       _dbId:Number(saved.id),id:Number(seed.id),name:seed.name,
       _featureV2:saved._featureV2===true,_needsFeatureMigration:saved._needsFeatureMigration===true
     });
@@ -1465,28 +2884,31 @@ function restorePinSession(){
   catch(e){S.isAdmin=false;}
 }
 async function initializeDbIfEmpty(){return;}
-async function loadWs(){
-  S.loading=true;S.supabaseError=false;render();
+function readLocalWs(){
   try{
-    const{data,error}=await db.from('whiskies').select('*').order('id');
-    if(error)throw error;
-    S.ws=mergeActualStock(data||[]);
-    const featureMigrationRows=S.ws.filter(w=>w._needsFeatureMigration);
-    if(featureMigrationRows.length){
-      const{error:featureMigrationError}=await db.from('whiskies').upsert(featureMigrationRows.map(toDbRow),{onConflict:'id'});
-      if(featureMigrationError)console.error('기존 제품 특징 데이터 전환 오류:',featureMigrationError);
-      else featureMigrationRows.forEach(w=>{w._needsFeatureMigration=false;});
-    }
-    S.dbEmpty=!(data&&data.length);
+    const parsed=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');
+    return Array.isArray(parsed)?parsed:null;
   }catch(e){
-    console.error('Supabase loadWs 오류:',e);
-    S.ws=normalizeWs(rawSeed());
-    S.dbEmpty=true;
-    S.supabaseError=true;
+    console.error('로컬 데이터 읽기 오류:',e);
+    return null;
   }
+}
+function saveWs(){
+  try{
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(S.ws));
+    return true;
+  }catch(e){
+    console.error('로컬 데이터 저장 오류:',e);
+    alert('이 브라우저에 데이터를 저장하지 못했습니다. 브라우저 저장공간 설정을 확인하세요.');
+    return false;
+  }
+}
+async function loadWs(){
+  S.loading=true;render();
+  const saved=readLocalWs();
+  S.ws=saved?mergeActualStock(saved):normalizeWs(rawSeed());
   S.loading=false;render();
 }
-function saveWs(){}
 
 function visibleWs(){return S.ws.filter(w=>w.visible!==false&&isActualStock(w));}
 function cnt(axId,subId){return visibleWs().filter(w=>w[axId]===subId).length;}
@@ -1509,13 +2931,8 @@ function renderLoading(){
     <p class="pulse" style="font-size:13px;color:#666;letter-spacing:.28em;margin-top:10px;">LOADING DATA…</p>
   </div>`;
 }
-function renderSupabaseError(){
-  if(!S.supabaseError)return'';
-  return`<div style="margin:0 16px 12px;padding:12px 16px;border-radius:10px;border:1px solid rgba(216,58,99,.35);background:rgba(216,58,99,.08);">
-    <p style="font-size:13px;color:#d83a63;letter-spacing:.12em;line-height:1.5;">⚠ Supabase 연결 오류 — 읽기 전용으로 작동 중입니다.<br>
-    <span style="color:#9a6a72;">spirit-core.html 상단의 SUPABASE_URL / SUPABASE_ANON 값을 확인하세요.</span></p>
-  </div>`;
-}
+function renderDataError(){return'';}
+
 function render(){
   const app=document.getElementById('app');
   if(!app)return;
@@ -1622,12 +3039,12 @@ function renderAxes(){
   const adminBtn=`<button class="btn" onclick="goAdmin()" style="font-size:13px;padding:5px 10px;flex-shrink:0;">ADMIN</button>`;
   return`<div class="fadein scr">
 ${hdr('WHISKY GUIDE','분류 방법을 선택하세요',false,adminBtn)}
-${renderSupabaseError()}
+${renderDataError()}
 <div class="guide-intro">
   <p class="guide-kicker">SPIRIT CORE LAB</p>
   <h1 class="guide-title">Whisky Flavor Navigator</h1>
   <p class="guide-copy">원료, 숙성 캐스크, 원산지, 향미, 도수, 바디, 피트 강도의 7개 축으로 현재 리스트를 빠르게 좁혀보는 테이스팅 가이드입니다.</p>
-  <div class="search-shell"><input class="main-search-input" type="text" inputmode="search" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="한글/영문 검색 · 예: 맥캘란, 셰리, 아일라, 버번" value="${esc(S.q||'')}" oncompositionstart="handleSearchCompositionStart()" oncompositionend="handleSearchCompositionEnd(this)" oninput="handleSearchInput(this)"/></div>
+  <div class="search-shell"><input class="main-search-input" type="text" inputmode="search" autocomplete="off" autocorrect="off" spellcheck="false" placeholder="한글·영문·中文·日本語 검색 · 예: 맥캘란, Macallan, 麦卡伦, マッカラン" value="${esc(S.q||'')}" oncompositionstart="handleSearchCompositionStart()" oncompositionend="handleSearchCompositionEnd(this)" oninput="handleSearchInput(this)"/></div>
 </div>
 ${quickHtml}
 <div style="padding:8px 16px 16px;display:flex;flex-direction:column;gap:10px;">${cards}</div>
@@ -1720,7 +3137,7 @@ ${OPTS[k].map(o=>`<option value="${esc(o)}"${d[k]===o?' selected':''}>${esc(opti
 <div style="margin-bottom:9px;">
 <p style="font-size:13px;color:#969696;letter-spacing:.18em;margin-bottom:4px;">이름 (Name)</p>
 <input type="text" value="${esc(d.name||'')}" readonly aria-readonly="true" style="opacity:.72;cursor:not-allowed;"/>
-<p class="price-help">제품명은 실제 입고 138종 식별값이므로 이 화면에서는 변경하지 않습니다.</p>
+<p class="price-help">제품명은 실제 입고 140종 식별값이므로 이 화면에서는 변경하지 않습니다.</p>
 </div>
 <div style="margin-bottom:9px;">
 <p style="font-size:13px;color:#d7a4b0;letter-spacing:.18em;margin-bottom:4px;">가격 (PRICE)</p>
@@ -1798,7 +3215,7 @@ ${HOME_LOGO}
 ${logoutBtn}</div>
 <div style="padding:14px 16px;">
 <div style="display:flex;gap:8px;margin-bottom:12px;align-items:center;">
-<input type="text" placeholder="위스키명, 원산지, 원료, 향미, 숙성 캐스크 검색..." value="${esc(S.adminQ)}" oninput="S.adminQ=this.value;render()" style="flex:1;"/>
+<input type="text" placeholder="한글·영문·中文·日本語 위스키명, 원산지, 원료, 향미 검색..." value="${esc(S.adminQ)}" oninput="S.adminQ=this.value;render()" style="flex:1;"/>
 
 </div>
 
@@ -2005,32 +3422,27 @@ async function confirmEdit(){
   const original=S.ws.find(w=>w.id===S.editId);
   if(!original)return;
   const updated=migrateWhisky({...S.editDraft,id:original.id,_dbId:original._dbId,name:original.name,price:normalizePrice(S.editDraft.price)});
-  try{
-    const{error}=await db.from('whiskies').upsert(toDbRow(updated),{onConflict:'id'});
-    if(error)throw error;
-    S.ws=S.ws.map(w=>w.id===S.editId?updated:w);
-    S.editId=null;render();
-  }catch(e){console.error('confirmEdit 오류:',e);alert('저장에 실패했습니다. Supabase 연결 또는 쓰기 정책을 확인하세요.');}
+  S.ws=S.ws.map(w=>w.id===S.editId?updated:w);
+  S.editId=null;
+  saveWs();
+  render();
 }
 async function toggleVisible(id){
   if(!requireAdminSession())return;
   const w=S.ws.find(x=>x.id===id);if(!w)return;
   const updated={...w,visible:w.visible===false};
-  try{
-    const{error}=await db.from('whiskies').upsert(toDbRow(updated),{onConflict:'id'});
-    if(error)throw error;
-    S.ws=S.ws.map(x=>x.id===id?updated:x);render();
-  }catch(e){console.error('toggleVisible 오류:',e);alert('노출 상태 저장에 실패했습니다.');}
+  S.ws=S.ws.map(x=>x.id===id?updated:x);
+  saveWs();
+  render();
 }
 async function delW(id){
   if(!requireAdminSession())return;
   const w=S.ws.find(x=>x.id===id);if(!w)return;
   if(!confirm(`「${w.name}」을(를) 삭제하시겠습니까?`))return;
-  try{
-    const{error}=await db.from('whiskies').delete().eq('id',id);
-    if(error)throw error;
-    S.ws=S.ws.filter(x=>x.id!==id);if(S.editId===id)S.editId=null;render();
-  }catch(e){console.error('delW 오류:',e);alert('삭제에 실패했습니다. Supabase 연결 또는 쓰기 정책을 확인하세요.');}
+  S.ws=S.ws.filter(x=>x.id!==id);
+  if(S.editId===id)S.editId=null;
+  saveWs();
+  render();
 }
 async function confirmAdd(){
   if(!requireAdminSession())return;
@@ -2039,16 +3451,21 @@ async function confirmAdd(){
   if(S.ws.some(w=>stockKey(w.name)===stockKey(name))){alert('같은 이름의 위스키가 이미 있습니다.');return;}
   const maxId=S.ws.reduce((m,w)=>Math.max(m,Number(w.id)||0),0);
   const newW=migrateWhisky({...S.newDraft,id:maxId+1,name,price:normalizePrice(S.newDraft.price),visible:true,note:S.newDraft.note||''});
-  try{
-    const{error}=await db.from('whiskies').insert(toDbRow(newW));
-    if(error)throw error;
-    S.ws=[...S.ws,newW].sort((a,b)=>a.id-b.id);
-    S.newDraft={name:'',price:0,abv:0,mat:'Malted Barley',cask:'Bourbon / American Oak',ori:'Scotland / Speyside',flv:'Fruity & Tropical',str:'Standard',bod:'Medium & Smooth',peat:'None',img:'',visible:true,note:''};
-    S.addMode=false;render();
-  }catch(e){console.error('confirmAdd 오류:',e);alert('추가에 실패했습니다. Supabase 연결 또는 쓰기 정책을 확인하세요.');}
+  S.ws=[...S.ws,newW].sort((a,b)=>a.id-b.id);
+  S.newDraft={name:'',price:0,abv:0,mat:'Malted Barley',cask:'Bourbon / American Oak',ori:'Scotland / Speyside',flv:'Fruity & Tropical',str:'Standard',bod:'Medium & Smooth',peat:'None',img:'',visible:true,note:''};
+  S.addMode=false;
+  saveWs();
+  render();
 }
+
 async function resetData(){
-  alert('이 버전은 실제 입고 138종을 고정 표시합니다.');
+  if(!requireAdminSession())return;
+  if(!confirm('이 브라우저에 저장된 관리자 수정사항을 초기화하고 기본 140종 데이터로 되돌리시겠습니까?'))return;
+  try{localStorage.removeItem(STORAGE_KEY);}catch(e){}
+  S.ws=normalizeWs(rawSeed());
+  S.editId=null;
+  S.addMode=false;
+  render();
 }
 
 async function initApp(){
@@ -2059,5 +3476,7 @@ async function initApp(){
 initApp();
 </script>
 
+
+<!-- DATA_SYNC: 140 whiskies | Bernheim 8000 KRW | local-only storage | search: KO/EN/ZH-CN/JA | generated 2026-07-11 -->
 </body>
 </html>
