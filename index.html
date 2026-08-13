@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>Spirit Core · Whisky Guide</title>
 <meta name="theme-color" content="#faf7f2">
@@ -13,7 +14,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html,body{height:100%;background:#060606;overflow-x:hidden}
-body{font-family:'Pretendard Variable','Pretendard',-apple-system,BlinkMacSystemFont,system-ui,sans-serif;color:#171717;font-weight:600;letter-spacing:-.01em}
+body{font-family:'Pretendard Variable','Pretendard',-apple-system,BlinkMacSystemFont,system-ui,Roboto,'Helvetica Neue','Segoe UI','Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',sans-serif;color:#171717;font-weight:600;letter-spacing:-.01em}
 ::-webkit-scrollbar{width:3px}
 ::-webkit-scrollbar-track{background:#0e0e0e}
 ::-webkit-scrollbar-thumb{background:#2a2a2a}
@@ -87,7 +88,7 @@ input[type=text]:focus,input[type=email]:focus,input[type=password]:focus,input[
 }
 html,body{background:var(--bg)!important;color:var(--ink)!important;}
 body{
-  font-weight:520!important;
+  font-weight:580!important;
   text-rendering:geometricPrecision;
   -webkit-font-smoothing:antialiased;
   background:
@@ -213,7 +214,7 @@ body::before{
 .guide-intro::before{content:'';position:absolute;inset:0 0 auto 0;height:1px;background:linear-gradient(90deg,transparent,rgba(216,58,99,.65),rgba(182,138,76,.35),transparent);}
 .guide-kicker{font-size:11px;color:var(--brass-soft);letter-spacing:.26em;margin-bottom:7px;font-weight:750;}
 .guide-title{font-size:22px;color:var(--ink);letter-spacing:.025em;line-height:1.25;margin-bottom:6px;font-weight:760;}
-.guide-copy{font-size:14px;color:var(--muted);line-height:1.62;font-weight:480;margin-bottom:14px;}
+.guide-copy{font-size:14px;color:var(--muted);line-height:1.62;font-weight:540;margin-bottom:14px;}
 .guide-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;}
 .guide-stat{border:1px solid rgba(255,255,255,.065);border-radius:12px;background:rgba(0,0,0,.22);padding:10px 8px;text-align:center;}
 .guide-stat strong{display:block;font-size:17px;color:#171717;letter-spacing:.04em;font-weight:760;}
@@ -227,10 +228,10 @@ input[type=text],input[type=email],input[type=password],input[type=number],selec
   border:1px solid rgba(255,255,255,.09)!important;
   background:linear-gradient(180deg,#121012,#0a0a0a)!important;
   color:#111111!important;
-  font-weight:520!important;
+  font-weight:580!important;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.045),0 12px 28px rgba(0,0,0,.22)!important;
 }
-input[type=text]::placeholder{color:#655d5f!important;font-weight:480;}
+input[type=text]::placeholder{color:#655d5f!important;font-weight:580;}
 input[type=text]:focus,input[type=email]:focus,input[type=password]:focus,input[type=number]:focus,select:focus{border-color:rgba(216,58,99,.58)!important;box-shadow:0 0 0 3px rgba(216,58,99,.09),inset 0 1px 0 rgba(255,255,255,.06)!important;}
 .tag{
   border-radius:999px!important;
@@ -269,7 +270,7 @@ input[type=text]:focus,input[type=email]:focus,input[type=password]:focus,input[
   padding:15px 16px;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.055),0 12px 30px rgba(0,0,0,.28);
 }
-.result-hero p{font-weight:470;}
+.result-hero p{font-weight:530;}
 .result-count-pill{
   display:inline-flex;
   align-items:center;
@@ -377,7 +378,7 @@ select,
   -webkit-backdrop-filter:blur(14px);
 }
 .detail-top p:first-child{font-size:11px;color:#5f584f;letter-spacing:.24em;margin-bottom:2px;font-weight:760;}
-.detail-top p:last-child{font-size:13px;color:#7c7473;letter-spacing:.08em;margin:0;font-weight:520;}
+.detail-top p:last-child{font-size:13px;color:#7c7473;letter-spacing:.08em;margin:0;font-weight:570;}
 .detail-close{
   border:1px solid rgba(255,255,255,.12);
   background:rgba(0,0,0,.18);
@@ -398,7 +399,7 @@ select,
 }
 .detail-bottle .bottle-img-wrap{width:168px!important;height:252px!important;border-radius:4px!important;}
 .detail-name{font-size:26px;color:#111111;letter-spacing:.01em;line-height:1.18;margin:2px 0 7px;font-weight:760;}
-.detail-origin{font-size:14px;color:#5f5a54;letter-spacing:.08em;margin:0 0 13px;font-weight:520;}
+.detail-origin{font-size:14px;color:#5f5a54;letter-spacing:.08em;margin:0 0 13px;font-weight:570;}
 .detail-tags{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0;}
 .detail-summary{
   margin-top:13px;
@@ -433,8 +434,8 @@ select,
 }
 .detail-axis{font-size:11px;color:#5f584f;letter-spacing:.20em;margin-bottom:7px;font-weight:760;}
 .detail-value{font-size:16px;color:#f0e7e5;line-height:1.35;font-weight:720;margin-bottom:8px;}
-.detail-value span{display:block;font-size:12px;color:#817978;letter-spacing:.06em;margin-top:2px;font-weight:540;}
-.detail-block p{font-size:13.5px;color:#5f5a54;line-height:1.62;margin:0;font-weight:470;}
+.detail-value span{display:block;font-size:12px;color:#817978;letter-spacing:.06em;margin-top:2px;font-weight:580;}
+.detail-block p{font-size:13.5px;color:#5f5a54;line-height:1.62;margin:0;font-weight:530;}
 .detail-note-empty{color:#5e5656!important;}
 @media(max-width:620px){
   .detail-panel{width:calc(100vw - 16px);margin:8px auto 22px;}
@@ -470,7 +471,7 @@ textarea:focus{border-color:#4f4146;box-shadow:0 0 0 3px rgba(216,58,99,.09);}
 .detail-spec{border:1px solid rgba(255,255,255,.075);background:rgba(0,0,0,.2);padding:11px 12px;min-height:78px;}
 .detail-spec-label{font-size:10.5px;color:#5f584f;letter-spacing:.2em;font-weight:760;margin-bottom:6px;}
 .detail-spec-value{font-size:18px;color:#f3e8e6;font-weight:760;line-height:1.25;}
-.detail-spec-copy{font-size:13px;color:#5f5a54;line-height:1.58;font-weight:470;}
+.detail-spec-copy{font-size:13px;color:#5f5a54;line-height:1.58;font-weight:530;}
 .detail-internal{margin:12px 18px 18px;border:1px solid rgba(216,58,99,.28);background:rgba(216,58,99,.055);padding:13px 14px;}
 .detail-internal .detail-spec-label{color:#5e4b51;}
 .detail-internal p{font-size:13px;color:#4f4945;line-height:1.62;margin:0;}
@@ -703,6 +704,21 @@ h1,h2,h3,h4,h5,h6,
 .detail-hint,.sep,.detail-section-title {
   color:#6a625c !important;
 }
+
+
+/* ===== GITHUB PAGES FONT CONSISTENCY ===== */
+html,body{font-family:'Pretendard Variable','Pretendard',-apple-system,BlinkMacSystemFont,system-ui,Roboto,'Helvetica Neue','Segoe UI','Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',sans-serif!important;}
+body{font-weight:580!important;}
+.guide-title,.detail-name{font-weight:800!important;}
+.card,.whisky-card{font-weight:600;}
+.guide-copy,.detail-origin,.detail-summary,.detail-block p,.detail-spec-copy,.detail-internal p,.result-hero p{font-weight:550!important;}
+.detail-value{font-weight:760!important;}
+.detail-value span{font-weight:580!important;}
+input[type=text],input[type=email],input[type=password],input[type=number],select,textarea{font-weight:580!important;}
+input::placeholder,textarea::placeholder{font-weight:520!important;}
+.tag,.status-chip{font-weight:720!important;}
+.price-display strong{font-weight:820!important;}
+.btn,.pin-btn{font-weight:650!important;}
 
 </style>
 </head>
