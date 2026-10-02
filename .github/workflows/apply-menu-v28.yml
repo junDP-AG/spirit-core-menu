@@ -1,0 +1,46 @@
+name: Apply whisky menu v28 patch
+
+on:
+  push:
+    branches: [ update-whisky-menu-v28 ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: update-whisky-menu-v28
+          fetch-depth: 0
+
+      - name: Apply menu patch
+        run: python scripts/apply_menu_patch.py
+
+      - name: Validate inline JavaScript
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          t=Path('index.html').read_text(encoding='utf-8')
+          s='\n'.join(re.findall(r'<script[^>]*>(.*?)</script>', t, flags=re.S|re.I))
+          Path('/tmp/menu-check.js').write_text(s, encoding='utf-8')
+          PY
+          node --check /tmp/menu-check.js
+
+      - name: Commit generated index
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "No generated changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Generate menu with official PPM and bottle images"
+          git push origin update-whisky-menu-v28
