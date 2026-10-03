@@ -1,0 +1,66 @@
+name: Apply peat intensity reclassification v31
+
+on:
+  push:
+    branches: [ peat-reclass-v31 ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: peat-reclass-v31
+          fetch-depth: 0
+
+      - name: Apply peat reclassification
+        run: python scripts/apply_peat_reclass_v31.py
+
+      - name: Validate inline JavaScript
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          t=Path('index.html').read_text(encoding='utf-8')
+          s='\n'.join(re.findall(r'<script[^>]*>(.*?)</script>', t, flags=re.S|re.I))
+          Path('/tmp/menu-check.js').write_text(s, encoding='utf-8')
+          PY
+          node --check /tmp/menu-check.js
+
+      - name: Validate taxonomy
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          t=Path('index.html').read_text(encoding='utf-8')
+          data=json.loads(Path('data/peat_classification_v31.json').read_text(encoding='utf-8'))
+          start=t.find('const RAW=')+len('const RAW=')
+          raw=json.JSONDecoder().raw_decode(t[start:])[0]
+          rows={r[1]:r for r in raw}
+          assert len(raw)==178
+          assert len(data['classes'])==46
+          assert all(rows[n][8]==c for n,c in data['classes'].items())
+          counts={k:sum(1 for c in data['classes'].values() if c==k) for k in ['Light Peat','Medium Peat','Heavy Peat']}
+          assert counts=={'Light Peat':18,'Medium Peat':14,'Heavy Peat':14}, counts
+          assert '1–15=약, 16–35=중, 36 이상=강' in t
+          assert 'const PEAT_CLASS_OVERRIDES=' in t
+          print(counts)
+          PY
+
+      - name: Commit generated index
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "No generated changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Reclassify peat intensity across all whiskies"
+          git push origin peat-reclass-v31
