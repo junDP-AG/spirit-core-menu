@@ -1,0 +1,63 @@
+name: Apply complete whisky PPM/status map
+
+on:
+  push:
+    branches: [ ppm-all-v30 ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ppm-all-v30
+          fetch-depth: 0
+
+      - name: Apply complete PPM/status patch
+        run: python scripts/apply_complete_ppm_v30.py
+
+      - name: Validate inline JavaScript
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          t=Path('index.html').read_text(encoding='utf-8')
+          s='\n'.join(re.findall(r'<script[^>]*>(.*?)</script>', t, flags=re.S|re.I))
+          Path('/tmp/menu-check.js').write_text(s, encoding='utf-8')
+          PY
+          node --check /tmp/menu-check.js
+
+      - name: Validate coverage
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          t=Path('index.html').read_text(encoding='utf-8')
+          def parse(name):
+            start=t.find('const '+name+'=')+len('const '+name+'=')
+            return json.JSONDecoder().raw_decode(t[start:])[0]
+          raw=parse('RAW'); d=parse('PRODUCT_DETAILS')
+          peated=[r for r in raw if r[8] != 'None']
+          assert len(raw)==178, len(raw)
+          assert all(d.get(r[1],{}).get('ppmText') and d.get(r[1],{}).get('ppmText')!='미상' for r in peated)
+          assert next(r for r in raw if r[1]=='LARK Chinotto Citrus Cask')[8]=='None'
+          print('total',len(raw),'peated/status-covered',len(peated))
+          PY
+
+      - name: Commit generated index
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "No generated changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Complete peat PPM and status coverage"
+          git push origin ppm-all-v30
